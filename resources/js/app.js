@@ -12,6 +12,7 @@ import Vue from "vue";
 import VueInternationalization from "vue-i18n";
 import VueRouter from "vue-router";
 import Vuetify from "vuetify";
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -103,7 +104,7 @@ const messages = {
             calulated:"Calculated at next",
             toshipping:"Continue to Shipping",
             select_size:'Please Select Size',
-            empty:'EMPTY',
+            empty:'      ',
 
 
 
@@ -183,7 +184,7 @@ const messages = {
              calulated:"الحساب سيتم الكرة القادة ",
              toshipping:"متابعة الشراء",
              select_size:'من فضلك اختر الحجم',
-             empty:'فارغ',
+             empty:'      ',
 
 
 

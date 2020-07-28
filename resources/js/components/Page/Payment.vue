@@ -121,9 +121,9 @@
                 {{ item.quantity }} x ${{item.price}}
             </div>
             <div style="clear:both"></div>
-            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }}</h6>
+            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} - {{item.sizeCm}} </h6>
           </div>
-          <hr />
+
           <div class="discount">
             <v-form class="form_discount">
               <v-text-field v-model="discount" label="Discount"></v-text-field>
@@ -274,9 +274,9 @@
                 {{ item.quantity }} x ${{item.price}}
             </div>
             <div style="clear:both"></div>
-            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }}</h6>
+            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} - {{item.sizeCm}} </h6>
           </div>
-          <hr />
+
           <div class="discount">
             <v-form class="form_discount">
               <v-text-field v-model="discount" label="الكوبون"></v-text-field>
@@ -683,5 +683,9 @@ this.cart.forEach(element => {
   .discount_section {
     width: 100%;
   }
+}
+
+.alert{
+    text-align: center;
 }
 </style>
