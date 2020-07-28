@@ -1,23 +1,40 @@
 <template>
-    <section>
+    <section class="myhome">
+
+
+
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" v-for="(artist) in artists" :class="{ 'active': artist.id === 1 }" @click="getdata(artist.id)" :key="artist.id" data-slide-to="artist.id" >{{artist.name}}</li>
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner ">
                 <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
-                    <div class="wrapper">
-                        <div class="details" v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)" :class="{ 'active': index == 0 }"  :key="palettesArtist.id">
-                            <img :src="palettesArtist.img" class="details_img" alt="...">
-                            <div class="content" >
-                                <h6>Summer | ${{palettesArtist.L_price}}</h6>
-                                <span><span class="text-success">{{palettesArtist.L_copies}}</span>/{{palettesArtist.L_avalible}} left</span>
+
+                        <div class="wrapper    ">
+                              <div class=" row  d-flex justify-content-center ">
+
+
+                            <div  class="details myhome col-md-2 col-sm-6 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
+                               <div :class="{ 'active': index == 0 }" class=" details-content">
+                                    <img    :src="palettesArtist.img" class="details_img" alt="...">
+                                    <div class="content" >
+                                        <div class="triangle"></div>
+                                        <h6>{{palettesArtist.name}}  | ${{palettesArtist.L_price}}</h6>
+
+                                        <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}  {{palettesArtist.L_avalible}} {{ $t("message.left") }}</span>
+                                        <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
 
                     </div>
+
+
+
                     <a class="carousel-control-next" href="#carouselExampleCaptions" @click="getdata(artist.id+1)" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
@@ -27,46 +44,55 @@
                         <span class="sr-only">Previous</span>
                     </a>
                 </div>
-                
+
             </div>
 
         </div>
         <div class="header_sm mb-2"></div>
-        <div class="container mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
+        <div class="container myhome mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
             <div class="row">
                 <div class="col-lg-7" >
                     <div class="row">
-                        <div class="col-md-6 mb-3 pl-1" v-for="minPalette in minPalettes"  :key="minPalette.id" >
+                        <div class="col-md-6 mb-3 targ pl-1" v-for="minPalette in minPalettes"  :key="minPalette.id" >
                             <img :src="minPalette.img" style="height:400px" class="w-100" alt="...">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="myhome col-lg-5">
                     <div class="add-cart p-3">
                         <p>Art paper framed by a wooden frame and non-reflective glass</p>
-                        <h2 class="font-weight-bold ">{{name}} II 
+                        <h2 class="font-weight-bold ">{{name}} II
                         <span v-if="active_el==1">${{S_price}}</span>
                         <span v-if="active_el==2">${{M_price}}</span>
                         <span v-if="active_el==3">${{L_price}}</span>
-                        
+
                         </h2>
                         <div class="mb-3 mt-2"> <span>silkscreen</span></div>
                         <div>
 
-                            <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="S_copies>0"  @click="small(1)">S</v-btn>
-                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >Empty</v-btn>
-                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="M_copies>0" @click="medium(2)">M</v-btn>
-                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >Empty</v-btn>
-                            <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="L_copies>0" @click="larg(3)">L</v-btn>
-                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >Empty</v-btn>
-                            <h3 class="mt-4 mb-4" v-if="active_el==1">30x40cm (12x16") <strong style="float:right">{{S_copies}}/{{S_avalible}} left</strong></h3>
-                            <h3 class="mt-4 mb-4" v-if="active_el==2">50x66.5cm (20x26") <strong style="float:right">{{M_copies}}/{{M_avalible}} left</strong></h3>
-                            <h3 class="mt-4 mb-4" v-if="active_el==3">70x93.5cm (28x37") <strong style="float:right">{{L_copies}}/{{L_avalible}} left</strong></h3>
+                            <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="S_avalible>0"  @click="small(1,S_price,S_avalible,cardId)">S</v-btn>
+                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.empty") }}</v-btn>
+                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="M_avalible>0" @click="medium(2,M_price, M_avalible ,cardId)">M</v-btn>
+                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.empty") }}</v-btn>
+                            <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="L_avalible>0" @click="larg(3,L_price,L_avalible,cardId )">L</v-btn>
+                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.empty") }}</v-btn>
+                            <h3 class="mt-4 mb-4" v-if="active_el==1">small - 30x40cm (12x16") <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium - 50x66.5cm (20x26") <strong style="float:right">{{M_copies}}/{{M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <h3 class="mt-4 mb-4" v-if="active_el==3">large - 70x93.5cm (28x37") <strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3>
                             <div style="clear:both"></div>
                         </div>
-                        <button class="btn add-button " @click="addtocart(cardId)"><span v-if="active_el==1">${{S_price}}</span>
+                        <button @click="  addtocart(cardId,priceTarget, avilableTarget , sizeTarget)" v-if="button" class="btn add-button addToCart "
+
+
+
+                         ><span v-if="active_el==1">${{S_price}}</span>
                         <span v-if="active_el==2">${{M_price}}</span>
-                        <span v-if="active_el==3">${{L_price}}</span> - {{ $t("message.cart") }}</button>
+                        <span v-if="active_el==3">${{L_price}}</span>
+                         -{{ $t("message.cart") }}
+
+                        </button>
+                        <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.select_size") }}</v-btn>
+
                         <p>
                             <span class="font-weight-bold ">This is the Classic</span>, designed and manufactured by Ecstase,
                             the Classic is made up of a wooden frame, a passe-partout,
@@ -78,49 +104,50 @@
                                 <span v-if="show">
                                     it is delivered as the artwork comes ready to be hung on your wall.
                                     The classical design and releases in this series make it an elegant
-                                    way to add a high-end touch to your space. Each artwork contains 
+                                    way to add a high-end touch to your space. Each artwork contains
                                     a signed certificate of authenticity that guarantees its originality.
                                     Curated by Ecstase in a collaboration with Seamless for a limited edition of 50.
                                     This psychedelic triple artwork capitalizes on brilliant negative space and amazing detail.
                                 </span>
                             </transition>
-                            <a class="more text-primary btn btn-block" v-if="!show" @click="show = !show">Read More</a>
-                            <a class="more text-primary btn btn-block" v-else @click="show = !show">Read Less</a>
+                            <a class="more text-primary btn btn-block" v-if="!show" @click="show = !show">{{ $t("message.readmore") }}</a>
+                            <a class="more text-primary btn btn-block" v-else @click="show = !show">{{ $t("message.readless") }}</a>
                         </p>
                         <ul class="list-group">
                             <li class="list-group-item" @click="size = !size">
                                 <h4 class="font-weight-bold ">
-                                    Size
+                                   {{ $t("message.size") }}
                                     <i v-if="!size" class="fa fa-chevron-down" style="float:right"></i>
-                                    <i v-else class="fa fa-chevron-up" style="float:right"></i> 
-                                </h4>                              
+                                    <i v-else class="fa fa-chevron-up" style="float:right"></i>
+                                </h4>
                                 <span v-if="size">
-                                    {{sizing_details}}
+                                    {{sizing_details}} CM
                                 </span>
                             </li>
                             <li class="list-group-item" @click="details = !details">
                                 <h4 class="font-weight-bold ">
-                                    Product Details
+
+                                   {{ $t("message.productDetails") }}
                                     <i v-if="!details" class="fa fa-chevron-down" style="float:right"></i>
-                                    <i v-else class="fa fa-chevron-up" style="float:right"></i>                                    
+                                    <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="details">
                                     it is delivered as the artwork comes ready to be hung on your wall.
-                                    The classical design and releases in this series make it an elegant
+                                    The classical design and  releases in this series make it an elegant
                                     way to add a high-end.
-                                </span>                        
+                                </span>
                             </li>
                             <li class="list-group-item" @click="shipping = !shipping">
                                 <h4 class="font-weight-bold ">
-                                    Shipping
+                                     {{ $t("message.shipping") }}
                                     <i v-if="!shipping" class="fa fa-chevron-down" style="float:right"></i>
-                                    <i v-else class="fa fa-chevron-up" style="float:right"></i>                              
+                                    <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="shipping">
                                     it is delivered as the artwork comes ready to be hung on your wall.
                                     The classical design and releases in this series make it an elegant
                                     way to add a high-end.
-                                </span>                       
+                                </span>
                             </li>
                         </ul>
                     </div>
@@ -135,6 +162,9 @@
 <script>
 import appvideo from '../pagecomponents/ShopVideo';
 import review from '../pagecomponents/Review';
+import $ from "jquery";
+
+
 export default {
     components:{appvideo,review},
     data(){
@@ -152,7 +182,7 @@ export default {
             first:null,
             firstpalettesArtists:null,
             firstminPalettes:null,
-            active_el:3,
+            active_el:0,
             S_copies:'',
             S_avalible:'',
             S_price:'',
@@ -164,12 +194,19 @@ export default {
             L_price:'',
             sizing_details:'',
             name:'',
-            cardId:''
+            cardId:'',
+            priceTarget:'',
+            avilableTarget:'',
+            sizeTarget:'',
+            button:false,
 
-            
+
+
         }
     },
     created() {
+
+
 
       axios.get('/api/palettes')
       .then(response =>{
@@ -191,23 +228,63 @@ export default {
             this.L_price=response.data.palettes[0].L_price,
             this.sizing_details=response.data.palettes[0].sizing_details
             this.palettesArtists = response.data.palettesArtists
-           
+
             this.firstpalettesArtists = response.data.palettesArtists[0].id
             axios.get("/api/viewMinPalettes?id=" + this.firstpalettesArtists)
             .then(response =>{
                 this.minPalettes = response.data.minPalettes
-                })  
+                })
             .catch(error => console.log(error.response.data))
-        })  
-        .catch(error => console.log(error.response.data))          
+        })
+        .catch(error => console.log(error.response.data))
       }
 
     ).catch(error => console.log(error.response.data));
 
-        
-      
+
+
     },
+
+      computed: {
+      cart() {
+        return this.products.filter(product => product.quantity > 0);
+      },
+      totalQuantity() {
+        return this.products.reduce(
+        (total, product) => total + product.quantity,
+        0);
+
+      } },
+
+
+
     methods:{
+
+
+        addToCart(product){
+
+            this.$store.dispatch('addProductToCart',{
+                 product,
+                quantity:1
+            })
+        }
+        ,
+         updateCart(product, updateType) {
+        for (let i = 0; i < this.products.length; i++) {
+          if (this.products[i].id === product.id) {
+            if (updateType === 'subtract') {
+              if (this.products[i].quantity !== 0) {
+                this.products[i].quantity--;
+              }
+            } else {
+              this.products[i].quantity++;
+            }
+
+            break;
+          }
+        }
+      }
+      ,
         getdata($id){
         axios.get("/api/view?id=" +$id)
         .then(response =>{
@@ -218,7 +295,7 @@ export default {
             } else {
                 this.firstminPalettes = null
             }
-            
+
             if($id > response.data.artists.length){
                 axios.get("/api/view?id=" +1)
                 .then(response =>{
@@ -227,12 +304,12 @@ export default {
                     axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
                     .then(response =>{
                         this.minPalettes = response.data.minPalettes
-                        })  
+                        })
                         .catch(error => console.log(error.response.data))
                     })
                 .catch(error => console.log(error.response.data))
             } else if($id == 0) {
-                
+
                 axios.get("/api/view?id=" + response.data.artists.length )
                 .then(response =>{
                     this.palettesArtists = response.data.palettesArtists
@@ -240,37 +317,87 @@ export default {
                     axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
                     .then(response =>{
                         this.minPalettes = response.data.minPalettes
-                        })  
+                        })
                         .catch(error => console.log(error.response.data))
                     })
                 .catch(error => console.log(error.response.data))
             }
-                
+
             axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
                 .then(response =>{
                     this.minPalettes = response.data.minPalettes
-                    })  
+                    })
                 .catch(error => console.log(error.response.data))
-        })  
+        })
         .catch(error => console.log(error.response.data))
         },
-        small(el){
+        small(el,price,avilable,cardId){
+            this.sizeTarget="small"
+            this.avilableTarget=avilable;
             this.active_el = el;
-            $(".active>.details_img").css({width:"78%",height:"160px"})
-            $(".active>.content").css({width:"78%",margin:"7px 0"})
+            this.priceTarget=price
+            this.button=true;
+
+
+
+             $(".details .details_img").css({width:"100%",height:"200px"})
+            $(".details  .content").css({width:"100%"})
+
+                $(".details.active .details_img").css({width:"75%",height:"100px"})
+            $(".details.active .content").css({width:"90%"})
+
+            // $("html,body").animate({
+            //     scrollTop:"100px"
+            // },1000)
 
         },
-        medium(el){
+        medium(el,price,avilable,cardId){
+            this.sizeTarget="medium"
+            this.avilableTarget=avilable;
             this.active_el = el;
-            $(".active>.details_img").css({width:"88%",height:"200px"})
-            $(".active>.content").css({width:"88%"})
+            this.priceTarget=price
+            this.button=true;
+
+
+               $(".details .details_img").css({width:"100%",height:"200px"})
+            $(".details  .content").css({width:"95%"})
+
+
+            $(".details.active .details_img").css({width:"80%",height:"150px"})
+            $(".details.active .content").css({width:"100%"})
+
+            // $("html,body").animate({
+            //     scrollTop:"100px"
+            // },1000)
+
+
         },
-        larg(el){
+        larg(el,price,avilable,cardId){
+             this.sizeTarget="large"
+            this.avilableTarget=avilable;
             this.active_el = el;
-            $(".active>.details_img").css({width:"100%",height:"250px"})
-            $(".active>.content").css({width:"100%"})
+            this.priceTarget=price
+            this.button=true;
+
+            $(".details .details_img").css({width:"100%",height:"200px"})
+            $(".details  .content").css({width:"100%"})
+
+                $(".details.active .details_img").css({width:"100%",height:"200px"})
+            $(".details.active .content").css({width:"100%"})
+
+
+            // $("html,body").animate({
+            //     scrollTop:"100px"
+            // },1000)
+
         },
         addActive($minPalette_id){
+
+
+            $("html,body").animate({
+                scrollTop:"450px"
+            },1000)
+
                 axios.get("/api/viewMinPalettes?id=" + $minPalette_id)
                 .then(response =>{
                     this.minPalettes = response.data.minPalettes
@@ -280,30 +407,80 @@ export default {
                     this.S_avalible=response.data.palettes[0].S_avalible,
                     this.S_price=response.data.palettes[0].S_price,
                     this.M_copies=response.data.palettes[0].M_copies,
-                    this.M_avalibles=response.data.palettes[0].M_avalible,
+                    this.M_avalible=response.data.palettes[0].M_avalible,
                     this.M_price=response.data.palettes[0].M_price,
                     this.L_copies=response.data.palettes[0].L_copies,
-                    this.L_avalibles=response.data.palettes[0].L_avalible,
+                    this.L_avalible=response.data.palettes[0].L_avalible,
                     this.L_price=response.data.palettes[0].L_price,
                     this.sizing_details=response.data.palettes[0].sizing_details
-                    })  
+                    })
                 .catch(error => console.log(error.response.data))
             $('.details').on('click', function () {
-                
+
                 $(this).addClass('active').siblings().removeClass('active');
             });
         },
-        addtocart($id){
+        addtocart($id,price,avilableTarget, sizeTarget){
+
+
             axios.post('/api/addtocart?id=' + $id)
-            .then(res=>{ $('#count')[0].innerText++})
-            .catch(error => console.log(error.response.data))
+            .then(res=>{
+
+            console.log(res.data.paletteCart)
+
+                // $('#count')[0].innerText++
+
+           let product=  res.data.paletteCart
+
+           if(sizeTarget=='large')
+           {
+               if(this.L_avalible<=0)
+               {
+
+                this.L_avalible=0;
+                return
+               }
+               --this.L_avalible;
+           }else if(sizeTarget=='small')
+           {
+                if(this.S_avalible<=0)
+               {
+               this.S_avalible =  0;
+               return
+               }
+                --this.S_avalible;
+
+           }else{
+             if(this.M_avalible<=0)
+               {
+                    this.M_avalible=0;
+                    return
+
+               }
+               --this.M_avalible;
+
+           }
+            this.$store.dispatch('addProductToCart',{
+                 product,
+                quantity:1,
+                price:price,
+                avilableTarget,
+                sizeTarget
+
+            })
+            }).catch(error => console.log(error))
 
         }
 
     }
 
 }
+
+
+
+
 </script>
+
 
 <style scoped>
     .carousel-item .header{
@@ -312,10 +489,14 @@ export default {
     }
     @media(max-width:991px){
         .wrapper{
-            display: none;
+
         }
         .carousel-item .header{
-            height: 300px;
+            height: 1281px;
+            overflow: scroll;
+        }
+        .carousel-item {
+            height: 1281px;
         }
     }
     .header_sm{
@@ -335,40 +516,67 @@ export default {
         }
     }
     .wrapper{
-        position: absolute;
-        top: 15%;
-        left: 32%;
-        
+   position: absolute;
+    top: 15%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    width: 100%
+
     }
     .details{
-    width: 16%;
-    display: inline-block;
-    margin: 15px;
     color: #fff;
     cursor: pointer;
+    transition: all 1s;
+
+
     }
     .details img{
         width: 100%;
         transition: all 1s;
         height: 250px;
+        /* box-shadow: 5px 5px 5px black; */
+        border: 10px solid #111;
+        height: 200px;
     }
     .wrapper .details .content{
+        position: relative;
         font-size: 14px;
         width: 100%;
         margin: 16px auto 0;
         padding: 6px 5px;
         transition: all .5s;
-        color: #fff;
+        color:#00a4ee;
         border-radius: 10px;
-        background-color: rgba(0,0,0,.75);
+          background: rgba(0,0,0,0.9);
         background-repeat: no-repeat;
         background-position: 50%;
         background-size: 100%;
+        z-index: 2;
+        top: 10px;
     }
-    .wrapper .details .content:hover{
+        .wrapper .details .content .triangle{
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    display: inline-block;
+    top: -12px;
+    left: 50%;
+    transform: rotate(45deg) translate(-50%, 19%);
+    border-top: 1px solid #00a4ee;
+    border-left: 1px solid #00a4ee ;
+     background: rgba(0,0,0,0.9);
+
+
+
+    }
+    /* .wrapper .details .content:hover{
         border: 2px solid #00a4ee;
+    } */
+
+    .details-content{
+        margin:20px;
     }
-    .details:hover img{
+    .details:hover {
         transform: scale(1.1);
     }
     .add-cart div span{
@@ -410,7 +618,7 @@ export default {
         padding-left: 10px;
         padding-right: 10px;
     }
-/* 
+/*
     .carousel-control-prev{
         left: -50%;
     } */
@@ -436,7 +644,7 @@ export default {
 }
 @media(max-width: 991px){
     .carousel-indicators{
-        bottom: -15%;
+        bottom: -8%
     }
 }
 .carousel-indicators .active{
@@ -447,7 +655,7 @@ export default {
     margin-right: 20px !important;
     font-size: 20px ;
 }
-.active>.content {
+.active .content {
     border: 2px solid #00a4ee;
 }
 .active_btn{

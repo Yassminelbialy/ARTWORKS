@@ -20,6 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::resource('palettes', 'PaletteAPIController');
+Route::get('hover/{id?}', 'PaletteAPIController@hover');
+Route::get('countries', 'OrderPaletteController@countries');
+
+
+
 Route::get('/view' ,'PaletteAPIController@Palettes');
 Route::get('/viewMinPalettes' ,'PaletteAPIController@viewMinPalettes');
 Route::get('review', 'PaletteAPIController@getReviews');
@@ -28,7 +33,9 @@ Route::get('getpallatecart','PaletteAPIController@getpallatecart');
 Route::post('removefromcart','PaletteAPIController@removefromcart');
 
 Route::group(['middleware'=>['api']], function () {
+    Route::post('check-promo' ,'CheckPromo@check_promo');
     Route::post('add-order' ,'OrderController@store');
     Route::get('payment/{order?}' ,'OrderController@create');
+    Route::post('artist-request' ,'JoinUsController@crete_request');
 
 });
