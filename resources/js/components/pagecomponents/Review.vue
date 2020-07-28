@@ -6,7 +6,7 @@
         <hr>
         <div class="rating" v-if="$i18n.locale == 'en'">
             <span class="fa fa-star text-warning" v-for="i in 5" :key="i.id"></span>
-            <span class="ml-2">{{reviewscount}} {{ $t("message.review") }}</span>
+            <span class="ml-2" >{{reviewscount}} {{ $t("message.review") }}</span>
             <v-btn style="background-color:black;color:#fff;float:right" @click="review = !review"><i class="fa fa-edit mr-2"></i>{{ $t("message.writereview") }}</v-btn>
             <div style="clear:both"></div>
         </div>
@@ -209,7 +209,7 @@ export default {
             .then(res =>{ 
                 this.review=false
                 this.reviews.unshift(res.data.review)
-                this.form='';
+            
             })
             .catch(error => this.errors = error.response.data.errors)
         },

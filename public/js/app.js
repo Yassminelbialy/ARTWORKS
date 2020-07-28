@@ -2976,8 +2976,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.review = false;
 
         _this.reviews.unshift(res.data.review);
-
-        _this.form = '';
       })["catch"](function (error) {
         return _this.errors = error.response.data.errors;
       });
@@ -19021,7 +19019,7 @@ return jQuery;
   var undefined;
 
   /** Used as the semantic version number. */
-  var VERSION = '4.17.15';
+  var VERSION = '4.17.19';
 
   /** Used as the size to enable large array optimizations. */
   var LARGE_ARRAY_SIZE = 200;
@@ -22728,8 +22726,21 @@ return jQuery;
      * @returns {Array} Returns the new sorted array.
      */
     function baseOrderBy(collection, iteratees, orders) {
+      if (iteratees.length) {
+        iteratees = arrayMap(iteratees, function(iteratee) {
+          if (isArray(iteratee)) {
+            return function(value) {
+              return baseGet(value, iteratee.length === 1 ? iteratee[0] : iteratee);
+            }
+          }
+          return iteratee;
+        });
+      } else {
+        iteratees = [identity];
+      }
+
       var index = -1;
-      iteratees = arrayMap(iteratees.length ? iteratees : [identity], baseUnary(getIteratee()));
+      iteratees = arrayMap(iteratees, baseUnary(getIteratee()));
 
       var result = baseMap(collection, function(value, key, collection) {
         var criteria = arrayMap(iteratees, function(iteratee) {
@@ -22986,6 +22997,10 @@ return jQuery;
         var key = toKey(path[index]),
             newValue = value;
 
+        if (key === '__proto__' || key === 'constructor' || key === 'prototype') {
+          return object;
+        }
+
         if (index != lastIndex) {
           var objValue = nested[key];
           newValue = customizer ? customizer(objValue, key, nested) : undefined;
@@ -23138,11 +23153,14 @@ return jQuery;
      *  into `array`.
      */
     function baseSortedIndexBy(array, value, iteratee, retHighest) {
-      value = iteratee(value);
-
       var low = 0,
-          high = array == null ? 0 : array.length,
-          valIsNaN = value !== value,
+          high = array == null ? 0 : array.length;
+      if (high === 0) {
+        return 0;
+      }
+
+      value = iteratee(value);
+      var valIsNaN = value !== value,
           valIsNull = value === null,
           valIsSymbol = isSymbol(value),
           valIsUndefined = value === undefined;
@@ -24627,10 +24645,11 @@ return jQuery;
       if (arrLength != othLength && !(isPartial && othLength > arrLength)) {
         return false;
       }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(array);
-      if (stacked && stack.get(other)) {
-        return stacked == other;
+      // Check that cyclic values are equal.
+      var arrStacked = stack.get(array);
+      var othStacked = stack.get(other);
+      if (arrStacked && othStacked) {
+        return arrStacked == other && othStacked == array;
       }
       var index = -1,
           result = true,
@@ -24792,10 +24811,11 @@ return jQuery;
           return false;
         }
       }
-      // Assume cyclic values are equal.
-      var stacked = stack.get(object);
-      if (stacked && stack.get(other)) {
-        return stacked == other;
+      // Check that cyclic values are equal.
+      var objStacked = stack.get(object);
+      var othStacked = stack.get(other);
+      if (objStacked && othStacked) {
+        return objStacked == other && othStacked == object;
       }
       var result = true;
       stack.set(object, other);
@@ -28176,6 +28196,10 @@ return jQuery;
      * // The `_.property` iteratee shorthand.
      * _.filter(users, 'active');
      * // => objects for ['barney']
+     *
+     * // Combining several predicates using `_.overEvery` or `_.overSome`.
+     * _.filter(users, _.overSome([{ 'age': 36 }, ['age', 40]]));
+     * // => objects for ['fred', 'barney']
      */
     function filter(collection, predicate) {
       var func = isArray(collection) ? arrayFilter : baseFilter;
@@ -28925,15 +28949,15 @@ return jQuery;
      * var users = [
      *   { 'user': 'fred',   'age': 48 },
      *   { 'user': 'barney', 'age': 36 },
-     *   { 'user': 'fred',   'age': 40 },
+     *   { 'user': 'fred',   'age': 30 },
      *   { 'user': 'barney', 'age': 34 }
      * ];
      *
      * _.sortBy(users, [function(o) { return o.user; }]);
-     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+     * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 30]]
      *
      * _.sortBy(users, ['user', 'age']);
-     * // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
+     * // => objects for [['barney', 34], ['barney', 36], ['fred', 30], ['fred', 48]]
      */
     var sortBy = baseRest(function(collection, iteratees) {
       if (collection == null) {
@@ -33808,11 +33832,11 @@ return jQuery;
 
       // Use a sourceURL for easier debugging.
       // The sourceURL gets injected into the source that's eval-ed, so be careful
-      // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
-      // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
+      // to normalize all kinds of whitespace, so e.g. newlines (and unicode versions of it) can't sneak in
+      // and escape the comment, thus injecting code that gets evaled.
       var sourceURL = '//# sourceURL=' +
         (hasOwnProperty.call(options, 'sourceURL')
-          ? (options.sourceURL + '').replace(/[\r\n]/g, ' ')
+          ? (options.sourceURL + '').replace(/\s/g, ' ')
           : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
@@ -33845,8 +33869,6 @@ return jQuery;
 
       // If `variable` is not specified wrap a with-statement around the generated
       // code to add the data object to the top of the scope chain.
-      // Like with sourceURL, we take care to not check the option's prototype,
-      // as this configuration is a code injection vector.
       var variable = hasOwnProperty.call(options, 'variable') && options.variable;
       if (!variable) {
         source = 'with (obj) {\n' + source + '\n}\n';
@@ -34553,6 +34575,9 @@ return jQuery;
      * values against any array or object value, respectively. See `_.isEqual`
      * for a list of supported value comparisons.
      *
+     * **Note:** Multiple values can be checked by combining several matchers
+     * using `_.overSome`
+     *
      * @static
      * @memberOf _
      * @since 3.0.0
@@ -34568,6 +34593,10 @@ return jQuery;
      *
      * _.filter(objects, _.matches({ 'a': 4, 'c': 6 }));
      * // => [{ 'a': 4, 'b': 5, 'c': 6 }]
+     *
+     * // Checking for several possible values
+     * _.filter(users, _.overSome([_.matches({ 'a': 1 }), _.matches({ 'a': 4 })]));
+     * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matches(source) {
       return baseMatches(baseClone(source, CLONE_DEEP_FLAG));
@@ -34581,6 +34610,9 @@ return jQuery;
      * **Note:** Partial comparisons will match empty array and empty object
      * `srcValue` values against any array or object value, respectively. See
      * `_.isEqual` for a list of supported value comparisons.
+     *
+     * **Note:** Multiple values can be checked by combining several matchers
+     * using `_.overSome`
      *
      * @static
      * @memberOf _
@@ -34598,6 +34630,10 @@ return jQuery;
      *
      * _.find(objects, _.matchesProperty('a', 4));
      * // => { 'a': 4, 'b': 5, 'c': 6 }
+     *
+     * // Checking for several possible values
+     * _.filter(users, _.overSome([_.matchesProperty('a', 1), _.matchesProperty('a', 4)]));
+     * // => [{ 'a': 1, 'b': 2, 'c': 3 }, { 'a': 4, 'b': 5, 'c': 6 }]
      */
     function matchesProperty(path, srcValue) {
       return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG));
@@ -34821,6 +34857,10 @@ return jQuery;
      * Creates a function that checks if **all** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
+     * Following shorthands are possible for providing predicates.
+     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
+     *
      * @static
      * @memberOf _
      * @since 4.0.0
@@ -34847,6 +34887,10 @@ return jQuery;
      * Creates a function that checks if **any** of the `predicates` return
      * truthy when invoked with the arguments it receives.
      *
+     * Following shorthands are possible for providing predicates.
+     * Pass an `Object` and it will be used as an parameter for `_.matches` to create the predicate.
+     * Pass an `Array` of parameters for `_.matchesProperty` and the predicate will be created using them.
+     *
      * @static
      * @memberOf _
      * @since 4.0.0
@@ -34866,6 +34910,9 @@ return jQuery;
      *
      * func(NaN);
      * // => false
+     *
+     * var matchesFunc = _.overSome([{ 'a': 1 }, { 'a': 2 }])
+     * var matchesPropertyFunc = _.overSome([['a', 1], ['a', 2]])
      */
     var overSome = createOver(arraySome);
 
@@ -61653,6 +61700,9 @@ var defaultMenuProps = __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1_
   created: function created() {
     this.setSearch();
   },
+  destroyed: function destroyed() {
+    document.removeEventListener('copy', this.onCopy);
+  },
   methods: {
     onFilteredItemsChanged: function onFilteredItemsChanged(val, oldVal) {
       var _this = this; // TODO: How is the watcher triggered
@@ -67836,9 +67886,9 @@ var __assign = undefined && undefined.__assign || function () {
       'v-simple-checkbox': true,
       'v-simple-checkbox--disabled': props.disabled
     };
-    return h('div', __assign({}, data, {
+    return h('div', Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_6__["default"])(data, {
       class: classes,
-      on: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_6__["mergeListeners"])({
+      on: {
         click: function click(e) {
           e.stopPropagation();
 
@@ -67848,7 +67898,7 @@ var __assign = undefined && undefined.__assign || function () {
             });
           }
         }
-      }, listeners)
+      }
     }), children);
   }
 }));
@@ -70906,6 +70956,7 @@ var __assign = undefined && undefined.__assign || function () {
   functional: true,
   props: {
     headers: Array,
+    hideDefaultHeader: Boolean,
     item: Object,
     rtl: Boolean
   },
@@ -70940,7 +70991,7 @@ var __assign = undefined && undefined.__assign || function () {
         staticClass: 'v-data-table__mobile-row__cell'
       }, children)];
 
-      if (header.value !== 'dataTableSelect') {
+      if (header.value !== 'dataTableSelect' && !props.hideDefaultHeader) {
         mobileRowChildren.unshift(h('div', {
           staticClass: 'v-data-table__mobile-row__header'
         }, [header.text]));
@@ -71691,6 +71742,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
         }), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPropertyFromItem"])(item, this.itemClass)),
         props: {
           headers: this.computedHeaders,
+          hideDefaultHeader: this.hideDefaultHeader,
           item: item,
           rtl: this.$vuetify.rtl
         },
@@ -72834,12 +72886,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _VDatePickerMonthTable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VDatePickerMonthTable */ "./src/components/VDatePicker/VDatePickerMonthTable.ts");
 /* harmony import */ var _VDatePickerYears__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./VDatePickerYears */ "./src/components/VDatePicker/VDatePickerYears.ts");
 /* harmony import */ var _mixins_localable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/localable */ "./src/mixins/localable/index.ts");
-/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-/* harmony import */ var _mixins_picker__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/picker */ "./src/mixins/picker/index.ts");
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./util */ "./src/components/VDatePicker/util/index.ts");
-/* harmony import */ var _util_isDateAllowed__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./util/isDateAllowed */ "./src/components/VDatePicker/util/isDateAllowed.ts");
-/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
-/* harmony import */ var _VCalendar_util_timestamp__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../VCalendar/util/timestamp */ "./src/components/VCalendar/util/timestamp.ts");
+/* harmony import */ var _mixins_picker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/picker */ "./src/mixins/picker/index.ts");
+/* harmony import */ var _util_isDateAllowed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./util/isDateAllowed */ "./src/components/VDatePicker/util/isDateAllowed.ts");
+/* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+/* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+/* harmony import */ var _VCalendar_util_timestamp__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../VCalendar/util/timestamp */ "./src/components/VCalendar/util/timestamp.ts");
+/* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./util */ "./src/components/VDatePicker/util/index.ts");
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -72881,14 +72934,6 @@ var __read = undefined && undefined.__read || function (o, n) {
   }
 
   return ar;
-};
-
-var __spread = undefined && undefined.__spread || function () {
-  for (var ar = [], i = 0; i < arguments.length; i++) {
-    ar = ar.concat(__read(arguments[i]));
-  }
-
-  return ar;
 }; // Components
 
 
@@ -72899,8 +72944,9 @@ var __spread = undefined && undefined.__spread || function () {
  // Mixins
 
 
-
  // Utils
+
+
 
 
 
@@ -72916,16 +72962,14 @@ function sanitizeDateString(dateString, type) {
       _c = _a[2],
       date = _c === void 0 ? 1 : _c;
 
-  return (year + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(month) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(date)).substr(0, {
+  return (year + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(month) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(date)).substr(0, {
     date: 10,
     month: 7,
     year: 4
   }[type]);
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_mixins_localable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_picker__WEBPACK_IMPORTED_MODULE_7__["default"]
-/* @vue/component */
-).extend({
+/* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_mixins_localable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_picker__WEBPACK_IMPORTED_MODULE_6__["default"]).extend({
   name: 'v-date-picker',
   props: {
     allowedDates: Function,
@@ -73029,23 +73073,27 @@ function sanitizeDateString(dateString, type) {
           return _this.pickerDate;
         }
 
-        var date = (_this.multiple || _this.range ? _this.value[_this.value.length - 1] : _this.value) || (typeof _this.showCurrent === 'string' ? _this.showCurrent : now.getFullYear() + "-" + (now.getMonth() + 1));
+        var multipleValue = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_9__["wrapInArray"])(_this.value);
+        var date = multipleValue[multipleValue.length - 1] || (typeof _this.showCurrent === 'string' ? _this.showCurrent : now.getFullYear() + "-" + (now.getMonth() + 1));
         return sanitizeDateString(date, _this.type === 'date' ? 'month' : 'year');
       }()
     };
   },
   computed: {
+    multipleValue: function multipleValue() {
+      return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_9__["wrapInArray"])(this.value);
+    },
     isMultiple: function isMultiple() {
       return this.multiple || this.range;
     },
     lastValue: function lastValue() {
-      return this.isMultiple ? this.value[this.value.length - 1] : this.value;
+      return this.isMultiple ? this.multipleValue[this.multipleValue.length - 1] : this.value;
     },
     selectedMonths: function selectedMonths() {
-      if (!this.value || !this.value.length || this.type === 'month') {
+      if (!this.value || this.type === 'month') {
         return this.value;
       } else if (this.isMultiple) {
-        return this.value.map(function (val) {
+        return this.multipleValue.map(function (val) {
           return val.substr(0, 7);
         });
       } else {
@@ -73060,7 +73108,7 @@ function sanitizeDateString(dateString, type) {
       return this.showCurrent || null;
     },
     inputDate: function inputDate() {
-      return this.type === 'date' ? this.inputYear + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.inputMonth + 1) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.inputDay) : this.inputYear + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.inputMonth + 1);
+      return this.type === 'date' ? this.inputYear + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.inputMonth + 1) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.inputDay) : this.inputYear + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.inputMonth + 1);
     },
     tableMonth: function tableMonth() {
       return Number((this.pickerDate || this.tableDate).split('-')[1]) - 1;
@@ -73082,7 +73130,7 @@ function sanitizeDateString(dateString, type) {
     },
     formatters: function formatters() {
       return {
-        year: this.yearFormat || Object(_util__WEBPACK_IMPORTED_MODULE_8__["createNativeLocaleFormatter"])(this.currentLocale, {
+        year: this.yearFormat || Object(_util__WEBPACK_IMPORTED_MODULE_12__["createNativeLocaleFormatter"])(this.currentLocale, {
           year: 'numeric',
           timeZone: 'UTC'
         }, {
@@ -73123,7 +73171,7 @@ function sanitizeDateString(dateString, type) {
           timeZone: 'UTC'
         }
       };
-      var titleDateFormatter = Object(_util__WEBPACK_IMPORTED_MODULE_8__["createNativeLocaleFormatter"])(this.currentLocale, titleFormats[this.type], {
+      var titleDateFormatter = Object(_util__WEBPACK_IMPORTED_MODULE_12__["createNativeLocaleFormatter"])(this.currentLocale, titleFormats[this.type], {
         start: 0,
         length: {
           date: 10,
@@ -73164,7 +73212,7 @@ function sanitizeDateString(dateString, type) {
 
       if (!this.isMultiple && this.value && !this.pickerDate) {
         this.tableDate = sanitizeDateString(this.inputDate, this.type === 'month' ? 'year' : 'month');
-      } else if (this.isMultiple && this.value.length && !oldValue.length && !this.pickerDate) {
+      } else if (this.isMultiple && this.multipleValue.length && (!oldValue || !oldValue.length) && !this.pickerDate) {
         this.tableDate = sanitizeDateString(this.inputDate, this.type === 'month' ? 'year' : 'month');
       }
     },
@@ -73172,7 +73220,7 @@ function sanitizeDateString(dateString, type) {
       this.activePicker = _type.toUpperCase();
 
       if (this.value && this.value.length) {
-        var output = (this.isMultiple ? this.value : [this.value]).map(function (val) {
+        var output = this.multipleValue.map(function (val) {
           return sanitizeDateString(val, _type);
         }).filter(this.isDateAllowed);
         this.$emit('input', this.isMultiple ? output : output[0]);
@@ -73190,12 +73238,11 @@ function sanitizeDateString(dateString, type) {
   },
   methods: {
     emitInput: function emitInput(newInput) {
-      if (this.range && this.value) {
-        if (this.value.length !== 1) {
+      if (this.range) {
+        if (this.multipleValue.length !== 1) {
           this.$emit('input', [newInput]);
         } else {
-          var output_1 = __spread(this.value, [newInput]);
-
+          var output_1 = [this.multipleValue[0], newInput];
           this.$emit('input', output_1);
           this.$emit('change', output_1);
         }
@@ -73203,7 +73250,7 @@ function sanitizeDateString(dateString, type) {
         return;
       }
 
-      var output = this.multiple ? this.value.indexOf(newInput) === -1 ? this.value.concat([newInput]) : this.value.filter(function (x) {
+      var output = this.multiple ? this.multipleValue.indexOf(newInput) === -1 ? this.multipleValue.concat([newInput]) : this.multipleValue.filter(function (x) {
         return x !== newInput;
       }) : newInput;
       this.$emit('input', output);
@@ -73215,11 +73262,11 @@ function sanitizeDateString(dateString, type) {
       var expected = this.isMultiple ? 'Array' : 'String';
 
       if (valueType !== expected) {
-        Object(_util_console__WEBPACK_IMPORTED_MODULE_10__["consoleWarn"])("Value must be " + (this.isMultiple ? 'an' : 'a') + " " + expected + ", got " + valueType, this);
+        Object(_util_console__WEBPACK_IMPORTED_MODULE_11__["consoleWarn"])("Value must be " + (this.isMultiple ? 'an' : 'a') + " " + expected + ", got " + valueType, this);
       }
     },
     isDateAllowed: function isDateAllowed(value) {
-      return Object(_util_isDateAllowed__WEBPACK_IMPORTED_MODULE_9__["default"])(value, this.min, this.max, this.allowedDates);
+      return Object(_util_isDateAllowed__WEBPACK_IMPORTED_MODULE_7__["default"])(value, this.min, this.max, this.allowedDates);
     },
     yearClick: function yearClick(value) {
       this.inputYear = value;
@@ -73227,7 +73274,7 @@ function sanitizeDateString(dateString, type) {
       if (this.type === 'month') {
         this.tableDate = "" + value;
       } else {
-        this.tableDate = value + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])((this.tableMonth || 0) + 1);
+        this.tableDate = value + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])((this.tableMonth || 0) + 1);
       }
 
       this.activePicker = 'MONTH';
@@ -73242,7 +73289,7 @@ function sanitizeDateString(dateString, type) {
 
       if (this.type === 'date') {
         if (this.inputDay) {
-          this.inputDay = Math.min(this.inputDay, Object(_VCalendar_util_timestamp__WEBPACK_IMPORTED_MODULE_11__["daysInMonth"])(this.inputYear, this.inputMonth + 1));
+          this.inputDay = Math.min(this.inputDay, Object(_VCalendar_util_timestamp__WEBPACK_IMPORTED_MODULE_10__["daysInMonth"])(this.inputYear, this.inputMonth + 1));
         }
 
         this.tableDate = value;
@@ -73266,13 +73313,13 @@ function sanitizeDateString(dateString, type) {
 
       return this.$createElement(_VDatePickerTitle__WEBPACK_IMPORTED_MODULE_0__["default"], {
         props: {
-          date: this.value ? this.formatters.titleDate(this.value) : '',
+          date: this.value ? this.formatters.titleDate(this.isMultiple ? this.multipleValue : this.value) : '',
           disabled: this.disabled,
           readonly: this.readonly,
           selectingYear: this.activePicker === 'YEAR',
-          year: this.formatters.year(this.value ? "" + this.inputYear : this.tableDate),
+          year: this.formatters.year(this.multipleValue.length ? "" + this.inputYear : this.tableDate),
           yearIcon: this.yearIcon,
-          value: this.isMultiple ? this.value[0] : this.value
+          value: this.multipleValue[0]
         },
         slot: 'title',
         on: {
@@ -73300,7 +73347,7 @@ function sanitizeDateString(dateString, type) {
           prevAriaLabel: this.activePicker === 'DATE' ? this.prevMonthAriaLabel : this.prevYearAriaLabel,
           prevIcon: this.prevIcon,
           readonly: this.readonly,
-          value: this.activePicker === 'DATE' ? Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.tableYear, 4) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.tableMonth + 1) : "" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.tableYear, 4)
+          value: this.activePicker === 'DATE' ? Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.tableYear, 4) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.tableMonth + 1) : "" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.tableYear, 4)
         },
         on: {
           toggle: function toggle() {
@@ -73335,7 +73382,7 @@ function sanitizeDateString(dateString, type) {
           readonly: this.readonly,
           scrollable: this.scrollable,
           showWeek: this.showWeek,
-          tableDate: Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.tableYear, 4) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.tableMonth + 1),
+          tableDate: Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.tableYear, 4) + "-" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.tableMonth + 1),
           value: this.value,
           weekdayFormat: this.weekdayFormat
         },
@@ -73345,7 +73392,7 @@ function sanitizeDateString(dateString, type) {
           'update:table-date': function updateTableDate(value) {
             return _this.tableDate = value;
           }
-        }, Object(_util__WEBPACK_IMPORTED_MODULE_8__["createItemTypeListeners"])(this, ':date'))
+        }, Object(_util__WEBPACK_IMPORTED_MODULE_12__["createItemTypeListeners"])(this, ':date'))
       });
     },
     genMonthTable: function genMonthTable() {
@@ -73369,7 +73416,7 @@ function sanitizeDateString(dateString, type) {
           readonly: this.readonly && this.type === 'month',
           scrollable: this.scrollable,
           value: this.selectedMonths,
-          tableDate: "" + Object(_util__WEBPACK_IMPORTED_MODULE_8__["pad"])(this.tableYear, 4)
+          tableDate: "" + Object(_util__WEBPACK_IMPORTED_MODULE_12__["pad"])(this.tableYear, 4)
         },
         ref: 'table',
         on: __assign({
@@ -73377,7 +73424,7 @@ function sanitizeDateString(dateString, type) {
           'update:table-date': function updateTableDate(value) {
             return _this.tableDate = value;
           }
-        }, Object(_util__WEBPACK_IMPORTED_MODULE_8__["createItemTypeListeners"])(this, ':month'))
+        }, Object(_util__WEBPACK_IMPORTED_MODULE_12__["createItemTypeListeners"])(this, ':month'))
       });
     },
     genYears: function genYears() {
@@ -73392,7 +73439,7 @@ function sanitizeDateString(dateString, type) {
         },
         on: __assign({
           input: this.yearClick
-        }, Object(_util__WEBPACK_IMPORTED_MODULE_8__["createItemTypeListeners"])(this, ':year'))
+        }, Object(_util__WEBPACK_IMPORTED_MODULE_12__["createItemTypeListeners"])(this, ':year'))
       });
     },
     genPickerBody: function genPickerBody() {
@@ -77385,6 +77432,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
 /* harmony import */ var _util_mergeData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/mergeData */ "./src/util/mergeData.ts");
 /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 // Styles
  // Directives
 
@@ -77453,16 +77502,16 @@ var hasIntersect = typeof window !== 'undefined' && 'IntersectionObserver' in wi
       return Number(this.normalisedSrc.aspect || this.calculatedAspectRatio);
     },
     normalisedSrc: function normalisedSrc() {
-      return typeof this.src === 'string' ? {
-        src: this.src,
-        srcset: this.srcset,
-        lazySrc: this.lazySrc,
-        aspect: Number(this.aspectRatio || 0)
-      } : {
+      return this.src && _typeof(this.src) === 'object' ? {
         src: this.src.src,
         srcset: this.srcset || this.src.srcset,
         lazySrc: this.lazySrc || this.src.lazySrc,
         aspect: Number(this.aspectRatio || this.src.aspect)
+      } : {
+        src: this.src,
+        srcset: this.srcset,
+        lazySrc: this.lazySrc,
+        aspect: Number(this.aspectRatio || 0)
       };
     },
     __cachedImage: function __cachedImage() {
@@ -93856,7 +93905,9 @@ function () {
       userPreset = {};
     }
 
-    this.framework = {};
+    this.framework = {
+      isHydrating: false
+    };
     this.installed = [];
     this.preset = {};
     this.userPreset = {};
@@ -93898,7 +93949,7 @@ function () {
 
   Vuetify.install = _install__WEBPACK_IMPORTED_MODULE_0__["install"];
   Vuetify.installed = false;
-  Vuetify.version = "2.3.4";
+  Vuetify.version = "2.3.5";
   Vuetify.config = {
     silent: false
   };
@@ -94021,6 +94072,24 @@ function install(Vue, args) {
         this.$vuetify = Vue.observable(options.vuetify.framework);
       } else {
         this.$vuetify = options.parent && options.parent.$vuetify || this;
+      }
+    },
+    beforeMount: function beforeMount() {
+      // @ts-ignore
+      if (this.$options.vuetify && this.$el.hasAttribute('data-server-rendered')) {
+        // @ts-ignore
+        this.$vuetify.isHydrating = true; // @ts-ignore
+
+        this.$vuetify.breakpoint.update(true);
+      }
+    },
+    mounted: function mounted() {
+      // @ts-ignore
+      if (this.$options.vuetify && this.$vuetify.isHydrating) {
+        // @ts-ignore
+        this.$vuetify.isHydrating = false; // @ts-ignore
+
+        this.$vuetify.breakpoint.update();
       }
     }
   });
@@ -100754,35 +100823,28 @@ function (_super) {
     _this.mobileBreakpoint = mobileBreakpoint;
     _this.scrollBarWidth = scrollBarWidth;
     _this.thresholds = thresholds;
-
-    _this.init();
-
     return _this;
   }
 
   Breakpoint.prototype.init = function () {
+    this.update();
     /* istanbul ignore if */
+
     if (typeof window === 'undefined') return;
     window.addEventListener('resize', this.onResize.bind(this), {
       passive: true
     });
-    this.update();
-  };
-
-  Breakpoint.prototype.onResize = function () {
-    clearTimeout(this.resizeTimeout); // Added debounce to match what
-    // v-resize used to do but was
-    // removed due to a memory leak
-    // https://github.com/vuetifyjs/vuetify/pull/2997
-
-    this.resizeTimeout = window.setTimeout(this.update.bind(this), 200);
   };
   /* eslint-disable-next-line max-statements */
 
 
-  Breakpoint.prototype.update = function () {
-    var height = this.getClientHeight();
-    var width = this.getClientWidth();
+  Breakpoint.prototype.update = function (ssr) {
+    if (ssr === void 0) {
+      ssr = false;
+    }
+
+    var height = ssr ? 0 : this.getClientHeight();
+    var width = ssr ? 0 : this.getClientWidth();
     var xs = width < this.thresholds.xs;
     var sm = width < this.thresholds.sm && !xs;
     var md = width < this.thresholds.md - this.scrollBarWidth && !(sm || xs);
@@ -100844,6 +100906,15 @@ function (_super) {
     var current = breakpoints[this.name];
     var max = breakpoints[this.mobileBreakpoint];
     this.mobile = current <= max;
+  };
+
+  Breakpoint.prototype.onResize = function () {
+    clearTimeout(this.resizeTimeout); // Added debounce to match what
+    // v-resize used to do but was
+    // removed due to a memory leak
+    // https://github.com/vuetifyjs/vuetify/pull/2997
+
+    this.resizeTimeout = window.setTimeout(this.update.bind(this), 200);
   }; // Cross-browser support as described in:
   // https://stackoverflow.com/questions/1248081
 
@@ -101905,7 +101976,7 @@ function (_super) {
 
     _this.disabled = false;
     _this.isDark = null;
-    _this.vueInstance = null;
+    _this.unwatch = null;
     _this.vueMeta = null;
     var _a = preset[Theme.property],
         dark = _a.dark,
@@ -101983,7 +102054,7 @@ function (_super) {
       this.initSSR(ssrContext);
     }
 
-    this.initTheme();
+    this.initTheme(root);
   }; // Allows for you to set target theme
 
 
@@ -102093,31 +102164,33 @@ function (_super) {
     ssrContext.head += "<style type=\"text/css\" id=\"vuetify-theme-stylesheet\"" + nonce + ">" + this.generatedStyles + "</style>";
   };
 
-  Theme.prototype.initTheme = function () {
+  Theme.prototype.initTheme = function (root) {
     var _this = this; // Only watch for reactivity on client side
 
 
     if (typeof document === 'undefined') return; // If we get here somehow, ensure
     // existing instance is removed
 
-    if (this.vueInstance) this.vueInstance.$destroy(); // Use Vue instance to track reactivity
-    // TODO: Update to use RFC if merged
+    if (this.unwatch) {
+      this.unwatch();
+      this.unwatch = null;
+    } // TODO: Update to use RFC if merged
     // https://github.com/vuejs/rfcs/blob/advanced-reactivity-api/active-rfcs/0000-advanced-reactivity-api.md
 
-    this.vueInstance = new vue__WEBPACK_IMPORTED_MODULE_3___default.a({
-      data: {
-        themes: this.themes
-      },
-      watch: {
-        themes: {
-          immediate: true,
-          deep: true,
-          handler: function handler() {
-            return _this.applyTheme();
-          }
-        }
-      }
+
+    root.$once('hook:created', function () {
+      var obs = vue__WEBPACK_IMPORTED_MODULE_3___default.a.observable({
+        themes: _this.themes
+      });
+      _this.unwatch = root.$watch(function () {
+        return obs.themes;
+      }, function () {
+        return _this.applyTheme();
+      }, {
+        deep: true
+      });
     });
+    this.applyTheme();
   };
 
   Object.defineProperty(Theme.prototype, "currentTheme", {
@@ -105985,8 +106058,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
