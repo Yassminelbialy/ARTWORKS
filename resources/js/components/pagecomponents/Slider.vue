@@ -142,42 +142,33 @@ export default {
             })
             .catch(error => console.log(error.response.data));
     },
-    mounted() {
-     var swiper = new Swiper('.swiper-container', {
-  // Default parameters
-  slidesPerView: 1,
-  spaceBetween: 10,
-  // Responsive breakpoints
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    480: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 40
-    }
-  }
-})
-        // swiper.update();
-    },
-    methods: {
-        hover(id) {
-            axios
-                .get("/api/hover/" + id)
-                .then(res => {
-                    // console.log(id,this.image_hover,'dssdsd',res.data);
+        mounted(){
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                freeMode: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                observer:true,
+                observerParents:true,
 
-                    if (res.data.hover_image) {
-                        this.image_hover = res.data.hover_image.img;
-                    } else {
+            });
+            swiper.update();
+        },
+    methods:{
+        hover(id){
+
+                axios.get('/api/hover/'+id).then(res=>{
+
+                                // console.log(id,this.image_hover,'dssdsd',res.data);
+
+                    if(res.data.hover_image)
+                    {
+                        this.image_hover=res.data.hover_image.img;
+
+                    }else{
                         // console.log(res.data);
                     }
                 })
@@ -190,4 +181,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.swiper-pagination{
+    position: relative;
+    top: 2px;
+}
+
+</style>

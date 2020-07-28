@@ -14,7 +14,7 @@
 
                     <div class="wrapper    ">
                         <div class=" row  d-flex justify-content-center ">
-                            <div  class="details myhome col-sm-4 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
+                            <div  class="details myhome col-sm-3 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
                                <div :class="{ 'active': index == 0 }" class=" details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
                                     <div class="content" >
@@ -498,7 +498,7 @@ export default {
     watch:{
     $route (to, from){
 
-            // this.addActive(this.$route.query.mydata)
+            this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
 
@@ -523,11 +523,6 @@ export default {
     .carousel-item .header{
         width: 100%;
         height: 640px;
-    }
-    @media(max-width:991px){
-        .wrapper{
-
-        }
     }
     .header_sm{
         background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');
@@ -568,11 +563,22 @@ export default {
         border-top: 2px solid #111;
         border-bottom: 2px solid #111;
     }
-    @media(max-width: 767px){
+
+    @media(max-width: 575px){
         .wrapper{
-            width:50%;
+            display: none;
+        }
+        .carousel-control-next{
+            display: none;
+        }
+        .carousel-control-prev{
+            display: none;
+        }
+        .carousel-item .header{
+            height: 300px;
         }
     }
+
     .wrapper .details .content{
         position: relative;
         font-size: 14px;
