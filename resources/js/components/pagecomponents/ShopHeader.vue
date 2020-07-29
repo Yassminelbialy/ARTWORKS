@@ -12,9 +12,9 @@
                 <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
 
-                    <div class="wrapper    ">
-                        <div class=" row  d-flex justify-content-center ">
-                            <div  class="details myhome col-sm-3 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
+                    <div class="wrapper">
+                        <div class=" row  d-flex justify-content-center">
+                            <div  class="details myhome col-lg-3 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
                                <div :class="{ 'active': index == 0 }" class=" details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
                                     <div class="content" >
@@ -524,26 +524,6 @@ export default {
         width: 100%;
         height: 640px;
     }
-<<<<<<< HEAD
-    @media(max-width:959px){
-        .wrapper{
-
-        }
-        .carousel-item .header{
-
-            height: 1281px;
-
-        }
-        .carousel-item {
-            height: 1281px;
-
-        }
-    }
-
-
-
-=======
->>>>>>> 3a8e700d9655bb6a5c1c6d734a9f512777e3b572
     .header_sm{
         background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');
         -webkit-background-size: cover;
@@ -576,34 +556,93 @@ export default {
 
     }
     .details img{
-        width: 100%;
+        width: 70%;
         transition: all 1s;
-        height: 250px;
+        height: 300px;
         /* box-shadow: 5px 5px 5px black; */
         border-top: 2px solid #111;
         border-bottom: 2px solid #111;
     }
 
-    @media(max-width: 575px){
-        .wrapper{
+    @media(max-width: 560px){
+        .details{
+            width: 40%;
+            font-size: 14px;
+        }
+        .details img{
+            width: 100%;
+            height: 200px;
+        }
+        .wrapper .details .content{
+            width: 100%;
+            margin: 16px auto 0;
+            
+        }
+        .carousel-item .header{
+            height: 860px;
+        }
+        /* .wrapper{
             display: none;
         }
-        .carousel-control-next{
-            display: none;
-        }
+
         .carousel-control-prev{
             display: none;
         }
         .carousel-item .header{
             height: 300px;
+        } */
+    }
+    @media(min-width: 561px) and (max-width:767px){
+        .details{
+            width: 40% ;
+            font-size: 14px;
+        }
+        .carousel-item .header{
+            height: 855px;
+        }
+        .details img{
+            width: 80%;
+            height: 200px;
+        }
+        .wrapper .details .content{
+            width: 80%;
+            margin-left: 10px;
+            /* margin: 16px auto 0; */
+            
+        }
+    }
+    @media(min-width: 768px) and (max-width:991px){
+        .details{
+            width: 33% ;
+            font-size: 14px;
+        }
+        /* .carousel-item .header{
+            height: 900px;
+        } */
+        .details img{
+            width: 80%;
+            height: 250px;
+        }
+        .wrapper .details .content{
+            width: 80%;
+            margin-left: 10px;
+            /* margin: 16px auto 0; */
+            
+        }
+        .wrapper{
+            top: 12%;
+            width: 90%;
+            left: 52%;
+
         }
     }
 
     .wrapper .details .content{
         position: relative;
         font-size: 14px;
-        width: 100%;
-        margin: 16px auto 0;
+        width: 70%;
+        margin-top: 10px;
+        /* margin: 16px auto 0; */
         padding: 6px 5px;
         transition: all .5s;
         color:#00a4ee;
