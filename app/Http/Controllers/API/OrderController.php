@@ -23,12 +23,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        // dd('ssss');
-        $appliedartists = Order::paginate(4);
 
-        return view('orders.index')
-            ->with('appliedartists', $appliedartists);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -155,6 +153,7 @@ class OrderController extends Controller
                    $palette_items_data['size']=$item['palettesize'];
                    $palette_items_data['price']=strval( $price);
                    $palette_items_data['quantity']=strval($item['quantity']);
+                   $palette_items_data['id']= $palette->id;
                    array_push( $retarr['baletteitems'],$palette_items_data);
 
 
@@ -187,7 +186,7 @@ class OrderController extends Controller
             foreach ($arr as &$palette_items_data)
             {
 
-                    $orderitem= $order->items()->create(['size'=>$palette_items_data['size'],'price'=> $palette_items_data['price'] ,'quantity'=>$palette_items_data['quantity']]);
+                    $orderitem= $order->items()->create(['size'=>$palette_items_data['size'],'price'=> $palette_items_data['price'] ,'quantity'=>$palette_items_data['quantity'],'palatte_id'=>$palette_items_data['id']]);
                     array_push( $retarr,$orderitem);
             }
             return $retarr;

@@ -26,5 +26,5 @@ class CheckPromo extends Controller
         {
             return response()->json(['status'=>false,'message'=>'code not found']);
         }
-    }a
+    }
 }

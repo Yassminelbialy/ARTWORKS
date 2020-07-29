@@ -3,9 +3,9 @@
 @section('content')
 <section class="content-header">
     <h1 class="pull-left">Artists Requests</h1>
-    <h1 class="pull-right">
+    {{-- <h1 class="pull-right">
         <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('appliedartists.create') }}">Add New</a>
-    </h1>
+    </h1> --}}
 </section>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -70,13 +70,15 @@
             <td>{{ $appliedartist->totalprice }}</td>
             <td>{{ $appliedartist->payment_transaction }}</td>
             <td>
-                    {!! Form::open(['route' => ['appliedartists.destroy', $appliedartist->id], 'method' => 'delete']) !!}
+                    {{-- {!! Form::open(['route' => ['appliedartists.destroy', $appliedartist->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
                         <a style=" margin-left: 15px;" href="{{ route('appliedartists.show', [$appliedartist->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
                         <a style=" margin-left: 15px;margin-right: 15px;"  href="{{ route('appliedartists.edit', [$appliedartist->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-edit"></i></a>
                         {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                     </div>
-                    {!! Form::close() !!}
+                    {!! Form::close() !!}  --}}
+                    <a style=" margin-left: 15px;" href="{{ route('appliedorder.show', [$appliedartist->id]) }}" class='btn btn-default btn-xs'><i class="glyphicon glyphicon-eye-open"></i></a>
+
                 </td>
             </tr>
         @endforeach
