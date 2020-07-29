@@ -367,7 +367,7 @@ export default {
             $(".details  .content").css({width:"100%"})
 
                 $(".details.active .details_img").css({width:"83%",height:"150px"})
-            $(".details.active .content").css({width:"90%"})
+            $(".details.active .content").css({width:"83%",marginRight:"34px"})
 
             // $("html,body").animate({
             //     scrollTop:"100px"
@@ -385,11 +385,11 @@ export default {
 
 
                $(".details .details_img").css({width:"100%",height:"200px"})
-            $(".details  .content").css({width:"95%"})
+            $(".details  .content").css({width:"100%"})
 
 
             $(".details.active .details_img").css({width:"90%",height:"180px"})
-            $(".details.active .content").css({width:"100%"})
+            $(".details.active .content").css({width:"90%",marginRight:"34px"})
 
             // $("html,body").animate({
             //     scrollTop:"100px"
@@ -409,7 +409,7 @@ export default {
             $(".details  .content").css({width:"100%"})
 
                 $(".details.active .details_img").css({width:"100%",height:"200px"})
-            $(".details.active .content").css({width:"100%"})
+            $(".details.active .content").css({width:"100%",marginRight:"34px"})
 
 
             // $("html,body").animate({
@@ -529,20 +529,23 @@ export default {
         width: 100%;
         height: 640px;
     }
-    @media(max-width:991px){
+    @media(max-width:959px){
         .wrapper{
 
         }
         .carousel-item .header{
-            overflow: scroll;
+
             height: 1281px;
 
         }
         .carousel-item {
             height: 1281px;
-             overflow: scroll;
+
         }
     }
+
+
+
     .header_sm{
         background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');
         -webkit-background-size: cover;
