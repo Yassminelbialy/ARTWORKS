@@ -104,8 +104,8 @@
 
                                         <div id='consmodal' class="modal-body mx-3 text-dark">
                                             <div class="md-form mb-2">
-                                                <i class="fa fa-user" v-if="$i18n.locale == 'en'"></i>
-                                                <i class="fa fa-user mb-1" v-else style="float:right"></i>
+                                                <i class="fa mx-2 fa-user" v-if="$i18n.locale == 'en'"></i>
+                                                <i class="fa mx-2 fa-user mb-1" v-else style="float:right"></i>
 
                                                   <label data-error="wrong" v-if="$i18n.locale == 'en'" data-success="right" for="defaultForm-email">{{ $t("message.name") }}</label>
                                                 <label data-error="wrong" v-else style="float:right" data-success="right" for="defaultForm-email">{{ $t("message.name") }}</label>
@@ -115,8 +115,8 @@
 
                                             </div>
                                             <div class="md-form mb-2">
-                                                <i class="fa fa-envelope" v-if="$i18n.locale == 'en'"></i>
-                                                <i class="fa fa-envelope mb-1" v-else style="float:right"></i>
+                                                <i class="fa mx-2 fa-envelope" v-if="$i18n.locale == 'en'"></i>
+                                                <i class="fa mx-2 fa-envelope mb-1" v-else style="float:right"></i>
 
                                                  <label data-error="wrong" data-success="right" v-if="$i18n.locale == 'en'" for="defaultForm-email">{{ $t("message.email") }}</label>
                                                 <label data-error="wrong" data-success="right" v-else style="float:right" for="defaultForm-email">{{ $t("message.email") }}</label>
@@ -126,8 +126,8 @@
 
                                             </div>
                                             <div class="md-form mb-2">
-                                                <i class="fa fa-phone" v-if="$i18n.locale == 'en'"></i>
-                                                <i class="fa fa-phone mb-1" v-else style="float:right"></i>
+                                                <i class="fa mx-2 fa-phone" v-if="$i18n.locale == 'en'"></i>
+                                                <i class="fa mx-2 fa-phone mb-1" v-else style="float:right"></i>
 
                                                    <label data-error="wrong" data-success="right" v-if="$i18n.locale == 'en'" for="defaultForm-pass">{{ $t("message.phone") }}</label>
                                                 <label data-error="wrong" data-success="right" v-else style="float:right" for="defaultForm-pass">{{ $t("message.phone") }}</label>
@@ -138,7 +138,7 @@
                                             </div>
                                         </div>
                                         <div class="modal-footer d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-info btn-block">{{ $t("message.submit") }}</button>
+                                            <button type="submit" class="btn btn-info " >{{ $t("message.submit") }}</button>
                                         </div>
                                     </form>
 
@@ -239,7 +239,10 @@ export default {
 }
 
 #modalLoginForms .modal-content .btn-info[data-v-78547fe5] {
-    color:white
+    color:white;
+    border-radius: 20px;
+    padding:6px  30px;
+    margin-top: 2px ;
 }
 .form-control{
     border: 1px solid #0c6bd1;

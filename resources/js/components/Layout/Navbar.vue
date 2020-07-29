@@ -84,7 +84,7 @@
                                      <h6  style="font-size:14px">{{ item.sizeTarget }} - {{item.sizeCm}} </h6>
                                     <h6>{{ item.quantity }} x ${{item.price}}</h6>
                                 </div>
-                                  <div>
+                                  <div class="pro">
                                 <v-form style="width:50%;display:inline-block">
                                     <!-- <v-text-field  v-model=" item.quantity  ">
                                         <v-icon slot="append" @click="addToCart(item.product )">mdi-plus</v-icon>
@@ -238,6 +238,14 @@ export default {
 .modal-body img{
     width: 80px;
     height: 80px;
+}
+
+.pro{
+    width: 124%;
+}
+.pro button {
+    margin-top:-37px ;
+
 }
 
 .delete{

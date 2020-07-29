@@ -147,7 +147,7 @@
           <div style="font-size:20px;padding:10px">
             <span> Total Price : </span>
             <span style="float:right;">
-              <span style="color:#737171;"></span> $ {{cartTotalPrice}}
+              <span style="color:#737171;"></span> $ {{totalprice_2}}
             </span>
             <div style="clear:both"></div>
           </div>
@@ -184,7 +184,7 @@
                                     <strong>Sorry!</strong> You should check in on some of those fields below.
                                     <br>
                                     <ul >
-                                        <li v-for="item in errors">
+                                        <li v-for="item in errors" :key="item">
                                             {{ item }}
                                         </li>
                                     </ul>
@@ -296,7 +296,7 @@
           <div style="font-size:20px;padding:10px">
             <span style="float:right;">الحساب الإجمالى</span>
             <span >
-              <span style="color:#737171;"></span> $ {{cartTotalPrice}}
+              <span style="color:#737171;"></span> $ {{totalprice_2}}
             </span>
             <div style="clear:both"></div>
           </div>
@@ -321,6 +321,7 @@ export default {
             $(".active>.content").css({width:"100%"})
         },
     cartTotalPrice() {
+        this.totalprice_2= this.$store.getters.cartTotalPrice ;
       return this.$store.getters.cartTotalPrice;
     },
     cart() {
@@ -345,6 +346,7 @@ export default {
       },
       discount: "",
       discount_value:0,
+      totalprice_2:0,
 
       item: [
                 "Afghanistan",
@@ -856,7 +858,7 @@ export default {
     };
   },
   created(){
-
+this.cartTotalPrice;
 //  {"paletteid":"3","palettesize":"medium","quantity":5}
 this.cart.forEach(element => {
 
@@ -878,7 +880,7 @@ this.cart.forEach(element => {
                 {
                     var price=parseInt(data.data.percentage);
                     this.discount_value=this.cartTotalPrice * price/100;
-                    // this.cartTotalPrice= this.cartTotalPrice - this.discount_value;
+                    this.cartTotalPrice = this.cartTotalPrice - this.discount_value;
                     this.form.promocode=this.discount
                 }
 

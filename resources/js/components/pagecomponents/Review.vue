@@ -122,7 +122,7 @@
                 <div style="clear:both"></div>
             </v-form>
         </div>
-          <v-card class="card" v-for="(review,index) in reviews" :key="index">
+          <v-card class="card mt-2" v-for="(review,index) in reviews" :key="index">
 
                 <div class="userimg">
                     <div class="userimg2">

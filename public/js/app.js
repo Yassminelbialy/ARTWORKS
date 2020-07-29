@@ -2919,6 +2919,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     cartTotalPrice: function cartTotalPrice() {
+      this.totalprice_2 = this.$store.getters.cartTotalPrice;
       return this.$store.getters.cartTotalPrice;
     },
     cart: function cart() {
@@ -2943,6 +2944,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       discount: "",
       discount_value: 0,
+      totalprice_2: 0,
       item: ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas (the)", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory (the)", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Cayman Islands (the)", "Central African Republic (the)", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands (the)", "Colombia", "Comoros (the)", "Congo (the Democratic Republic of the)", "Congo (the)", "Cook Islands (the)", "Costa Rica", "Croatia", "Cuba", "Curaçao", "Cyprus", "Czechia", "Côte d'Ivoire", "Denmark", "Djibouti", "Dominica", "Dominican Republic (the)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Falkland Islands (the) [Malvinas]", "Faroe Islands (the)", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories (the)", "Gabon", "Gambia (the)", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (the)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (the Democratic People's Republic of)", "Korea (the Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic (the)", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands (the)", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia (Federated States of)", "Moldova (the Republic of)", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands (the)", "New Caledonia", "New Zealand", "Nicaragua", "Niger (the)", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands (the)", "Norway", "Oman", "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines (the)", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of North Macedonia", "Romania", "Russian Federation (the)", "Rwanda", "Réunion", "Saint Barthélemy", "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "Sudan (the)", "Suriname", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands (the)", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates (the)", "United Kingdom of Great Britain and Northern Ireland (the)", "United States Minor Outlying Islands (the)", "United States of America (the)", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "Åland Islands"],
       item_ar: ["أفغانستان", "ألبانيا", "الجزائر", "ساموا الأمريكية", "أندورا", "أنغولا", "أنغيلا", "أنتاركتيكا", "أنتيغوا وبربودا", "الأرجنتين", "أرمينيا", "أروبا", "أستراليا", "النمسا", "أذربيجان", "جزر البهاما", "البحرين", "بنغلاديش", "بربادوس", "بيلاروس", "بلجيكا", "بليز", "بنين", "برمودا", "بوتان", "بوليفيا (دولة - المتعددة القوميات)", "بونير وسينت أوستاتيوس وسابا", "البوسنة والهرسك", "بوتسوانا", "جزيرة بوفيت", "البرازيل", "إقليم المحيط الهندي البريطاني (the)", "بروناي دار السلام", "بلغاريا", "بوركينا فاسو", "بوروندي", "كابو فيردي", "كمبوديا", "الكاميرون", "كندا", "جزر كايمان (ال)", "جمهورية أفريقيا الوسطى", "تشاد", "تشيلي", "الصين", "جزيرة الكريسماس", "جزر كوكوس (كيلينغ)", "كولومبيا", "جزر القمر", "جمهورية الكونغو الديمقراطية", "الكونغو (ال)", "جزر كوك", "كوستا ريكا", "كرواتيا", "كوبا", "كوراساو", "قبرص", "التشيك", "كوت ديفوار", "الدنمارك", "جيبوتي", "دومينيكا", "جمهورية الدومينيكان", "إكوادور", "مصر", "السلفادور", "غينيا الإستوائية", "إريتريا", "إستونيا", "Eswatini", "أثيوبيا", "جزر فوكلاند (مالفيناس)", "جزر فارو", "فيجي", "فنلندا", "فرنسا", "غيانا الفرنسية", "بولينيزيا الفرنسية", "الأقاليم الجنوبية الفرنسية (ال)", "الغابون", "غامبيا", "جورجيا", "ألمانيا", "غانا", "جبل طارق", "اليونان", "الأرض الخضراء", "غرينادا", "جوادلوب", "غوام", "غواتيمالا", "غيرنسي", "غينيا", "غينيا - بيساو", "غيانا", "هايتي", "قلب الجزيرة وجزر ماكدونالز", "الكرسي الرسولي", "هندوراس", "هونغ كونغ", "هنغاريا", "أيسلندا", "الهند", "إندونيسيا", "جمهورية إيران الإسلامية", "العراق", "أيرلندا", "جزيرة آيل أوف مان", "إسرائيل", "إيطاليا", "جامايكا", "اليابان", "جيرسي", "الأردن", "كازاخستان", "كينيا", "كيريباتي", "كوريا (جمهورية - الديمقراطية الشعبية)", "جمهورية كوريا", "الكويت", "قيرغيزستان", "جمهورية لاو الديمقراطية الشعبية (ذا)", "لاتفيا", "لبنان", "ليسوتو", "ليبيريا", "ليبيا", "ليختنشتاين", "ليتوانيا", "لوكسمبورغ", "ماكاو", 'مدغشقر', "ملاوي", "ماليزيا", "جزر المالديف", "مالي", "مالطا", "جزر مارشال", "مارتينيك", "موريتانيا", "موريشيوس", "مايوت", "المكسيك", "ميكرونيزيا (ولايات - الموحدة)", "مولدوفا (جمهورية)", "موناكو", "منغوليا", "الجبل الأسود", "مونتسيرات", "المغرب", "موزمبيق", "ميانمار", "ناميبيا", "ناورو", "نيبال", "هولندا", "كاليدونيا الجديدة", "نيوزيلندا", "نيكاراغوا", "النيجر", "نيجيريا", "نيوي", "جزيرة نورفولك", "جزر ماريانا الشمالية", "النرويج", "سلطنة عمان", "باكستان", "بالاو", "فلسطين , دولة", "بنما", "بابوا غينيا الجديدة", "باراغواي", "بيرو", "الفلبين", "بيتكيرن", "بولندا", "البرتغال", "بورتوريكو", "دولة قطر", "جمهورية شمال مقدونيا", "رومانيا", "الاتحاد الروسي", "رواندا", "جمع شمل", "سانت بارتيليمي", "سانت هيلانة وأسنسيون وتريستان دا كونها", "سانت كيتس ونيفيس", "القديسة لوسيا", "سانت مارتن (الجزء الفرنسي)", "سانت بيير وميكلون", "سانت فنسنت وجزر غرينادين", "ساموا", "سان مارينو", "ساو تومي وبرينسيبي", "المملكة العربية السعودية", "السنغال", "صربيا", "سيشيل", "سيرا ليون", "سنغافورة", "سانت مارتن (الجزء الهولندي)", "سلوفاكيا", "سلوفينيا", "جزر سليمان", "الصومال", "جنوب أفريقيا", "جورجيا الجنوبية وجزر ساندويتش الجنوبية", "جنوب السودان", "إسبانيا", "سيريلانكا", "السودان", "سورينام", "سفالبارد وجان ماين", "السويد", "سويسرا", "الجمهورية العربية السورية", "تايوان", "طاجيكستان", "جمهورية تنزانيا المتحدة", "تايلاند", "تيمور الشرقية", "توجو", "توكيلاو", "تونغا", "ترينداد وتوباغو", "تونس", "ديك رومي", "تركمانستان", "جزر تركس وكايكوس", "توفالو", "أوغندا", "أوكرانيا", "الإمارات العربية المتحدة", "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية (ال)", "جزر الولايات المتحدة الصغيرة النائية (ال)", "الولايات المتحدة الأمريكية", "أوروغواي", "أوزبكستان", "فانواتو", "فنزويلا (جمهورية - البوليفارية)", "فيتنام", "جزر العذراء البريطانية)", "جزر فيرجن (الولايات المتحدة)", "واليس وفوتونا", "الصحراء الغربية", "اليمن", "زامبيا", "زيمبابوي", "جزر آلاند"],
       errors: [],
@@ -2957,7 +2959,8 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    //  {"paletteid":"3","palettesize":"medium","quantity":5}
+    this.cartTotalPrice; //  {"paletteid":"3","palettesize":"medium","quantity":5}
+
     this.cart.forEach(function (element) {
       _this.form.items.push({
         paletteid: element.product.id,
@@ -2978,8 +2981,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (data.data.status) {
           var price = parseInt(data.data.percentage);
-          _this2.discount_value = _this2.cartTotalPrice * price / 100; // this.cartTotalPrice= this.cartTotalPrice - this.discount_value;
-
+          _this2.discount_value = _this2.cartTotalPrice * price / 100;
+          _this2.cartTotalPrice = _this2.cartTotalPrice - _this2.discount_value;
           _this2.form.promocode = _this2.discount;
         }
       })["catch"](function (e) {
@@ -3836,7 +3839,8 @@ __webpack_require__.r(__webpack_exports__);
         height: "150px"
       });
       jquery__WEBPACK_IMPORTED_MODULE_2___default()(".details.active .content").css({
-        width: "90%"
+        width: "83%",
+        marginRight: "34px"
       }); // $("html,body").animate({
       //     scrollTop:"100px"
       // },1000)
@@ -3853,14 +3857,15 @@ __webpack_require__.r(__webpack_exports__);
         height: "200px"
       });
       jquery__WEBPACK_IMPORTED_MODULE_2___default()(".details  .content").css({
-        width: "95%"
+        width: "100%"
       });
       jquery__WEBPACK_IMPORTED_MODULE_2___default()(".details.active .details_img").css({
         width: "90%",
         height: "180px"
       });
       jquery__WEBPACK_IMPORTED_MODULE_2___default()(".details.active .content").css({
-        width: "100%"
+        width: "90%",
+        marginRight: "34px"
       }); // $("html,body").animate({
       //     scrollTop:"100px"
       // },1000)
@@ -3884,7 +3889,8 @@ __webpack_require__.r(__webpack_exports__);
         height: "200px"
       });
       jquery__WEBPACK_IMPORTED_MODULE_2___default()(".details.active .content").css({
-        width: "100%"
+        width: "100%",
+        marginRight: "34px"
       }); // $("html,body").animate({
       //     scrollTop:"100px"
       // },1000)
@@ -4065,84 +4071,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       sliderPalettes: [],
-      image_hover: ""
+      image_hover: ''
     };
   },
   created: function created() {
@@ -8631,7 +8564,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n#modalLoginForms .modal-content[data-v-78547fe5]{\n    /* background: linear-gradient(-45deg , white 50% , #0c6bd1 50%); */\n    font-weight: bold;\n    color: gray;\n    border:1px solid white;\n   /* border-radius: 40px; */\n    overflow: hidden;\n}\n.modal-header[data-v-78547fe5]{\n      background:#0c6bd1\n}\n#modalLoginForms .modal-content .fa[data-v-78547fe5]{\n color: #0c6bd1;\n}\n#modalLoginForms .modal-footer[data-v-78547fe5]{\n    padding: 0;\n}\n#modalLoginForms .md-form[data-v-78547fe5]{\n    padding: 13px;\n}\n#modalLoginForms .modal-content .btn-info[data-v-78547fe5]{\n    margin: 0;\n    border-radius: 0;\n    background: #0c6bd1;\n    padding: 10px;\n}\n#modalLoginForms .modal-content .btn-info[data-v-78547fe5][data-v-78547fe5] {\n    color:white\n}\n.form-control[data-v-78547fe5]{\n    border: 1px solid #0c6bd1;\n}\n.alert[data-v-78547fe5] {\n        text-align: center;\n}\n.modal-title-sign[data-v-78547fe5]{\n     color:white;\n    font-size: 30px;\n}\n.modal-title-sign span[data-v-78547fe5]{\n\n        color:white;\n}\n.modal-header .close[data-v-78547fe5]{\n    color: white;\n}\n.row[data-v-78547fe5]{\n    margin-left: 0;\n    margin-right: 0;\n}\n\n", ""]);
+exports.push([module.i, "\n#modalLoginForms .modal-content[data-v-78547fe5]{\n    /* background: linear-gradient(-45deg , white 50% , #0c6bd1 50%); */\n    font-weight: bold;\n    color: gray;\n    border:1px solid white;\n   /* border-radius: 40px; */\n    overflow: hidden;\n}\n.modal-header[data-v-78547fe5]{\n      background:#0c6bd1\n}\n#modalLoginForms .modal-content .fa[data-v-78547fe5]{\n color: #0c6bd1;\n}\n#modalLoginForms .modal-footer[data-v-78547fe5]{\n    padding: 0;\n}\n#modalLoginForms .md-form[data-v-78547fe5]{\n    padding: 13px;\n}\n#modalLoginForms .modal-content .btn-info[data-v-78547fe5]{\n    margin: 0;\n    border-radius: 0;\n    background: #0c6bd1;\n    padding: 10px;\n}\n#modalLoginForms .modal-content .btn-info[data-v-78547fe5][data-v-78547fe5] {\n    color:white;\n    border-radius: 20px;\n    padding:6px  30px;\n    margin-top: 2px ;\n}\n.form-control[data-v-78547fe5]{\n    border: 1px solid #0c6bd1;\n}\n.alert[data-v-78547fe5] {\n        text-align: center;\n}\n.modal-title-sign[data-v-78547fe5]{\n     color:white;\n    font-size: 30px;\n}\n.modal-title-sign span[data-v-78547fe5]{\n\n        color:white;\n}\n.modal-header .close[data-v-78547fe5]{\n    color: white;\n}\n.row[data-v-78547fe5]{\n    margin-left: 0;\n    margin-right: 0;\n}\n\n", ""]);
 
 // exports
 
@@ -8650,7 +8583,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.modal-mask[data-v-1706a3da] {\n  position: fixed;\n\n  top: 0;\n  left: 0;\n  width: 100%;\n\n  background-color: rgba(0, 0, 0, .5);\n  display: block;\n  transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-1706a3da] {\n  display: table-cell;\n  vertical-align: middle;\n  float: right;\n}\n.modal-content[data-v-1706a3da]{\n    top: -27px;\n    overflow: scroll;\n\n    min-height: 800px;\n}\n.modal-body[data-v-1706a3da] {\n    position: relative;\n    -ms-flex: 1 1 auto;\n    max-height: 500px;\n    flex: 1 1 auto;\n    overflow: auto;\n    padding: 1rem;\n}\n/* .modal-body{\n    position: absolute;\n    width: 400px;\n        overflow: scroll;\n} */\n.modal-body img[data-v-1706a3da]{\n    width: 80px;\n    height: 80px;\n}\n.delete[data-v-1706a3da]{\n     width: 90px !important;\n    float: right;\n}\n", ""]);
+exports.push([module.i, "\n.modal-mask[data-v-1706a3da] {\n  position: fixed;\n\n  top: 0;\n  left: 0;\n  width: 100%;\n\n  background-color: rgba(0, 0, 0, .5);\n  display: block;\n  transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-1706a3da] {\n  display: table-cell;\n  vertical-align: middle;\n  float: right;\n}\n.modal-content[data-v-1706a3da]{\n    top: -27px;\n    overflow: scroll;\n\n    min-height: 800px;\n}\n.modal-body[data-v-1706a3da] {\n    position: relative;\n    -ms-flex: 1 1 auto;\n    max-height: 500px;\n    flex: 1 1 auto;\n    overflow: auto;\n    padding: 1rem;\n}\n/* .modal-body{\n    position: absolute;\n    width: 400px;\n        overflow: scroll;\n} */\n.modal-body img[data-v-1706a3da]{\n    width: 80px;\n    height: 80px;\n}\n.pro[data-v-1706a3da]{\n    width: 124%;\n}\n.pro button[data-v-1706a3da] {\n    margin-top:-37px ;\n}\n.delete[data-v-1706a3da]{\n     width: 90px !important;\n    float: right;\n}\n", ""]);
 
 // exports
 
@@ -8764,7 +8697,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.carousel-item .header[data-v-266b1872]{\n        width: 100%;\n        height: 640px;\n}\n.header_sm[data-v-266b1872]{\n        background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');\n        background-size: cover;\n        height: 300px;\n        background-position: center;\n        position: relative;\n        display: none;\n}\n@media(max-width:991px){\n.header_sm[data-v-266b1872]{\n            display: none;\n}\n}\n.wrapper[data-v-266b1872]{\n   position: absolute;\n    top: 15%;\n    transform: translate(-50%, 0);\n    left: 50%;\n    width: 100%\n}\n.details[data-v-266b1872]{\n    color: #fff;\n    cursor: pointer;\n    transition: all 1s;\n}\n.details img[data-v-266b1872]{\n        width: 100%;\n        transition: all 1s;\n        height: 250px;\n        /* box-shadow: 5px 5px 5px black; */\n        border-top: 2px solid #111;\n        border-bottom: 2px solid #111;\n}\n@media(max-width: 575px){\n.wrapper[data-v-266b1872]{\n            display: none;\n}\n.carousel-control-next[data-v-266b1872]{\n            display: none;\n}\n.carousel-control-prev[data-v-266b1872]{\n            display: none;\n}\n.carousel-item .header[data-v-266b1872]{\n            height: 300px;\n}\n}\n.wrapper .details .content[data-v-266b1872]{\n        position: relative;\n        font-size: 14px;\n        width: 100%;\n        margin: 16px auto 0;\n        padding: 6px 5px;\n        transition: all .5s;\n        color:#00a4ee;\n        border-radius: 10px;\n          background: rgba(0,0,0,0.9);\n        background-repeat: no-repeat;\n        background-position: 50%;\n        background-size: 100%;\n        z-index: 2;\n        top: 10px;\n}\n        /* @media(max-width: 991px){\n        .wrapper .details .content{\n            width:33%;\n        }\n    } */\n.wrapper .details .content .triangle[data-v-266b1872]{\n    position: relative;\n    z-index: 1;\n    padding: 10px;\n    display: inline-block;\n    top: -12px;\n    left: 50%;\n    transform: rotate(45deg) translate(-50%, 19%);\n    border-top: 1px solid #00a4ee;\n    border-left: 1px solid #00a4ee ;\n     background: rgba(0,0,0,0.9);\n}\n    /* .wrapper .details .content:hover{\n        border: 2px solid #00a4ee;\n    } */\n.details-content[data-v-266b1872]{\n        margin:20px;\n}\n.details[data-v-266b1872]:hover {\n        transform: scale(1.1);\n}\n.add-cart div span[data-v-266b1872]{\n        font-size: 15px;\n        font-weight: 400;\n        line-height: 22px;\n        display: inline-block;\n        margin-right: 5px;\n        padding: 0 10px;\n        text-transform: lowercase;\n        color: #fff;\n        border-radius: 999px;\n        background-color: #000;\n}\n.add-cart p[data-v-266b1872]{\n        font-size: 20px;\n}\n.add-cart .add-button[data-v-266b1872]{\n        font-size: 20px;\n        font-weight: 700;\n        line-height: 70px;\n        display: block;\n        width: 100%;\n        margin-bottom: 10px;\n        cursor: pointer;\n        text-align: center;\n        text-decoration: none;\n        color: #fff;\n        border: none;\n        background-color: #000;\n}\n.add-cart .more[data-v-266b1872]{\n        outline: none;\n}\n.list-group .list-group-item[data-v-266b1872]{\n        cursor: pointer;\n        border-left: none;\n        border-right: none;\n        padding-left: 10px;\n        padding-right: 10px;\n}\n/*\n    .carousel-control-prev{\n        left: -50%;\n    } */\n.carousel-indicators li[data-v-266b1872] {\n    box-sizing: content-box;\n    flex: 0 1 auto;\n    width: 67px;\n    height: 29px;\n    margin-right: 14px;\n    margin-left: 0;\n    text-indent: 0;\n    cursor: pointer;\n    color: black;\n    background: none;\n}\n.carousel-indicators[data-v-266b1872]{\n    bottom: -9%;\n    width: 100%;\n    background-color: #f5f0ed;\n    margin-left: 0;\n    margin-right: 0;\n}\n@media(max-width: 991px){\n.carousel-indicators[data-v-266b1872]{\n        bottom: -8%\n}\n}\n.carousel-indicators .active[data-v-266b1872]{\n    border-bottom: 3px solid #25d1e2;\n}\n.small[data-v-266b1872], .medium[data-v-266b1872], .larg[data-v-266b1872]{\n    padding: 30px !important;\n    margin-right: 20px !important;\n    font-size: 20px ;\n}\n.active .content[data-v-266b1872] {\n    border: 2px solid #00a4ee;\n}\n.active_btn[data-v-266b1872]{\n    border: 2px solid #00a4ee;\n}\n.rotate[data-v-266b1872]{\n width: 100%;\n    position: relative;\n    height: 82px;\n    transform: rotate(49deg);\n    background: black;\n}\n", ""]);
+exports.push([module.i, "\n.carousel-item .header[data-v-266b1872]{\n        width: 100%;\n        height: 640px;\n}\n<<<<<<< HEAD\n    @media(max-width:\\959px)[data-v-266b1872]{\n.wrapper{\n}\n.carousel-item .header{\n\n            height: 1281px;\n}\n.carousel-item {\n            height: 1281px;\n}\n}\n=======\n>>>>>>> 3a8e700d9655bb6a5c1c6d734a9f512777e3b572\n    .header_sm[data-v-266b1872]{\n        background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');\n        background-size: cover;\n        height: 300px;\n        background-position: center;\n        position: relative;\n        display: none;\n}\n@media(max-width:991px){\n.header_sm[data-v-266b1872]{\n            display: none;\n}\n}\n.wrapper[data-v-266b1872]{\n   position: absolute;\n    top: 15%;\n    transform: translate(-50%, 0);\n    left: 50%;\n    width: 100%\n}\n.details[data-v-266b1872]{\n    color: #fff;\n    cursor: pointer;\n    transition: all 1s;\n}\n.details img[data-v-266b1872]{\n        width: 100%;\n        transition: all 1s;\n        height: 250px;\n        /* box-shadow: 5px 5px 5px black; */\n        border-top: 2px solid #111;\n        border-bottom: 2px solid #111;\n}\n@media(max-width: 575px){\n.wrapper[data-v-266b1872]{\n            display: none;\n}\n.carousel-control-next[data-v-266b1872]{\n            display: none;\n}\n.carousel-control-prev[data-v-266b1872]{\n            display: none;\n}\n.carousel-item .header[data-v-266b1872]{\n            height: 300px;\n}\n}\n.wrapper .details .content[data-v-266b1872]{\n        position: relative;\n        font-size: 14px;\n        width: 100%;\n        margin: 16px auto 0;\n        padding: 6px 5px;\n        transition: all .5s;\n        color:#00a4ee;\n        border-radius: 10px;\n          background: rgba(0,0,0,0.9);\n        background-repeat: no-repeat;\n        background-position: 50%;\n        background-size: 100%;\n        z-index: 2;\n        top: 10px;\n}\n        /* @media(max-width: 991px){\n        .wrapper .details .content{\n            width:33%;\n        }\n    } */\n.wrapper .details .content .triangle[data-v-266b1872]{\n    position: relative;\n    z-index: 1;\n    padding: 10px;\n    display: inline-block;\n    top: -12px;\n    left: 50%;\n    transform: rotate(45deg) translate(-50%, 19%);\n    border-top: 1px solid #00a4ee;\n    border-left: 1px solid #00a4ee ;\n     background: rgba(0,0,0,0.9);\n}\n    /* .wrapper .details .content:hover{\n        border: 2px solid #00a4ee;\n    } */\n.details-content[data-v-266b1872]{\n        margin:20px;\n}\n.details[data-v-266b1872]:hover {\n        transform: scale(1.1);\n}\n.add-cart div span[data-v-266b1872]{\n        font-size: 15px;\n        font-weight: 400;\n        line-height: 22px;\n        display: inline-block;\n        margin-right: 5px;\n        padding: 0 10px;\n        text-transform: lowercase;\n        color: #fff;\n        border-radius: 999px;\n        background-color: #000;\n}\n.add-cart p[data-v-266b1872]{\n        font-size: 20px;\n}\n.add-cart .add-button[data-v-266b1872]{\n        font-size: 20px;\n        font-weight: 700;\n        line-height: 70px;\n        display: block;\n        width: 100%;\n        margin-bottom: 10px;\n        cursor: pointer;\n        text-align: center;\n        text-decoration: none;\n        color: #fff;\n        border: none;\n        background-color: #000;\n}\n.add-cart .more[data-v-266b1872]{\n        outline: none;\n}\n.list-group .list-group-item[data-v-266b1872]{\n        cursor: pointer;\n        border-left: none;\n        border-right: none;\n        padding-left: 10px;\n        padding-right: 10px;\n}\n/*\n    .carousel-control-prev{\n        left: -50%;\n    } */\n.carousel-indicators li[data-v-266b1872] {\n    box-sizing: content-box;\n    flex: 0 1 auto;\n    width: 67px;\n    height: 29px;\n    margin-right: 14px;\n    margin-left: 0;\n    text-indent: 0;\n    cursor: pointer;\n    color: black;\n    background: none;\n}\n.carousel-indicators[data-v-266b1872]{\n    bottom: -9%;\n    width: 100%;\n    background-color: #f5f0ed;\n    margin-left: 0;\n    margin-right: 0;\n}\n@media(max-width: 991px){\n.carousel-indicators[data-v-266b1872]{\n        bottom: -8%\n}\n}\n.carousel-indicators .active[data-v-266b1872]{\n    border-bottom: 3px solid #25d1e2;\n}\n.small[data-v-266b1872], .medium[data-v-266b1872], .larg[data-v-266b1872]{\n    padding: 30px !important;\n    margin-right: 20px !important;\n    font-size: 20px ;\n}\n.active .content[data-v-266b1872] {\n    border: 2px solid #00a4ee;\n}\n.active_btn[data-v-266b1872]{\n    border: 2px solid #00a4ee;\n}\n.rotate[data-v-266b1872]{\n width: 100%;\n    position: relative;\n    height: 82px;\n    transform: rotate(49deg);\n    background: black;\n}\n", ""]);
 
 // exports
 
@@ -43279,9 +43212,11 @@ var render = function() {
                               [
                                 _c("div", { staticClass: "md-form mb-2" }, [
                                   _vm.$i18n.locale == "en"
-                                    ? _c("i", { staticClass: "fa fa-user" })
+                                    ? _c("i", {
+                                        staticClass: "fa mx-2 fa-user"
+                                      })
                                     : _c("i", {
-                                        staticClass: "fa fa-user mb-1",
+                                        staticClass: "fa mx-2 fa-user mb-1",
                                         staticStyle: { float: "right" }
                                       }),
                                   _vm._v(" "),
@@ -43365,9 +43300,11 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("div", { staticClass: "md-form mb-2" }, [
                                   _vm.$i18n.locale == "en"
-                                    ? _c("i", { staticClass: "fa fa-envelope" })
+                                    ? _c("i", {
+                                        staticClass: "fa mx-2 fa-envelope"
+                                      })
                                     : _c("i", {
-                                        staticClass: "fa fa-envelope mb-1",
+                                        staticClass: "fa mx-2 fa-envelope mb-1",
                                         staticStyle: { float: "right" }
                                       }),
                                   _vm._v(" "),
@@ -43459,9 +43396,11 @@ var render = function() {
                                 _vm._v(" "),
                                 _c("div", { staticClass: "md-form mb-2" }, [
                                   _vm.$i18n.locale == "en"
-                                    ? _c("i", { staticClass: "fa fa-phone" })
+                                    ? _c("i", {
+                                        staticClass: "fa mx-2 fa-phone"
+                                      })
                                     : _c("i", {
-                                        staticClass: "fa fa-phone mb-1",
+                                        staticClass: "fa mx-2 fa-phone mb-1",
                                         staticStyle: { float: "right" }
                                       }),
                                   _vm._v(" "),
@@ -43563,7 +43502,7 @@ var render = function() {
                                 _c(
                                   "button",
                                   {
-                                    staticClass: "btn btn-info btn-block",
+                                    staticClass: "btn btn-info ",
                                     attrs: { type: "submit" }
                                   },
                                   [_vm._v(_vm._s(_vm.$t("message.submit")))]
@@ -44082,6 +44021,7 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "div",
+                                    { staticClass: "pro" },
                                     [
                                       _c("v-form", {
                                         staticStyle: {
@@ -44219,7 +44159,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", [
+  return _c("section", { staticStyle: { "min-height": "200px" } }, [
     _c("div", { staticClass: "loading-page" }, [
       _c("div", { staticClass: "counter" }, [
         _c("p", [_vm._v(_vm._s(_vm.$t("message.loading")))]),
@@ -44913,7 +44853,7 @@ var render = function() {
                       _c("span", { staticStyle: { float: "right" } }, [
                         _c("span", { staticStyle: { color: "#737171" } }),
                         _vm._v(
-                          " $ " + _vm._s(_vm.cartTotalPrice) + "\n          "
+                          " $ " + _vm._s(_vm.totalprice_2) + "\n          "
                         )
                       ]),
                       _vm._v(" "),
@@ -44966,7 +44906,7 @@ var render = function() {
                               _c(
                                 "ul",
                                 _vm._l(_vm.errors, function(item) {
-                                  return _c("li", [
+                                  return _c("li", { key: item }, [
                                     _vm._v(
                                       "\n                                          " +
                                         _vm._s(item) +
@@ -45361,7 +45301,7 @@ var render = function() {
                       _c("span", [
                         _c("span", { staticStyle: { color: "#737171" } }),
                         _vm._v(
-                          " $ " + _vm._s(_vm.cartTotalPrice) + "\n          "
+                          " $ " + _vm._s(_vm.totalprice_2) + "\n          "
                         )
                       ]),
                       _vm._v(" "),
@@ -46117,7 +46057,7 @@ var render = function() {
       _vm._l(_vm.reviews, function(review, index) {
         return _c(
           "v-card",
-          { key: index, staticClass: "card" },
+          { key: index, staticClass: "card mt-2" },
           [
             _c("div", { staticClass: "userimg" }, [
               _c("div", { staticClass: "userimg2" }, [
@@ -47163,10 +47103,7 @@ var render = function() {
                         {
                           staticClass: "product-grid-item__imagewrapper",
                           attrs: {
-                            to: {
-                              path: "/shop",
-                              query: { mydata: data.id }
-                            },
+                            to: { path: "/shop", query: { mydata: data.id } },
                             "data-product-handle": "son-this-is-the-universe",
                             "data-product-quantity": "48"
                           }
@@ -47198,7 +47135,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "\n                                        Walltones-studio added diamond dust\n                                        to this print for a glittering\n                                        effect that makes the artwork even\n                                        more enticing. Additionally, keep in\n                                        mind that each artwork is done by\n                                        hand and therefore may slightly vary\n                                        from the exemplary product images.\n                                    "
+                              "Walltones-studio added diamond dust to this print for a glittering effect that makes the artwork even more enticing. Additionally, keep in mind that each artwork is done by hand and therefore may slightly vary from the exemplary product images."
                             )
                           ])
                         ]),
@@ -47212,7 +47149,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "\n                                        This artwork was added recently (but\n                                        will likely be sold out soon)\n                                    "
+                              "This artwork was added recently (but will likely be sold out soon)"
                             )
                           ])
                         ])
@@ -47248,7 +47185,6 @@ var render = function() {
                       _c("span", [
                         _vm._v(
                           _vm._s(data.avalible_copies) +
-                            " " +
                             _vm._s(_vm.$t("message.left"))
                         )
                       ])
