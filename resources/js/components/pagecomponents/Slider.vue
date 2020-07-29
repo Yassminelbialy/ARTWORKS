@@ -29,9 +29,33 @@
                                 <span class="cms-special-label color-4">{{data.name}}</span>
                                 <p>Walltones-studio added diamond dust to this print for a glittering effect that makes the artwork even more enticing. Additionally, keep in mind that each artwork is done by hand and therefore may slightly vary from the exemplary product images.</p>
                             </div>
+<<<<<<< HEAD
                             <div class="cms-special-description">
                                 <span class="cms-special-label color-7">{{ $t("message.newreleaseheader") }}</span>
                                 <p>This artwork was added recently (but will likely be sold out soon)</p>
+=======
+                            <div class="product-grid-item__info">
+                                <div class="product-grid-item__title">
+                                    <h3 class="product-grid-item__name">
+                                        <a
+                                            data-product-handle="son-this-is-the-universe"
+                                            data-product-quantity="48"
+                                            >{{ data.name }}</a
+                                        >
+                                    </h3>
+                                    <span class="product-grid-item__price"
+                                        >from ${{ data.L_price }}</span
+                                    >
+                                </div>
+                                <span class="product-grid-item__qty"
+                                    ><span class="prints-times text-success"
+                                        >{{ data.palette_copies }} / </span
+                                    ><span
+                                        >{{ data.avalible_copies
+                                        }}&nbsp;{{ $t("message.left") }}</span
+                                    ></span
+                                >
+>>>>>>> 3a8e700d9655bb6a5c1c6d734a9f512777e3b572
                             </div>
                         </div>
                     </div>
@@ -61,17 +85,13 @@
             }
         },
     created() {
-
-
-      axios.get('/api/palettes')
-      .then(response =>{
-          this.artists = response.data.artists
-          this.sliderPalettes = response.data.palettesSlider;
-
-
-      })
-      .catch(error => console.log(error.response.data))
-
+        axios
+            .get("/api/palettes")
+            .then(response => {
+                this.artists = response.data.artists;
+                this.sliderPalettes = response.data.palettesSlider;
+            })
+            .catch(error => console.log(error.response.data));
     },
         mounted(){
             var swiper = new Swiper('.swiper-container', {
@@ -83,7 +103,8 @@
                     clickable: true,
                 },
                 observer:true,
-                observerParents:true
+                observerParents:true,
+
             });
             swiper.update();
         },
@@ -116,7 +137,15 @@
     }
 </script>
 
-<style  scoped>
+<style scoped>
+.swiper-pagination{
+    position: relative;
+    top: 2px;
+}
+@media(max-width: 767px){
+    .product-grid-item__title{
+        font-size: 20px;
+    }
+}
 
 </style>
-

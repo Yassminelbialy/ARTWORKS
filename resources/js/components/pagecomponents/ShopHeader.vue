@@ -12,11 +12,9 @@
                 <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
 
-                        <div class="wrapper    ">
-                              <div class=" row  d-flex justify-content-center ">
-
-
-                            <div  class="details myhome col-md-2 col-sm-6 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
+                    <div class="wrapper    ">
+                        <div class=" row  d-flex justify-content-center ">
+                            <div  class="details myhome col-sm-3 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
                                <div :class="{ 'active': index == 0 }" class=" details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
                                     <div class="content" >
@@ -32,9 +30,6 @@
                         </div>
 
                     </div>
-
-
-
                     <a class="carousel-control-next" href="#carouselExampleCaptions" @click="getdata(artist.id+1)" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
@@ -503,7 +498,7 @@ export default {
     watch:{
     $route (to, from){
 
-            // this.addActive(this.$route.query.mydata)
+            this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
 
@@ -529,6 +524,7 @@ export default {
         width: 100%;
         height: 640px;
     }
+<<<<<<< HEAD
     @media(max-width:959px){
         .wrapper{
 
@@ -546,6 +542,8 @@ export default {
 
 
 
+=======
+>>>>>>> 3a8e700d9655bb6a5c1c6d734a9f512777e3b572
     .header_sm{
         background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');
         -webkit-background-size: cover;
@@ -584,8 +582,23 @@ export default {
         /* box-shadow: 5px 5px 5px black; */
         border-top: 2px solid #111;
         border-bottom: 2px solid #111;
-        height: 200px;
     }
+
+    @media(max-width: 575px){
+        .wrapper{
+            display: none;
+        }
+        .carousel-control-next{
+            display: none;
+        }
+        .carousel-control-prev{
+            display: none;
+        }
+        .carousel-item .header{
+            height: 300px;
+        }
+    }
+
     .wrapper .details .content{
         position: relative;
         font-size: 14px;
@@ -602,6 +615,11 @@ export default {
         z-index: 2;
         top: 10px;
     }
+        /* @media(max-width: 991px){
+        .wrapper .details .content{
+            width:33%;
+        }
+    } */
         .wrapper .details .content .triangle{
     position: relative;
     z-index: 1;
