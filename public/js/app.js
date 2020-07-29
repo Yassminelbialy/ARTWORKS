@@ -4097,6 +4097,21 @@ __webpack_require__.r(__webpack_exports__);
         el: '.swiper-pagination',
         clickable: true
       },
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 20
+        },
+        640: {
+          slidesPerView: 1
+        },
+        // when window width is >= 640px
+        991: {
+          slidesPerView: 2,
+          spaceBetween: 30
+        }
+      },
       observer: true,
       observerParents: true
     });
@@ -8697,7 +8712,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.carousel-item .header[data-v-266b1872]{\n        width: 100%;\n        height: 640px;\n}\n<<<<<<< HEAD\n    @media(max-width:\\959px)[data-v-266b1872]{\n.wrapper{\n}\n.carousel-item .header{\n\n            height: 1281px;\n}\n.carousel-item {\n            height: 1281px;\n}\n}\n=======\n>>>>>>> 3a8e700d9655bb6a5c1c6d734a9f512777e3b572\n    .header_sm[data-v-266b1872]{\n        background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');\n        background-size: cover;\n        height: 300px;\n        background-position: center;\n        position: relative;\n        display: none;\n}\n@media(max-width:991px){\n.header_sm[data-v-266b1872]{\n            display: none;\n}\n}\n.wrapper[data-v-266b1872]{\n   position: absolute;\n    top: 15%;\n    transform: translate(-50%, 0);\n    left: 50%;\n    width: 100%\n}\n.details[data-v-266b1872]{\n    color: #fff;\n    cursor: pointer;\n    transition: all 1s;\n}\n.details img[data-v-266b1872]{\n        width: 100%;\n        transition: all 1s;\n        height: 250px;\n        /* box-shadow: 5px 5px 5px black; */\n        border-top: 2px solid #111;\n        border-bottom: 2px solid #111;\n}\n@media(max-width: 575px){\n.wrapper[data-v-266b1872]{\n            display: none;\n}\n.carousel-control-next[data-v-266b1872]{\n            display: none;\n}\n.carousel-control-prev[data-v-266b1872]{\n            display: none;\n}\n.carousel-item .header[data-v-266b1872]{\n            height: 300px;\n}\n}\n.wrapper .details .content[data-v-266b1872]{\n        position: relative;\n        font-size: 14px;\n        width: 100%;\n        margin: 16px auto 0;\n        padding: 6px 5px;\n        transition: all .5s;\n        color:#00a4ee;\n        border-radius: 10px;\n          background: rgba(0,0,0,0.9);\n        background-repeat: no-repeat;\n        background-position: 50%;\n        background-size: 100%;\n        z-index: 2;\n        top: 10px;\n}\n        /* @media(max-width: 991px){\n        .wrapper .details .content{\n            width:33%;\n        }\n    } */\n.wrapper .details .content .triangle[data-v-266b1872]{\n    position: relative;\n    z-index: 1;\n    padding: 10px;\n    display: inline-block;\n    top: -12px;\n    left: 50%;\n    transform: rotate(45deg) translate(-50%, 19%);\n    border-top: 1px solid #00a4ee;\n    border-left: 1px solid #00a4ee ;\n     background: rgba(0,0,0,0.9);\n}\n    /* .wrapper .details .content:hover{\n        border: 2px solid #00a4ee;\n    } */\n.details-content[data-v-266b1872]{\n        margin:20px;\n}\n.details[data-v-266b1872]:hover {\n        transform: scale(1.1);\n}\n.add-cart div span[data-v-266b1872]{\n        font-size: 15px;\n        font-weight: 400;\n        line-height: 22px;\n        display: inline-block;\n        margin-right: 5px;\n        padding: 0 10px;\n        text-transform: lowercase;\n        color: #fff;\n        border-radius: 999px;\n        background-color: #000;\n}\n.add-cart p[data-v-266b1872]{\n        font-size: 20px;\n}\n.add-cart .add-button[data-v-266b1872]{\n        font-size: 20px;\n        font-weight: 700;\n        line-height: 70px;\n        display: block;\n        width: 100%;\n        margin-bottom: 10px;\n        cursor: pointer;\n        text-align: center;\n        text-decoration: none;\n        color: #fff;\n        border: none;\n        background-color: #000;\n}\n.add-cart .more[data-v-266b1872]{\n        outline: none;\n}\n.list-group .list-group-item[data-v-266b1872]{\n        cursor: pointer;\n        border-left: none;\n        border-right: none;\n        padding-left: 10px;\n        padding-right: 10px;\n}\n/*\n    .carousel-control-prev{\n        left: -50%;\n    } */\n.carousel-indicators li[data-v-266b1872] {\n    box-sizing: content-box;\n    flex: 0 1 auto;\n    width: 67px;\n    height: 29px;\n    margin-right: 14px;\n    margin-left: 0;\n    text-indent: 0;\n    cursor: pointer;\n    color: black;\n    background: none;\n}\n.carousel-indicators[data-v-266b1872]{\n    bottom: -9%;\n    width: 100%;\n    background-color: #f5f0ed;\n    margin-left: 0;\n    margin-right: 0;\n}\n@media(max-width: 991px){\n.carousel-indicators[data-v-266b1872]{\n        bottom: -8%\n}\n}\n.carousel-indicators .active[data-v-266b1872]{\n    border-bottom: 3px solid #25d1e2;\n}\n.small[data-v-266b1872], .medium[data-v-266b1872], .larg[data-v-266b1872]{\n    padding: 30px !important;\n    margin-right: 20px !important;\n    font-size: 20px ;\n}\n.active .content[data-v-266b1872] {\n    border: 2px solid #00a4ee;\n}\n.active_btn[data-v-266b1872]{\n    border: 2px solid #00a4ee;\n}\n.rotate[data-v-266b1872]{\n width: 100%;\n    position: relative;\n    height: 82px;\n    transform: rotate(49deg);\n    background: black;\n}\n", ""]);
+exports.push([module.i, "\n.carousel-item .header[data-v-266b1872]{\n        width: 100%;\n        height: 640px;\n}\n.header_sm[data-v-266b1872]{\n        background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');\n        background-size: cover;\n        height: 300px;\n        background-position: center;\n        position: relative;\n        display: none;\n}\n@media(max-width:991px){\n.header_sm[data-v-266b1872]{\n            display: none;\n}\n}\n.wrapper[data-v-266b1872]{\n   position: absolute;\n    top: 15%;\n    transform: translate(-50%, 0);\n    left: 50%;\n    width: 100%\n}\n.details[data-v-266b1872]{\n    color: #fff;\n    cursor: pointer;\n    transition: all 1s;\n}\n.details img[data-v-266b1872]{\n        width: 70%;\n        transition: all 1s;\n        height: 300px;\n        /* box-shadow: 5px 5px 5px black; */\n        border-top: 2px solid #111;\n        border-bottom: 2px solid #111;\n}\n@media(max-width: 560px){\n.details[data-v-266b1872]{\n            width: 40%;\n            font-size: 14px;\n}\n.details img[data-v-266b1872]{\n            width: 100%;\n            height: 200px;\n}\n.wrapper .details .content[data-v-266b1872]{\n            width: 100%;\n            margin: 16px auto 0;\n}\n.carousel-item .header[data-v-266b1872]{\n            height: 860px;\n}\n        /* .wrapper{\n            display: none;\n        }\n\n        .carousel-control-prev{\n            display: none;\n        }\n        .carousel-item .header{\n            height: 300px;\n        } */\n}\n@media(min-width: 561px) and (max-width:767px){\n.details[data-v-266b1872]{\n            width: 40% ;\n            font-size: 14px;\n}\n.carousel-item .header[data-v-266b1872]{\n            height: 855px;\n}\n.details img[data-v-266b1872]{\n            width: 80%;\n            height: 200px;\n}\n.wrapper .details .content[data-v-266b1872]{\n            width: 80%;\n            margin-left: 10px;\n            /* margin: 16px auto 0; */\n}\n}\n@media(min-width: 768px) and (max-width:991px){\n.details[data-v-266b1872]{\n            width: 33% ;\n            font-size: 14px;\n}\n        /* .carousel-item .header{\n            height: 900px;\n        } */\n.details img[data-v-266b1872]{\n            width: 80%;\n            height: 250px;\n}\n.wrapper .details .content[data-v-266b1872]{\n            width: 80%;\n            margin-left: 10px;\n            /* margin: 16px auto 0; */\n}\n.wrapper[data-v-266b1872]{\n            top: 12%;\n            width: 90%;\n            left: 52%;\n}\n}\n.wrapper .details .content[data-v-266b1872]{\n        position: relative;\n        font-size: 14px;\n        width: 70%;\n        margin-top: 10px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:#00a4ee;\n        border-radius: 10px;\n          background: rgba(0,0,0,0.9);\n        background-repeat: no-repeat;\n        background-position: 50%;\n        background-size: 100%;\n        z-index: 2;\n        top: 10px;\n}\n        /* @media(max-width: 991px){\n        .wrapper .details .content{\n            width:33%;\n        }\n    } */\n.wrapper .details .content .triangle[data-v-266b1872]{\n    position: relative;\n    z-index: 1;\n    padding: 10px;\n    display: inline-block;\n    top: -12px;\n    left: 50%;\n    transform: rotate(45deg) translate(-50%, 19%);\n    border-top: 1px solid #00a4ee;\n    border-left: 1px solid #00a4ee ;\n     background: rgba(0,0,0,0.9);\n}\n    /* .wrapper .details .content:hover{\n        border: 2px solid #00a4ee;\n    } */\n.details-content[data-v-266b1872]{\n        margin:20px;\n}\n.details[data-v-266b1872]:hover {\n        transform: scale(1.1);\n}\n.add-cart div span[data-v-266b1872]{\n        font-size: 15px;\n        font-weight: 400;\n        line-height: 22px;\n        display: inline-block;\n        margin-right: 5px;\n        padding: 0 10px;\n        text-transform: lowercase;\n        color: #fff;\n        border-radius: 999px;\n        background-color: #000;\n}\n.add-cart p[data-v-266b1872]{\n        font-size: 20px;\n}\n.add-cart .add-button[data-v-266b1872]{\n        font-size: 20px;\n        font-weight: 700;\n        line-height: 70px;\n        display: block;\n        width: 100%;\n        margin-bottom: 10px;\n        cursor: pointer;\n        text-align: center;\n        text-decoration: none;\n        color: #fff;\n        border: none;\n        background-color: #000;\n}\n.add-cart .more[data-v-266b1872]{\n        outline: none;\n}\n.list-group .list-group-item[data-v-266b1872]{\n        cursor: pointer;\n        border-left: none;\n        border-right: none;\n        padding-left: 10px;\n        padding-right: 10px;\n}\n/*\n    .carousel-control-prev{\n        left: -50%;\n    } */\n.carousel-indicators li[data-v-266b1872] {\n    box-sizing: content-box;\n    flex: 0 1 auto;\n    width: 67px;\n    height: 29px;\n    margin-right: 14px;\n    margin-left: 0;\n    text-indent: 0;\n    cursor: pointer;\n    color: black;\n    background: none;\n}\n.carousel-indicators[data-v-266b1872]{\n    bottom: -9%;\n    width: 100%;\n    background-color: #f5f0ed;\n    margin-left: 0;\n    margin-right: 0;\n}\n@media(max-width: 991px){\n.carousel-indicators[data-v-266b1872]{\n        bottom: -8%\n}\n}\n.carousel-indicators .active[data-v-266b1872]{\n    border-bottom: 3px solid #25d1e2;\n}\n.small[data-v-266b1872], .medium[data-v-266b1872], .larg[data-v-266b1872]{\n    padding: 30px !important;\n    margin-right: 20px !important;\n    font-size: 20px ;\n}\n.active .content[data-v-266b1872] {\n    border: 2px solid #00a4ee;\n}\n.active_btn[data-v-266b1872]{\n    border: 2px solid #00a4ee;\n}\n.rotate[data-v-266b1872]{\n width: 100%;\n    position: relative;\n    height: 82px;\n    transform: rotate(49deg);\n    background: black;\n}\n", ""]);
 
 // exports
 
@@ -8735,7 +8750,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.swiper-pagination[data-v-40f21cb0]{\n    position: relative;\n    top: 2px;\n}\n@media(max-width: 767px){\n.product-grid-item__title[data-v-40f21cb0]{\n        font-size: 20px;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.swiper-pagination[data-v-40f21cb0]{\n    position: relative;\n    top: 2px;\n}\n@media(max-width: 767px){\n.product-grid-item__title[data-v-40f21cb0]{\n        font-size: 16px;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -46330,10 +46345,10 @@ var render = function() {
                     attrs: { src: artist.cover_img, alt: "..." }
                   }),
                   _vm._v(" "),
-                  _c("div", { staticClass: "wrapper    " }, [
+                  _c("div", { staticClass: "wrapper" }, [
                     _c(
                       "div",
-                      { staticClass: " row  d-flex justify-content-center " },
+                      { staticClass: " row  d-flex justify-content-center" },
                       _vm._l(_vm.palettesArtists, function(
                         palettesArtist,
                         index
@@ -46342,7 +46357,7 @@ var render = function() {
                           "div",
                           {
                             key: palettesArtist.id,
-                            staticClass: "details myhome col-sm-3 ",
+                            staticClass: "details myhome col-lg-3 ",
                             on: {
                               click: function($event) {
                                 return _vm.addActive(palettesArtist.id)
@@ -47185,6 +47200,7 @@ var render = function() {
                       _c("span", [
                         _vm._v(
                           _vm._s(data.avalible_copies) +
+                            " " +
                             _vm._s(_vm.$t("message.left"))
                         )
                       ])

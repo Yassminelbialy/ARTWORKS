@@ -40,7 +40,7 @@
                             <h3 class="product-grid-item__name"><a  data-product-handle="son-this-is-the-universe" data-product-quantity="48">{{data.name}}</a></h3>
                             <span class="product-grid-item__price">from ${{data.L_price}}</span>
                         </div>
-                        <span class="product-grid-item__qty"><span class="prints-times text-success">{{data.palette_copies}} / </span><span>{{data.avalible_copies}}{{$t("message.left") }}</span></span>
+                        <span class="product-grid-item__qty"><span class="prints-times text-success">{{data.palette_copies}} / </span><span>{{data.avalible_copies}}&nbsp;{{$t("message.left") }}</span></span>
                     </div>
                 </div>
               </div>
@@ -77,6 +77,21 @@
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
+                },
+                breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                    },
+                    640:{
+                        slidesPerView:1
+                    },
+                    // when window width is >= 640px
+                991: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                    }
                 },
                 observer:true,
                 observerParents:true,
@@ -120,7 +135,7 @@
 }
 @media(max-width: 767px){
     .product-grid-item__title{
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
