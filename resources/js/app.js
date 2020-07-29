@@ -105,6 +105,7 @@ const messages = {
             toshipping:"Continue to Shipping",
             select_size:'Please Select Size',
             empty:'      ',
+            socialLink:'SocialLink'
 
 
 
@@ -185,6 +186,7 @@ const messages = {
              toshipping:"متابعة الشراء",
              select_size:'من فضلك اختر الحجم',
              empty:'      ',
+             socialLink:'رابط التواصل اﻷجتماعي'
 
 
 

@@ -22,24 +22,6 @@
 
             </div>
         </div>
-
-        <!-- <div class="col-md-12" >
-            <img v-if="selectedImage" class="hero-image-pc" :src="selectedImage" alt="Fine art">
-            <div class="hero-content">
-                <p class="hero-subtitle">{{ $t("message.introducing") }}</p>
-                <h3 class="hero-title">{{ $t("message.fineart") }}</h3>
-                <div class="hero-counter">
-                    <span class="hero-counter__live">{{ $t("message.live") }}</span>
-                    <img class="hero-counter__eye ml-2 mr-1" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/eye.png?v=10839783198912625093">
-                    <span id="hero-counter">{{numbers}}</span>
-                    {{ $t("message.shoppers") }}
-                </div>
-                <router-link to="/shop">
-                    <a class="hero-btn btn">{{ $t("message.shopnow") }}</a>
-                </router-link>
-
-            </div>
-        </div> -->
     </div>
  </div>
 </template>

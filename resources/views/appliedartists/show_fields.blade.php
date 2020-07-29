@@ -16,6 +16,12 @@
     <p>{{ $appliedartist->phone }}</p>
 </div>
 
+<!-- Social Field -->
+<div class="form-group">
+    {!! Form::label('socialLink', 'socialLink:') !!}
+    <p>{{ $appliedartist->socialLink }}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

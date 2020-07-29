@@ -5,6 +5,7 @@
                 <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
+        <th>Social Link</th>
                 <th colspan="3" style=" padding-left: 2%;">Action</th>
             </tr>
         </thead>
@@ -14,6 +15,7 @@
                 <td>{{ $appliedartist->name }}</td>
             <td>{{ $appliedartist->email }}</td>
             <td>{{ $appliedartist->phone }}</td>
+            <td>{{$appliedartist->socialLink}}</td>
                 <td>
                     {!! Form::open(['route' => ['appliedartists.destroy', $appliedartist->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

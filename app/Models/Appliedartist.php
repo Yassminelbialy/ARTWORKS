@@ -28,7 +28,8 @@ class Appliedartist extends Model
     public $fillable = [
         'name',
         'email',
-        'phone'
+        'phone',
+        'socialLink',
     ];
 
     /**
@@ -40,7 +41,8 @@ class Appliedartist extends Model
         'id' => 'integer',
         'name' => 'string',
         'email' => 'string',
-        'phone' => 'string'
+        'phone' => 'string',
+        'socialLink' =>'string'
     ];
 
     /**
@@ -49,7 +51,7 @@ class Appliedartist extends Model
      * @var array
      */
     public static $rules = [
-        
+        'socialLink' => 'required'
     ];
 
     

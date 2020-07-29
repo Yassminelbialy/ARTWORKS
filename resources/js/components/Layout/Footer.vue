@@ -63,88 +63,9 @@
                     <div class="footer-col footer-col-2">
                         <h3 class="footer-title">{{ $t("message.Newsletter") }}</h3>
                         <p >{{ $t("message.signup") }}</p>
-                        <a class="btn signUp btn-primary" data-toggle="modal" data-target="#modalLoginForms">{{ $t("message.SUBSCRIBE") }}</a>
-                        <div class="modal fade" id="modalLoginForms" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header text-center">
-                                        <h4 class="modal-title-sign w-100 font-weight-bold"> <span>Sign</span> Up</h4>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-
-
-
-                            <div   v-if="errors.length > 0 && !message" class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>Sorry!</strong> You should check in on some of those fields below.
-                                    <br>
-                                    <ul >
-                                        <li v-for="item in errors">
-                                            {{ item }}
-                                        </li>
-                                    </ul>
-
-
-
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-                            <div   v-if=" message.length >0 " class="alert alert-warning alert-dismissible fade show" role="alert">
-                                  <h1> {{message}}</h1>
-
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-
-                                    <form @submit.prevent="send">
-                                        <!-- @csrf -->
-
-                                        <div id='consmodal' class="modal-body mx-3 text-dark">
-                                            <div class="md-form mb-2">
-                                                <i class="fa mx-2 fa-user" v-if="$i18n.locale == 'en'"></i>
-                                                <i class="fa mx-2 fa-user mb-1" v-else style="float:right"></i>
-
-                                                  <label data-error="wrong" v-if="$i18n.locale == 'en'" data-success="right" for="defaultForm-email">{{ $t("message.name") }}</label>
-                                                <label data-error="wrong" v-else style="float:right" data-success="right" for="defaultForm-email">{{ $t("message.name") }}</label>
-                                                <input   v-model="form.name" type="text" class="form-control validate" v-if="$i18n.locale == 'en'" >
-                                                <input  v-model="form.name" type="text" class="form-control validate" v-else dir="rtl" >
-
-
-                                            </div>
-                                            <div class="md-form mb-2">
-                                                <i class="fa mx-2 fa-envelope" v-if="$i18n.locale == 'en'"></i>
-                                                <i class="fa mx-2 fa-envelope mb-1" v-else style="float:right"></i>
-
-                                                 <label data-error="wrong" data-success="right" v-if="$i18n.locale == 'en'" for="defaultForm-email">{{ $t("message.email") }}</label>
-                                                <label data-error="wrong" data-success="right" v-else style="float:right" for="defaultForm-email">{{ $t("message.email") }}</label>
-                                                <input  type="email" class="form-control validate" v-if="$i18n.locale == 'en'"  v-model="form.email">
-                                                <input  type="email" class="form-control validate" v-else dir="rtl"  v-model="form.email" >
-
-
-                                            </div>
-                                            <div class="md-form mb-2">
-                                                <i class="fa mx-2 fa-phone" v-if="$i18n.locale == 'en'"></i>
-                                                <i class="fa mx-2 fa-phone mb-1" v-else style="float:right"></i>
-
-                                                   <label data-error="wrong" data-success="right" v-if="$i18n.locale == 'en'" for="defaultForm-pass">{{ $t("message.phone") }}</label>
-                                                <label data-error="wrong" data-success="right" v-else style="float:right" for="defaultForm-pass">{{ $t("message.phone") }}</label>
-                                                <input  type="text"  v-model="form.phone" v-if="$i18n.locale == 'en'" class="form-control validate">
-                                                <input  type="text"  v-model="form.phone" v-else dir="rtl" class="form-control validate">
-
-
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer d-flex justify-content-center">
-                                            <button type="submit" class="btn btn-info " >{{ $t("message.submit") }}</button>
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
+                        <router-link to="/joinus">
+                            <a class="btn signUp btn-primary">{{ $t("message.SUBSCRIBE") }}</a>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -171,35 +92,7 @@
 
 export default {
 
-            data:()=>({
-                form:{phone:'',name:'',email:''},
-                errors:[],
-                message:''
-            }),
-            methods:{
-                send(){
-            axios.post('/api/artist-request',this.form)
-            .then(res =>{
-
-                if (!res.data.status)
-                {
-                    console.log(res.data);
-                    this.errors = res.data.errors;
-
-
-                }else{
-                    console.log(res.data);
-                    this.message = 'Successful';
-                    this.form.phone="";
-                    this.form.name="";
-                    this.form.email="";
-
-
-                }
-            })
-            .catch(error => this.errors = error.response.data.errors)
-                }
-            }
+            
 }
 
 
@@ -207,66 +100,6 @@ export default {
 
 <style scoped>
 
-#modalLoginForms .modal-content{
-    /* background: linear-gradient(-45deg , white 50% , #0c6bd1 50%); */
-    font-weight: bold;
-    color: gray;
-    border:1px solid white;
-   /* border-radius: 40px; */
-    overflow: hidden;
-
-}
-
-.modal-header{
-      background:#0c6bd1
-}
-
-#modalLoginForms .modal-content .fa{
- color: #0c6bd1;
-}
-#modalLoginForms .modal-footer{
-    padding: 0;
-}
-#modalLoginForms .md-form{
-    padding: 13px;
-}
-
-#modalLoginForms .modal-content .btn-info{
-    margin: 0;
-    border-radius: 0;
-    background: #0c6bd1;
-    padding: 10px;
-}
-
-#modalLoginForms .modal-content .btn-info[data-v-78547fe5] {
-    color:white;
-    border-radius: 20px;
-    padding:6px  30px;
-    margin-top: 2px ;
-}
-.form-control{
-    border: 1px solid #0c6bd1;
-
-}
-.alert {
-        text-align: center;
-}
-
-
-.modal-title-sign{
-     color:white;
-    font-size: 30px;
-}
-.modal-title-sign span{
-
-        color:white;
-
-
-}
-
-.modal-header .close{
-    color: white;
-}
 .row{
     margin-left: 0;
     margin-right: 0;
