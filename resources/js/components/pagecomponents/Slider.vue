@@ -111,7 +111,7 @@
                                         >{{ data.palette_copies }} / </span
                                     ><span
                                         >{{ data.avalible_copies
-                                        }}{{ $t("message.left") }}</span
+                                        }}&nbsp;{{ $t("message.left") }}</span
                                     ></span
                                 >
                             </div>
@@ -185,6 +185,11 @@ export default {
 .swiper-pagination{
     position: relative;
     top: 2px;
+}
+@media(max-width: 767px){
+    .product-grid-item__title{
+        font-size: 20px;
+    }
 }
 
 </style>
