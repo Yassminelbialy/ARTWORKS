@@ -127,16 +127,16 @@
           <div class="discount">
             <v-form class="form_discount">
               <v-text-field v-model="discount" label="Discount"></v-text-field>
-              <v-btn class="mr-4">Apply</v-btn>
+              <v-btn @click="apply_discount()" class="mr-4">Apply</v-btn>
             </v-form>
           </div>
           <hr />
           <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
-            <!-- <div>
-              <span>Sub Total</span>
-              <span style="float:right">$70.00</span>
+            <div>
+              <span>Sub Value</span>
+              <span style="float:right">${{discount_value}}</span>
               <div style="clear:both"></div>
-            </div> -->
+            </div>
             <!-- <div class="mt-3">
               <span>Shipping</span>
               <span style="float:right">calculated at next</span>
@@ -147,7 +147,7 @@
           <div style="font-size:20px;padding:10px">
             <span> Total Price : </span>
             <span style="float:right;">
-              <span style="color:#737171;"></span> $ {{cartTotalPrice}}
+              <span style="color:#737171;"></span> $ {{totalprice_2}}
             </span>
             <div style="clear:both"></div>
           </div>
@@ -184,7 +184,7 @@
                                     <strong>Sorry!</strong> You should check in on some of those fields below.
                                     <br>
                                     <ul >
-                                        <li v-for="item in errors">
+                                        <li v-for="item in errors" :key="item">
                                             {{ item }}
                                         </li>
                                     </ul>
@@ -232,10 +232,10 @@
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.city" label="المدينة" required></v-text-field>
               </v-col>
-              <v-col class="d-flex" cols="12" sm="4">
-                <v-select v-model="form.country" :items="item" label="الدولة" outlined></v-select>
+              <v-col class="d-flex" cols="12" sm="8">
+                <v-select v-model="form.country" :items="item_ar" value='اليمن' label="الدولة" outlined></v-select>
               </v-col>
-              <v-col class="d-flex" cols="12" sm="4">
+              <!-- <v-col class="d-flex" cols="12" sm="4">
                 <v-select
                   v-model="form.goverment"
                   item-text="name"
@@ -244,7 +244,7 @@
                   label="المحافظة"
                   outlined
                 ></v-select>
-              </v-col>
+              </v-col> -->
               <v-col cols="12" sm="4">
                 <v-text-field v-model="form.postcode" label="رمز البريد" required></v-text-field>
               </v-col>
@@ -280,27 +280,23 @@
           <div class="discount">
             <v-form class="form_discount">
               <v-text-field v-model="discount" label="الكوبون"></v-text-field>
-              <v-btn class="mr-4">خصم الأن</v-btn>
+              <v-btn @click="apply_discount()" class="mr-4">خصم الأن</v-btn>
             </v-form>
           </div>
           <hr />
           <div class="discount_text" style="color:#737171;padding:10px">
             <div>
               <span style="float:right">الخصم</span>
-              <span >$70.00</span>
+              <span >${{discount_value}}</span>
               <div style="clear:both"></div>
             </div>
-            <div class="mt-3">
-              <span  style="float:right">الشحن</span>
-              <span>سيتم المحاسبة فى المرة القادمة</span>
-              <div style="clear:both"></div>
-            </div>
+
           </div>
 
           <div style="font-size:20px;padding:10px">
             <span style="float:right;">الحساب الإجمالى</span>
             <span >
-              <span style="color:#737171;"></span> $ {{cartTotalPrice}}
+              <span style="color:#737171;"></span> $ {{totalprice_2}}
             </span>
             <div style="clear:both"></div>
           </div>
@@ -325,6 +321,7 @@ export default {
             $(".active>.content").css({width:"100%"})
         },
     cartTotalPrice() {
+        this.totalprice_2= this.$store.getters.cartTotalPrice ;
       return this.$store.getters.cartTotalPrice;
     },
     cart() {
@@ -345,8 +342,12 @@ export default {
         goverment: 'Saudi Arabia',
         postcode: null,
         items: [],
+        promocode:"",
       },
       discount: "",
+      discount_value:0,
+      totalprice_2:0,
+
       item: [
                 "Afghanistan",
                 "Albania",
@@ -597,7 +598,258 @@ export default {
                 "Zambia",
                 "Zimbabwe",
                 "Åland Islands"
-        ],
+            ],
+    item_ar :
+        [       "أفغانستان" ,
+                "ألبانيا" ,
+                "الجزائر",
+                "ساموا الأمريكية",
+                "أندورا" ,
+                "أنغولا" ,
+                "أنغيلا" ,
+                "أنتاركتيكا" ,
+                "أنتيغوا وبربودا",
+                "الأرجنتين" ,
+                "أرمينيا" ,
+                "أروبا" ,
+                "أستراليا" ,
+                "النمسا" ,
+                "أذربيجان",
+                "جزر البهاما" ,
+                "البحرين",
+                "بنغلاديش" ,
+                "بربادوس" ,
+                "بيلاروس" ,
+                "بلجيكا" ,
+                "بليز" ,
+                "بنين" ,
+                "برمودا" ,
+                "بوتان" ,
+                "بوليفيا (دولة - المتعددة القوميات)" ,
+                "بونير وسينت أوستاتيوس وسابا" ,
+                "البوسنة والهرسك",
+                "بوتسوانا" ,
+                "جزيرة بوفيت" ,
+                "البرازيل",
+                "إقليم المحيط الهندي البريطاني (the)" ,
+                "بروناي دار السلام",
+                "بلغاريا" ,
+                "بوركينا فاسو",
+                "بوروندي" ,
+                "كابو فيردي" ,
+                "كمبوديا" ,
+                "الكاميرون" ,
+                "كندا",
+                "جزر كايمان (ال)" ,
+                "جمهورية أفريقيا الوسطى" ,
+                "تشاد" ,
+                "تشيلي" ,
+                "الصين",
+                "جزيرة الكريسماس" ,
+                "جزر كوكوس (كيلينغ)" ,
+                "كولومبيا" ,
+                "جزر القمر" ,
+                "جمهورية الكونغو الديمقراطية" ,
+                "الكونغو (ال)" ,
+                "جزر كوك" ,
+                "كوستا ريكا",
+                "كرواتيا" ,
+                "كوبا" ,
+                "كوراساو" ,
+                "قبرص" ,
+                "التشيك" ,
+                "كوت ديفوار" ,
+                "الدنمارك" ,
+                "جيبوتي" ,
+                "دومينيكا" ,
+                "جمهورية الدومينيكان" ,
+                "إكوادور" ,
+                "مصر" ,
+                "السلفادور",
+                "غينيا الإستوائية",
+                "إريتريا" ,
+                "إستونيا" ,
+                "Eswatini" ,
+                "أثيوبيا",
+                "جزر فوكلاند (مالفيناس)" ,
+                "جزر فارو" ,
+                "فيجي" ,
+                "فنلندا" ,
+                "فرنسا",
+                "غيانا الفرنسية",
+                "بولينيزيا الفرنسية",
+                "الأقاليم الجنوبية الفرنسية (ال)" ,
+                "الغابون" ,
+                "غامبيا" ,
+                "جورجيا" ,
+                "ألمانيا",
+                "غانا" ,
+                "جبل طارق" ,
+                "اليونان",
+                "الأرض الخضراء",
+                "غرينادا" ,
+                "جوادلوب" ,
+                "غوام" ,
+                "غواتيمالا" ,
+                "غيرنسي" ,
+                "غينيا" ,
+                "غينيا - بيساو" ,
+                "غيانا" ,
+                "هايتي" ,
+                "قلب الجزيرة وجزر ماكدونالز",
+                "الكرسي الرسولي" ,
+                "هندوراس" ,
+                "هونغ كونغ" ,
+                "هنغاريا",
+                "أيسلندا",
+                "الهند",
+                "إندونيسيا",
+                "جمهورية إيران الإسلامية" ,
+                "العراق",
+                "أيرلندا" ,
+                "جزيرة آيل أوف مان",
+                "إسرائيل",
+                "إيطاليا",
+                "جامايكا" ,
+                "اليابان",
+                "جيرسي" ,
+                "الأردن",
+                "كازاخستان" ,
+                "كينيا" ,
+                "كيريباتي" ,
+                "كوريا (جمهورية - الديمقراطية الشعبية)" ,
+                "جمهورية كوريا" ,
+                "الكويت",
+                "قيرغيزستان" ,
+                "جمهورية لاو الديمقراطية الشعبية (ذا)" ,
+                "لاتفيا" ,
+                "لبنان" ,
+                "ليسوتو" ,
+                "ليبيريا" ,
+                "ليبيا" ,
+                "ليختنشتاين" ,
+                "ليتوانيا" ,
+                "لوكسمبورغ" ,
+                "ماكاو" ,
+                'مدغشقر',
+                "ملاوي" ,
+                "ماليزيا" ,
+                "جزر المالديف" ,
+                "مالي" ,
+                "مالطا" ,
+                "جزر مارشال" ,
+                "مارتينيك" ,
+                "موريتانيا" ,
+                "موريشيوس" ,
+                "مايوت" ,
+                "المكسيك" ,
+                "ميكرونيزيا (ولايات - الموحدة)" ,
+                "مولدوفا (جمهورية)" ,
+                "موناكو" ,
+                "منغوليا" ,
+                "الجبل الأسود" ,
+                "مونتسيرات" ,
+                "المغرب",
+                "موزمبيق" ,
+                "ميانمار" ,
+                "ناميبيا" ,
+                "ناورو" ,
+                "نيبال" ,
+                "هولندا" ,
+                "كاليدونيا الجديدة",
+                "نيوزيلندا",
+                "نيكاراغوا" ,
+                "النيجر" ,
+                "نيجيريا" ,
+                "نيوي" ,
+                "جزيرة نورفولك" ,
+                "جزر ماريانا الشمالية" ,
+                "النرويج",
+                "سلطنة عمان",
+                "باكستان" ,
+                "بالاو" ,
+                "فلسطين , دولة" ,
+                "بنما" ,
+                "بابوا غينيا الجديدة" ,
+                "باراغواي" ,
+                "بيرو",
+                "الفلبين" ,
+                "بيتكيرن" ,
+                "بولندا",
+                "البرتغال",
+                "بورتوريكو" ,
+                "دولة قطر",
+                "جمهورية شمال مقدونيا" ,
+                "رومانيا",
+                "الاتحاد الروسي" ,
+                "رواندا" ,
+                "جمع شمل",
+                "سانت بارتيليمي",
+                "سانت هيلانة وأسنسيون وتريستان دا كونها" ,
+                "سانت كيتس ونيفيس",
+                "القديسة لوسيا",
+                "سانت مارتن (الجزء الفرنسي)" ,
+                "سانت بيير وميكلون",
+                "سانت فنسنت وجزر غرينادين",
+                "ساموا" ,
+                "سان مارينو",
+                "ساو تومي وبرينسيبي" ,
+                "المملكة العربية السعودية",
+                "السنغال",
+                "صربيا" ,
+                "سيشيل" ,
+                "سيرا ليون",
+                "سنغافورة" ,
+                "سانت مارتن (الجزء الهولندي)" ,
+                "سلوفاكيا" ,
+                "سلوفينيا" ,
+                "جزر سليمان",
+                "الصومال",
+                "جنوب أفريقيا",
+                "جورجيا الجنوبية وجزر ساندويتش الجنوبية",
+                "جنوب السودان",
+                "إسبانيا",
+                "سيريلانكا",
+                "السودان" ,
+                "سورينام" ,
+                "سفالبارد وجان ماين" ,
+                "السويد",
+                "سويسرا" ,
+                "الجمهورية العربية السورية",
+                "تايوان" ,
+                "طاجيكستان" ,
+                "جمهورية تنزانيا المتحدة" ,
+                "تايلاند" ,
+                "تيمور الشرقية" ,
+                "توجو",
+                "توكيلاو" ,
+                "تونغا" ,
+                "ترينداد وتوباغو",
+                "تونس" ,
+                "ديك رومي",
+                "تركمانستان" ,
+                "جزر تركس وكايكوس" ,
+                "توفالو" ,
+                "أوغندا" ,
+                "أوكرانيا" ,
+                "الإمارات العربية المتحدة" ,
+                "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية (ال)" ,
+                "جزر الولايات المتحدة الصغيرة النائية (ال)" ,
+                "الولايات المتحدة الأمريكية" ,
+                "أوروغواي" ,
+                "أوزبكستان" ,
+                "فانواتو" ,
+                "فنزويلا (جمهورية - البوليفارية)" ,
+                "فيتنام" ,
+                "جزر العذراء البريطانية)",
+                "جزر فيرجن (الولايات المتحدة)" ,
+                "واليس وفوتونا",
+                "الصحراء الغربية",
+                "اليمن",
+                "زامبيا" ,
+                "زيمبابوي" ,
+                "جزر آلاند"
+            ],
       errors: [],
       nameRules: [v => !!v || "Name is required"],
       checkbox: false,
@@ -606,7 +858,7 @@ export default {
     };
   },
   created(){
-
+this.cartTotalPrice;
 //  {"paletteid":"3","palettesize":"medium","quantity":5}
 this.cart.forEach(element => {
 
@@ -620,6 +872,23 @@ this.cart.forEach(element => {
 
   },
   methods: {
+      apply_discount(){
+            console.log(this.discount);
+            axios.post('/api/check-promo',{code:this.discount}).then((data)=>{
+                console.log(data.data);
+                if(data.data.status)
+                {
+                    var price=parseInt(data.data.percentage);
+                    this.discount_value=this.cartTotalPrice * price/100;
+                    this.cartTotalPrice = this.cartTotalPrice - this.discount_value;
+                    this.form.promocode=this.discount
+                }
+
+            }).catch(e=>{console.log(e);
+            })
+
+
+      },
        clearProductFromCart(product){
       this.$store.dispatch("deleteCartItem",product)
     },

@@ -14,9 +14,30 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        // dd('ssss');
+        $appliedartists = Order::paginate(4);
+
+        return view('orders.index')
+            ->with('appliedartists', $appliedartists);
     }
 
+    public function orderindex($id=null)
+    {
+        // dd('ssss');
+        $order = Order::find($id);
+        if($order)
+        {
+// dd($order->items);
+        return view('orders.orderindex')
+        ->with('appliedartists', $order->items);
+
+
+        }
+
+
+        return view('orders.index')
+            ->with('appliedartists', $appliedartists);
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -2955,10 +2955,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     larg: function larg(el, price, avilable) {
@@ -2975,6 +2971,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     cartTotalPrice: function cartTotalPrice() {
+      this.totalprice_2 = this.$store.getters.cartTotalPrice;
       return this.$store.getters.cartTotalPrice;
     },
     cart: function cart() {
@@ -2994,10 +2991,14 @@ __webpack_require__.r(__webpack_exports__);
         country: 'Saudi Arabia',
         goverment: 'Saudi Arabia',
         postcode: null,
-        items: []
+        items: [],
+        promocode: ""
       },
       discount: "",
+      discount_value: 0,
+      totalprice_2: 0,
       item: ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas (the)", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory (the)", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Cayman Islands (the)", "Central African Republic (the)", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands (the)", "Colombia", "Comoros (the)", "Congo (the Democratic Republic of the)", "Congo (the)", "Cook Islands (the)", "Costa Rica", "Croatia", "Cuba", "Curaçao", "Cyprus", "Czechia", "Côte d'Ivoire", "Denmark", "Djibouti", "Dominica", "Dominican Republic (the)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Falkland Islands (the) [Malvinas]", "Faroe Islands (the)", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories (the)", "Gabon", "Gambia (the)", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (the)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (the Democratic People's Republic of)", "Korea (the Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic (the)", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands (the)", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia (Federated States of)", "Moldova (the Republic of)", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands (the)", "New Caledonia", "New Zealand", "Nicaragua", "Niger (the)", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands (the)", "Norway", "Oman", "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines (the)", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of North Macedonia", "Romania", "Russian Federation (the)", "Rwanda", "Réunion", "Saint Barthélemy", "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "Sudan (the)", "Suriname", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands (the)", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates (the)", "United Kingdom of Great Britain and Northern Ireland (the)", "United States Minor Outlying Islands (the)", "United States of America (the)", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "Åland Islands"],
+      item_ar: ["أفغانستان", "ألبانيا", "الجزائر", "ساموا الأمريكية", "أندورا", "أنغولا", "أنغيلا", "أنتاركتيكا", "أنتيغوا وبربودا", "الأرجنتين", "أرمينيا", "أروبا", "أستراليا", "النمسا", "أذربيجان", "جزر البهاما", "البحرين", "بنغلاديش", "بربادوس", "بيلاروس", "بلجيكا", "بليز", "بنين", "برمودا", "بوتان", "بوليفيا (دولة - المتعددة القوميات)", "بونير وسينت أوستاتيوس وسابا", "البوسنة والهرسك", "بوتسوانا", "جزيرة بوفيت", "البرازيل", "إقليم المحيط الهندي البريطاني (the)", "بروناي دار السلام", "بلغاريا", "بوركينا فاسو", "بوروندي", "كابو فيردي", "كمبوديا", "الكاميرون", "كندا", "جزر كايمان (ال)", "جمهورية أفريقيا الوسطى", "تشاد", "تشيلي", "الصين", "جزيرة الكريسماس", "جزر كوكوس (كيلينغ)", "كولومبيا", "جزر القمر", "جمهورية الكونغو الديمقراطية", "الكونغو (ال)", "جزر كوك", "كوستا ريكا", "كرواتيا", "كوبا", "كوراساو", "قبرص", "التشيك", "كوت ديفوار", "الدنمارك", "جيبوتي", "دومينيكا", "جمهورية الدومينيكان", "إكوادور", "مصر", "السلفادور", "غينيا الإستوائية", "إريتريا", "إستونيا", "Eswatini", "أثيوبيا", "جزر فوكلاند (مالفيناس)", "جزر فارو", "فيجي", "فنلندا", "فرنسا", "غيانا الفرنسية", "بولينيزيا الفرنسية", "الأقاليم الجنوبية الفرنسية (ال)", "الغابون", "غامبيا", "جورجيا", "ألمانيا", "غانا", "جبل طارق", "اليونان", "الأرض الخضراء", "غرينادا", "جوادلوب", "غوام", "غواتيمالا", "غيرنسي", "غينيا", "غينيا - بيساو", "غيانا", "هايتي", "قلب الجزيرة وجزر ماكدونالز", "الكرسي الرسولي", "هندوراس", "هونغ كونغ", "هنغاريا", "أيسلندا", "الهند", "إندونيسيا", "جمهورية إيران الإسلامية", "العراق", "أيرلندا", "جزيرة آيل أوف مان", "إسرائيل", "إيطاليا", "جامايكا", "اليابان", "جيرسي", "الأردن", "كازاخستان", "كينيا", "كيريباتي", "كوريا (جمهورية - الديمقراطية الشعبية)", "جمهورية كوريا", "الكويت", "قيرغيزستان", "جمهورية لاو الديمقراطية الشعبية (ذا)", "لاتفيا", "لبنان", "ليسوتو", "ليبيريا", "ليبيا", "ليختنشتاين", "ليتوانيا", "لوكسمبورغ", "ماكاو", 'مدغشقر', "ملاوي", "ماليزيا", "جزر المالديف", "مالي", "مالطا", "جزر مارشال", "مارتينيك", "موريتانيا", "موريشيوس", "مايوت", "المكسيك", "ميكرونيزيا (ولايات - الموحدة)", "مولدوفا (جمهورية)", "موناكو", "منغوليا", "الجبل الأسود", "مونتسيرات", "المغرب", "موزمبيق", "ميانمار", "ناميبيا", "ناورو", "نيبال", "هولندا", "كاليدونيا الجديدة", "نيوزيلندا", "نيكاراغوا", "النيجر", "نيجيريا", "نيوي", "جزيرة نورفولك", "جزر ماريانا الشمالية", "النرويج", "سلطنة عمان", "باكستان", "بالاو", "فلسطين , دولة", "بنما", "بابوا غينيا الجديدة", "باراغواي", "بيرو", "الفلبين", "بيتكيرن", "بولندا", "البرتغال", "بورتوريكو", "دولة قطر", "جمهورية شمال مقدونيا", "رومانيا", "الاتحاد الروسي", "رواندا", "جمع شمل", "سانت بارتيليمي", "سانت هيلانة وأسنسيون وتريستان دا كونها", "سانت كيتس ونيفيس", "القديسة لوسيا", "سانت مارتن (الجزء الفرنسي)", "سانت بيير وميكلون", "سانت فنسنت وجزر غرينادين", "ساموا", "سان مارينو", "ساو تومي وبرينسيبي", "المملكة العربية السعودية", "السنغال", "صربيا", "سيشيل", "سيرا ليون", "سنغافورة", "سانت مارتن (الجزء الهولندي)", "سلوفاكيا", "سلوفينيا", "جزر سليمان", "الصومال", "جنوب أفريقيا", "جورجيا الجنوبية وجزر ساندويتش الجنوبية", "جنوب السودان", "إسبانيا", "سيريلانكا", "السودان", "سورينام", "سفالبارد وجان ماين", "السويد", "سويسرا", "الجمهورية العربية السورية", "تايوان", "طاجيكستان", "جمهورية تنزانيا المتحدة", "تايلاند", "تيمور الشرقية", "توجو", "توكيلاو", "تونغا", "ترينداد وتوباغو", "تونس", "ديك رومي", "تركمانستان", "جزر تركس وكايكوس", "توفالو", "أوغندا", "أوكرانيا", "الإمارات العربية المتحدة", "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية (ال)", "جزر الولايات المتحدة الصغيرة النائية (ال)", "الولايات المتحدة الأمريكية", "أوروغواي", "أوزبكستان", "فانواتو", "فنزويلا (جمهورية - البوليفارية)", "فيتنام", "جزر العذراء البريطانية)", "جزر فيرجن (الولايات المتحدة)", "واليس وفوتونا", "الصحراء الغربية", "اليمن", "زامبيا", "زيمبابوي", "جزر آلاند"],
       errors: [],
       nameRules: [function (v) {
         return !!v || "Name is required";
@@ -3010,7 +3011,8 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    //  {"paletteid":"3","palettesize":"medium","quantity":5}
+    this.cartTotalPrice; //  {"paletteid":"3","palettesize":"medium","quantity":5}
+
     this.cart.forEach(function (element) {
       _this.form.items.push({
         paletteid: element.product.id,
@@ -3020,6 +3022,25 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
+    apply_discount: function apply_discount() {
+      var _this2 = this;
+
+      console.log(this.discount);
+      axios.post('/api/check-promo', {
+        code: this.discount
+      }).then(function (data) {
+        console.log(data.data);
+
+        if (data.data.status) {
+          var price = parseInt(data.data.percentage);
+          _this2.discount_value = _this2.cartTotalPrice * price / 100;
+          _this2.cartTotalPrice = _this2.cartTotalPrice - _this2.discount_value;
+          _this2.form.promocode = _this2.discount;
+        }
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    },
     clearProductFromCart: function clearProductFromCart(product) {
       this.$store.dispatch("deleteCartItem", product);
     },
@@ -3027,7 +3048,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.dispatch("clearCartItems");
     },
     send: function send() {
-      var _this2 = this;
+      var _this3 = this;
 
       // console.log(this.cart());
       axios.post("/api/add-order", this.form).then(function (data) {
@@ -3035,19 +3056,19 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.data.status) {
           console.log(data.data);
-          _this2.errors = data.data.errors;
+          _this3.errors = data.data.errors;
         } else {
           $('#exampleModalCenter').modal('show');
           console.log(data.data.checkid);
           console.log(data.data.orderid);
-          _this2.formview = data.data.orderid;
-          _this2.message = "donnnnnnnnnnnnnnnnne";
+          _this3.formview = data.data.orderid;
+          _this3.message = "donnnnnnnnnnnnnnnnne";
           var tag = document.createElement("script");
           tag.setAttribute("src", "https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=" + data.data.checkid);
           document.head.appendChild(tag);
         }
       })["catch"](function (error) {
-        return _this2.errors = error.response.data.errors;
+        return _this3.errors = error.response.data.errors;
       });
     }
   }
@@ -44699,9 +44720,18 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
-                          _c("v-btn", { staticClass: "mr-4" }, [
-                            _vm._v("Apply")
-                          ])
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "mr-4",
+                              on: {
+                                click: function($event) {
+                                  return _vm.apply_discount()
+                                }
+                              }
+                            },
+                            [_vm._v("Apply")]
+                          )
                         ],
                         1
                       )
@@ -44710,6 +44740,16 @@ var render = function() {
                   ),
                   _vm._v(" "),
                   _c("hr"),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("span", [_vm._v("Sub Value")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v("$" + _vm._s(_vm.discount_value))
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticStyle: { clear: "both" } })
+                  ]),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -44720,7 +44760,7 @@ var render = function() {
                       _c("span", { staticStyle: { float: "right" } }, [
                         _c("span", { staticStyle: { color: "#737171" } }),
                         _vm._v(
-                          " $ " + _vm._s(_vm.cartTotalPrice) + "\n          "
+                          " $ " + _vm._s(_vm.totalprice_2) + "\n          "
                         )
                       ]),
                       _vm._v(" "),
@@ -44773,7 +44813,7 @@ var render = function() {
                               _c(
                                 "ul",
                                 _vm._l(_vm.errors, function(item) {
-                                  return _c("li", [
+                                  return _c("li", { key: item }, [
                                     _vm._v(
                                       "\n                                          " +
                                         _vm._s(item) +
@@ -44959,12 +44999,13 @@ var render = function() {
                             "v-col",
                             {
                               staticClass: "d-flex",
-                              attrs: { cols: "12", sm: "4" }
+                              attrs: { cols: "12", sm: "8" }
                             },
                             [
                               _c("v-select", {
                                 attrs: {
-                                  items: _vm.item,
+                                  items: _vm.item_ar,
+                                  value: "اليمن",
                                   label: "الدولة",
                                   outlined: ""
                                 },
@@ -44974,33 +45015,6 @@ var render = function() {
                                     _vm.$set(_vm.form, "country", $$v)
                                   },
                                   expression: "form.country"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-col",
-                            {
-                              staticClass: "d-flex",
-                              attrs: { cols: "12", sm: "4" }
-                            },
-                            [
-                              _c("v-select", {
-                                attrs: {
-                                  "item-text": "name",
-                                  "item-value": "last",
-                                  items: _vm.item,
-                                  label: "المحافظة",
-                                  outlined: ""
-                                },
-                                model: {
-                                  value: _vm.form.goverment,
-                                  callback: function($$v) {
-                                    _vm.$set(_vm.form, "goverment", $$v)
-                                  },
-                                  expression: "form.goverment"
                                 }
                               })
                             ],
@@ -45143,9 +45157,18 @@ var render = function() {
                             }
                           }),
                           _vm._v(" "),
-                          _c("v-btn", { staticClass: "mr-4" }, [
-                            _vm._v("خصم الأن")
-                          ])
+                          _c(
+                            "v-btn",
+                            {
+                              staticClass: "mr-4",
+                              on: {
+                                click: function($event) {
+                                  return _vm.apply_discount()
+                                }
+                              }
+                            },
+                            [_vm._v("خصم الأن")]
+                          )
                         ],
                         1
                       )
@@ -45155,7 +45178,24 @@ var render = function() {
                   _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
-                  _vm._m(2),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "discount_text",
+                      staticStyle: { color: "#737171", padding: "10px" }
+                    },
+                    [
+                      _c("div", [
+                        _c("span", { staticStyle: { float: "right" } }, [
+                          _vm._v("الخصم")
+                        ]),
+                        _vm._v(" "),
+                        _c("span", [_vm._v("$" + _vm._s(_vm.discount_value))]),
+                        _vm._v(" "),
+                        _c("div", { staticStyle: { clear: "both" } })
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -45168,7 +45208,7 @@ var render = function() {
                       _c("span", [
                         _c("span", { staticStyle: { color: "#737171" } }),
                         _vm._v(
-                          " $ " + _vm._s(_vm.cartTotalPrice) + "\n          "
+                          " $ " + _vm._s(_vm.totalprice_2) + "\n          "
                         )
                       ]),
                       _vm._v(" "),
@@ -45283,35 +45323,6 @@ var staticRenderFns = [
             )
           ]
         )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "discount_text",
-        staticStyle: { color: "#737171", padding: "10px" }
-      },
-      [
-        _c("div", [
-          _c("span", { staticStyle: { float: "right" } }, [_vm._v("الخصم")]),
-          _vm._v(" "),
-          _c("span", [_vm._v("$70.00")]),
-          _vm._v(" "),
-          _c("div", { staticStyle: { clear: "both" } })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-3" }, [
-          _c("span", { staticStyle: { float: "right" } }, [_vm._v("الشحن")]),
-          _vm._v(" "),
-          _c("span", [_vm._v("سيتم المحاسبة فى المرة القادمة")]),
-          _vm._v(" "),
-          _c("div", { staticStyle: { clear: "both" } })
-        ])
       ]
     )
   }
@@ -109144,8 +109155,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

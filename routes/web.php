@@ -26,7 +26,9 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('reviews', 'ReviewController');
     Route::resource('palettes', 'PaletteController');
     Route::resource('paletteimages', 'PaletteimageController');
-    Route::get('orders', 'Api\orderController@index');
+    Route::get('orders', 'orderController@index');
+    Route::get('appliedorders/{id?}', 'orderController@orderindex')->name('appliedorder.show');
+
     Route::get('addpaletteimages/{palette?}/create','PaletteimageController@create')->name("addimgpalette");
     Route::get('changeStatus', 'UserController@changeStatus');
     Route::get('users', 'UserController@index');
