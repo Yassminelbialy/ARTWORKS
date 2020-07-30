@@ -39,3 +39,7 @@ Route::group(['middleware'=>['api']], function () {
     Route::post('artist-request' ,'JoinUsController@crete_request');
 
 });
+
+
+
+

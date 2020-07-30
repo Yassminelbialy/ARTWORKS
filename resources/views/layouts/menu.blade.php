@@ -60,3 +60,4 @@
     <a href="{{ route('homeDatas.index') }}"><i class="fa fa-edit"></i><span>Home Datas</span></a>
 </li>
 
+
