@@ -43756,7 +43756,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticStyle: { "min-height": "200px" } }, [
+  return _c("section", { staticStyle: { "min-height": "500px" } }, [
     _c("div", { staticClass: "loading-page" }, [
       _c("div", { staticClass: "counter" }, [
         _c("p", [_vm._v(_vm._s(_vm.$t("message.loading")))]),

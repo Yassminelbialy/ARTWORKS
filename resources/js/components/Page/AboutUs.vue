@@ -1,5 +1,5 @@
 <template>
-  <section style="min-height:200px">
+  <section style="min-height:500px">
   <div class="loading-page">
             <div class="counter">
                 <p>{{ $t("message.loading") }}</p>
