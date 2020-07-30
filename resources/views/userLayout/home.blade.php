@@ -26,6 +26,7 @@
 	$('div .size_btn').on('click', function () {
         
         $(this).addClass('active_btn').siblings().removeClass('active_btn');
-    });
+	});
+
 </script>
 @endsection
