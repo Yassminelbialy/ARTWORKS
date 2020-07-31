@@ -26,7 +26,7 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('reviews', 'ReviewController');
     Route::resource('palettes', 'PaletteController');
     Route::resource('paletteimages', 'PaletteimageController');
-    Route::get('orders', 'orderController@index');
+    Route::get('orders', '  orderController@index');
     Route::get('appliedorders/{id?}', 'orderController@orderindex')->name('appliedorder.show');
 
     Route::get('addpaletteimages/{palette?}/create','PaletteimageController@create')->name("addimgpalette");
@@ -34,6 +34,13 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::get('users', 'UserController@index');
     Route::get('changeStatus', 'UserController@changeStatus');
     Route::resource('homeDatas', 'HomeDataController');
+
+
+
+
+Route::resource('aboutContents', 'AboutContentController');
+
+Route::resource('aboutAretists', 'AboutAretistsController');
 
 });
 Route::get('/home', 'HomeController@index')->middleware('verified')->name("home.index");

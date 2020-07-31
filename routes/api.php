@@ -38,6 +38,10 @@ Route::group(['middleware'=>['api']], function () {
     Route::get('payment/{order?}' ,'OrderController@create');
     Route::post('artist-request' ,'JoinUsController@crete_request');
 
+    Route::get('get-about-content' ,'AboutController@get_about_content');
+    Route::get('get-about-artists' ,'AboutController@get_about_artist');
+
+
 });
 
 

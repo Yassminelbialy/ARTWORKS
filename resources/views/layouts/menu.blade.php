@@ -61,3 +61,11 @@
 </li>
 
 
+<li class="{{ Request::is('aboutContents*') ? 'active' : '' }}">
+    <a href="{{ route('aboutContents.index') }}"><i class="fa fa-edit"></i><span>About Contents</span></a>
+</li>
+
+<li class="{{ Request::is('aboutAretists*') ? 'active' : '' }}">
+    <a href="{{ route('aboutAretists.index') }}"><i class="fa fa-edit"></i><span>About Aretists</span></a>
+</li>
+
