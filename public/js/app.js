@@ -2383,7 +2383,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios.get("/api/get-about-content").then(function (response) {
-      console.log(response.data);
       _this.artists = response.data.dataArtist;
       _this.about = response.data.data;
     })["catch"](function (error) {

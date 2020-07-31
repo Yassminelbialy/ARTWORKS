@@ -97,7 +97,6 @@ export default {
     axios
       .get("/api/get-about-content")
       .then(response => {
-        console.log(response.data)
         this.artists = response.data.dataArtist;
         this.about = response.data.data
       })
