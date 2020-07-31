@@ -2370,12 +2370,6 @@ __webpack_require__.r(__webpack_exports__);
       about: {},
       mission: true,
       artist: false,
-      form: {
-        name: null,
-        email: null,
-        phone: null,
-        message: null
-      },
       errors: {}
     };
   },

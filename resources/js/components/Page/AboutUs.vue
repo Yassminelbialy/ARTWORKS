@@ -84,12 +84,6 @@ export default {
       about:{},
       mission: true,
       artist: false,
-      form: {
-        name: null,
-        email: null,
-        phone: null,
-        message: null
-      },
       errors: {}
     };
   },
