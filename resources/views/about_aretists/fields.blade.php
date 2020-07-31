@@ -10,6 +10,11 @@
     {!! Form::text('name_ar', null, ['class' => 'form-control','maxlength' => 30]) !!}
 </div>
 
+<!-- Social Link Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('sociallink', 'Social Link:') !!}
+    {!! Form::text('sociallink', null, ['class' => 'form-control','maxlength' => 30]) !!}
+</div>
 <!-- Image Ar Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('image_ar', 'Image Ar:') !!}

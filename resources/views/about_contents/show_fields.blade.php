@@ -13,7 +13,7 @@
 <!-- Body Image Field -->
 <div class="form-group">
     {!! Form::label('body_image', 'Body Image:') !!}
-    <p>{{ $aboutContent->body_image }}</p>
+    <img src="{{ $aboutContent->body_image }}" style="width:120px;height:100px">
 </div>
 
 <!-- Body2 En Field -->

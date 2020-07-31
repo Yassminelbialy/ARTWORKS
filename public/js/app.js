@@ -2359,11 +2359,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       artists: [],
+      about: {},
       mission: true,
       artist: false,
       form: {
@@ -2378,8 +2382,10 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get("/api/palettes").then(function (response) {
-      _this.artists = response.data.artists;
+    axios.get("/api/get-about-content").then(function (response) {
+      console.log(response.data);
+      _this.artists = response.data.dataArtist;
+      _this.about = response.data.data;
     })["catch"](function (error) {
       return console.log(error.response.data);
     });
@@ -8649,7 +8655,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 150px;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n", ""]);
+exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 150px;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\n  width:90%;\n  height:370px;\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\n    width: 100% !important;\n}\n}\n\n\n", ""]);
 
 // exports
 
@@ -43814,16 +43820,14 @@ var render = function() {
               ? _c("div", { staticClass: "col-md-8" }, [
                   _c("p", [
                     _vm._v(
-                      "\n          " +
-                        _vm._s(_vm.$t("message.ourmissiontext1")) +
-                        "\n        "
+                      "\n          " + _vm._s(_vm.about.body1_en) + "\n        "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
                       "\n          " +
-                        _vm._s(_vm.$t("message.ourmissiontext2")) +
+                        _vm._s(_vm.about.body2_en) +
                         " \n        "
                     )
                   ])
@@ -43832,25 +43836,13 @@ var render = function() {
             _vm._v(" "),
             _vm.$i18n.locale == "en"
               ? _c("div", { staticClass: "col-md-3" }, [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "//cdn.shopify.com/s/files/1/3000/4362/files/Untitled-1_a6547468-5701-4807-94b7-495f7130594d_2048x.jpg?v=1563943428",
-                      alt: ""
-                    }
-                  })
+                  _c("img", { attrs: { src: _vm.about.body_image, alt: "" } })
                 ])
               : _vm._e(),
             _vm._v(" "),
             _vm.$i18n.locale == "ar"
               ? _c("div", { staticClass: "col-md-3" }, [
-                  _c("img", {
-                    attrs: {
-                      src:
-                        "//cdn.shopify.com/s/files/1/3000/4362/files/Untitled-1_a6547468-5701-4807-94b7-495f7130594d_2048x.jpg?v=1563943428",
-                      alt: ""
-                    }
-                  })
+                  _c("img", { attrs: { src: _vm.about.body_image, alt: "" } })
                 ])
               : _vm._e(),
             _vm._v(" "),
@@ -43858,16 +43850,14 @@ var render = function() {
               ? _c("div", { staticClass: "col-md-8" }, [
                   _c("p", [
                     _vm._v(
-                      "\n          " +
-                        _vm._s(_vm.$t("message.ourmissiontext1")) +
-                        "\n        "
+                      "\n          " + _vm._s(_vm.about.body1_ar) + "\n        "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", [
                     _vm._v(
                       "\n          " +
-                        _vm._s(_vm.$t("message.ourmissiontext2")) +
+                        _vm._s(_vm.about.body2_ar) +
                         " \n        "
                     )
                   ])
@@ -43941,18 +43931,38 @@ var render = function() {
                       },
                       [
                         _c("div", { staticClass: "about-team__people" }, [
-                          _c("img", {
-                            staticStyle: {
-                              "border-radius": "28%",
-                              width: "100px",
-                              height: "100px"
+                          _c(
+                            "a",
+                            {
+                              staticStyle: { color: "#000" },
+                              attrs: {
+                                href: artist.sociallink,
+                                target: "_blank"
+                              }
                             },
-                            attrs: { src: artist.artist_img, alt: "artist" }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", { staticClass: "about-team__name" }, [
-                            _vm._v(_vm._s(artist.name))
-                          ])
+                            [
+                              _c("img", {
+                                staticStyle: {
+                                  "border-radius": "28%",
+                                  width: "100px",
+                                  height: "100px"
+                                },
+                                attrs: { src: artist.image_ar, alt: "artist" }
+                              }),
+                              _vm._v(" "),
+                              _vm.$i18n.locale == "en"
+                                ? _c(
+                                    "h4",
+                                    { staticClass: "about-team__name" },
+                                    [_vm._v(_vm._s(artist.name_en))]
+                                  )
+                                : _c(
+                                    "h4",
+                                    { staticClass: "about-team__name" },
+                                    [_vm._v(_vm._s(artist.name_ar))]
+                                  )
+                            ]
+                          )
                         ])
                       ]
                     )
@@ -109155,8 +109165,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

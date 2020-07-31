@@ -10,10 +10,16 @@
     <p>{{ $aboutAretists->name_ar }}</p>
 </div>
 
+<!-- Social Link Field -->
+<div class="form-group">
+    {!! Form::label('sociallink', 'Social Link:') !!}
+    <p>{{ $aboutAretists->sociallink }}</p>
+</div>
+
 <!-- Image Ar Field -->
 <div class="form-group">
     {!! Form::label('image_ar', 'Image Ar:') !!}
-    <p>{{ $aboutAretists->image_ar }}</p>
+    <img src="{{ $aboutAretists->image_ar }}" style="width:120px;height:100px">
 </div>
 
 <!-- Created At Field -->

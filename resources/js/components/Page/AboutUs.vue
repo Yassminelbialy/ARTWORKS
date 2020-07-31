@@ -18,30 +18,30 @@
       <div class="row mt-5 text-center" v-if="mission">
         <div class="col-md-8" v-if=" $i18n.locale == 'en'">
           <p>
-            {{ $t("message.ourmissiontext1") }}
+            {{ about.body1_en}}
           </p>
           <p>
-            {{ $t("message.ourmissiontext2") }}&nbsp;
+            {{  about.body2_en}}&nbsp;
           </p>
         </div>
         <div class="col-md-3" v-if=" $i18n.locale == 'en'">
           <img
-            src="//cdn.shopify.com/s/files/1/3000/4362/files/Untitled-1_a6547468-5701-4807-94b7-495f7130594d_2048x.jpg?v=1563943428"
+            :src="about.body_image"
             alt
           />
         </div>
         <div class="col-md-3" v-if=" $i18n.locale == 'ar'">
           <img
-            src="//cdn.shopify.com/s/files/1/3000/4362/files/Untitled-1_a6547468-5701-4807-94b7-495f7130594d_2048x.jpg?v=1563943428"
+            :src="about.body_image"
             alt
           />
         </div>
         <div class="col-md-8" v-if=" $i18n.locale == 'ar'">
           <p>
-            {{ $t("message.ourmissiontext1") }}
+            {{ about.body1_ar}}
           </p>
           <p>
-            {{ $t("message.ourmissiontext2") }}&nbsp;
+            {{ about.body2_ar}}&nbsp;
           </p>
         </div>
       </div>
@@ -60,8 +60,11 @@
                     <div class="row justify-content-sm-center">
                         <div class="col-sm-4 col-md-3 col-lg-2" v-for="artist in artists" :key="artist.id">
                           <div class="about-team__people">
-                              <img :src="artist.artist_img" alt="artist" style="border-radius:28%;width:100px;height:100px">
-                              <h4 class="about-team__name">{{artist.name}}</h4>
+                            <a :href="artist.sociallink" style="color:#000" target="_blank">
+                              <img :src="artist.image_ar" alt="artist" style="border-radius:28%;width:100px;height:100px">
+                              <h4 class="about-team__name" v-if=" $i18n.locale == 'en'">{{artist.name_en}}</h4>
+                              <h4 class="about-team__name" v-else>{{artist.name_ar}}</h4>
+                            </a>
                           </div>
                         </div>
                     </div>
@@ -78,6 +81,7 @@ export default {
   data() {
     return {
       artists: [],
+      about:{},
       mission: true,
       artist: false,
       form: {
@@ -91,9 +95,11 @@ export default {
   },
   created() {
     axios
-      .get("/api/palettes")
+      .get("/api/get-about-content")
       .then(response => {
-        this.artists = response.data.artists;
+        console.log(response.data)
+        this.artists = response.data.dataArtist;
+        this.about = response.data.data
       })
       .catch(error => console.log(error.response.data));
   },
@@ -152,4 +158,21 @@ export default {
   width: 50%;
   margin: auto;
 }
+.mission img{
+  width:90%;
+  height:370px;
+  border-radius: 10px;
+}
+@media(max-width:767px){
+  .mission img{
+    width: 50% !important;
+  }
+}
+@media(min-width:768px) and (max-width:991px){
+  .mission img{
+    width: 100% !important;
+  }
+}
+
+
 </style>
