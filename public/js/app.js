@@ -3189,7 +3189,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8777,7 +8776,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:342px;\n}\n", ""]);
+exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:342px;\n}\n.about-us[data-v-bb44e346]{\n    background-repeat: no-repeat;\n    background-size: cover  ;\n    background-position: center;\n}\n", ""]);
 
 // exports
 
@@ -45566,35 +45565,34 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("header", { staticClass: "about-us" }, [
-    _c("div", { staticClass: "overlay" }),
-    _vm._v(" "),
-    _c("video", {
-      attrs: {
-        src: _vm.data,
-        playsinline: "playsinline",
-        autoplay: "autoplay",
-        muted: "muted",
-        loop: "loop"
-      },
-      domProps: { muted: true }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "text mb-4 about-content" },
-      [
-        _c("h1", [_vm._v(_vm._s(_vm.$t("message.about")))]),
-        _vm._v(" "),
-        _c("router-link", { staticClass: "mb-5", attrs: { to: "/about" } }, [
-          _c("a", { staticClass: "btn btn-light mb-5" }, [
-            _vm._v(_vm._s(_vm.$t("message.readmore")))
+  return _c(
+    "header",
+    {
+      staticClass: "about-us",
+      staticStyle: {
+        "background-image":
+          "url(https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg)"
+      }
+    },
+    [
+      _c("div", { staticClass: "overlay" }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text mb-4 about-content" },
+        [
+          _c("h1", [_vm._v(_vm._s(_vm.$t("message.about")))]),
+          _vm._v(" "),
+          _c("router-link", { staticClass: "mb-5", attrs: { to: "/about" } }, [
+            _c("a", { staticClass: "btn btn-light mb-5" }, [
+              _vm._v(_vm._s(_vm.$t("message.readmore")))
+            ])
           ])
-        ])
-      ],
-      1
-    )
-  ])
+        ],
+        1
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

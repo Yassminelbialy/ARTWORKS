@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::view('/','userLayout.home');
 
+
     Route::get('/admin', 'AdminController@index')->name("admin.index");
     Route::resource('appliedartists', 'AppliedartistController');
     Route::resource('artists', 'ArtistController');
@@ -34,13 +35,8 @@ Route::view('/','userLayout.home');
     Route::get('users', 'UserController@index');
     Route::get('changeStatus', 'UserController@changeStatus');
     Route::resource('homeDatas', 'HomeDataController');
-
-
-
-
-Route::resource('aboutContents', 'AboutContentController');
-
-Route::resource('aboutAretists', 'AboutAretistsController');
+    Route::resource('aboutContents', 'AboutContentController');
+    Route::resource('aboutAretists', 'AboutAretistsController');
 
 
 Route::get('/home', 'HomeController@index')->middleware('verified')->name("home.index");
