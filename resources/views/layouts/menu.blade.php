@@ -32,7 +32,7 @@
 <br> <br>
 <li class="{{ Request::is('artists*') ? 'active' : '' }}">
     <a href="{{ route('artists.index') }}"><i class="fa fa-plus" aria-hidden="true"></i>
-        <span>Artists</span></a>
+        <span>Gallery</span></a>
 </li>
 
 <li class="{{ Request::is('palettes*') ? 'active' : '' }}">

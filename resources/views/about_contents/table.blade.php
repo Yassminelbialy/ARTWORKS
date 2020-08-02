@@ -15,7 +15,7 @@
             <tr>
                 <td>{{ $aboutContent->body1_en }}</td>
             <td>{{ $aboutContent->body1_ar }}</td>
-            <td>{{ $aboutContent->body_image }}</td>
+            <td><img src="{{ $aboutContent->body_image }}" style="width:120px;height:100px"></td>
             <td>{{ $aboutContent->body2_en }}</td>
             <td>{{ $aboutContent->body2_ar }}</td>
                 <td>

@@ -21,9 +21,10 @@ class AboutController extends Controller
     {
 
         $data =AboutContent::latest()->first();
+        $dataArtist = AboutAretists::all();
         if($data)
         {
-                    return response( )->json(['status'=>true,'data'=>$data]);
+                    return response( )->json(['status'=>true,'data'=>$data,'dataArtist'=>$dataArtist]);
 
         }else{
             return response( )->json(['status'=>false]);

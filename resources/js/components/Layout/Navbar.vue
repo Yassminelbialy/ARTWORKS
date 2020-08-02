@@ -1,11 +1,4 @@
 <template>
-
-
-
-
-
-
-
     <nav class="navbar navbar-expand-lg navbar-light px-3 sticky-top">
         <button class="navbar-toggler" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,6 +24,7 @@
                     </router-link>
                 </li>
             </ul>
+            
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
                 <li class="nav-item">
                     <router-link to="/about">
@@ -252,4 +246,5 @@ export default {
      width: 90px !important;
     float: right;
 }
+
 </style>

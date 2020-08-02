@@ -28,7 +28,8 @@ class AboutAretists extends Model
     public $fillable = [
         'name_en',
         'name_ar',
-        'image_ar'
+        'image_ar',
+        'sociallink'
     ];
 
     /**
@@ -40,7 +41,8 @@ class AboutAretists extends Model
         'id' => 'integer',
         'name_en' => 'string',
         'name_ar' => 'string',
-        'image_ar' => 'string'
+        'image_ar' => 'string',
+        'sociallink' => 'string'
     ];
 
     /**
@@ -51,7 +53,8 @@ class AboutAretists extends Model
     public static $rules = [
         'name_en' => 'required|string|max:30',
         'name_ar' => 'required|string|max:30',
-        'image_ar' => 'required|image'
+        'image_ar' => 'required|image',
+        'sociallink' => 'required'
     ];
 
 
