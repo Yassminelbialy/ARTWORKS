@@ -39,7 +39,7 @@ export default {
 <style scoped>
 .about-us .about-content{
     position: relative;
-    top: 372px;
+    top:342px;
 
 }
 </style>

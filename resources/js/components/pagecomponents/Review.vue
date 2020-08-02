@@ -122,7 +122,7 @@
                 <div style="clear:both"></div>
             </v-form>
         </div>
-          <v-card class="card mt-2" v-for="(review,index) in reviews" :key="index">
+          <v-card class="card my-5" v-for="(review,index) in reviews" :key="index">
 
                 <div class="userimg">
                     <div class="userimg2">
@@ -151,6 +151,27 @@
             >
                <i class="fa fa-share-square"></i> {{ $t("message.share") }}
             </v-btn>
+            <span style="float:right;position:relative;left:-35px" v-if="$i18n.locale == 'en'">
+                {{ $t("message.checkreview") }}
+                <!-- <v-btn class="ma-2"  text icon @click.once="like(review.id,$event)">
+                    <v-icon >mdi-thumb-up</v-icon><span :id="review.id">{{review.like_counter}}</span>
+                </v-btn> -->
+<!--
+                <v-btn class="ma-2" text icon @click.once="dislike(review.id,$event)">
+                    <v-icon >mdi-thumb-down</v-icon> &nbsp;<span :id="review.id+'d'">{{review.dislike_counter}}</span>
+                </v-btn> -->
+            </span>
+            <span style="float:right" v-else>
+                <!-- <v-btn class="ma-2" text icon @click.once="like(review.id,$event)">
+                    <v-icon >mdi-thumb-up</v-icon><span :id="review.id">{{review.like_counter}}</span>
+                </v-btn>
+
+                <v-btn class="ma-2" text icon @click.once="dislike(review.id,$event)">
+                    <v-icon >mdi-thumb-down</v-icon> &nbsp;<span :id="review.id+'d'">{{review.dislike_counter}}</span>
+                </v-btn> -->
+                {{ $t("message.checkreview") }}
+            </span>
+            <div style="clear:both"></div>
             </v-card-actions>
         </v-card>
           <div class="text-center">
@@ -271,6 +292,7 @@ export default {
         border-radius: 50%;
         background-color: black;
         color: #fff;
+        margin-left: 13px;
     }
     .userimg span{
         position:absolute;

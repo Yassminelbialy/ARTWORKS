@@ -39,4 +39,7 @@ export default {
         font-size: 22px;
         margin: 0;
     }
+    video{
+        display: block !important;
+    }
 </style>

@@ -65,7 +65,7 @@ const messages = {
             SUBSCRIBE: "Join Us",
             others: "Others",
             company: "Company",
-            Limitworks: "Limitworks",
+            Limitworks:"LIMITED ARTWORKS",
             name: "Your Name",
             email: "Your Email",
             phone: "Your Phone",
@@ -86,7 +86,7 @@ const messages = {
             cartname:"Cart",
 
             // footer
-            logo:"Website Name",
+            logo:"ecstase",
             lorem:"lorem text",
             // Payment
             email:"E-mail",
@@ -105,6 +105,17 @@ const messages = {
             toshipping:"Continue to Shipping",
             select_size:'Please Select Size',
             empty:'      ',
+            // Start Footer
+            addressfooter:'ecstase BV. Westplein 123016BM RotterdamThe Netherlands',
+            shopfooter:'Shop artworks',
+            aboutfooter:'About our products',
+            carreerfooter:'Careers',
+            aboutusfooter:'About us',
+            artistfooter:'Our Artist',
+            contactfooter:'Contact us',
+            termsfooter:'Terms of use',
+            privacyfooter:'Privacy Policy',
+            refundpolicy:'Refund Policy',
             socialLink:'SocialLink'
 
 
@@ -186,6 +197,17 @@ const messages = {
              toshipping:"متابعة الشراء",
              select_size:'من فضلك اختر الحجم',
              empty:'      ',
+            //  Start Footer
+             addressfooter:'ecstase BV. Westplein 123016BM RotterdamThe Netherlands',
+             shopfooter:'تسوق الأعمال الفنية',
+             aboutfooter:'حول منتجاتنا',
+             carreerfooter:'وظائف',
+             aboutusfooter:'معلومات عنا',
+             artistfooter:'الفنانون',
+             contactfooter:'اتصل بنا',
+             termsfooter:'شروط الاستخدام',
+             privacyfooter:'سياسة خاصة',
+             refundpolicy:'سياسة الاسترجاع',
              socialLink:'رابط التواصل اﻷجتماعي'
 
 

@@ -1,15 +1,7 @@
 <template>
   <div>
-        <div class="loading-page">
-            <div class="counter">
-                <p>{{ $t("message.loading") }}</p>
-                <h1>
-                    0%
-
-
-                </h1>
-                <hr />
-            </div>
+        <div class="spinner-content">
+         <div class="spinner"></div>
         </div>
     <shopHeader></shopHeader>
     <appslider></appslider>

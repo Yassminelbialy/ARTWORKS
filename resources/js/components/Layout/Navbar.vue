@@ -4,46 +4,51 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
+    <div class="d-sm-block d-none">
         <LanguageDropdown></LanguageDropdown>
+    </div>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-if="$i18n.locale == 'en'">
-                <li class="nav-item active">
+            <ul class="navbar-nav  mx-auto mt-2 mt-lg-0">
+                <li class=" d-block d-sm-none about">
+                   <LanguageDropdown></LanguageDropdown>
+                </li>
+                <li class="nav-item home active">
                     <router-link to="/">
                         <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
 
                 </li>
-                <li class="nav-item">
+                <li class="nav-item shop">
                     <router-link to="/shop">
                         <a class="nav-link">{{ $t("message.shopart") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link to="/about">
-                        <a class="nav-link">{{ $t("message.about") }}</a>
-                    </router-link>
-                </li>
-            </ul>
-            
-            <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
-                <li class="nav-item">
+                <li class="nav-item about">
                     <router-link to="/about">
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
 
-                <li class="nav-item">
+            </ul>
+            <!-- <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
+                <li class="nav-item about">
+                    <router-link to="/about">
+                        <a class="nav-link">{{ $t("message.about") }}</a>
+                    </router-link>
+                </li>
+
+                <li class="nav-item shop">
                     <router-link to="/shop">
                         <a class="nav-link">{{ $t("message.shopart") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item active home">
                     <router-link to="/">
                         <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
 
                 </li>
-            </ul>
+            </ul> -->
         </div>
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
             <button class="nav-btns" @click="showModal = true">
@@ -70,12 +75,12 @@
                             <div class="row p-4 mt-2 border-bottom"
                                  v-for="(item,index) in cart "
                                  :key="{index}">
-                                <div class="col-md-sm-4 ml-3">
+                                <div class="col-md-sm-4 ml-1">
                                     <img :src="item.product.img">
                                 </div>
-                                <div class="col-md-sm-8 ml-3">
+                                <div class="col-md-sm-8 ml-3 " style="margin-right:50px">
                                     <span> <strong>{{ item.product.name }}</strong></span>
-                                     <h6  style="font-size:14px">{{ item.sizeTarget }} - {{item.sizeCm}} </h6>
+                                     <h6  style="font-size:14px">{{ item.sizeTarget }}  {{item.sizeCm}} </h6>
                                     <h6>{{ item.quantity }} x ${{item.price}}</h6>
                                 </div>
                                   <div class="pro">
@@ -114,6 +119,7 @@
 import "jquery"
 import LanguageDropdown from './LanguageDropdown';
 export default {
+
     computed: {
     cartTotalPrice() {
       return this.$store.getters.cartTotalPrice;
@@ -135,7 +141,13 @@ export default {
             expand:false
         }
     },
-    created(){
+    mounted(){
+
+        let infoUrl = window.location.href
+        let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
+        $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
+        console.log("."+infoUrlTarget)
+
         axios.get('/api/getpallatecart')
         .then(res=>{
             this.cartcount = res.data.palettes.length
@@ -242,9 +254,21 @@ export default {
 
 }
 
+@media(max-width:996px){
+
+    li.nav-item{
+        width: 67px;
+    }
+}
+.nav-btns{
+    margin-left: 27px;
+}
+
 .delete{
      width: 90px !important;
     float: right;
 }
-
+.navbar-brand img{
+    width: 42px;
+}
 </style>

@@ -1,7 +1,22 @@
 <template>
     <section class="myhome">
 
+   <div class="swiper-container pallete-swiper text-center d-sm-none ">
+        <div class="swiper-wrapper">
+            <div  class="swiper-slide text-center "    v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                <img :src="palettesArtist.img" alt="...">
+                       <div class="content" :class="{ 'active': index == 0 }" >
+                                        <div class="triangle"></div>
+                                        <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
 
+                                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
+                                        <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
+                                    </div>
+            </div>
+        </div>
+                            <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
 
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
@@ -11,25 +26,38 @@
             <div class="carousel-inner ">
                 <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
-
-                    <div class="wrapper">
+                <!---------------------------- start regular pallete----------------------- -->
+                    <div class="wrapper d-none d-sm-block ">
                         <div class=" row  d-flex justify-content-center">
-                            <div  class="details myhome col-lg-3 "  v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id)"   :key="palettesArtist.id">
-                               <div :class="{ 'active': index == 0 }" class=" details-content">
+                            <div  class="details myhome col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                               <div class="details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
-                                    <div class="content" >
+                                    <div class="content" :class="{ 'active': index == 0 }" >
                                         <div class="triangle"></div>
-                                        <h6>{{palettesArtist.name}}  | ${{palettesArtist.L_price}}</h6>
+                                        <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
 
-                                        <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}  {{palettesArtist.L_avalible}} {{ $t("message.left") }}</span>
+                                        <div class="infor">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
                                         <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
                                     </div>
                                 </div>
                             </div>
 
                         </div>
+                    </div>
+                    <!---------------------------- start carousel pallete----------------------- -->
+
+
+                    <div class="parent d-sm-none">
+                        <div>
+                            <img src="https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/swipetothenext.png?v=14393615295324639232" alt="">
+                        </div>
+                        <div class="navigate2 ">
+                            <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M1395 864q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23zm0-384q0 13-10 23l-466 466q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l393 393 393-393q10-10 23-10t23 10l50 50q10 10 10 23z"></path></svg>
+                        </div>
 
                     </div>
+
+
                     <a class="carousel-control-next" href="#carouselExampleCaptions" @click="getdata(artist.id+1)" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
@@ -49,7 +77,7 @@
                 <div class="col-lg-7" >
                     <div class="row">
                         <div class="col-md-6 mb-3 targ pl-1" v-for="minPalette in minPalettes"  :key="minPalette.id" >
-                            <img :src="minPalette.img" style="height:400px" class="w-100"  alt="...">                            
+                            <img :src="minPalette.img" style="height:400px" class="w-100"  alt="...">
                         </div>
                     </div>
                 </div>
@@ -65,34 +93,35 @@
                         <div class="mb-3 mt-2"> <span>silkscreen</span></div>
                         <div>
 
-                            <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="S_avalible>0"  @click="small(1,S_price,S_avalible,cardId)">S</v-btn>
+                            <!-- <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="S_avalible>0"  @click="small(1,S_price,S_avalible,cardId)">S</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
-                                {{ $t("message.empty") }}</v-btn>
+                                {{ $t("message.empty") }}</v-btn> -->
                             <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="M_avalible>0" @click="medium(2,M_price, M_avalible ,cardId)">M</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
+
                                 {{ $t("message.empty") }}</v-btn>
-                            <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="L_avalible>0" @click="larg(3,L_price,L_avalible,cardId )">L</v-btn>
-                            <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
+                            <!-- <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="L_avalible>0" @click="larg(3,L_price,L_avalible,cardId )">L</v-btn> -->
+                            <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
-                                {{ $t("message.empty") }}</v-btn>
-                            <h3 class="mt-4 mb-4" v-if="active_el==1">small - 30x40cm (12x16) <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3>
-                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium - 50x66.5cm (20x26) <strong style="float:right">{{M_copies}}/{{M_avalible}}  {{ $t("message.left") }}</strong></h3>
-                            <h3 class="mt-4 mb-4" v-if="active_el==3">large - 70x93.5cm (28x37) <strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3>
+                                {{ $t("message.empty") }}</v-btn> -->
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
+                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{M_copies}}/{{M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
-                        <button @click="  addtocart(cardId,priceTarget, avilableTarget , sizeTarget,sizeCm)" v-if="button" class="btn add-button addToCart "
+                        <button @click="addtocart(cardId,M_price, avilableTarget , sizeTarget)"  class="btn add-button addToCart ">
 
 
 
-                         ><span v-if="active_el==1">${{S_price}}</span>
+                       <!-- <span v-if="active_el==1">${{S_price}}</span> -->
                         <span v-if="active_el==2">${{M_price}}</span>
-                        <span v-if="active_el==3">${{L_price}}</span>
+                        <!-- <span v-if="active_el==3">${{L_price}}</span> -->
                          -{{ $t("message.cart") }}
 
                         </button>
-                        <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.select_size") }}</v-btn>
+                        <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.select_size") }}</v-btn> -->
 
                         <p>
                             <span class="font-weight-bold ">This is the Classic</span>, designed and manufactured by Ecstase,
@@ -183,7 +212,7 @@ export default {
             first:null,
             firstpalettesArtists:null,
             firstminPalettes:null,
-            active_el:0,
+            active_el:2,
             S_copies:'',
             S_avalible:'',
             S_price:'',
@@ -198,20 +227,50 @@ export default {
             cardId:'',
             priceTarget:'',
             avilableTarget:'',
-            sizeTarget:'',
+            sizeTarget:'medium',
             button:false,
             sizeCm:""
 
 
 
         }
-    },
+    },mounted(){
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 3,
+                spaceBetween: 30,
+                freeMode: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                    },
+                    640:{
+                        slidesPerView:1
+                    },
+                    // when window width is >= 640px
+                991: {
+                    slidesPerView: 2,
+                    spaceBetween: 30
+                    }
+                },
+                observer:true,
+                observerParents:true,
+
+            });
+            swiper.update();
+        },
+
 
     created() {
 
         if(this.$route.query.mydata)
         {
-                        this.addActive(this.$route.query.mydata)
+                 this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
 
@@ -358,15 +417,18 @@ export default {
             this.button=true;
             this.sizeCm="30x40cm (12x16)"
 
-             $(".details .details_img").css({width:"100%",height:"200px"})
-            $(".details  .content").css({width:"100%"})
+            //  $(".details .details_img").css({
+            //      transform:"scale(1)"
+            //  })
 
-                $(".details.active .details_img").css({width:"83%",height:"150px"})
-            $(".details.active .content").css({width:"83%",marginRight:"34px"})
+            // $(".details .content").css({marginTop:"27px"})
 
-            // $("html,body").animate({
-            //     scrollTop:"100px"
-            // },1000)
+
+            $(".details.active .details_img").css({
+                transform:"scale(.7)"
+            })
+            $(".details.active .content").css({marginTop:"-27px"})
+
 
         },
         medium(el,price,avilable,cardId){
@@ -378,17 +440,18 @@ export default {
             this.sizeCm="50x66.5cm (20x26)"
 
 
+            //  $(".details .details_img").css({
+            //      transform:"scale(1)"
+            //  })
+            // $(".details .content").css({marginTop:"27px"})
 
-               $(".details .details_img").css({width:"100%",height:"200px"})
-            $(".details  .content").css({width:"100%"})
+
+            // $(".details.active .details_img").css({
+            //     transform:"scale(.8)"
+            // })
+            // $(".details.active .content").css({marginTop:"-17px"})
 
 
-            $(".details.active .details_img").css({width:"90%",height:"180px"})
-            $(".details.active .content").css({width:"90%",marginRight:"34px"})
-
-            // $("html,body").animate({
-            //     scrollTop:"100px"
-            // },1000)
 
 
         },
@@ -400,19 +463,20 @@ export default {
             this.button=true;
             this.sizeCm="70x93.5cm (28x37)"
 
-            $(".details .details_img").css({width:"100%",height:"200px"})
-            $(".details  .content").css({width:"100%"})
+             $(".details.active .details_img").css({
+                 transform:"scale(1)"
+             })
+                 $(".details.active .content").css({marginTop:"27px"})
 
-                $(".details.active .details_img").css({width:"100%",height:"200px"})
-            $(".details.active .content").css({width:"100%",marginRight:"34px"})
-
-
-            // $("html,body").animate({
-            //     scrollTop:"100px"
-            // },1000)
 
         },
-        addActive($minPalette_id){
+        addActive($minPalette_id,index){
+console.log(  this.$refs.myActive)
+          let myActive =  this.$refs.myActive[index]
+
+
+
+                $(myActive).addClass('active').siblings().removeClass('active');
 
 
             $("html,body").animate({
@@ -436,10 +500,7 @@ export default {
                     this.sizing_details=response.data.palettes[0].sizing_details
                     })
                 .catch(error => console.log(error.response.data))
-            $('.details').on('click', function () {
 
-                $(this).addClass('active').siblings().removeClass('active');
-            });
         },
         addtocart($id,price,avilableTarget, sizeTarget,sizeCm){
 
@@ -542,9 +603,9 @@ export default {
     }
     .wrapper{
    position: absolute;
-    top: 15%;
+    top: -2%;
     transform: translate(-50%, 0);
-    left: 50%;
+    left: 50.5%;
     width: 100%
 
     }
@@ -556,14 +617,14 @@ export default {
 
     }
     .details img{
-        width: 70%;
-        transition: all 1s;
-        height: 300px;
-        /* box-shadow: 5px 5px 5px black; */
-        border-top: 2px solid #111;
-        border-bottom: 2px solid #111;
+          width: 83%;
+    transition: all 1s;
+    height: 357px;
+    /* box-shadow: 5px 5px 5px black; */
+    border-top: 8px solid #111;
+    border-bottom: 8px solid #111;
     }
-
+/*
     @media(max-width: 560px){
         .details{
             width: 40%;
@@ -576,23 +637,14 @@ export default {
         .wrapper .details .content{
             width: 100%;
             margin: 16px auto 0;
-            
+
         }
         .carousel-item .header{
             height: 860px;
         }
-        /* .wrapper{
-            display: none;
-        }
 
-        .carousel-control-prev{
-            display: none;
-        }
-        .carousel-item .header{
-            height: 300px;
-        } */
-    }
-    @media(min-width: 561px) and (max-width:767px){
+    } */
+    /* @media(min-width: 561px) and (max-width:767px){
         .details{
             width: 40% ;
             font-size: 14px;
@@ -606,53 +658,54 @@ export default {
         }
         .wrapper .details .content{
             width: 80%;
-            margin-left: 10px;
-            /* margin: 16px auto 0; */
-            
+
+
         }
-    }
-    @media(min-width: 768px) and (max-width:991px){
+    } */
+    /* @media(min-width: 768px) and (max-width:991px){
         .details{
             width: 33% ;
             font-size: 14px;
         }
-        /* .carousel-item .header{
-            height: 900px;
-        } */
+
         .details img{
             width: 80%;
             height: 250px;
         }
         .wrapper .details .content{
             width: 80%;
-            margin-left: 10px;
-            /* margin: 16px auto 0; */
-            
+
+
         }
         .wrapper{
-            top: 12%;
+            top: -1%;
             width: 90%;
             left: 52%;
 
         }
-    }
+    } */
+ .wrapper .row{
+         transform: scale(.4);
 
+        }
     .wrapper .details .content{
         position: relative;
         font-size: 14px;
-        width: 70%;
-        margin-top: 10px;
+        width: 83%;
+        margin-top: 34px;
         /* margin: 16px auto 0; */
         padding: 6px 5px;
         transition: all .5s;
-        color:#00a4ee;
+        color:white;
         border-radius: 10px;
-          background: rgba(0,0,0,0.9);
+          background: rgba(0,0,0,0.75);
         background-repeat: no-repeat;
         background-position: 50%;
         background-size: 100%;
         z-index: 2;
         top: 10px;
+        padding: 0 20px;
+        border: 4px solid rgba(0,0,0,-7.25);;
     }
         /* @media(max-width: 991px){
         .wrapper .details .content{
@@ -660,27 +713,29 @@ export default {
         }
     } */
         .wrapper .details .content .triangle{
-    position: relative;
+   position: relative;
     z-index: 1;
-    padding: 10px;
+    /* padding: 10px; */
     display: inline-block;
-    top: -12px;
+    top: -29px;
     left: 50%;
-    transform: rotate(45deg) translate(-50%, 19%);
-    border-top: 1px solid #00a4ee;
-    border-left: 1px solid #00a4ee ;
-     background: rgba(0,0,0,0.9);
-
-
-
+    background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon.png);
+    transform: rotate(0) scale(2.3) translate(-16%, 19%);
+    /* background: rgba(0,0,0,0.9); */
+    width: 22px;
+    height: 10px;
     }
+    /* .details.active .triangle{
+            top: -26.1px;
+
+    } */
     /* .wrapper .details .content:hover{
         border: 2px solid #00a4ee;
     } */
 
-    .details-content{
+    /* .details-content{
         margin:20px;
-    }
+    } */
     .details:hover {
         transform: scale(1.1);
     }
@@ -723,6 +778,11 @@ export default {
         padding-left: 10px;
         padding-right: 10px;
     }
+     .list-group {
+
+        padding-left: 0;
+
+    }
 /*
     .carousel-control-prev{
         left: -50%;
@@ -760,12 +820,236 @@ export default {
     margin-right: 20px !important;
     font-size: 20px ;
 }
-.active .content {
-    border: 2px solid #00a4ee;
+ .details.active .content {
+    border: 4px solid #00a4ee;
+}
+ .details.active .triangle {
+      background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon-active.png) !important;
 }
 .active_btn{
     border: 2px solid #00a4ee;
 }
+.content h6 ,.content  span{
+font-size: 2rem;
+}
+
+.price{
+   font-size: 1.6rem!important ;
+}
+
+
+.infor{
+top: -12px;
+left: -20px;
+position: relative;
+transform: scale(.7);
+}
+
+/* Start Responsive */
+@media (max-width: 1264px){
+ .wrapper .row{
+        position: absolute;
+        /* top: -230px; */
+
+        left: 51px;
+    transform: scale(0.4);
+
+    }
+    .details-content{
+    /* margin: 10px 30px ; */
+    }
+}
+
+@media (max-width: 960px){
+ .wrapper .row{
+        transform: scale(.4);
+    }
+    .details-content{
+    /* margin: 10px 50px ; */
+
+    }
+    .infor[data-v-266b1872] {
+    left: 8px;
+    position: relative;
+    transform: scale(.9);
+}
+
+
+.wrapper .details img{
+    width: 100%;
+}
+.wrapper .details .content{
+    width: 100%;
+}
+
+}
+
+
+@media (max-width: 880px){
+ .wrapper .row{
+        transform: scale(.4) ;
+        display: flex;
+        justify-content: space-evenly!important;
+    }
+    .details-content{
+    /* margin: 10px 50px ; */
+    margin-right: -18px;
+
+    }
+    .infor[data-v-266b1872] {
+    left: 8px;
+    position: relative;
+    transform: scale(.9);
+}
+.wrapper .details{
+    width: 300px !important;
+}
+
+.wrapper .details img{
+    width:93%;
+}
+.wrapper .details .content{
+    width: 93%;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navigate2 {
+    margin: 30px 0;
+    text-align: center;
+}
+.navigate2 svg{
+    animation: e 2s infinite;
+    width: 28px;
+}
+
+@keyframes e{0%,20%,50%,80%,to{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}
+.parent{
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%,0);
+
+}
+.parent img{
+  width: 170px;
+}
+
+.pallete-swiper{
+    /* position: absolute; */
+    /* top: 100px; */
+    /* left: 50%;
+    transform: translate(50%,0); */
+    position: absolute;
+    text-align: center;
+    /* transform: scale(.9); */
+}
+.pallete-swiper img{
+    width: auto;
+    height: 50vw;
+    margin-top: 30px;
+    border-top: 6px solid #111;
+    border-bottom: 6px solid #111;
+}
+.pallete-swiper .swiper-pagination{
+    display: none;
+}
+.pallete-swiper .swiper-slide {
+    width: 77% !important;
+
+}
+.swiper-wrapper{
+    /* left: 44px; */
+}
+
+.pallete-swiper .content{
+ position: relative;
+        font-size: 14px;
+        width:  68%;
+        margin-top: 34px;
+        /* margin: 16px auto 0; */
+        padding: 6px 5px;
+        transition: all .5s;
+        color:white;
+        border-radius: 10px;
+        background: rgba(0,0,0,0.75);
+        top: 10px;
+        padding: 0 20px;
+        border: 4px solid rgba(0,0,0,-7.25);
+        left:50%;
+        transform: translate(-50%,-50%) scale(.5);
+
+}
+
+.pallete-swiper .content .triangle{
+    position: relative;
+    z-index: 1;
+    /* padding: 10px; */
+    display: inline-block;
+    top: -29px;
+    left: 50%;
+    background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon.png);
+    transform: rotate(0) scale(2.3) translate(-316%, 18%);
+    /* background: rgba(0,0,0,0.9); */
+    width: 22px;
+    height: 10px;
+
+}
+
+
+@media (max-width: 414px){
+
+.pallete-swiper img{
+
+
+    margin-top: 80px;
+
+}
+.pallete-swiper .content{
+ position: relative;
+        font-size: 14px;
+        width:  68%;
+        margin-top: 34px;
+        /* margin: 16px auto 0; */
+        padding: 6px 5px;
+        transition: all .5s;
+        color:white;
+        border-radius: 10px;
+        background: rgba(0,0,0,0.75);
+        top: 10px;
+        padding: 0 20px;
+        border: 4px solid rgba(0,0,0,-7.25);
+        left:50%;
+        transform: translate(-50%,-50%) scale(.5);
+
+}
+
+.pallete-swiper .content .triangle{
+
+    left: 58%;
+
+
+}
+
+.pallete-swiper .swiper-slide {
+         width: 70% !important;
+
+}
+}
+
 
 .rotate{
  width: 100%;

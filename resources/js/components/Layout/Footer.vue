@@ -4,8 +4,7 @@
         <div class="col-md-4 footer-col-1">
             <a href="" class="footer-logo">{{$t("message.logo") }}</a>
             <div class="footer-info">
-                <p class="lead">{{ $t("message.lorem") }}<br>
-                  {{ $t("message.lorem") }}</p>
+                <p class="lead">{{ $t("message.addressfooter") }}<br></p>
             </div>
             <div class="footer-social">
                 <a href="" class="custom-social-link "><i class="fa fa-facebook facebook"></i></a>
@@ -14,47 +13,59 @@
         </div>
         <div class="col-md-8 ">
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-2 pl-5">
+                <div class="col-md-6 col-lg-3 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.Limitworks") }}
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">  {{ $t("message.lorem") }}</a>
+                            <a href="#" class="footer-menu-item-link">  {{ $t("message.shopfooter") }}</a>
 
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">  {{ $t("message.lorem") }}</a>
+                            <a href="#" class="footer-menu-item-link">  {{ $t("message.aboutfooter") }}</a>
 
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-2 pl-5">
+                <div class="col-md-6 col-lg-3 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.company") }}
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.lorem") }}</a>
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.carreerfooter") }}</a>
 
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.lorem") }}</a>
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.aboutusfooter") }}</a>
+
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.artistfooter") }}</a>
+
+                        </li>
+                        <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.contactfooter") }}</a>
 
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-2 pl-5">
+                <div class="col-md-6 col-lg-3 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.others") }}
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.lorem") }}</a>
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.termsfooter") }}</a>
 
                         </li>
                         <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.lorem") }}</a>
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.privacyfooter") }}</a>
+
+                        </li>
+                          <li class="footer-menu-item">
+                            <a href="#" class="footer-menu-item-link">{{ $t("message.refundpolicy") }}</a>
 
                         </li>
                     </ul>
@@ -104,5 +115,22 @@ export default {
     margin-left: 0;
     margin-right: 0;
 }
+
+
+.col-lg-3,.col-sm-6{
+    padding: 0;
+}
+
+@media (max-width: 991px){
+.footer-col-2 {
+    width: 91%;
+    margin-left: 5%;
+}
+}
+
+.lead{
+    font-size: 16px!important;
+}
+
 
 </style>
