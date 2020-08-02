@@ -4124,19 +4124,18 @@ __webpack_require__.r(__webpack_exports__);
     swiper.update();
   },
   methods: {
-    hover: function hover(id) {
-      var _this2 = this;
-
-      axios.get('/api/hover/' + id).then(function (res) {
-        // console.log(id,this.image_hover,'dssdsd',res.data);
-        if (res.data.hover_image) {
-          _this2.image_hover = res.data.hover_image.img;
-        } else {// console.log(res.data);
-        }
-      })["catch"](function (e) {
-        console.log(e.data);
-      });
-    },
+    // hover(id){
+    //         axios.get('/api/hover/'+id).then(res=>{
+    //                         // console.log(id,this.image_hover,'dssdsd',res.data);
+    //             if(res.data.hover_image)
+    //             {
+    //                 this.image_hover=res.data.hover_image.img;
+    //             }else{
+    //                 // console.log(res.data);
+    //             }
+    //         }).catch(e=>{console.log(e.data);
+    //         })
+    // },
     showmore: function showmore(id) {}
   }
 });
@@ -46919,126 +46918,118 @@ var render = function() {
           "div",
           { staticClass: "swiper-wrapper" },
           _vm._l(_vm.sliderPalettes, function(data) {
-            return _c(
-              "div",
-              {
-                key: data.id,
-                staticClass: "swiper-slide ",
-                on: {
-                  mouseover: function($event) {
-                    return _vm.hover(data.id)
-                  }
-                }
-              },
-              [
-                _c("div", { staticClass: "product-grid-item" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "product-grid-item__image",
-                      on: {
-                        click: function($event) {
-                          return _vm.showmore(data.id)
-                        }
+            return _c("div", { key: data.id, staticClass: "swiper-slide " }, [
+              _c("div", { staticClass: "product-grid-item" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "product-grid-item__image",
+                    on: {
+                      click: function($event) {
+                        return _vm.showmore(data.id)
                       }
-                    },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "product-grid-item__imagewrapper",
+                    }
+                  },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "product-grid-item__imagewrapper",
+                        attrs: {
+                          to: { path: "/shop", query: { mydata: data.id } },
+                          "data-product-handle": "son-this-is-the-universe",
+                          "data-product-quantity": "48"
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "front",
+                          staticStyle: { height: "100%" },
+                          attrs: { src: data.img ? data.img : "ffff" }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          staticClass: "back",
+                          staticStyle: { height: "100%" },
                           attrs: {
-                            to: { path: "/shop", query: { mydata: data.id } },
+                            src: data.extraimg
+                              ? data.extraimg.img
+                              : "https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg"
+                          }
+                        })
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _vm._m(0, true),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "product-grid-item__tags" }, [
+                      _c("div", { staticClass: "cms-special-description" }, [
+                        _c(
+                          "span",
+                          { staticClass: "cms-special-label color-4" },
+                          [_vm._v(_vm._s(data.name))]
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Walltones-studio added diamond dust to this print for a glittering effect that makes the artwork even more enticing. Additionally, keep in mind that each artwork is done by hand and therefore may slightly vary from the exemplary product images."
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "cms-special-description" }, [
+                        _c(
+                          "span",
+                          { staticClass: "cms-special-label color-7" },
+                          [_vm._v(_vm._s(_vm.$t("message.newreleaseheader")))]
+                        ),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "This artwork was added recently (but will likely be sold out soon)"
+                          )
+                        ])
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "product-grid-item__info" }, [
+                  _c("div", { staticClass: "product-grid-item__title" }, [
+                    _c("h3", { staticClass: "product-grid-item__name" }, [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
                             "data-product-handle": "son-this-is-the-universe",
                             "data-product-quantity": "48"
                           }
                         },
-                        [
-                          _c("img", {
-                            staticClass: "front",
-                            staticStyle: { height: "100%" },
-                            attrs: { src: data.img }
-                          }),
-                          _vm._v(" "),
-                          _c("img", {
-                            staticClass: "back",
-                            staticStyle: { height: "100%" },
-                            attrs: { src: _vm.image_hover }
-                          })
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm._m(0, true),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "product-grid-item__tags" }, [
-                        _c("div", { staticClass: "cms-special-description" }, [
-                          _c(
-                            "span",
-                            { staticClass: "cms-special-label color-4" },
-                            [_vm._v(_vm._s(data.name))]
-                          ),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Walltones-studio added diamond dust to this print for a glittering effect that makes the artwork even more enticing. Additionally, keep in mind that each artwork is done by hand and therefore may slightly vary from the exemplary product images."
-                            )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "cms-special-description" }, [
-                          _c(
-                            "span",
-                            { staticClass: "cms-special-label color-7" },
-                            [_vm._v(_vm._s(_vm.$t("message.newreleaseheader")))]
-                          ),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "This artwork was added recently (but will likely be sold out soon)"
-                            )
-                          ])
-                        ])
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "product-grid-item__info" }, [
-                    _c("div", { staticClass: "product-grid-item__title" }, [
-                      _c("h3", { staticClass: "product-grid-item__name" }, [
-                        _c(
-                          "a",
-                          {
-                            attrs: {
-                              "data-product-handle": "son-this-is-the-universe",
-                              "data-product-quantity": "48"
-                            }
-                          },
-                          [_vm._v(_vm._s(data.name))]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "product-grid-item__price" }, [
-                        _vm._v("from $" + _vm._s(data.L_price))
-                      ])
+                        [_vm._v(_vm._s(data.name))]
+                      )
                     ]),
                     _vm._v(" "),
-                    _c("span", { staticClass: "product-grid-item__qty" }, [
-                      _c("span", { staticClass: "prints-times text-success" }, [
-                        _vm._v(_vm._s(data.palette_copies) + " / ")
-                      ]),
-                      _c("span", [
-                        _vm._v(
-                          _vm._s(data.avalible_copies) +
-                            " " +
-                            _vm._s(_vm.$t("message.left"))
-                        )
-                      ])
+                    _c("span", { staticClass: "product-grid-item__price" }, [
+                      _vm._v("from $" + _vm._s(data.L_price))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "product-grid-item__qty" }, [
+                    _c("span", { staticClass: "prints-times text-success" }, [
+                      _vm._v(_vm._s(data.palette_copies) + " / ")
+                    ]),
+                    _c("span", [
+                      _vm._v(
+                        _vm._s(data.avalible_copies) +
+                          " " +
+                          _vm._s(_vm.$t("message.left"))
+                      )
                     ])
                   ])
                 ])
-              ]
-            )
+              ])
+            ])
           }),
           0
         ),
@@ -109219,8 +109210,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
