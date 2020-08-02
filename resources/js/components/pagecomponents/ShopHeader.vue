@@ -77,7 +77,7 @@
                 <div class="col-lg-7" >
                     <div class="row">
                         <div class="col-md-6 mb-3 targ pl-1" v-for="minPalette in minPalettes"  :key="minPalette.id" >
-                            <img :src="minPalette.img" style="height:400px" class="w-100" alt="...">
+                            <img :src="minPalette.img" style="height:400px" class="w-100"  alt="...">
                         </div>
                     </div>
                 </div>
@@ -268,7 +268,7 @@ export default {
 
     created() {
 
-                        if(this.$route.query.mydata)
+        if(this.$route.query.mydata)
         {
                  this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
@@ -1010,7 +1010,7 @@ transform: scale(.7);
 }
 
 
-@media (max-width: 375px){
+@media (max-width: 414px){
 
 .pallete-swiper img{
 
@@ -1039,13 +1039,13 @@ transform: scale(.7);
 
 .pallete-swiper .content .triangle{
 
-    left: 64%;
+    left: 58%;
 
 
 }
 
 .pallete-swiper .swiper-slide {
-    width: 67% !important;
+         width: 70% !important;
 
 }
 }

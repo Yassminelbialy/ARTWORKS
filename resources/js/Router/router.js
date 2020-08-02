@@ -7,6 +7,7 @@ import Shop from '../components/Page/ShopArt';
 import About from '../components/Page/AboutUs';
 import Terms from '../components/Page/Terms';
 import Privacy from '../components/Page/Privacy';
+import JoinUs from '../components/Page/JoinUs';
 import Refund from '../components/Page/Refund';
 import Payment from '../components/Page/Payment';
 const routes = [
@@ -16,7 +17,8 @@ const routes = [
     { path: '/terms', component: Terms },
     { path: '/privacy', component: Privacy },
     { path: '/refund', component: Refund },
-    { path: '/payment', component:Payment}
+    { path: '/payment', component:Payment},
+    { path: '/joinus', component:JoinUs},
 ]
 
 const router = new VueRouter({

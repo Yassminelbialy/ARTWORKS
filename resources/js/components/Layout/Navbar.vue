@@ -1,8 +1,4 @@
 <template>
-
-
-
-
     <nav class="navbar navbar-expand-lg navbar-light px-3 sticky-top">
         <button class="navbar-toggler" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -13,7 +9,7 @@
     </div>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0">
-                <li class="nav-item d-block d-sm-none about">
+                <li class=" d-block d-sm-none about">
                    <LanguageDropdown></LanguageDropdown>
                 </li>
                 <li class="nav-item home active">

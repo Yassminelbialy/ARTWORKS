@@ -19,7 +19,8 @@ class AppliedartistRepository extends BaseRepository
     protected $fieldSearchable = [
         'name',
         'email',
-        'phone'
+        'phone',
+        'socialLink'
     ];
 
     /**

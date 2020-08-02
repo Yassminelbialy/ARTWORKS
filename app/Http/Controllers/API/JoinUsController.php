@@ -19,13 +19,15 @@ class JoinUsController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email:rfc,dns',
             'name' => 'required|string|max:100',
-            'phone' => ['required', 'regex:/^\+(?:[0-9] ?){6,14}[0-9]$/'],            ]);
+            'phone' => ['required', 'regex:/^\+(?:[0-9] ?){6,14}[0-9]$/'],
+            'socialLink' => 'required'
+            ]);
                 if($validator->errors()->count() > 0)
                 {
                     return response()->json(['status'=>false,'errors'=>$validator->errors()->all()]);
                 }
 
-          $applied =  Appliedartist::create($request->only(['name','email','phone']));
+          $applied =  Appliedartist::create($request->only(['name','email','phone','socialLink']));
           if($applied)
           {
             return response()->json(['status'=>true,'data'=>$applied]);

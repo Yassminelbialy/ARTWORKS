@@ -116,9 +116,7 @@ const messages = {
             termsfooter:'Terms of use',
             privacyfooter:'Privacy Policy',
             refundpolicy:'Refund Policy',
-
-
-
+            socialLink:'SocialLink'
 
 
 
@@ -210,7 +208,7 @@ const messages = {
              termsfooter:'شروط الاستخدام',
              privacyfooter:'سياسة خاصة',
              refundpolicy:'سياسة الاسترجاع',
-
+             socialLink:'رابط التواصل اﻷجتماعي'
 
 
 
