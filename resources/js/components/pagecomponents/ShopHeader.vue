@@ -852,7 +852,7 @@ transform: scale(.7);
         /* top: -230px; */
 
         left: 51px;
-    transform: scale(0.38);
+    transform: scale(0.4);
 
     }
     .details-content{

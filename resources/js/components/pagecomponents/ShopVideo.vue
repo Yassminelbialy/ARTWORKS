@@ -40,6 +40,6 @@ export default {
         margin: 0;
     }
     video{
-        display: block!important;
+        display: block !important;
     }
 </style>
