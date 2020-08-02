@@ -32,7 +32,7 @@ Route::post('addtocart', 'PaletteAPIController@addtocart');
 Route::get('getpallatecart','PaletteAPIController@getpallatecart');
 Route::post('removefromcart','PaletteAPIController@removefromcart');
 
-Route::group(['middleware'=>['api']], function () {
+    Route::group(['middleware'=>['api']], function () {
     Route::post('check-promo' ,'CheckPromo@check_promo');
     Route::post('add-order' ,'OrderController@store');
     Route::get('payment/{order?}' ,'OrderController@create');
