@@ -26,6 +26,7 @@ a:hover {
     text-decoration: none;
 }
 
+
 li.nav-item {
     margin: 0 5px;
     border-bottom: 2px solid white;
@@ -34,6 +35,19 @@ li.nav-item {
 
 .navbar-nav li.active {
     border-bottom-color: black;
+}
+@media(max-width:991px){
+    .navbar-nav li.active {
+        border-bottom-color: black;
+        width: 70px;
+    }
+    li.nav-item:hover {
+        border-bottom-color: gray;
+        width: 70px;
+    }
+    .navbar .navbar-brand img{
+        width: 60%;
+    }
 }
 
 li.nav-item:hover {
@@ -52,7 +66,11 @@ nav.navbar {
     padding: 0;
     position: relative;
 }
-
+@media(max-width:991px){
+    .nav-btns{
+       margin-top: 20px;
+    }
+}
 .nav-btns:first-of-type {
     margin-right: 12px;
 }

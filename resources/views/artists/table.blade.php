@@ -5,7 +5,7 @@
                 <th>Name</th>
                 <!-- <th>Palette Description</th> -->
                 <th>Email</th>
-                <th>Artist Img</th>
+                <!-- <th>Artist Img</th> -->
                 <th>Cover Img</th>
                 <th colspan="3" style=" padding-left: 2%;">Action</th>
             </tr>
@@ -16,7 +16,7 @@
                 <td>{{ $artist->name }}</td>
                 <!-- <td>{{ $artist->Plates_description }}</td> -->
                 <td>{{ $artist->email }}</td>
-                <td><img height="50" width="50" src="{{ $artist->artist_img }}" /></td>
+                <!-- <td><img height="50" width="50" src="{{ $artist->artist_img }}" /></td> -->
                 <td><img height="50" width="50" src="{{ $artist->cover_img }}" /></td>
                 <td>
                     {!! Form::open(['route' => ['artists.destroy', $artist->id], 'method' => 'delete']) !!}

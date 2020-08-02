@@ -94,7 +94,7 @@ export default {
         this.artists = response.data.dataArtist;
         this.about = response.data.data
       })
-      .catch(error => console.log(error.response.data));
+      .catch(error => this.errors=error.response.data);
   },
 
 };

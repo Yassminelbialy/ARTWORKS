@@ -16,11 +16,11 @@
     <p>{{ $artist->email }}</p>
 </div>
 
-<!-- Artist Img Field -->
+<!-- Artist Img Field
 <div class="form-group">
     {!! Form::label('artist_img', 'Artist Img:') !!}
     <p>{{ $artist->artist_img }}</p>
-</div>
+</div> -->
 
 <!-- Cover Img Field -->
 <div class="form-group">

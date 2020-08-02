@@ -64,6 +64,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+@media(max-width:991px)
+{
+    .hero .hero-title{
+        font-size: 65px;
+    }
+}
 </style>
