@@ -43,7 +43,8 @@
 <!-- Video Field -->
 <div class="form-group">
     {!! Form::label('video', 'Video:') !!}
-    <video style="width: 300;height:300" controls src="/{{ $homeData->video }}"></video>
+    <img style="width: 300;height:300px" src="/{{ $homeData->video }}" alt="ssss" srcset="">
+
 </div>
 
 <!-- Created At Field -->
