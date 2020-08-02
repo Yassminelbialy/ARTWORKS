@@ -19,8 +19,8 @@ use App\Http\Middleware\CheckAdmin;
 Auth::routes();
 
 Route::view('/','userLayout.home');
-Route::group(['middleware' => 'isadmin'], function () {
-    Route::get('/admin', 'AdminController@index')->middleware(['isadmin'])->name("admin.index");
+
+    Route::get('/admin', 'AdminController@index')->name("admin.index");
     Route::resource('appliedartists', 'AppliedartistController');
     Route::resource('artists', 'ArtistController');
     Route::resource('reviews', 'ReviewController');
@@ -35,7 +35,7 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::get('changeStatus', 'UserController@changeStatus');
     Route::resource('homeDatas', 'HomeDataController');
 
-});
+
 Route::get('/home', 'HomeController@index')->middleware('verified')->name("home.index");
 Route::get('/', 'HomeController@index');
 

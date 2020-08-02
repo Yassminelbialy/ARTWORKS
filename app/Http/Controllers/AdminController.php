@@ -16,7 +16,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+
     }
 
     /**
@@ -26,8 +26,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $artists = DB::table('artists')->count();    
-        $palettes = DB::table('palettes')->count();    
+        $artists = DB::table('artists')->count();
+        $palettes = DB::table('palettes')->count();
 
         return view('admin',['artists'=>$artists,"palettes"=>$palettes]);
     }
