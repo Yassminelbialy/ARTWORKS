@@ -2230,10 +2230,10 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    var infoUrl = window.location.href;
-    var infoUrlTarget = infoUrl.split('/').slice(-1)[0];
-    $("." + infoUrlTarget).addClass('active').siblings().removeClass('active');
-    console.log("." + infoUrlTarget);
+    // let infoUrl = window.location.href
+    // let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
+    // $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
+    // console.log("."+infoUrlTarget)
     axios.get('/api/getpallatecart').then(function (res) {
       _this.cartcount = res.data.palettes.length;
       _this.pallatecart = res.data.palettes;
@@ -3776,17 +3776,28 @@ __webpack_require__.r(__webpack_exports__);
       },
       observer: true,
       observerParents: true
-    });
-    swiper.update();
+    }); // swiper.update();
   },
   created: function created() {
     var _this = this;
 
     if (this.$route.query.mydata) {
-      this.addActive(this.$route.query.mydata);
+      axios.get('/api/palettes').then(function (response) {
+        _this.artists = response.data.artists;
+        _this.first = response.data.artists[0].id;
+        axios.get("/api/view?id=" + _this.first).then(function (response) {
+          _this.palettes = response.data.palettes;
+          _this.name = response.data.palettes[0].name, _this.cardId = response.data.palettes[0].id, _this.S_copies = response.data.palettes[0].S_copies, _this.S_avalible = response.data.palettes[0].S_avalible, _this.S_price = response.data.palettes[0].S_price, _this.M_copies = response.data.palettes[0].M_copies, _this.M_avalible = response.data.palettes[0].M_avalible, _this.M_price = response.data.palettes[0].M_price, _this.L_copies = response.data.palettes[0].L_copies, _this.L_avalible = response.data.palettes[0].L_avalible, _this.L_price = response.data.palettes[0].L_price, _this.sizing_details = response.data.palettes[0].sizing_details;
+          _this.palettesArtists = response.data.palettesArtists;
+        })["catch"](function (error) {
+          return console.log(error.response.data);
+        });
+      })["catch"](function (error) {
+        return console.log(error.response.data);
+      }); //this.addActive(this.$route.query.mydata)
+
       axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata).then(function (response) {
         _this.minPalettes = response.data.minPalettes;
-        console.log(_this.$route.query.mydata);
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
@@ -3945,9 +3956,9 @@ __webpack_require__.r(__webpack_exports__);
     addActive: function addActive($minPalette_id, index) {
       var _this3 = this;
 
-      console.log(this.$refs.myActive);
-      var myActive = this.$refs.myActive[index];
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()(myActive).addClass('active').siblings().removeClass('active');
+      // console.log(  this.$refs.myActive)
+      //   let myActive =  this.$refs.myActive[index]
+      //         $(myActive).addClass('active').siblings().removeClass('active');
       jquery__WEBPACK_IMPORTED_MODULE_2___default()("html,body").animate({
         scrollTop: "450px"
       }, 1000);
@@ -4161,8 +4172,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       observer: true,
       observerParents: true
-    });
-    swiper.update();
+    }); // swiper.update();
   },
   methods: {
     // hover(id){
@@ -109260,8 +109270,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
