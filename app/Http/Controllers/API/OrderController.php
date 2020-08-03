@@ -53,7 +53,43 @@ class OrderController extends Controller
         }
         curl_close($ch);
          $responseData = json_decode( $responseData);
-         dd($request->all(),$order,$responseData);
+
+        //  dd($request->all(),$order->items,$responseData);
+         if(isset($responseData->id) && isset($responseData->result->description) &&  str_contains($responseData->result->description,'successfully'))
+         {
+            //  return 'error' ;
+            $key['small']="S_avalible";
+            $key['medium']='M_avalible';
+            $key['large']='L_avalible';
+
+            foreach ($order->items as  $item) {
+                $palette  =  Palette::find($item->palatte_id);
+                $palette_arr =$palette->toArray();
+                $quantity_left =  $palette_arr[$key[$item->size]];
+                $sub = $quantity_left - $item->quantity;
+                $subcopies=$palette->avalible_copies -  $item->quantity;
+                $palette->update([$key[$item->size]=>$sub,'avalible_copies'=>$subcopies]);
+
+
+
+
+             }
+             return view('checkout.success',['id'=>$responseData->id]);
+
+
+
+         }else
+         {
+             if(isset($responseData->result->description))
+             {
+                             return view('checkout.error',['msg'=>$responseData->result->description]);
+
+             }else
+             {
+                return view('checkout.error',['msg'=>'error accured please contact us ']);
+
+             }
+        }
 
     }
 
@@ -199,7 +235,7 @@ class OrderController extends Controller
         {
             $url = "https://test.oppwa.com/v1/checkouts";
             $data = "entityId=8a8294174b7ecb28014b9699220015ca" .
-                        "&amount=92.00" .
+                        "&amount=$price" .
                         "&currency=EUR" .
                         "&paymentType=DB";
 
