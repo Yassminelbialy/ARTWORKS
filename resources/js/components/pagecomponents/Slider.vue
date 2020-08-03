@@ -8,12 +8,12 @@
         </h2>
         <div class="swiper-container mt-5">
             <div class="swiper-wrapper">
-              <div @mouseover="hover(data.id)" class="swiper-slide " v-for="data in sliderPalettes" :key="data.id">
+              <div class="swiper-slide " v-for="data in sliderPalettes" :key="data.id">
                 <div class="product-grid-item">
                     <div @click="showmore(data.id)" class="product-grid-item__image">
                         <router-link  :to="{ path: '/shop', query: { mydata: data.id }}" class="product-grid-item__imagewrapper"  data-product-handle="son-this-is-the-universe" data-product-quantity="48">
-                            <img class="front" :src="data.img" style="height:100%">
-                            <img class="back" :src="image_hover" style="height:100%">
+                            <img class="front" :src="data.img?data.img:'ffff'" style="height:100%">
+                            <img class="back" :src="data.extraimg?data.extraimg.img:'https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg'" style="height:100%">
 
                         </router-link>
                         <div class="product-grid-item__variants">
@@ -100,23 +100,23 @@
             swiper.update();
         },
     methods:{
-        hover(id){
+        // hover(id){
 
-                axios.get('/api/hover/'+id).then(res=>{
+        //         axios.get('/api/hover/'+id).then(res=>{
 
-                                // console.log(id,this.image_hover,'dssdsd',res.data);
+        //                         // console.log(id,this.image_hover,'dssdsd',res.data);
 
-                    if(res.data.hover_image)
-                    {
-                        this.image_hover=res.data.hover_image.img;
+        //             if(res.data.hover_image)
+        //             {
+        //                 this.image_hover=res.data.hover_image.img;
 
-                    }else{
-                        // console.log(res.data);
+        //             }else{
+        //                 // console.log(res.data);
 
-                    }
-                }).catch(e=>{console.log(e.data);
-                })
-        },
+        //             }
+        //         }).catch(e=>{console.log(e.data);
+        //         })
+        // },
             showmore(id){
 
 

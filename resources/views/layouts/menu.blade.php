@@ -57,15 +57,15 @@
 
 
 <li class="{{ Request::is('homeDatas*') ? 'active' : '' }}">
-    <a href="{{ route('homeDatas.index') }}"><i class="fa fa-edit"></i><span>Home Datas</span></a>
+    <a href="{{ route('homeDatas.index') }}"><i class="fa fa-edit"></i><span>Home Content</span></a>
 </li>
 
 
 <li class="{{ Request::is('aboutContents*') ? 'active' : '' }}">
-    <a href="{{ route('aboutContents.index') }}"><i class="fa fa-edit"></i><span>About Contents</span></a>
+    <a href="{{ route('aboutContents.index') }}"><i class="fa fa-edit"></i><span>About P:Content</span></a>
 </li>
 
 <li class="{{ Request::is('aboutAretists*') ? 'active' : '' }}">
-    <a href="{{ route('aboutAretists.index') }}"><i class="fa fa-edit"></i><span>About Aretists</span></a>
+    <a href="{{ route('aboutAretists.index') }}"><i class="fa fa-edit"></i><span>About P:Artists</span></a>
 </li>
 

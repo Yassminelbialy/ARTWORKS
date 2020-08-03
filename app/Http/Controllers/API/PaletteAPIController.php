@@ -37,8 +37,21 @@ class PaletteAPIController extends AppBaseController
      */
     public function index()
     {
+        $arr=[];
         $artists = Artist::all();
         $palettesSlider = Palette::all();
+        foreach ($palettesSlider as $item) {
+            $myitem= $item-> images->first();
+            if($myitem)
+            {
+                 $item->extraimg = $myitem ;
+            }else
+            {
+                $item->extraimg  =  'https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg';
+            }
+
+        }
+
 
         return response()->json(['artists' => $artists,'palettesSlider' =>$palettesSlider]);
 
