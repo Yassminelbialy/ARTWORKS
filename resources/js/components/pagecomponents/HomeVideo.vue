@@ -1,5 +1,5 @@
 <template>
-    <header style="background-image:url(https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg)" class="about-us">
+    <header :style="'background-image:url('+data+')'"  class="about-us">
         <div class="overlay"></div>
 
         <div class="text mb-4 about-content">
@@ -19,12 +19,16 @@ export default {
         }
     },
     beforeCreate(){
+
                 axios.get('/api/homedata').then((result) => {
 
             if(result.data.status)
             {
 
-                this.data="/"+result.data.data.video
+
+
+                this.data=result.data.data.video
+                console.log("images",result.data.data.video)
             }
         }).catch((err) => {
             console.log(err.data);

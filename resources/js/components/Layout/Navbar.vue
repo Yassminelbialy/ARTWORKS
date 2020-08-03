@@ -143,10 +143,10 @@ export default {
     },
     mounted(){
 
-        let infoUrl = window.location.href
-        let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
-        $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
-        console.log("."+infoUrlTarget)
+        // let infoUrl = window.location.href
+        // let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
+        // $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
+        // console.log("."+infoUrlTarget)
 
         axios.get('/api/getpallatecart')
         .then(res=>{

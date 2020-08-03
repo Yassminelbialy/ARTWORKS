@@ -107,7 +107,7 @@
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
-                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{M_copies}}/{{M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <h3 class="mt-4 mb-4" v-if="active_el==2">Medium  </h3>
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
