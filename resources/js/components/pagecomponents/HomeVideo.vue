@@ -1,8 +1,7 @@
 <template>
-    <header class="about-us">
+    <header :style="`background-image:url(${data})`" class="about-us">
         <div class="overlay"></div>
-        <video :src="data" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        </video>
+
         <div class="text mb-4 about-content">
             <h1>{{ $t("message.about") }}</h1>
             <router-link to="/about" class="mb-5">
@@ -41,7 +40,13 @@ export default {
     position: relative;
     top:342px;
 
+
 }
+.about-us{
+    background-repeat: no-repeat;
+    background-size: cover  ;
+    background-position: center;
+    }
 </style>
 
 

@@ -34,13 +34,8 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::get('users', 'UserController@index');
     Route::get('changeStatus', 'UserController@changeStatus');
     Route::resource('homeDatas', 'HomeDataController');
-
-
-
-
-Route::resource('aboutContents', 'AboutContentController');
-
-Route::resource('aboutAretists', 'AboutAretistsController');
+    Route::resource('aboutContents', 'AboutContentController');
+    Route::resource('aboutAretists', 'AboutAretistsController');
 
 });
 Route::get('/home', 'HomeController@index')->middleware('verified')->name("home.index");

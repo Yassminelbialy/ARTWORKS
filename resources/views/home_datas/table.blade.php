@@ -23,7 +23,7 @@
             <td>{{ $homeData->word3_en }}</td>
             <td>{{ $homeData->word3_ar }}</td>
             <td> <img style="width: 100px;height:100px" src=" {{ $homeData->image }}" alt="" srcset=""></td>
-            <td> <video style="width: 200px;height:100px" controls src="{{ $homeData->video }}"></video></td>
+            <td> <img style="width: 200px;height:100px" controls src="{{ $homeData->video }}"> </td>
                 <td>
                     {!! Form::open(['route' => ['homeDatas.destroy', $homeData->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

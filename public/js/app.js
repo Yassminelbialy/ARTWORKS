@@ -2988,6 +2988,7 @@ __webpack_require__.r(__webpack_exports__);
       discount: "",
       discount_value: 0,
       totalprice_2: 0,
+      id: '',
       item: ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas (the)", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba", "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory (the)", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Cayman Islands (the)", "Central African Republic (the)", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands (the)", "Colombia", "Comoros (the)", "Congo (the Democratic Republic of the)", "Congo (the)", "Cook Islands (the)", "Costa Rica", "Croatia", "Cuba", "Curaçao", "Cyprus", "Czechia", "Côte d'Ivoire", "Denmark", "Djibouti", "Dominica", "Dominican Republic (the)", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Falkland Islands (the) [Malvinas]", "Faroe Islands (the)", "Fiji", "Finland", "France", "French Guiana", "French Polynesia", "French Southern Territories (the)", "Gabon", "Gambia (the)", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard Island and McDonald Islands", "Holy See (the)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Isle of Man", "Israel", "Italy", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea (the Democratic People's Republic of)", "Korea (the Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic (the)", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Macao", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands (the)", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia (Federated States of)", "Moldova (the Republic of)", "Monaco", "Mongolia", "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands (the)", "New Caledonia", "New Zealand", "Nicaragua", "Niger (the)", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands (the)", "Norway", "Oman", "Pakistan", "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines (the)", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Republic of North Macedonia", "Romania", "Russian Federation (the)", "Rwanda", "Réunion", "Saint Barthélemy", "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin (French part)", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Sint Maarten (Dutch part)", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "South Sudan", "Spain", "Sri Lanka", "Sudan (the)", "Suriname", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands (the)", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates (the)", "United Kingdom of Great Britain and Northern Ireland (the)", "United States Minor Outlying Islands (the)", "United States of America (the)", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna", "Western Sahara", "Yemen", "Zambia", "Zimbabwe", "Åland Islands"],
       item_ar: ["أفغانستان", "ألبانيا", "الجزائر", "ساموا الأمريكية", "أندورا", "أنغولا", "أنغيلا", "أنتاركتيكا", "أنتيغوا وبربودا", "الأرجنتين", "أرمينيا", "أروبا", "أستراليا", "النمسا", "أذربيجان", "جزر البهاما", "البحرين", "بنغلاديش", "بربادوس", "بيلاروس", "بلجيكا", "بليز", "بنين", "برمودا", "بوتان", "بوليفيا (دولة - المتعددة القوميات)", "بونير وسينت أوستاتيوس وسابا", "البوسنة والهرسك", "بوتسوانا", "جزيرة بوفيت", "البرازيل", "إقليم المحيط الهندي البريطاني (the)", "بروناي دار السلام", "بلغاريا", "بوركينا فاسو", "بوروندي", "كابو فيردي", "كمبوديا", "الكاميرون", "كندا", "جزر كايمان (ال)", "جمهورية أفريقيا الوسطى", "تشاد", "تشيلي", "الصين", "جزيرة الكريسماس", "جزر كوكوس (كيلينغ)", "كولومبيا", "جزر القمر", "جمهورية الكونغو الديمقراطية", "الكونغو (ال)", "جزر كوك", "كوستا ريكا", "كرواتيا", "كوبا", "كوراساو", "قبرص", "التشيك", "كوت ديفوار", "الدنمارك", "جيبوتي", "دومينيكا", "جمهورية الدومينيكان", "إكوادور", "مصر", "السلفادور", "غينيا الإستوائية", "إريتريا", "إستونيا", "Eswatini", "أثيوبيا", "جزر فوكلاند (مالفيناس)", "جزر فارو", "فيجي", "فنلندا", "فرنسا", "غيانا الفرنسية", "بولينيزيا الفرنسية", "الأقاليم الجنوبية الفرنسية (ال)", "الغابون", "غامبيا", "جورجيا", "ألمانيا", "غانا", "جبل طارق", "اليونان", "الأرض الخضراء", "غرينادا", "جوادلوب", "غوام", "غواتيمالا", "غيرنسي", "غينيا", "غينيا - بيساو", "غيانا", "هايتي", "قلب الجزيرة وجزر ماكدونالز", "الكرسي الرسولي", "هندوراس", "هونغ كونغ", "هنغاريا", "أيسلندا", "الهند", "إندونيسيا", "جمهورية إيران الإسلامية", "العراق", "أيرلندا", "جزيرة آيل أوف مان", "إسرائيل", "إيطاليا", "جامايكا", "اليابان", "جيرسي", "الأردن", "كازاخستان", "كينيا", "كيريباتي", "كوريا (جمهورية - الديمقراطية الشعبية)", "جمهورية كوريا", "الكويت", "قيرغيزستان", "جمهورية لاو الديمقراطية الشعبية (ذا)", "لاتفيا", "لبنان", "ليسوتو", "ليبيريا", "ليبيا", "ليختنشتاين", "ليتوانيا", "لوكسمبورغ", "ماكاو", 'مدغشقر', "ملاوي", "ماليزيا", "جزر المالديف", "مالي", "مالطا", "جزر مارشال", "مارتينيك", "موريتانيا", "موريشيوس", "مايوت", "المكسيك", "ميكرونيزيا (ولايات - الموحدة)", "مولدوفا (جمهورية)", "موناكو", "منغوليا", "الجبل الأسود", "مونتسيرات", "المغرب", "موزمبيق", "ميانمار", "ناميبيا", "ناورو", "نيبال", "هولندا", "كاليدونيا الجديدة", "نيوزيلندا", "نيكاراغوا", "النيجر", "نيجيريا", "نيوي", "جزيرة نورفولك", "جزر ماريانا الشمالية", "النرويج", "سلطنة عمان", "باكستان", "بالاو", "فلسطين , دولة", "بنما", "بابوا غينيا الجديدة", "باراغواي", "بيرو", "الفلبين", "بيتكيرن", "بولندا", "البرتغال", "بورتوريكو", "دولة قطر", "جمهورية شمال مقدونيا", "رومانيا", "الاتحاد الروسي", "رواندا", "جمع شمل", "سانت بارتيليمي", "سانت هيلانة وأسنسيون وتريستان دا كونها", "سانت كيتس ونيفيس", "القديسة لوسيا", "سانت مارتن (الجزء الفرنسي)", "سانت بيير وميكلون", "سانت فنسنت وجزر غرينادين", "ساموا", "سان مارينو", "ساو تومي وبرينسيبي", "المملكة العربية السعودية", "السنغال", "صربيا", "سيشيل", "سيرا ليون", "سنغافورة", "سانت مارتن (الجزء الهولندي)", "سلوفاكيا", "سلوفينيا", "جزر سليمان", "الصومال", "جنوب أفريقيا", "جورجيا الجنوبية وجزر ساندويتش الجنوبية", "جنوب السودان", "إسبانيا", "سيريلانكا", "السودان", "سورينام", "سفالبارد وجان ماين", "السويد", "سويسرا", "الجمهورية العربية السورية", "تايوان", "طاجيكستان", "جمهورية تنزانيا المتحدة", "تايلاند", "تيمور الشرقية", "توجو", "توكيلاو", "تونغا", "ترينداد وتوباغو", "تونس", "ديك رومي", "تركمانستان", "جزر تركس وكايكوس", "توفالو", "أوغندا", "أوكرانيا", "الإمارات العربية المتحدة", "المملكة المتحدة لبريطانيا العظمى وأيرلندا الشمالية (ال)", "جزر الولايات المتحدة الصغيرة النائية (ال)", "الولايات المتحدة الأمريكية", "أوروغواي", "أوزبكستان", "فانواتو", "فنزويلا (جمهورية - البوليفارية)", "فيتنام", "جزر العذراء البريطانية)", "جزر فيرجن (الولايات المتحدة)", "واليس وفوتونا", "الصحراء الغربية", "اليمن", "زامبيا", "زيمبابوي", "جزر آلاند"],
       errors: [],
@@ -3053,6 +3054,7 @@ __webpack_require__.r(__webpack_exports__);
           console.log(data.data.checkid);
           console.log(data.data.orderid);
           _this3.formview = data.data.orderid;
+          _this3.id = data.data.orderid;
           _this3.message = "donnnnnnnnnnnnnnnnne";
           var tag = document.createElement("script");
           tag.setAttribute("src", "https://test.oppwa.com/v1/paymentWidgets.js?checkoutId=" + data.data.checkid);
@@ -3176,7 +3178,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -8787,7 +8788,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:342px;\n}\n", ""]);
+exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:342px;\n}\n.about-us[data-v-bb44e346]{\n    background-repeat: no-repeat;\n    background-size: cover  ;\n    background-position: center;\n}\n", ""]);
 
 // exports
 
@@ -8825,7 +8826,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.carousel-item .header[data-v-266b1872]{\n        width: 100%;\n        height: 640px;\n}\n.header_sm[data-v-266b1872]{\n        background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');\n        background-size: cover;\n        height: 300px;\n        background-position: center;\n        position: relative;\n        display: none;\n}\n@media(max-width:991px){\n.header_sm[data-v-266b1872]{\n            display: none;\n}\n}\n.wrapper[data-v-266b1872]{\n   position: absolute;\n    top: -2%;\n    transform: translate(-50%, 0);\n    left: 50.5%;\n    width: 100%\n}\n.details[data-v-266b1872]{\n    color: #fff;\n    cursor: pointer;\n    transition: all 1s;\n}\n.details img[data-v-266b1872]{\n          width: 83%;\n    transition: all 1s;\n    height: 357px;\n    /* box-shadow: 5px 5px 5px black; */\n    border-top: 8px solid #111;\n    border-bottom: 8px solid #111;\n}\n/*\n    @media(max-width: 560px){\n        .details{\n            width: 40%;\n            font-size: 14px;\n        }\n        .details img{\n            width: 100%;\n            height: 200px;\n        }\n        .wrapper .details .content{\n            width: 100%;\n            margin: 16px auto 0;\n\n        }\n        .carousel-item .header{\n            height: 860px;\n        }\n\n    } */\n    /* @media(min-width: 561px) and (max-width:767px){\n        .details{\n            width: 40% ;\n            font-size: 14px;\n        }\n        .carousel-item .header{\n            height: 855px;\n        }\n        .details img{\n            width: 80%;\n            height: 200px;\n        }\n        .wrapper .details .content{\n            width: 80%;\n\n\n        }\n    } */\n    /* @media(min-width: 768px) and (max-width:991px){\n        .details{\n            width: 33% ;\n            font-size: 14px;\n        }\n\n        .details img{\n            width: 80%;\n            height: 250px;\n        }\n        .wrapper .details .content{\n            width: 80%;\n\n\n        }\n        .wrapper{\n            top: -1%;\n            width: 90%;\n            left: 52%;\n\n        }\n    } */\n.wrapper .row[data-v-266b1872]{\n         transform: scale(.4);\n}\n.wrapper .details .content[data-v-266b1872]{\n        position: relative;\n        font-size: 14px;\n        width: 83%;\n        margin-top: 34px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:white;\n        border-radius: 10px;\n          background: rgba(0,0,0,0.75);\n        background-repeat: no-repeat;\n        background-position: 50%;\n        background-size: 100%;\n        z-index: 2;\n        top: 10px;\n        padding: 0 20px;\n        border: 4px solid rgba(0,0,0,-7.25);\n}\n        /* @media(max-width: 991px){\n        .wrapper .details .content{\n            width:33%;\n        }\n    } */\n.wrapper .details .content .triangle[data-v-266b1872]{\n   position: relative;\n    z-index: 1;\n    /* padding: 10px; */\n    display: inline-block;\n    top: -29px;\n    left: 50%;\n    background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon.png);\n    transform: rotate(0) scale(2.3) translate(-16%, 19%);\n    /* background: rgba(0,0,0,0.9); */\n    width: 22px;\n    height: 10px;\n}\n    /* .details.active .triangle{\n            top: -26.1px;\n\n    } */\n    /* .wrapper .details .content:hover{\n        border: 2px solid #00a4ee;\n    } */\n\n    /* .details-content{\n        margin:20px;\n    } */\n.details[data-v-266b1872]:hover {\n        transform: scale(1.1);\n}\n.add-cart div span[data-v-266b1872]{\n        font-size: 15px;\n        font-weight: 400;\n        line-height: 22px;\n        display: inline-block;\n        margin-right: 5px;\n        padding: 0 10px;\n        text-transform: lowercase;\n        color: #fff;\n        border-radius: 999px;\n        background-color: #000;\n}\n.add-cart p[data-v-266b1872]{\n        font-size: 20px;\n}\n.add-cart .add-button[data-v-266b1872]{\n        font-size: 20px;\n        font-weight: 700;\n        line-height: 70px;\n        display: block;\n        width: 100%;\n        margin-bottom: 10px;\n        cursor: pointer;\n        text-align: center;\n        text-decoration: none;\n        color: #fff;\n        border: none;\n        background-color: #000;\n}\n.add-cart .more[data-v-266b1872]{\n        outline: none;\n}\n.list-group .list-group-item[data-v-266b1872]{\n        cursor: pointer;\n        border-left: none;\n        border-right: none;\n        padding-left: 10px;\n        padding-right: 10px;\n}\n.list-group[data-v-266b1872] {\n\n        padding-left: 0;\n}\n/*\n    .carousel-control-prev{\n        left: -50%;\n    } */\n.carousel-indicators li[data-v-266b1872] {\n    box-sizing: content-box;\n    flex: 0 1 auto;\n    width: 67px;\n    height: 29px;\n    margin-right: 14px;\n    margin-left: 0;\n    text-indent: 0;\n    cursor: pointer;\n    color: black;\n    background: none;\n}\n.carousel-indicators[data-v-266b1872]{\n    bottom: -9%;\n    width: 100%;\n    background-color: #f5f0ed;\n    margin-left: 0;\n    margin-right: 0;\n}\n@media(max-width: 991px){\n.carousel-indicators[data-v-266b1872]{\n        bottom: -8%\n}\n}\n.carousel-indicators .active[data-v-266b1872]{\n    border-bottom: 3px solid #25d1e2;\n}\n.small[data-v-266b1872], .medium[data-v-266b1872], .larg[data-v-266b1872]{\n    padding: 30px !important;\n    margin-right: 20px !important;\n    font-size: 20px ;\n}\n.details.active .content[data-v-266b1872] {\n    border: 4px solid #00a4ee;\n}\n.details.active .triangle[data-v-266b1872] {\n      background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon-active.png) !important;\n}\n.active_btn[data-v-266b1872]{\n    border: 2px solid #00a4ee;\n}\n.content h6[data-v-266b1872],.content  span[data-v-266b1872]{\nfont-size: 2rem;\n}\n.price[data-v-266b1872]{\n   font-size: 1.6rem!important ;\n}\n.infor[data-v-266b1872]{\ntop: -12px;\nleft: -20px;\nposition: relative;\ntransform: scale(.7);\n}\n\n/* Start Responsive */\n@media (max-width: 1264px){\n.wrapper .row[data-v-266b1872]{\n        position: absolute;\n        /* top: -230px; */\n\n        left: 51px;\n    transform: scale(0.4);\n}\n.details-content[data-v-266b1872]{\n    /* margin: 10px 30px ; */\n}\n}\n@media (max-width: 960px){\n.wrapper .row[data-v-266b1872]{\n        transform: scale(.4);\n}\n.details-content[data-v-266b1872]{\n    /* margin: 10px 50px ; */\n}\n.infor[data-v-266b1872][data-v-266b1872] {\n    left: 8px;\n    position: relative;\n    transform: scale(.9);\n}\n.wrapper .details img[data-v-266b1872]{\n    width: 100%;\n}\n.wrapper .details .content[data-v-266b1872]{\n    width: 100%;\n}\n}\n@media (max-width: 880px){\n.wrapper .row[data-v-266b1872]{\n        transform: scale(.4) ;\n        display: flex;\n        justify-content: space-evenly!important;\n}\n.details-content[data-v-266b1872]{\n    /* margin: 10px 50px ; */\n    margin-right: -18px;\n}\n.infor[data-v-266b1872][data-v-266b1872] {\n    left: 8px;\n    position: relative;\n    transform: scale(.9);\n}\n.wrapper .details[data-v-266b1872]{\n    width: 300px !important;\n}\n.wrapper .details img[data-v-266b1872]{\n    width:93%;\n}\n.wrapper .details .content[data-v-266b1872]{\n    width: 93%;\n}\n}\n.navigate2[data-v-266b1872] {\n    margin: 30px 0;\n    text-align: center;\n}\n.navigate2 svg[data-v-266b1872]{\n    -webkit-animation: e-data-v-266b1872 2s infinite;\n            animation: e-data-v-266b1872 2s infinite;\n    width: 28px;\n}\n@-webkit-keyframes e-data-v-266b1872{0%,20%,50%,80%,to{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}\n@keyframes e-data-v-266b1872{0%,20%,50%,80%,to{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}\n.parent[data-v-266b1872]{\n    position: absolute;\n    top: 400px;\n    left: 50%;\n    transform: translate(-50%,0);\n}\n.parent img[data-v-266b1872]{\n  width: 170px;\n}\n.pallete-swiper[data-v-266b1872]{\n    /* position: absolute; */\n    /* top: 100px; */\n    /* left: 50%;\n    transform: translate(50%,0); */\n    position: absolute;\n    text-align: center;\n    /* transform: scale(.9); */\n}\n.pallete-swiper img[data-v-266b1872]{\n    width: auto;\n    height: 50vw;\n    margin-top: 30px;\n    border-top: 6px solid #111;\n    border-bottom: 6px solid #111;\n}\n.pallete-swiper .swiper-pagination[data-v-266b1872]{\n    display: none;\n}\n.pallete-swiper .swiper-slide[data-v-266b1872] {\n    width: 77% !important;\n}\n.swiper-wrapper[data-v-266b1872]{\n    /* left: 44px; */\n}\n.pallete-swiper .content[data-v-266b1872]{\n position: relative;\n        font-size: 14px;\n        width:  68%;\n        margin-top: 34px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:white;\n        border-radius: 10px;\n        background: rgba(0,0,0,0.75);\n        top: 10px;\n        padding: 0 20px;\n        border: 4px solid rgba(0,0,0,-7.25);\n        left:50%;\n        transform: translate(-50%,-50%) scale(.5);\n}\n.pallete-swiper .content .triangle[data-v-266b1872]{\n    position: relative;\n    z-index: 1;\n    /* padding: 10px; */\n    display: inline-block;\n    top: -29px;\n    left: 50%;\n    background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon.png);\n    transform: rotate(0) scale(2.3) translate(-316%, 18%);\n    /* background: rgba(0,0,0,0.9); */\n    width: 22px;\n    height: 10px;\n}\n@media (max-width: 414px){\n.pallete-swiper img[data-v-266b1872]{\n\n\n    margin-top: 80px;\n}\n.pallete-swiper .content[data-v-266b1872]{\n position: relative;\n        font-size: 14px;\n        width:  68%;\n        margin-top: 34px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:white;\n        border-radius: 10px;\n        background: rgba(0,0,0,0.75);\n        top: 10px;\n        padding: 0 20px;\n        border: 4px solid rgba(0,0,0,-7.25);\n        left:50%;\n        transform: translate(-50%,-50%) scale(.5);\n}\n.pallete-swiper .content .triangle[data-v-266b1872]{\n\n    left: 58%;\n}\n.pallete-swiper .swiper-slide[data-v-266b1872] {\n         width: 70% !important;\n}\n}\n.rotate[data-v-266b1872]{\n width: 100%;\n    position: relative;\n    height: 82px;\n    transform: rotate(49deg);\n    background: black;\n}\n", ""]);
+exports.push([module.i, "\n.carousel-item .header[data-v-266b1872]{\n        width: 100%;\n        height: 640px;\n}\n.header_sm[data-v-266b1872]{\n        background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');\n        background-size: cover;\n        height: 300px;\n        background-position: center;\n        position: relative;\n        display: none;\n}\n@media(max-width:991px){\n.header_sm[data-v-266b1872]{\n            display: none;\n}\n}\n.wrapper[data-v-266b1872]{\n   position: absolute;\n    top: -2%;\n    transform: translate(-50%, 0);\n    left: 50.5%;\n    width: 100%\n}\n.details[data-v-266b1872]{\n    color: #fff;\n    cursor: pointer;\n    transition: all 1s;\n}\n.details img[data-v-266b1872]{\n          width: 83%;\n    transition: all 1s;\n    height: 357px;\n    /* box-shadow: 5px 5px 5px black; */\n    border-top: 8px solid #111;\n    border-bottom: 8px solid #111;\n}\n/*\n    @media(max-width: 560px){\n        .details{\n            width: 40%;\n            font-size: 14px;\n        }\n        .details img{\n            width: 100%;\n            height: 200px;\n        }\n        .wrapper .details .content{\n            width: 100%;\n            margin: 16px auto 0;\n\n        }\n        .carousel-item .header{\n            height: 860px;\n        }\n\n    } */\n    /* @media(min-width: 561px) and (max-width:767px){\n        .details{\n            width: 40% ;\n            font-size: 14px;\n        }\n        .carousel-item .header{\n            height: 855px;\n        }\n        .details img{\n            width: 80%;\n            height: 200px;\n        }\n        .wrapper .details .content{\n            width: 80%;\n\n\n        }\n    } */\n    /* @media(min-width: 768px) and (max-width:991px){\n        .details{\n            width: 33% ;\n            font-size: 14px;\n        }\n\n        .details img{\n            width: 80%;\n            height: 250px;\n        }\n        .wrapper .details .content{\n            width: 80%;\n\n\n        }\n        .wrapper{\n            top: -1%;\n            width: 90%;\n            left: 52%;\n\n        }\n    } */\n.wrapper .row[data-v-266b1872]{\n         transform: scale(.4);\n}\n.wrapper .details .content[data-v-266b1872]{\n        position: relative;\n        font-size: 14px;\n        width: 83%;\n        margin-top: 34px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:white;\n        border-radius: 10px;\n          background: rgba(0,0,0,0.75);\n        background-repeat: no-repeat;\n        background-position: 50%;\n        background-size: 100%;\n        z-index: 2;\n        top: 10px;\n        padding: 0 20px;\n        border: 4px solid rgba(0,0,0,-7.25);\n}\n        /* @media(max-width: 991px){\n        .wrapper .details .content{\n            width:33%;\n        }\n    } */\n.wrapper .details .content .triangle[data-v-266b1872]{\n   position: relative;\n    z-index: 1;\n    /* padding: 10px; */\n    display: inline-block;\n    top: -29px;\n    left: 50%;\n    background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon.png);\n    transform: rotate(0) scale(2.3) translate(-16%, 19%);\n    /* background: rgba(0,0,0,0.9); */\n    width: 22px;\n    height: 10px;\n}\n    /* .details.active .triangle{\n            top: -26.1px;\n\n    } */\n    /* .wrapper .details .content:hover{\n        border: 2px solid #00a4ee;\n    } */\n\n    /* .details-content{\n        margin:20px;\n    } */\n.details[data-v-266b1872]:hover {\n        transform: scale(1.1);\n}\n.add-cart div span[data-v-266b1872]{\n        font-size: 15px;\n        font-weight: 400;\n        line-height: 22px;\n        display: inline-block;\n        margin-right: 5px;\n        padding: 0 10px;\n        text-transform: lowercase;\n        color: #fff;\n        border-radius: 999px;\n        background-color: #000;\n}\n.add-cart p[data-v-266b1872]{\n        font-size: 20px;\n}\n.add-cart .add-button[data-v-266b1872]{\n        font-size: 20px;\n        font-weight: 700;\n        line-height: 70px;\n        display: block;\n        width: 100%;\n        margin-bottom: 10px;\n        cursor: pointer;\n        text-align: center;\n        text-decoration: none;\n        color: #fff;\n        border: none;\n        background-color: #000;\n}\n.add-cart .more[data-v-266b1872]{\n        outline: none;\n}\n.list-group .list-group-item[data-v-266b1872]{\n        cursor: pointer;\n        border-left: none;\n        border-right: none;\n        padding-left: 10px;\n        padding-right: 10px;\n}\n.list-group[data-v-266b1872] {\n\n        padding-left: 0;\n}\n/*\n    .carousel-control-prev{\n        left: -50%;\n    } */\n.carousel-indicators li[data-v-266b1872] {\n    box-sizing: content-box;\n    flex: 0 1 auto;\n    width: 67px;\n    height: 29px;\n    margin-right: 14px;\n    margin-left: 0;\n    text-indent: 0;\n    cursor: pointer;\n    color: black;\n    background: none;\n}\n.carousel-indicators[data-v-266b1872]{\n    bottom: -9%;\n    width: 100%;\n    background-color: #f5f0ed;\n    margin-left: 0;\n    margin-right: 0;\n}\n@media(max-width: 991px){\n.carousel-indicators[data-v-266b1872]{\n        bottom: -8%\n}\n}\n.carousel-indicators .active[data-v-266b1872]{\n    border-bottom: 3px solid #25d1e2;\n}\n.small[data-v-266b1872], .medium[data-v-266b1872], .larg[data-v-266b1872]{\n    padding: 30px !important;\n    margin-right: 20px !important;\n    font-size: 20px ;\n}\n.details.active .content[data-v-266b1872] {\n    border: 4px solid #00a4ee;\n}\n.details.active .triangle[data-v-266b1872] {\n      background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon-active.png) !important;\n}\n.active_btn[data-v-266b1872]{\n    border: 2px solid #00a4ee;\n}\n.content h6[data-v-266b1872],.content  span[data-v-266b1872]{\nfont-size: 2rem;\n}\n.price[data-v-266b1872]{\n   font-size: 1.6rem!important ;\n}\n.infor[data-v-266b1872]{\ntop: -12px;\nleft: -20px;\nposition: relative;\ntransform: scale(.7);\nbackground-repeat: ;\n}\n\n/* Start Responsive */\n@media (max-width: 1264px){\n.wrapper .row[data-v-266b1872]{\n        position: absolute;\n        /* top: -230px; */\n\n        left: 51px;\n    transform: scale(0.4);\n}\n.details-content[data-v-266b1872]{\n    /* margin: 10px 30px ; */\n}\n}\n@media (max-width: 960px){\n.wrapper .row[data-v-266b1872]{\n        transform: scale(.4);\n}\n.details-content[data-v-266b1872]{\n    /* margin: 10px 50px ; */\n}\n.infor[data-v-266b1872][data-v-266b1872] {\n    left: 8px;\n    position: relative;\n    transform: scale(.9);\n}\n.wrapper .details img[data-v-266b1872]{\n    width: 100%;\n}\n.wrapper .details .content[data-v-266b1872]{\n    width: 100%;\n}\n}\n@media (max-width: 880px){\n.wrapper .row[data-v-266b1872]{\n        transform: scale(.4) ;\n        display: flex;\n        justify-content: space-evenly!important;\n}\n.details-content[data-v-266b1872]{\n    /* margin: 10px 50px ; */\n    margin-right: -18px;\n}\n.infor[data-v-266b1872][data-v-266b1872] {\n    left: 8px;\n    position: relative;\n    transform: scale(.9);\n}\n.wrapper .details[data-v-266b1872]{\n    width: 300px !important;\n}\n.wrapper .details img[data-v-266b1872]{\n    width:93%;\n}\n.wrapper .details .content[data-v-266b1872]{\n    width: 93%;\n}\n}\n.navigate2[data-v-266b1872] {\n    margin: 30px 0;\n    text-align: center;\n}\n.navigate2 svg[data-v-266b1872]{\n    -webkit-animation: e-data-v-266b1872 2s infinite;\n            animation: e-data-v-266b1872 2s infinite;\n    width: 28px;\n}\n@-webkit-keyframes e-data-v-266b1872{0%,20%,50%,80%,to{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}\n@keyframes e-data-v-266b1872{0%,20%,50%,80%,to{transform:translateY(0)}40%{transform:translateY(-10px)}60%{transform:translateY(-5px)}}\n.parent[data-v-266b1872]{\n    position: absolute;\n    top: 400px;\n    left: 50%;\n    transform: translate(-50%,0);\n}\n.parent img[data-v-266b1872]{\n  width: 170px;\n}\n.pallete-swiper[data-v-266b1872]{\n    /* position: absolute; */\n    /* top: 100px; */\n    /* left: 50%;\n    transform: translate(50%,0); */\n    position: absolute;\n    text-align: center;\n    /* transform: scale(.9); */\n}\n.pallete-swiper img[data-v-266b1872]{\n    width: auto;\n    height: 50vw;\n    margin-top: 30px;\n    border-top: 6px solid #111;\n    border-bottom: 6px solid #111;\n}\n.pallete-swiper .swiper-pagination[data-v-266b1872]{\n    display: none;\n}\n.pallete-swiper .swiper-slide[data-v-266b1872] {\n    width: 77% !important;\n}\n.swiper-wrapper[data-v-266b1872]{\n    /* left: 44px; */\n}\n.pallete-swiper .content[data-v-266b1872]{\n position: relative;\n        font-size: 14px;\n        width:  68%;\n        margin-top: 34px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:white;\n        border-radius: 10px;\n        background: rgba(0,0,0,0.75);\n        top: 10px;\n        padding: 0 20px;\n        border: 4px solid rgba(0,0,0,-7.25);\n        left:50%;\n        transform: translate(-50%,-50%) scale(.5);\n}\n.pallete-swiper .content .triangle[data-v-266b1872]{\n    position: relative;\n    z-index: 1;\n    /* padding: 10px; */\n    display: inline-block;\n    top: -29px;\n    left: 50%;\n    background: url(https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/icon.png);\n    transform: rotate(0) scale(2.3) translate(-316%, 18%);\n    /* background: rgba(0,0,0,0.9); */\n    width: 22px;\n    height: 10px;\n}\n@media (max-width: 414px){\n.pallete-swiper img[data-v-266b1872]{\n\n\n    margin-top: 80px;\n}\n.pallete-swiper .content[data-v-266b1872]{\n position: relative;\n        font-size: 14px;\n        width:  68%;\n        margin-top: 34px;\n        /* margin: 16px auto 0; */\n        padding: 6px 5px;\n        transition: all .5s;\n        color:white;\n        border-radius: 10px;\n        background: rgba(0,0,0,0.75);\n        top: 10px;\n        padding: 0 20px;\n        border: 4px solid rgba(0,0,0,-7.25);\n        left:50%;\n        transform: translate(-50%,-50%) scale(.5);\n}\n.pallete-swiper .content .triangle[data-v-266b1872]{\n\n    left: 58%;\n}\n.pallete-swiper .swiper-slide[data-v-266b1872] {\n         width: 70% !important;\n}\n}\n.rotate[data-v-266b1872]{\n width: 100%;\n    position: relative;\n    height: 82px;\n    transform: rotate(49deg);\n    background: black;\n}\n", ""]);
 
 // exports
 
@@ -44449,7 +44450,52 @@ var render = function() {
             "div",
             { staticClass: "col-md-7" },
             [
-              _vm._m(0),
+              _c(
+                "div",
+                {
+                  staticClass: "modal show",
+                  attrs: {
+                    id: "exampleModalCenter",
+                    tabindex: "-1",
+                    role: "dialog",
+                    "aria-labelledby": "exampleModalCenterTitle",
+                    "aria-hidden": "true",
+                    show: "true"
+                  }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "modal-dialog modal-dialog-centered",
+                      attrs: { role: "document" }
+                    },
+                    [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "modal-content",
+                          staticStyle: { display: "contents" }
+                        },
+                        [
+                          _c("div", { staticClass: "moda-body" }, [
+                            _vm._v(
+                              "\n                                                              ss\n                                                        "
+                            ),
+                            _c("form", {
+                              staticClass: "paymentWidgets",
+                              attrs: {
+                                action: "/api/payment/" + this.id,
+                                "data-brands": "VISA MASTER AMEX"
+                              }
+                            })
+                          ])
+                        ]
+                      )
+                    ]
+                  )
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "v-form",
@@ -44878,7 +44924,7 @@ var render = function() {
             "div",
             { staticClass: "col-md-7" },
             [
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c(
                 "v-form",
@@ -45374,57 +45420,6 @@ var staticRenderFns = [
         )
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal show",
-        attrs: {
-          id: "exampleModalCenter",
-          tabindex: "-1",
-          role: "dialog",
-          "aria-labelledby": "exampleModalCenterTitle",
-          "aria-hidden": "true",
-          show: "true"
-        }
-      },
-      [
-        _c(
-          "div",
-          {
-            staticClass: "modal-dialog modal-dialog-centered",
-            attrs: { role: "document" }
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "modal-content",
-                staticStyle: { display: "contents" }
-              },
-              [
-                _c("div", { staticClass: "moda-body" }, [
-                  _vm._v(
-                    "\n                                                              ss\n                                                        "
-                  ),
-                  _c("form", {
-                    staticClass: "paymentWidgets",
-                    attrs: {
-                      action: "/api/payment/40",
-                      "data-brands": "VISA MASTER AMEX"
-                    }
-                  })
-                ])
-              ]
-            )
-          ]
-        )
-      ]
-    )
   }
 ]
 render._withStripped = true
@@ -45576,35 +45571,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("header", { staticClass: "about-us" }, [
-    _c("div", { staticClass: "overlay" }),
-    _vm._v(" "),
-    _c("video", {
-      attrs: {
-        src: _vm.data,
-        playsinline: "playsinline",
-        autoplay: "autoplay",
-        muted: "muted",
-        loop: "loop"
-      },
-      domProps: { muted: true }
-    }),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "text mb-4 about-content" },
-      [
-        _c("h1", [_vm._v(_vm._s(_vm.$t("message.about")))]),
-        _vm._v(" "),
-        _c("router-link", { staticClass: "mb-5", attrs: { to: "/about" } }, [
-          _c("a", { staticClass: "btn btn-light mb-5" }, [
-            _vm._v(_vm._s(_vm.$t("message.readmore")))
+  return _c(
+    "header",
+    {
+      staticClass: "about-us",
+      style: "background-image:url(" + _vm.data + ")"
+    },
+    [
+      _c("div", { staticClass: "overlay" }),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "text mb-4 about-content" },
+        [
+          _c("h1", [_vm._v(_vm._s(_vm.$t("message.about")))]),
+          _vm._v(" "),
+          _c("router-link", { staticClass: "mb-5", attrs: { to: "/about" } }, [
+            _c("a", { staticClass: "btn btn-light mb-5" }, [
+              _vm._v(_vm._s(_vm.$t("message.readmore")))
+            ])
           ])
-        ])
-      ],
-      1
-    )
-  ])
+        ],
+        1
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

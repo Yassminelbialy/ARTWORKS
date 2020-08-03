@@ -24,7 +24,7 @@ class HomeData extends Model
     use SoftDeletes;
 
     public $table = 'home_datas';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -71,8 +71,8 @@ class HomeData extends Model
         'word3_en' => 'required|string|max:200',
         'word3_ar' => 'required|string|max:200',
         'image' => 'required|image',
-        'video' => 'required|file'
+        'video' => 'required|image'
     ];
 
-    
+
 }

@@ -16,7 +16,7 @@
 
                                                         <div class="moda-body">
                                                                 ss
-                                                          <form action="/api/payment/40" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
+                                                          <form :action="`/api/payment/${this.id}`" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
 
                                                         </div>
 
@@ -347,6 +347,7 @@ export default {
       discount: "",
       discount_value:0,
       totalprice_2:0,
+      id:'',
 
       item: [
                 "Afghanistan",
@@ -912,6 +913,8 @@ this.cart.forEach(element => {
               console.log(data.data.orderid);
 
             this.formview=data.data.orderid
+            this.id=data.data.orderid
+
             this.message = "donnnnnnnnnnnnnnnnne";
                           let tag = document.createElement("script");
                               tag.setAttribute("src", "https://test.oppwa.com/v1/paymentWidgets.js?checkoutId="+data.data.checkid);
