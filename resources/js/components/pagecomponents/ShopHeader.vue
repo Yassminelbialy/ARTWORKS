@@ -868,7 +868,7 @@ top: -12px;
 left: -20px;
 position: relative;
 transform: scale(.7);
-background-repeat: ;
+
 }
 
 /* Start Responsive */
