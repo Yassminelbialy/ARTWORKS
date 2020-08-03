@@ -43851,7 +43851,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticStyle: { "min-height": "200px" } }, [
+  return _c("section", { staticStyle: { "min-height": "486px" } }, [
     _vm._m(0),
     _vm._v(" "),
     _c("div", { staticClass: "mission myhome mt-4" }, [
