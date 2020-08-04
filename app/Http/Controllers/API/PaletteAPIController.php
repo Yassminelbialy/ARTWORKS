@@ -50,6 +50,20 @@ class PaletteAPIController extends AppBaseController
                 $item->extraimg  =  'https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg';
             }
 
+        } //add extra img attr  for slider img
+
+                foreach ($artists as $key=>$item) {
+
+            $palettesArtists = Palette::where('artist_id',$item->id)->limit(3)->get();
+                    $item->key=$key;
+            if($palettesArtists)
+            {
+                 $item->artist_palettes = $palettesArtists ;
+            }else
+            {
+                $item->artist_palettes  = [];
+            }
+
         }
 
 
