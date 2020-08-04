@@ -1,5 +1,5 @@
 <template>
-  <section style="min-height:200px">
+  <section style="min-height:486px">
         <div class="spinner-content">
          <div class="spinner"></div>
         </div>

@@ -97,7 +97,7 @@
                 observerParents:true,
 
             });
-            swiper.update();
+            // swiper.update();
         },
     methods:{
         // hover(id){
