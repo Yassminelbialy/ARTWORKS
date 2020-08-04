@@ -3841,25 +3841,33 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    // getdata($id){
-    // axios.get("/api/view?id=" +$id)
-    // .then(response =>{
-    //     console.log($id);
-    //     this.palettes = response.data.palettes
-    //     this.palettesArtists = response.data.palettesArtists
-    //     if(response.data.palettesArtists.length>0){
-    //         this.firstminPalettes = response.data.palettesArtists[0].id
-    //     } else {
-    //         this.firstminPalettes = null
-    //     }
-    //     axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-    //         .then(response =>{
-    //             this.minPalettes = response.data.minPalettes
-    //             })
-    //         .catch(error => console.log(error.response.data))
-    // })
-    // .catch(error => console.log(error.response.data))
-    // },
+    getdata: function getdata($id) {
+      var _this2 = this;
+
+      axios.get("/api/view?id=" + $id).then(function (response) {
+        console.log($id);
+        _this2.palettes = response.data.palettes;
+        _this2.minPalettesActive = response.data.palettes[0];
+
+        if (_this2.minPalettesActive == null) {
+          _this2.minPalettesActive = '';
+        }
+
+        if (response.data.palettesArtists.length > 0) {
+          _this2.firstminPalettes = response.data.palettesArtists[0].id;
+        } else {
+          _this2.firstminPalettes = null;
+        }
+
+        axios.get("/api/viewMinPalettes?id=" + _this2.firstminPalettes).then(function (response) {
+          _this2.minPalettes = response.data.minPalettes;
+        })["catch"](function (error) {
+          return console.log(error.response.data);
+        });
+      })["catch"](function (error) {
+        return console.log(error.response.data);
+      });
+    },
     small: function small(el, price, avilable, cardId) {
       this.sizeTarget = "small";
       this.avilableTarget = avilable;
@@ -3908,7 +3916,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addActive: function addActive($minPalette_id, index) {
-      var _this2 = this;
+      var _this3 = this;
 
       // console.log(  this.$refs.myActive)
       var myActive = this.$refs.myActive[index];
@@ -3917,14 +3925,14 @@ __webpack_require__.r(__webpack_exports__);
         scrollTop: "450px"
       }, 1000);
       axios.get("/api/viewMinPalettes?id=" + $minPalette_id).then(function (response) {
-        _this2.minPalettes = response.data.minPalettes;
-        _this2.minPalettesActive = response.data.palettes[0];
+        _this3.minPalettes = response.data.minPalettes;
+        _this3.minPalettesActive = response.data.palettes[0];
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
     },
     addtocart: function addtocart($id, price, avilableTarget, sizeTarget, sizeCm) {
-      var _this3 = this;
+      var _this4 = this;
 
       axios.post('/api/addtocart?id=' + $id).then(function (res) {
         // console.log(res.data.paletteCart)
@@ -3932,29 +3940,29 @@ __webpack_require__.r(__webpack_exports__);
         var product = res.data.paletteCart;
 
         if (sizeTarget == 'large') {
-          if (_this3.minPalettesActive.L_avalible <= 0) {
-            _this3.minPalettesActive.L_avalible = 0;
+          if (_this4.minPalettesActive.L_avalible <= 0) {
+            _this4.minPalettesActive.L_avalible = 0;
             return;
           }
 
-          --_this3.minPalettesActive.L_avalible;
+          --_this4.minPalettesActive.L_avalible;
         } else if (sizeTarget == 'small') {
-          if (_this3.minPalettesActive.S_avalible <= 0) {
-            _this3.minPalettesActive.S_avalible = 0;
+          if (_this4.minPalettesActive.S_avalible <= 0) {
+            _this4.minPalettesActive.S_avalible = 0;
             return;
           }
 
-          --_this3.minPalettesActive.S_avalible;
+          --_this4.minPalettesActive.S_avalible;
         } else {
-          if (_this3.minPalettesActive.M_avalible <= 0) {
-            _this3.minPalettesActive.M_avalible = 0;
+          if (_this4.minPalettesActive.M_avalible <= 0) {
+            _this4.minPalettesActive.M_avalible = 0;
             return;
           }
 
-          --_this3.minPalettesActive.M_avalible;
+          --_this4.minPalettesActive.M_avalible;
         }
 
-        _this3.$store.dispatch('addProductToCart', {
+        _this4.$store.dispatch('addProductToCart', {
           product: product,
           quantity: 1,
           price: price,
@@ -3971,11 +3979,11 @@ __webpack_require__.r(__webpack_exports__);
   //method
   watch: {
     $route: function $route(to, from) {
-      var _this4 = this;
+      var _this5 = this;
 
       this.addActive(this.$route.query.mydata);
       axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata).then(function (response) {
-        _this4.minPalettes = response.data.minPalettes; // console.log(this.$route.query.mydata );
+        _this5.minPalettes = response.data.minPalettes; // console.log(this.$route.query.mydata );
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
@@ -46201,6 +46209,11 @@ var render = function() {
                   attrs: {
                     "data-target": "#carouselExampleCaptions",
                     "data-slide-to": "artist.id"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.getdata(artist.id)
+                    }
                   }
                 },
                 [_vm._v(_vm._s(artist.name))]
@@ -46230,7 +46243,7 @@ var render = function() {
                     _c(
                       "div",
                       { staticClass: " row  d-flex justify-content-center" },
-                      _vm._l(_vm.palettesArtists, function(
+                      _vm._l(artist.artist_palettes, function(
                         palettesArtist,
                         index
                       ) {
@@ -46330,9 +46343,57 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(1, true),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "carousel-control-next",
+                      attrs: {
+                        href: "#carouselExampleCaptions",
+                        role: "button",
+                        "data-slide": "next"
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.getdata(artist.id)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "carousel-control-next-icon",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+                    ]
+                  ),
                   _vm._v(" "),
-                  _vm._m(2, true)
+                  _c(
+                    "a",
+                    {
+                      staticClass: "carousel-control-prev",
+                      attrs: {
+                        href: "#carouselExampleCaptions",
+                        role: "button",
+                        "data-slide": "prev"
+                      },
+                      on: {
+                        click: function($event) {
+                          return _vm.getdata(artist.id)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "carousel-control-prev-icon",
+                        attrs: { "aria-hidden": "true" }
+                      }),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "sr-only" }, [
+                        _vm._v("Previous")
+                      ])
+                    ]
+                  )
                 ]
               )
             }),
@@ -46411,7 +46472,7 @@ var render = function() {
                     : _vm._e()
                 ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -46701,54 +46762,6 @@ var staticRenderFns = [
         }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "carousel-control-next",
-        attrs: {
-          href: "#carouselExampleCaptions",
-          role: "button",
-          "data-slide": "next"
-        }
-      },
-      [
-        _c("span", {
-          staticClass: "carousel-control-next-icon",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "carousel-control-prev",
-        attrs: {
-          href: "#carouselExampleCaptions",
-          role: "button",
-          "data-slide": "prev"
-        }
-      },
-      [
-        _c("span", {
-          staticClass: "carousel-control-prev-icon",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" "),
-        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
-      ]
-    )
   },
   function() {
     var _vm = this
@@ -109180,8 +109193,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/macbookair/Desktop/yassmin/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -21,7 +21,7 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" data-slide-to="artist.id" >{{artist.name}}</li>
+                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" @click="getdata(artist.id)" data-slide-to="artist.id" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
                 <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
@@ -29,7 +29,7 @@
                 <!---------------------------- start regular pallete----------------------- -->
                     <div class="wrapper d-none d-sm-block ">
                         <div class=" row  d-flex justify-content-center">
-                            <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                            <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                                <div class="details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
                                     <div class="content" :class="{ 'active': index == 0 }" >
@@ -56,11 +56,11 @@
 
                     </div>
 
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" @click="getdata(artist.id)" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" @click="getdata(artist.id)" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -213,8 +213,7 @@ export default {
             sizeTarget:'medium',
             button:false,
             artistID:'',
-            sizeCm:""
-
+            sizeCm:"",
 
 
         }
@@ -352,27 +351,31 @@ export default {
         }
       }
       ,
-        // getdata($id){
-        // axios.get("/api/view?id=" +$id)
+        getdata($id){
+        axios.get("/api/view?id=" +$id)
 
-        // .then(response =>{
-        //     console.log($id);
-        //     this.palettes = response.data.palettes
-        //     this.palettesArtists = response.data.palettesArtists
-        //     if(response.data.palettesArtists.length>0){
-        //         this.firstminPalettes = response.data.palettesArtists[0].id
-        //     } else {
-        //         this.firstminPalettes = null
-        //     }
+        .then(response =>{
+            console.log($id)
+            this.palettes = response.data.palettes
+            this.minPalettesActive=response.data.palettes[0]
+            if(this.minPalettesActive == null)
+            {
+                this.minPalettesActive = ''
+            }
+            if(response.data.palettesArtists.length>0){
+                this.firstminPalettes = response.data.palettesArtists[0].id
+            } else {
+                this.firstminPalettes = null
+            }
 
-        //     axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-        //         .then(response =>{
-        //             this.minPalettes = response.data.minPalettes
-        //             })
-        //         .catch(error => console.log(error.response.data))
-        // })
-        // .catch(error => console.log(error.response.data))
-        // },
+            axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
+                .then(response =>{
+                    this.minPalettes = response.data.minPalettes
+                    })
+                .catch(error => console.log(error.response.data))
+        })
+        .catch(error => console.log(error.response.data))
+        },
         small(el,price,avilable,cardId){
             this.sizeTarget="small"
             this.avilableTarget=avilable;
