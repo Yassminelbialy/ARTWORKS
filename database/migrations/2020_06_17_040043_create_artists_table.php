@@ -22,7 +22,6 @@ class CreateArtistsTable extends Migration
             $table->string('artist_img')->nullable();
             $table->string('cover_img');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

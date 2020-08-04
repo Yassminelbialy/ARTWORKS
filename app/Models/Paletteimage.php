@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Paletteimage
@@ -15,12 +14,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Paletteimage extends Model
 {
-    use SoftDeletes;
 
     public $table = 'paletteimages';
-    
 
-    protected $dates = ['deleted_at'];
+
 
 
 
@@ -46,8 +43,8 @@ class Paletteimage extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
-    
+
 }
