@@ -20,7 +20,7 @@ class CreatePaletteimagesTable extends Migration
             $table->integer('palatte_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('palatte_id')->references('id')->on('palettes');
+            $table->foreign('palatte_id')->references('id')->on('palettes')->onDelete('cascade');;
         });
     }
 
