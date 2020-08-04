@@ -3702,12 +3702,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3731,23 +3725,13 @@ __webpack_require__.r(__webpack_exports__);
       first: null,
       firstpalettesArtists: null,
       firstminPalettes: null,
+      minPalettesActive: {},
       active_el: 2,
-      S_copies: '',
-      S_avalible: '',
-      S_price: '',
-      M_copies: '',
-      M_avalible: '',
-      M_price: '',
-      L_copies: '',
-      L_avalible: '',
-      L_price: '',
-      sizing_details: '',
-      name: '',
-      cardId: '',
       priceTarget: '',
       avilableTarget: '',
       sizeTarget: 'medium',
       button: false,
+      artistID: '',
       sizeCm: ""
     };
   },
@@ -3788,8 +3772,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.first = response.data.artists[0].id;
         axios.get("/api/view?id=" + _this.first).then(function (response) {
           _this.palettes = response.data.palettes;
-          _this.name = response.data.palettes[0].name, _this.cardId = response.data.palettes[0].id, _this.S_copies = response.data.palettes[0].S_copies, _this.S_avalible = response.data.palettes[0].S_avalible, _this.S_price = response.data.palettes[0].S_price, _this.M_copies = response.data.palettes[0].M_copies, _this.M_avalible = response.data.palettes[0].M_avalible, _this.M_price = response.data.palettes[0].M_price, _this.L_copies = response.data.palettes[0].L_copies, _this.L_avalible = response.data.palettes[0].L_avalible, _this.L_price = response.data.palettes[0].L_price, _this.sizing_details = response.data.palettes[0].sizing_details;
-          _this.palettesArtists = response.data.palettesArtists;
+          _this.minPalettesActive = response.data.palettes[0], _this.palettesArtists = response.data.palettesArtists;
         })["catch"](function (error) {
           return console.log(error.response.data);
         });
@@ -3808,8 +3791,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.first = response.data.artists[0].id;
         axios.get("/api/view?id=" + _this.first).then(function (response) {
           _this.palettes = response.data.palettes;
-          _this.name = response.data.palettes[0].name, _this.cardId = response.data.palettes[0].id, _this.S_copies = response.data.palettes[0].S_copies, _this.S_avalible = response.data.palettes[0].S_avalible, _this.S_price = response.data.palettes[0].S_price, _this.M_copies = response.data.palettes[0].M_copies, _this.M_avalible = response.data.palettes[0].M_avalible, _this.M_price = response.data.palettes[0].M_price, _this.L_copies = response.data.palettes[0].L_copies, _this.L_avalible = response.data.palettes[0].L_avalible, _this.L_price = response.data.palettes[0].L_price, _this.sizing_details = response.data.palettes[0].sizing_details;
-          _this.palettesArtists = response.data.palettesArtists;
+          _this.minPalettesActive = response.data.palettes[0], _this.palettesArtists = response.data.palettesArtists;
           _this.firstpalettesArtists = response.data.palettesArtists[0].id;
           axios.get("/api/viewMinPalettes?id=" + _this.firstpalettesArtists).then(function (response) {
             _this.minPalettes = response.data.minPalettes;
@@ -3859,54 +3841,25 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
     },
-    getdata: function getdata($id) {
-      var _this2 = this;
-
-      axios.get("/api/view?id=" + $id).then(function (response) {
-        _this2.palettes = response.data.palettes;
-        _this2.palettesArtists = response.data.palettesArtists;
-
-        if (response.data.palettesArtists.length > 0) {
-          _this2.firstminPalettes = response.data.palettesArtists[0].id;
-        } else {
-          _this2.firstminPalettes = null;
-        }
-
-        if ($id > response.data.artists.length) {
-          axios.get("/api/view?id=" + 1).then(function (response) {
-            _this2.palettesArtists = response.data.palettesArtists;
-            _this2.firstminPalettes = response.data.palettesArtists[0].id;
-            axios.get("/api/viewMinPalettes?id=" + _this2.firstminPalettes).then(function (response) {
-              _this2.minPalettes = response.data.minPalettes;
-            })["catch"](function (error) {
-              return console.log(error.response.data);
-            });
-          })["catch"](function (error) {
-            return console.log(error.response.data);
-          });
-        } else if ($id == 0) {
-          axios.get("/api/view?id=" + response.data.artists.length).then(function (response) {
-            _this2.palettesArtists = response.data.palettesArtists;
-            _this2.firstminPalettes = response.data.palettesArtists[0].id;
-            axios.get("/api/viewMinPalettes?id=" + _this2.firstminPalettes).then(function (response) {
-              _this2.minPalettes = response.data.minPalettes;
-            })["catch"](function (error) {
-              return console.log(error.response.data);
-            });
-          })["catch"](function (error) {
-            return console.log(error.response.data);
-          });
-        }
-
-        axios.get("/api/viewMinPalettes?id=" + _this2.firstminPalettes).then(function (response) {
-          _this2.minPalettes = response.data.minPalettes;
-        })["catch"](function (error) {
-          return console.log(error.response.data);
-        });
-      })["catch"](function (error) {
-        return console.log(error.response.data);
-      });
-    },
+    // getdata($id){
+    // axios.get("/api/view?id=" +$id)
+    // .then(response =>{
+    //     console.log($id);
+    //     this.palettes = response.data.palettes
+    //     this.palettesArtists = response.data.palettesArtists
+    //     if(response.data.palettesArtists.length>0){
+    //         this.firstminPalettes = response.data.palettesArtists[0].id
+    //     } else {
+    //         this.firstminPalettes = null
+    //     }
+    //     axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
+    //         .then(response =>{
+    //             this.minPalettes = response.data.minPalettes
+    //             })
+    //         .catch(error => console.log(error.response.data))
+    // })
+    // .catch(error => console.log(error.response.data))
+    // },
     small: function small(el, price, avilable, cardId) {
       this.sizeTarget = "small";
       this.avilableTarget = avilable;
@@ -3955,7 +3908,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addActive: function addActive($minPalette_id, index) {
-      var _this3 = this;
+      var _this2 = this;
 
       // console.log(  this.$refs.myActive)
       var myActive = this.$refs.myActive[index];
@@ -3964,44 +3917,44 @@ __webpack_require__.r(__webpack_exports__);
         scrollTop: "450px"
       }, 1000);
       axios.get("/api/viewMinPalettes?id=" + $minPalette_id).then(function (response) {
-        _this3.minPalettes = response.data.minPalettes;
-        _this3.name = response.data.palettes[0].name, _this3.cardId = response.data.palettes[0].id, _this3.S_copies = response.data.palettes[0].S_copies, _this3.S_avalible = response.data.palettes[0].S_avalible, _this3.S_price = response.data.palettes[0].S_price, _this3.M_copies = response.data.palettes[0].M_copies, _this3.M_avalible = response.data.palettes[0].M_avalible, _this3.M_price = response.data.palettes[0].M_price, _this3.L_copies = response.data.palettes[0].L_copies, _this3.L_avalible = response.data.palettes[0].L_avalible, _this3.L_price = response.data.palettes[0].L_price, _this3.sizing_details = response.data.palettes[0].sizing_details;
+        _this2.minPalettes = response.data.minPalettes;
+        _this2.minPalettesActive = response.data.palettes[0];
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
     },
     addtocart: function addtocart($id, price, avilableTarget, sizeTarget, sizeCm) {
-      var _this4 = this;
+      var _this3 = this;
 
       axios.post('/api/addtocart?id=' + $id).then(function (res) {
-        console.log(res.data.paletteCart); // $('#count')[0].innerText++
-
+        // console.log(res.data.paletteCart)
+        // $('#count')[0].innerText++
         var product = res.data.paletteCart;
 
         if (sizeTarget == 'large') {
-          if (_this4.L_avalible <= 0) {
-            _this4.L_avalible = 0;
+          if (_this3.minPalettesActive.L_avalible <= 0) {
+            _this3.minPalettesActive.L_avalible = 0;
             return;
           }
 
-          --_this4.L_avalible;
+          --_this3.minPalettesActive.L_avalible;
         } else if (sizeTarget == 'small') {
-          if (_this4.S_avalible <= 0) {
-            _this4.S_avalible = 0;
+          if (_this3.minPalettesActive.S_avalible <= 0) {
+            _this3.minPalettesActive.S_avalible = 0;
             return;
           }
 
-          --_this4.S_avalible;
+          --_this3.minPalettesActive.S_avalible;
         } else {
-          if (_this4.M_avalible <= 0) {
-            _this4.M_avalible = 0;
+          if (_this3.minPalettesActive.M_avalible <= 0) {
+            _this3.minPalettesActive.M_avalible = 0;
             return;
           }
 
-          --_this4.M_avalible;
+          --_this3.minPalettesActive.M_avalible;
         }
 
-        _this4.$store.dispatch('addProductToCart', {
+        _this3.$store.dispatch('addProductToCart', {
           product: product,
           quantity: 1,
           price: price,
@@ -4018,12 +3971,11 @@ __webpack_require__.r(__webpack_exports__);
   //method
   watch: {
     $route: function $route(to, from) {
-      var _this5 = this;
+      var _this4 = this;
 
       this.addActive(this.$route.query.mydata);
       axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata).then(function (response) {
-        _this5.minPalettes = response.data.minPalettes;
-        console.log(_this5.$route.query.mydata);
+        _this4.minPalettes = response.data.minPalettes; // console.log(this.$route.query.mydata );
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
@@ -46097,54 +46049,12 @@ var render = function() {
               _vm._v(" "),
               _c("div", [
                 _vm._v(
-                  "\n                    " +
-                    _vm._s(review.body) +
-                    "\n                "
+                  "\n                " + _vm._s(review.body) + "\n            "
                 )
               ])
             ]),
             _vm._v(" "),
-            _c(
-              "v-card-actions",
-              { staticStyle: { display: "block" } },
-              [
-                _c("v-btn", { attrs: { text: "" } }, [
-                  _c("i", { staticClass: "fa fa-share-square" }),
-                  _vm._v(
-                    " " + _vm._s(_vm.$t("message.share")) + "\n            "
-                  )
-                ]),
-                _vm._v(" "),
-                _vm.$i18n.locale == "en"
-                  ? _c(
-                      "span",
-                      {
-                        staticStyle: {
-                          float: "right",
-                          position: "relative",
-                          left: "-35px"
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                " +
-                            _vm._s(_vm.$t("message.checkreview")) +
-                            "\n                "
-                        )
-                      ]
-                    )
-                  : _c("span", { staticStyle: { float: "right" } }, [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(_vm.$t("message.checkreview")) +
-                          "\n            "
-                      )
-                    ]),
-                _vm._v(" "),
-                _c("div", { staticStyle: { clear: "both" } })
-              ],
-              1
-            )
+            _c("v-card-actions", { staticStyle: { display: "block" } })
           ],
           1
         )
@@ -46282,20 +46192,15 @@ var render = function() {
           _c(
             "ol",
             { staticClass: "carousel-indicators" },
-            _vm._l(_vm.artists, function(artist) {
+            _vm._l(_vm.artists, function(artist, index) {
               return _c(
                 "li",
                 {
                   key: artist.id,
-                  class: { active: artist.id === 1 },
+                  class: { active: index === 0 },
                   attrs: {
                     "data-target": "#carouselExampleCaptions",
                     "data-slide-to": "artist.id"
-                  },
-                  on: {
-                    click: function($event) {
-                      return _vm.getdata(artist.id)
-                    }
                   }
                 },
                 [_vm._v(_vm._s(artist.name))]
@@ -46425,57 +46330,9 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "carousel-control-next",
-                      attrs: {
-                        href: "#carouselExampleCaptions",
-                        role: "button",
-                        "data-slide": "next"
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.getdata(artist.id + 1)
-                        }
-                      }
-                    },
-                    [
-                      _c("span", {
-                        staticClass: "carousel-control-next-icon",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
-                    ]
-                  ),
+                  _vm._m(1, true),
                   _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "carousel-control-prev",
-                      attrs: {
-                        href: "#carouselExampleCaptions",
-                        role: "button",
-                        "data-slide": "prev"
-                      },
-                      on: {
-                        click: function($event) {
-                          return _vm.getdata(artist.id - 1)
-                        }
-                      }
-                    },
-                    [
-                      _c("span", {
-                        staticClass: "carousel-control-prev-icon",
-                        attrs: { "aria-hidden": "true" }
-                      }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "sr-only" }, [
-                        _vm._v("Previous")
-                      ])
-                    ]
-                  )
+                  _vm._m(2, true)
                 ]
               )
             }),
@@ -46531,26 +46388,35 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("h2", { staticClass: "font-weight-bold " }, [
-                  _vm._v(_vm._s(_vm.name) + " II\n                     "),
+                  _vm._v(
+                    _vm._s(_vm.minPalettesActive.name) +
+                      " II\n                     "
+                  ),
                   _vm.active_el == 1
-                    ? _c("span", [_vm._v("$" + _vm._s(_vm.S_price))])
+                    ? _c("span", [
+                        _vm._v("$" + _vm._s(_vm.minPalettesActive.S_price))
+                      ])
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.active_el == 2
-                    ? _c("span", [_vm._v("$" + _vm._s(_vm.M_price))])
+                    ? _c("span", [
+                        _vm._v("$" + _vm._s(_vm.minPalettesActive.M_price))
+                      ])
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.active_el == 3
-                    ? _c("span", [_vm._v("$" + _vm._s(_vm.L_price))])
+                    ? _c("span", [
+                        _vm._v("$" + _vm._s(_vm.minPalettesActive.L_price))
+                      ])
                     : _vm._e()
                 ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _vm._m(3),
                 _vm._v(" "),
                 _c(
                   "div",
                   [
-                    _vm.M_avalible > 0
+                    _vm.minPalettesActive.M_avalible > 0
                       ? _c(
                           "v-btn",
                           {
@@ -46560,9 +46426,9 @@ var render = function() {
                               click: function($event) {
                                 return _vm.medium(
                                   2,
-                                  _vm.M_price,
-                                  _vm.M_avalible,
-                                  _vm.cardId
+                                  _vm.minPalettesActive.M_price,
+                                  _vm.minPalettesActive.M_avalible,
+                                  _vm.minPalettesActive.id
                                 )
                               }
                             }
@@ -46594,9 +46460,9 @@ var render = function() {
                           _vm._v("medium  "),
                           _c("strong", { staticStyle: { float: "right" } }, [
                             _vm._v(
-                              _vm._s(_vm.M_copies) +
+                              _vm._s(_vm.minPalettesActive.M_copies) +
                                 "/" +
-                                _vm._s(_vm.M_avalible) +
+                                _vm._s(_vm.minPalettesActive.M_avalible) +
                                 "  " +
                                 _vm._s(_vm.$t("message.left"))
                             )
@@ -46616,8 +46482,8 @@ var render = function() {
                     on: {
                       click: function($event) {
                         return _vm.addtocart(
-                          _vm.cardId,
-                          _vm.M_price,
+                          _vm.minPalettesActive.id,
+                          _vm.minPalettesActive.M_price,
                           _vm.avilableTarget,
                           _vm.sizeTarget
                         )
@@ -46626,7 +46492,9 @@ var render = function() {
                   },
                   [
                     _vm.active_el == 2
-                      ? _c("span", [_vm._v("$" + _vm._s(_vm.M_price))])
+                      ? _c("span", [
+                          _vm._v("$" + _vm._s(_vm.minPalettesActive.M_price))
+                        ])
                       : _vm._e(),
                     _vm._v(" "),
                     _vm._v(
@@ -46718,7 +46586,7 @@ var render = function() {
                         ? _c("span", [
                             _vm._v(
                               "\n                                 " +
-                                _vm._s(_vm.sizing_details) +
+                                _vm._s(_vm.minPalettesActive.sizing_details) +
                                 " CM\n                             "
                             )
                           ])
@@ -46757,7 +46625,9 @@ var render = function() {
                       _vm.details
                         ? _c("span", [
                             _vm._v(
-                              "\n                                 it is delivered as the artwork comes ready to be hung on your wall.\n                                 The classical design and  releases in this series make it an elegant\n                                 way to add a high-end.\n                             "
+                              "\n                                 " +
+                                _vm._s(_vm.minPalettesActive.frame_material) +
+                                "\n                             "
                             )
                           ])
                         : _vm._e()
@@ -46795,7 +46665,9 @@ var render = function() {
                       _vm.shipping
                         ? _c("span", [
                             _vm._v(
-                              "\n                                 it is delivered as the artwork comes ready to be hung on your wall.\n                                 The classical design and releases in this series make it an elegant\n                                 way to add a high-end.\n                             "
+                              "\n                                 " +
+                                _vm._s(_vm.minPalettesActive.frame_finish) +
+                                "\n                             "
                             )
                           ])
                         : _vm._e()
@@ -46829,6 +46701,54 @@ var staticRenderFns = [
         }
       })
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          href: "#carouselExampleCaptions",
+          role: "button",
+          "data-slide": "next"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          href: "#carouselExampleCaptions",
+          role: "button",
+          "data-slide": "prev"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
+      ]
+    )
   },
   function() {
     var _vm = this

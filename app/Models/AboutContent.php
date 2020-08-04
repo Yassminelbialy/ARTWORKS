@@ -22,10 +22,7 @@ class AboutContent extends Model
 
     public $table = 'about_contents';
     
-
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'body1_en',
@@ -62,5 +59,4 @@ class AboutContent extends Model
         'body2_ar' => 'required|min:100|string'
     ];
 
-    
 }

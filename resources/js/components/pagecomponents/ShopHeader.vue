@@ -21,7 +21,7 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" v-for="(artist) in artists" :class="{ 'active': artist.id === 1 }" @click="getdata(artist.id)" :key="artist.id" data-slide-to="artist.id" >{{artist.name}}</li>
+                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" data-slide-to="artist.id" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
                 <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
@@ -35,7 +35,6 @@
                                     <div class="content" :class="{ 'active': index == 0 }" >
                                         <div class="triangle"></div>
                                         <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
-
                                         <div class="infor">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
                                         <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
                                     </div>
@@ -57,12 +56,11 @@
 
                     </div>
 
-
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" @click="getdata(artist.id+1)" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" @click="getdata(artist.id-1)" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -84,40 +82,40 @@
                 <div class=" col-lg-5">
                     <div class="add-cart p-3">
                         <p>Art paper framed by a wooden frame and non-reflective glass</p>
-                        <h2 class="font-weight-bold ">{{name}} II
-                        <span v-if="active_el==1">${{S_price}}</span>
-                        <span v-if="active_el==2">${{M_price}}</span>
-                        <span v-if="active_el==3">${{L_price}}</span>
+                        <h2 class="font-weight-bold ">{{minPalettesActive.name}} II
+                        <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
+                        <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                        <span v-if="active_el==3">${{minPalettesActive.L_price}}</span>
 
                         </h2>
                         <div class="mb-3 mt-2"> <span>silkscreen</span></div>
                         <div>
 
-                            <!-- <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="S_avalible>0"  @click="small(1,S_price,S_avalible,cardId)">S</v-btn>
+                            <!-- <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="minPalettesActive.S_avalible>0"  @click="small(1,minPalettesActive.S_price,minPalettesActive.S_avalible,minPalettesActive.id)">S</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
-                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="M_avalible>0" @click="medium(2,M_price, M_avalible ,cardId)">M</v-btn>
+                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="minPalettesActive.M_avalible>0" @click="medium(2,minPalettesActive.M_price, minPalettesActive.M_avalible ,minPalettesActive.id)">M</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
 
                                 {{ $t("message.empty") }}</v-btn>
-                            <!-- <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="L_avalible>0" @click="larg(3,L_price,L_avalible,cardId )">L</v-btn> -->
+                            <!-- <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="minPalettesActive.L_avalible>0" @click="larg(3,minPalettesActive.L_price,minPalettesActive.L_avalible,minPalettesActive.id )">L</v-btn> -->
                             <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
-                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
-                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{M_copies}}/{{M_avalible}}  {{ $t("message.left") }}</strong></h3>
-                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{minPalettesActive.S_copies}}/{{minPalettesActive.S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
+                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{minPalettesActive.L_copies}}/{{minPalettesActive.L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
-                        <button @click="addtocart(cardId,M_price, avilableTarget , sizeTarget)"  class="btn add-button addToCart ">
+                        <button @click="addtocart(minPalettesActive.id,minPalettesActive.M_price, avilableTarget , sizeTarget)"  class="btn add-button addToCart ">
 
 
 
-                       <!-- <span v-if="active_el==1">${{S_price}}</span> -->
-                        <span v-if="active_el==2">${{M_price}}</span>
-                        <!-- <span v-if="active_el==3">${{L_price}}</span> -->
+                       <!-- <span v-if="active_el==1">${{minPalettesActive.S_price}}</span> -->
+                        <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                        <!-- <span v-if="active_el==3">${{minPalettesActive.L_price}}</span> -->
                          -{{ $t("message.cart") }}
 
                         </button>
@@ -151,7 +149,7 @@
                                     <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="size">
-                                    {{sizing_details}} CM
+                                    {{minPalettesActive.sizing_details}} CM
                                 </span>
                             </li>
                             <li class="list-group-item" @click="details = !details">
@@ -162,9 +160,7 @@
                                     <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="details">
-                                    it is delivered as the artwork comes ready to be hung on your wall.
-                                    The classical design and  releases in this series make it an elegant
-                                    way to add a high-end.
+                                    {{minPalettesActive.frame_material}}
                                 </span>
                             </li>
                             <li class="list-group-item" @click="shipping = !shipping">
@@ -174,9 +170,7 @@
                                     <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="shipping">
-                                    it is delivered as the artwork comes ready to be hung on your wall.
-                                    The classical design and releases in this series make it an elegant
-                                    way to add a high-end.
+                                    {{minPalettesActive.frame_finish}}
                                 </span>
                             </li>
                         </ul>
@@ -212,23 +206,13 @@ export default {
             first:null,
             firstpalettesArtists:null,
             firstminPalettes:null,
+            minPalettesActive:{},
             active_el:2,
-            S_copies:'',
-            S_avalible:'',
-            S_price:'',
-            M_copies:'',
-            M_avalible:'',
-            M_price:'',
-            L_copies:'',
-            L_avalible:'',
-            L_price:'',
-            sizing_details:'',
-            name:'',
-            cardId:'',
             priceTarget:'',
             avilableTarget:'',
             sizeTarget:'medium',
             button:false,
+            artistID:'',
             sizeCm:""
 
 
@@ -273,22 +257,12 @@ export default {
                   axios.get('/api/palettes')
       .then(response =>{
           this.artists = response.data.artists
+          
           this.first = response.data.artists[0].id
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
             this.palettes = response.data.palettes
-            this.name=response.data.palettes[0].name,
-            this.cardId=response.data.palettes[0].id,
-            this.S_copies=response.data.palettes[0].S_copies,
-            this.S_avalible=response.data.palettes[0].S_avalible,
-            this.S_price=response.data.palettes[0].S_price,
-            this.M_copies=response.data.palettes[0].M_copies,
-            this.M_avalible=response.data.palettes[0].M_avalible,
-            this.M_price=response.data.palettes[0].M_price,
-            this.L_copies=response.data.palettes[0].L_copies,
-            this.L_avalible=response.data.palettes[0].L_avalible,
-            this.L_price=response.data.palettes[0].L_price,
-            this.sizing_details=response.data.palettes[0].sizing_details
+            this.minPalettesActive=response.data.palettes[0],
             this.palettesArtists = response.data.palettesArtists
         })
         .catch(error => console.log(error.response.data))
@@ -316,19 +290,9 @@ export default {
           this.first = response.data.artists[0].id
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
+            
             this.palettes = response.data.palettes
-            this.name=response.data.palettes[0].name,
-            this.cardId=response.data.palettes[0].id,
-            this.S_copies=response.data.palettes[0].S_copies,
-            this.S_avalible=response.data.palettes[0].S_avalible,
-            this.S_price=response.data.palettes[0].S_price,
-            this.M_copies=response.data.palettes[0].M_copies,
-            this.M_avalible=response.data.palettes[0].M_avalible,
-            this.M_price=response.data.palettes[0].M_price,
-            this.L_copies=response.data.palettes[0].L_copies,
-            this.L_avalible=response.data.palettes[0].L_avalible,
-            this.L_price=response.data.palettes[0].L_price,
-            this.sizing_details=response.data.palettes[0].sizing_details
+            this.minPalettesActive=response.data.palettes[0],
             this.palettesArtists = response.data.palettesArtists
 
             this.firstpalettesArtists = response.data.palettesArtists[0].id
@@ -388,52 +352,27 @@ export default {
         }
       }
       ,
-        getdata($id){
-        axios.get("/api/view?id=" +$id)
-        .then(response =>{
-            this.palettes = response.data.palettes
-            this.palettesArtists = response.data.palettesArtists
-            if(response.data.palettesArtists.length>0){
-                this.firstminPalettes = response.data.palettesArtists[0].id
-            } else {
-                this.firstminPalettes = null
-            }
+        // getdata($id){
+        // axios.get("/api/view?id=" +$id)
 
-            if($id > response.data.artists.length){
-                axios.get("/api/view?id=" +1)
-                .then(response =>{
-                    this.palettesArtists = response.data.palettesArtists
-                     this.firstminPalettes = response.data.palettesArtists[0].id
-                    axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-                    .then(response =>{
-                        this.minPalettes = response.data.minPalettes
-                        })
-                        .catch(error => console.log(error.response.data))
-                    })
-                .catch(error => console.log(error.response.data))
-            } else if($id == 0) {
+        // .then(response =>{
+        //     console.log($id);
+        //     this.palettes = response.data.palettes
+        //     this.palettesArtists = response.data.palettesArtists
+        //     if(response.data.palettesArtists.length>0){
+        //         this.firstminPalettes = response.data.palettesArtists[0].id
+        //     } else {
+        //         this.firstminPalettes = null
+        //     }
 
-                axios.get("/api/view?id=" + response.data.artists.length )
-                .then(response =>{
-                    this.palettesArtists = response.data.palettesArtists
-                     this.firstminPalettes = response.data.palettesArtists[0].id
-                    axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-                    .then(response =>{
-                        this.minPalettes = response.data.minPalettes
-                        })
-                        .catch(error => console.log(error.response.data))
-                    })
-                .catch(error => console.log(error.response.data))
-            }
-
-            axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-                .then(response =>{
-                    this.minPalettes = response.data.minPalettes
-                    })
-                .catch(error => console.log(error.response.data))
-        })
-        .catch(error => console.log(error.response.data))
-        },
+        //     axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
+        //         .then(response =>{
+        //             this.minPalettes = response.data.minPalettes
+        //             })
+        //         .catch(error => console.log(error.response.data))
+        // })
+        // .catch(error => console.log(error.response.data))
+        // },
         small(el,price,avilable,cardId){
             this.sizeTarget="small"
             this.avilableTarget=avilable;
@@ -511,18 +450,7 @@ export default {
                 axios.get("/api/viewMinPalettes?id=" + $minPalette_id)
                 .then(response =>{
                     this.minPalettes = response.data.minPalettes
-                    this.name=response.data.palettes[0].name,
-                    this.cardId=response.data.palettes[0].id,
-                    this.S_copies=response.data.palettes[0].S_copies,
-                    this.S_avalible=response.data.palettes[0].S_avalible,
-                    this.S_price=response.data.palettes[0].S_price,
-                    this.M_copies=response.data.palettes[0].M_copies,
-                    this.M_avalible=response.data.palettes[0].M_avalible,
-                    this.M_price=response.data.palettes[0].M_price,
-                    this.L_copies=response.data.palettes[0].L_copies,
-                    this.L_avalible=response.data.palettes[0].L_avalible,
-                    this.L_price=response.data.palettes[0].L_price,
-                    this.sizing_details=response.data.palettes[0].sizing_details
+                    this.minPalettesActive=response.data.palettes[0]
                     })
                 .catch(error => console.log(error.response.data))
 
@@ -533,7 +461,7 @@ export default {
             axios.post('/api/addtocart?id=' + $id)
             .then(res=>{
 
-            console.log(res.data.paletteCart)
+            // console.log(res.data.paletteCart)
 
                 // $('#count')[0].innerText++
 
@@ -541,30 +469,30 @@ export default {
 
            if(sizeTarget=='large')
            {
-               if(this.L_avalible<=0)
+               if(this.minPalettesActive.L_avalible<=0)
                {
 
-                this.L_avalible=0;
+                this.minPalettesActive.L_avalible=0;
                 return
                }
-               --this.L_avalible;
+               --this.minPalettesActive.L_avalible;
            }else if(sizeTarget=='small')
            {
-                if(this.S_avalible<=0)
+                if(this.minPalettesActive.S_avalible<=0)
                {
-               this.S_avalible =  0;
+               this.minPalettesActive.S_avalible =  0;
                return
                }
-                --this.S_avalible;
+                --this.minPalettesActive.S_avalible;
 
            }else{
-             if(this.M_avalible<=0)
+             if(this.minPalettesActive.M_avalible<=0)
                {
-                    this.M_avalible=0;
+                    this.minPalettesActive.M_avalible=0;
                     return
 
                }
-               --this.M_avalible;
+               --this.minPalettesActive.M_avalible;
 
            }
             this.$store.dispatch('addProductToCart',{
@@ -589,7 +517,7 @@ export default {
             .then(response =>{
 
                 this.minPalettes = response.data.minPalettes
-                console.log(this.$route.query.mydata );
+                // console.log(this.$route.query.mydata );
 
                 })
             .catch(error => console.log(error.response.data))
