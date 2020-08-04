@@ -1,5 +1,5 @@
 <template>
-    <section class="myhome">
+    <section >
 
    <div class="swiper-container pallete-swiper text-center d-sm-none ">
         <div class="swiper-wrapper">
@@ -29,7 +29,7 @@
                 <!---------------------------- start regular pallete----------------------- -->
                     <div class="wrapper d-none d-sm-block ">
                         <div class=" row  d-flex justify-content-center">
-                            <div  class="details myhome col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                            <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                                <div class="details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
                                     <div class="content" :class="{ 'active': index == 0 }" >
@@ -72,7 +72,7 @@
 
         </div>
         <div class="header_sm mb-2"></div>
-        <div class="container myhome mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
+        <div class="container  mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
             <div class="row">
                 <div class="col-lg-7" >
                     <div class="row">
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="myhome col-lg-5">
+                <div class=" col-lg-5">
                     <div class="add-cart p-3">
                         <p>Art paper framed by a wooden frame and non-reflective glass</p>
                         <h2 class="font-weight-bold ">{{name}} II
@@ -497,11 +497,11 @@ export default {
         },
         addActive($minPalette_id,index){
 // console.log(  this.$refs.myActive)
-        //   let myActive =  this.$refs.myActive[index]
+          let myActive =  this.$refs.myActive[index]
 
 
 
-        //         $(myActive).addClass('active').siblings().removeClass('active');
+            $(myActive).addClass('active').siblings().removeClass('active');
 
 
             $("html,body").animate({
@@ -1065,13 +1065,14 @@ transform: scale(.7);
 
 .pallete-swiper .content .triangle{
 
-    left: 58%;
+    left: 55%;
 
 
 }
 
 .pallete-swiper .swiper-slide {
          width: 70% !important;
+         margin-right:0px  !important;
 
 }
 }
