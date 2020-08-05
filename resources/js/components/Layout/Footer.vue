@@ -18,14 +18,16 @@
                         <li class="footer-title">
                             {{ $t("message.Limitworks") }}
                         </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">  {{ $t("message.shopfooter") }}</a>
-
-                        </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">  {{ $t("message.aboutfooter") }}</a>
-
-                        </li>
+                        <router-link to="/shop">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">  {{ $t("message.shopfooter") }}</a>
+                            </li>
+                        </router-link>
+                        <router-link :to="{ path: '/about', query: { mydata: 'product'}}">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">  {{ $t("message.aboutfooter") }}</a>
+                            </li>
+                        </router-link>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-2">
@@ -35,20 +37,22 @@
                         </li>
                         <li class="footer-menu-item">
                             <a href="#" class="footer-menu-item-link">{{ $t("message.carreerfooter") }}</a>
-
                         </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.aboutusfooter") }}</a>
-
-                        </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.artistfooter") }}</a>
-
-                        </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.contactfooter") }}</a>
-
-                        </li>
+                        <router-link to="/about">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">{{ $t("message.aboutusfooter") }}</a>
+                            </li>
+                        </router-link>
+                        <router-link :to="{ path: '/about', query: { mydata: 'artist'}}">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">{{ $t("message.artistfooter") }}</a>
+                            </li>
+                        </router-link>
+                         <router-link :to="{ path: '/about', query: { mydata: 'contact'}}">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">{{ $t("message.contactfooter") }}</a>
+                            </li>
+                         </router-link>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-2">
@@ -56,18 +60,21 @@
                         <li class="footer-title">
                             {{ $t("message.others") }}
                         </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.termsfooter") }}</a>
-
-                        </li>
-                        <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.privacyfooter") }}</a>
-
-                        </li>
-                          <li class="footer-menu-item">
-                            <a href="#" class="footer-menu-item-link">{{ $t("message.refundpolicy") }}</a>
-
-                        </li>
+                        <router-link to="/terms">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">{{ $t("message.termsfooter") }}</a>
+                            </li>
+                        </router-link>
+                        <router-link to="/privacy">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">{{ $t("message.privacyfooter") }}</a>
+                            </li>
+                        </router-link>
+                        <router-link to="/refund">
+                            <li class="footer-menu-item">
+                                <a class="footer-menu-item-link">{{ $t("message.refundpolicy") }}</a>
+                            </li>
+                        </router-link>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-2 pl-0">

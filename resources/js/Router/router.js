@@ -2,29 +2,50 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-import Home from '../components/Page/Home';
-import Shop from '../components/Page/ShopArt';
-import About from '../components/Page/AboutUs';
-import Terms from '../components/Page/Terms';
-import Privacy from '../components/Page/Privacy';
-import JoinUs from '../components/Page/JoinUs';
-import Refund from '../components/Page/Refund';
-import Payment from '../components/Page/Payment';
 const routes = [
-    { path: '/', component: Home,name:'home' },
-    { path: '/shop', component: Shop , name:'shop' },
-    { path: '/about', component: About },
-    { path: '/terms', component: Terms },
-    { path: '/privacy', component: Privacy },
-    { path: '/refund', component: Refund },
-    { path: '/payment', component:Payment},
-    { path: '/joinus', component:JoinUs},
+    { 
+        path: '/',
+        name:'home',
+        component: ()=> import('../components/Page/Home') 
+    },
+    {
+        path: '/shop',
+        name:'shop',
+        component: ()=> import('../components/Page/ShopArt')
+    },
+    {
+        path: '/about',
+        component: ()=> import('../components/Page/AboutUs')
+    },
+    {
+        path: '/terms',
+        component: ()=> import('../components/Page/Terms')
+    },
+    { 
+        path: '/privacy',
+        component: ()=> import('../components/Page/Privacy')
+    },
+    { 
+        path: '/refund',
+        component: ()=> import('../components/Page/Refund')
+    },
+    { 
+        path: '/payment',
+        component: ()=> import('../components/Page/Payment')
+    },
+    { 
+        path: '/joinus',
+        component: ()=> import('../components/Page/JoinUs')
+    },
 ]
 
 const router = new VueRouter({
     routes, // short for `routes: routes`
     hashbang : false,
-    mode : 'history'
+    mode : 'history',
+    scrollBehavior (to, from, savedPosition) {
+        return {x:0,y:0};
+    }
 })
 
 

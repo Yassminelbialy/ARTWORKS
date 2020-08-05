@@ -69,6 +69,13 @@
           </div>
           <div class="col-md-2 content" @click="activate(4)" :class="{ active : active_el == 4 }">
             <img
+              src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-4.svg?v=13401101258815370791"
+              style="height: 110px"
+            />
+            <h3 class="mt-4">{{ $t("message.Terms") }}</h3>
+          </div>
+          <div class="col-md-2 content" @click="activate(5)" :class="{ active : active_el == 5 }">
+            <img
               src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-5.svg?v=6164253995379968036"
               style="height: 110px"
             />
@@ -201,6 +208,50 @@
             </div>
           </div>
           <div class="col-sm-12" v-if="active_el==4">
+            <div class="row" v-if=" $i18n.locale == 'en'">
+              <div class="col-sm-5 text-center left">
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text1") }}</p>
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text2") }}</p>
+                <p class="font-weight-bold">{{ $t("message.Terms_text3") }}</p>
+              </div>
+              <div class="col-sm-7 term_text">
+                <p>
+                  {{ $t("message.Terms_text4") }}
+                  <router-link to="/terms">here</router-link>.
+                </p>
+                <p>
+                  {{ $t("message.Terms_text5") }}
+                  <router-link to="/privacy">here</router-link>.
+                </p>
+                <p>
+                  {{ $t("message.Terms_text6") }}
+                  <router-link to="/refund">here</router-link>.
+                </p>
+              </div>
+            </div>
+            <div class="row" v-else>
+              <div class="col-sm-7 text-right term_text">
+                <p>
+                  {{ $t("message.Terms_text4") }}
+                  <router-link to="/terms">من هنا</router-link>
+                </p>
+                <p>
+                  {{ $t("message.Terms_text5") }}
+                  <router-link to="/privacy">من هنا</router-link>
+                </p>
+                <p>
+                  {{ $t("message.Terms_text6") }}
+                  <router-link to="/refund">من هنا</router-link>
+                </p>
+              </div>
+              <div class="col-sm-5 text-center right">
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text1") }}</p>
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text2") }}</p>
+                <p class="font-weight-bold">{{ $t("message.Terms_text3") }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12" v-if="active_el==5">
             <v-form class="form" @submit.prevent="send" v-if=" $i18n.locale == 'en'">
               <v-container>
                 <v-row>
@@ -217,7 +268,7 @@
                     <v-textarea v-model="form.message" outlined name="input-7-4" label="Message"></v-textarea>
                   </v-col>
                 </v-row>
-                <v-btn color="#f2efeb" style="margin-left:12px" type="submit">Send</v-btn>
+                <v-btn color="#252524" style="margin-left:12px;color:#fff" type="submit">Send</v-btn>
               </v-container>
             </v-form>
             <v-form class="form" @submit.prevent="send" v-else>
@@ -236,7 +287,7 @@
                     <v-textarea v-model="form.message" outlined name="input-7-4" label="اكتب رسالتك" dir="rtl"></v-textarea>
                   </v-col>
                 </v-row>
-                <v-btn color="#f2efeb" style="margin-left:12px;float:right" type="submit">ارسال</v-btn>
+                <v-btn color="#252524" style="margin-left:12px;float:right;color:#fff" type="submit">ارسال</v-btn>
                 <div style="clear:both"></div>
               </v-container>
             </v-form>
@@ -294,6 +345,18 @@ export default {
     };
   },
   created() {
+    if(this.$route.query.mydata=='artist')
+    {
+      this.artist=true;
+      this.mission=false;
+    } else if(this.$route.query.mydata=='contact'){
+      this.support=true;
+      this.mission=false;
+      this.active_el=5;
+    }else if(this.$route.query.mydata=='product'){
+      this.support=true;
+      this.mission=false;
+1    }
     axios
       .get("/api/get-about-content")
       .then(response => {
@@ -373,7 +436,7 @@ export default {
 }
 @media (min-width: 992px) and (max-width: 1999px) {
   .left {
-    padding-left: 150px;
+    padding-left: 200px;
   }
 }
 .right {
@@ -388,7 +451,12 @@ export default {
 }
 @media (min-width: 992px) and (max-width: 1999px) {
   .right {
-    padding-right: 150px;
+    padding-right: 200px;
+  }
+}
+@media(max-width:991px){
+  .term_text{
+    text-align: center !important;
   }
 }
 .form {

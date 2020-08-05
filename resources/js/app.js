@@ -144,6 +144,13 @@ const messages = {
             Collabs_text2:'I am an influencer, how can we work together?',
             Collabs_text3:'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.',
             Collabs_text4:'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!',
+            Terms:'Terms',
+            Terms_text1:'What are the terms of this website?',
+            Terms_text2:'How do you treat my privacy?',
+            Terms_text3:'How can I get a refund?',
+            Terms_text4:'Read our terms',
+            Terms_text5:'Read our Privacy Policy',
+            Terms_text6:'Read our Refund Policy',
         }
     },
     ar: {
@@ -260,6 +267,13 @@ const messages = {
              Collabs_text2:'أنا مؤثر ، كيف يمكننا العمل معًا؟',
              Collabs_text3:' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.',
              Collabs_text4:' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!',
+             Terms:'الشروط',
+             Terms_text1:'ما هي شروط الموقع',
+             Terms_text2:'كيف تتعامل مع خصوصيتك',
+             Terms_text3:'كيف يمكنني استرداد اﻷموال',
+             Terms_text4:'اقرأ شروط الموقع',
+             Terms_text5:'اقرأ سياسة الخصوصية',
+             Terms_text6:'اقرأ سياسة اﻷسترداد',
         }
     }
 };
