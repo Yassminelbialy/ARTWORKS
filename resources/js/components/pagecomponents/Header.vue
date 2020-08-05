@@ -48,7 +48,6 @@ export default {
     },
     created() {
 
-
         this.selectedImage = this.randomItem(this.images);
         this.numbers=Math.floor(Math.random()*200)+50;
         axios.get('/api/homedata').then((result) => {

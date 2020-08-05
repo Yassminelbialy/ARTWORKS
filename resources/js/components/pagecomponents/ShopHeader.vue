@@ -21,10 +21,10 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" @click="getdata(artist.id)" data-slide-to="artist.id" >{{artist.name}}</li>
+                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
-                <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
+                <div class="carousel-item" v-for="(artist,index ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
                 <!---------------------------- start regular pallete----------------------- -->
                     <div class="wrapper d-none d-sm-block ">
@@ -56,11 +56,11 @@
 
                     </div>
 
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" @click="getdata(artist.id)" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" @click="getdata(index+1)" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" @click="getdata(artist.id)" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" @click="getdata(index-1)" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -109,16 +109,19 @@
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{minPalettesActive.L_copies}}/{{minPalettesActive.L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
-                        <button @click="addtocart(minPalettesActive.id,minPalettesActive.M_price, avilableTarget , sizeTarget)"  class="btn add-button addToCart ">
+                        <div class="text-center">
+                            <button @click="addtocart(minPalettesActive.id,minPalettesActive.M_price, avilableTarget , sizeTarget)" v-if="minPalettesActive.M_avalible>0"  class="btn add-button addToCart ">
+                            <!-- <span v-if="active_el==1">${{minPalettesActive.S_price}}</span> -->
+                                <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                                <!-- <span v-if="active_el==3">${{minPalettesActive.L_price}}</span> -->
+                                -{{ $t("message.cart") }}
 
+                                </button>
+                                <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
+                                        
 
-
-                       <!-- <span v-if="active_el==1">${{minPalettesActive.S_price}}</span> -->
-                        <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
-                        <!-- <span v-if="active_el==3">${{minPalettesActive.L_price}}</span> -->
-                         -{{ $t("message.cart") }}
-
-                        </button>
+                                {{ $t("message.solidout") }}</v-btn>
+                        </div>
                         <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.select_size") }}</v-btn> -->
 
                         <p>
@@ -272,15 +275,9 @@ export default {
             //this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
-
                 this.minPalettes = response.data.minPalettes
-                
-
                 })
             .catch(error => console.log(error.response.data))
-
-
-
         }else{
 
       axios.get('/api/palettes')
@@ -289,11 +286,9 @@ export default {
           this.first = response.data.artists[0].id
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
-            
             this.palettes = response.data.palettes
             this.minPalettesActive=response.data.palettes[0],
             this.palettesArtists = response.data.palettesArtists
-
             this.firstpalettesArtists = response.data.palettesArtists[0].id
             axios.get("/api/viewMinPalettes?id=" + this.firstpalettesArtists)
             .then(response =>{
@@ -305,30 +300,22 @@ export default {
       }
 
     ).catch(error => console.log(error.response.data));
-        }//////
-
-
+        }
     },
 
       computed: {
+        cart() {
+            return this.products.filter(product => product.quantity > 0);
+        },
+        totalQuantity() {
+            return this.products.reduce(
+            (total, product) => total + product.quantity,
+            0);
 
-      cart() {
-        return this.products.filter(product => product.quantity > 0);
+        } 
       },
-      totalQuantity() {
-        return this.products.reduce(
-        (total, product) => total + product.quantity,
-        0);
-
-      } },
-
-
-
     methods:{
-
-
         addToCart(product){
-
             this.$store.dispatch('addProductToCart',{
                  product,
                 quantity:1
@@ -352,10 +339,21 @@ export default {
       }
       ,
         getdata($id){
+            // let id = 0;
+            if(this.artists[$id])
+            {
+                $id = this.artists[$id].id
+            } else if($id > this.artists.length-1)
+            {
+             $id = this.artists[0].id;   
+            }
+            else{
+                $id = this.artists[this.artists.length-1].id;
+            }
         axios.get("/api/view?id=" +$id)
 
         .then(response =>{
-            console.log($id)
+
             this.palettes = response.data.palettes
             this.minPalettesActive=response.data.palettes[0]
             if(this.minPalettesActive == null)
@@ -390,13 +388,10 @@ export default {
 
             // $(".details .content").css({marginTop:"27px"})
 
-
             $(".details.active .details_img").css({
                 transform:"scale(.7)"
             })
             $(".details.active .content").css({marginTop:"-27px"})
-
-
         },
         medium(el,price,avilable,cardId){
             this.sizeTarget="medium"
@@ -406,20 +401,15 @@ export default {
             this.button=true;
             this.sizeCm="50x66.5cm (20x26)"
 
-
             //  $(".details .details_img").css({
             //      transform:"scale(1)"
             //  })
             // $(".details .content").css({marginTop:"27px"})
 
-
             // $(".details.active .details_img").css({
             //     transform:"scale(.8)"
             // })
             // $(".details.active .content").css({marginTop:"-17px"})
-
-
-
 
         },
         larg(el,price,avilable,cardId){
@@ -438,13 +428,10 @@ export default {
 
         },
         addActive($minPalette_id,index){
-// console.log(  this.$refs.myActive)
-          let myActive =  this.$refs.myActive[index]
-
-
+            // console.log(  this.$refs.myActive)
+            let myActive =  this.$refs.myActive[index]
 
             $(myActive).addClass('active').siblings().removeClass('active');
-
 
             $("html,body").animate({
                 scrollTop:"450px"
@@ -459,7 +446,6 @@ export default {
 
         },
         addtocart($id,price,avilableTarget, sizeTarget,sizeCm){
-
 
             axios.post('/api/addtocart?id=' + $id)
             .then(res=>{
@@ -515,17 +501,17 @@ export default {
     watch:{
     $route (to, from){
 
-            this.addActive(this.$route.query.mydata)
-            axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
-            .then(response =>{
+        this.addActive(this.$route.query.mydata)
+        axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
+        .then(response =>{
 
-                this.minPalettes = response.data.minPalettes
-                // console.log(this.$route.query.mydata );
+            this.minPalettes = response.data.minPalettes
+            // console.log(this.$route.query.mydata );
 
-                })
-            .catch(error => console.log(error.response.data))
+            })
+        .catch(error => console.log(error.response.data))
 
-}
+    }
 }
 
 }

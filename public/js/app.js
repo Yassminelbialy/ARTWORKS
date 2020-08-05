@@ -2372,6 +2372,212 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2380,6 +2586,14 @@ __webpack_require__.r(__webpack_exports__);
       about: {},
       mission: true,
       artist: false,
+      support: false,
+      active_el: 1,
+      form: {
+        name: null,
+        email: null,
+        phone: null,
+        message: null
+      },
       errors: {}
     };
   },
@@ -2389,9 +2603,27 @@ __webpack_require__.r(__webpack_exports__);
     axios.get("/api/get-about-content").then(function (response) {
       _this.artists = response.data.dataArtist;
       _this.about = response.data.data;
+
+      if (_this.about == null) {
+        _this.about = '';
+      }
     })["catch"](function (error) {
       return _this.errors = error.response.data;
     });
+  },
+  methods: {
+    activate: function activate(el) {
+      this.active_el = el;
+    },
+    send: function send() {
+      var _this2 = this;
+
+      axios.post("/aboutContacts-api", this.form).then(function (res) {
+        return _this2.form = '';
+      })["catch"](function (error) {
+        return _this2.errors = error.response.data;
+      });
+    }
   }
 });
 
@@ -3440,7 +3672,7 @@ __webpack_require__.r(__webpack_exports__);
     send: function send() {
       var _this = this;
 
-      axios.post('/reviews', this.form).then(function (res) {
+      axios.post('/reviews-api', this.form).then(function (res) {
         _this.review = false;
 
         _this.reviews.unshift(res.data.review);
@@ -3517,6 +3749,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pagecomponents_Review__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pagecomponents/Review */ "./resources/js/components/pagecomponents/Review.vue");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
 //
 //
 //
@@ -3804,8 +4039,7 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
-    } //////
-
+    }
   },
   computed: {
     cart: function cart() {
@@ -3844,8 +4078,16 @@ __webpack_require__.r(__webpack_exports__);
     getdata: function getdata($id) {
       var _this2 = this;
 
+      // let id = 0;
+      if (this.artists[$id]) {
+        $id = this.artists[$id].id;
+      } else if ($id > this.artists.length - 1) {
+        $id = this.artists[0].id;
+      } else {
+        $id = this.artists[this.artists.length - 1].id;
+      }
+
       axios.get("/api/view?id=" + $id).then(function (response) {
-        console.log($id);
         _this2.palettes = response.data.palettes;
         _this2.minPalettesActive = response.data.palettes[0];
 
@@ -4089,7 +4331,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4134,21 +4375,6 @@ __webpack_require__.r(__webpack_exports__);
       observer: true,
       observerParents: true
     }); // swiper.update();
-  },
-  methods: {
-    // hover(id){
-    //         axios.get('/api/hover/'+id).then(res=>{
-    //                         // console.log(id,this.image_hover,'dssdsd',res.data);
-    //             if(res.data.hover_image)
-    //             {
-    //                 this.image_hover=res.data.hover_image.img;
-    //             }else{
-    //                 // console.log(res.data);
-    //             }
-    //         }).catch(e=>{console.log(e.data);
-    //         })
-    // },
-    showmore: function showmore(id) {}
   }
 });
 
@@ -8653,7 +8879,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 150px;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\n  width:90%;\n  height:370px;\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\n    width: 100% !important;\n}\n}\n\n\n", ""]);
+exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.support_div .content[data-v-2fea7dd6] {\n  color: grey;\n  cursor: pointer;\n}\n.support_div .active[data-v-2fea7dd6] {\n  color: black;\n  font-weight: bold;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 150px;\n}\n}\n.right[data-v-2fea7dd6] {\n  border-left: 2px solid #000;\n  padding-right: 300px;\n}\n@media (max-width: 991px) {\n.right[data-v-2fea7dd6] {\n    border-left: none;\n    padding-right: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.right[data-v-2fea7dd6] {\n    padding-right: 150px;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\n  width:90%;\n  height:370px;\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\n    width: 100% !important;\n}\n}\n\n\n", ""]);
 
 // exports
 
@@ -43908,6 +44134,845 @@ var render = function() {
         : _vm._e()
     ]),
     _vm._v(" "),
+    _c("div", { staticClass: "support mt-4" }, [
+      !_vm.support
+        ? _c(
+            "h3",
+            {
+              staticClass: "title",
+              on: {
+                click: function($event) {
+                  _vm.support = !_vm.support
+                }
+              }
+            },
+            [
+              _c("span", [_vm._v(_vm._s(_vm.$t("message.support")) + " ")]),
+              _vm._v(" "),
+              _vm.support == false
+                ? _c("span", { staticClass: "plus" }, [_vm._v("+")])
+                : _vm._e()
+            ]
+          )
+        : _c(
+            "h3",
+            {
+              staticClass: "title",
+              on: {
+                click: function($event) {
+                  _vm.support = !_vm.support
+                }
+              }
+            },
+            [
+              _c("span", [
+                _vm._v(" " + _vm._s(_vm.$t("message.support")) + " ")
+              ]),
+              _vm._v(" "),
+              _vm.support == true
+                ? _c("span", { staticClass: "plus" }, [_vm._v("-")])
+                : _vm._e()
+            ]
+          ),
+      _vm._v(" "),
+      _vm.support
+        ? _c("div", { staticClass: "mt-5" }, [
+            _c("p", { staticClass: "text-center" }, [
+              _vm._v(_vm._s(_vm.$t("message.support_text")))
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "row justify-content-md-center support_div text-center "
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-2 content",
+                    class: { active: _vm.active_el == 1 },
+                    on: {
+                      click: function($event) {
+                        return _vm.activate(1)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticStyle: { height: "110px" },
+                      attrs: {
+                        src:
+                          "//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-1.svg?v=12010384132983907058"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "mt-4" }, [
+                      _vm._v(_vm._s(_vm.$t("message.Product")))
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-2 content",
+                    class: { active: _vm.active_el == 2 },
+                    on: {
+                      click: function($event) {
+                        return _vm.activate(2)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticStyle: { height: "110px" },
+                      attrs: {
+                        src:
+                          "//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-2.svg?v=16172020802828672890"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "mt-4" }, [
+                      _vm._v(_vm._s(_vm.$t("message.Shipping")))
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-2 content",
+                    class: { active: _vm.active_el == 3 },
+                    on: {
+                      click: function($event) {
+                        return _vm.activate(3)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticStyle: { height: "110px" },
+                      attrs: {
+                        src:
+                          "//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-3.svg?v=6657556400331861725"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "mt-4" }, [
+                      _vm._v(_vm._s(_vm.$t("message.Collabs")))
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-md-2 content",
+                    class: { active: _vm.active_el == 4 },
+                    on: {
+                      click: function($event) {
+                        return _vm.activate(4)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      staticStyle: { height: "110px" },
+                      attrs: {
+                        src:
+                          "//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-5.svg?v=6164253995379968036"
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("h3", { staticClass: "mt-4" }, [
+                      _vm._v(_vm._s(_vm.$t("message.contact")))
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "row mt-5" }, [
+              _vm.active_el == 1
+                ? _c("div", { staticClass: "col-sm-12" }, [
+                    _vm.$i18n.locale == "en"
+                      ? _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-5 text-center left" },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text1"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text2"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text3"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text4"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text5"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text6"))
+                                  )
+                                ]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-7" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(_vm.$t("message.product_text7")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                 " +
+                                  _vm._s(_vm.$t("message.product_text8")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(_vm.$t("message.product_text9")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                " " + _vm._s(_vm.$t("message.product_text10"))
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(_vm.$t("message.product_text11")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                 " +
+                                  _vm._s(_vm.$t("message.product_text12")) +
+                                  "\n              "
+                              )
+                            ])
+                          ])
+                        ])
+                      : _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-sm-7" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.product_text7")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.product_text8")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.product_text9")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                " " + _vm._s(_vm.$t("message.product_text10"))
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(_vm.$t("message.product_text11")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                  " +
+                                  _vm._s(_vm.$t("message.product_text12")) +
+                                  "\n              "
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-5 text-center right" },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text1"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text2"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text3"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text4"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text5"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.product_text6"))
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.active_el == 2
+                ? _c("div", { staticClass: "col-sm-12" }, [
+                    _vm.$i18n.locale == "en"
+                      ? _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-5 text-center left" },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [_vm._v(_vm._s(_vm.$t("message.ship_text1")))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mt-3" },
+                                [_vm._v(_vm._s(_vm.$t("message.ship_text2")))]
+                              )
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-7" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.ship_text3")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.ship_text4")) +
+                                  "\n              "
+                              )
+                            ])
+                          ])
+                        ])
+                      : _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-sm-7" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.ship_text3")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.ship_text4")) +
+                                  "\n              "
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-5 text-center right" },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-5" },
+                                [_vm._v(_vm._s(_vm.$t("message.ship_text1")))]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mt-5" },
+                                [_vm._v(_vm._s(_vm.$t("message.ship_text2")))]
+                              )
+                            ]
+                          )
+                        ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.active_el == 3
+                ? _c("div", { staticClass: "col-sm-12" }, [
+                    _vm.$i18n.locale == "en"
+                      ? _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-5 text-center left" },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.Collabs_text1"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "font-weight-bold" }, [
+                                _vm._v(_vm._s(_vm.$t("message.Collabs_text2")))
+                              ])
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "col-sm-7" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.Collabs_text3")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.Collabs_text4")) +
+                                  "\n              "
+                              )
+                            ])
+                          ])
+                        ])
+                      : _c("div", { staticClass: "row" }, [
+                          _c("div", { staticClass: "col-sm-7" }, [
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.Collabs_text3")) +
+                                  "\n              "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "\n                " +
+                                  _vm._s(_vm.$t("message.Collabs_text4")) +
+                                  "\n              "
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-sm-5 text-center right" },
+                            [
+                              _c(
+                                "p",
+                                { staticClass: "font-weight-bold mb-4" },
+                                [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("message.Collabs_text1"))
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "font-weight-bold" }, [
+                                _vm._v(_vm._s(_vm.$t("message.Collabs_text2")))
+                              ])
+                            ]
+                          )
+                        ])
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.active_el == 4
+                ? _c(
+                    "div",
+                    { staticClass: "col-sm-12" },
+                    [
+                      _vm.$i18n.locale == "en"
+                        ? _c(
+                            "v-form",
+                            {
+                              staticClass: "form",
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.send($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "v-container",
+                                [
+                                  _c(
+                                    "v-row",
+                                    [
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "6" } },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "First name",
+                                              required: ""
+                                            },
+                                            model: {
+                                              value: _vm.form.name,
+                                              callback: function($$v) {
+                                                _vm.$set(_vm.form, "name", $$v)
+                                              },
+                                              expression: "form.name"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "6" } },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "E-mail",
+                                              required: ""
+                                            },
+                                            model: {
+                                              value: _vm.form.email,
+                                              callback: function($$v) {
+                                                _vm.$set(_vm.form, "email", $$v)
+                                              },
+                                              expression: "form.email"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "12" } },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "Phone Number",
+                                              required: ""
+                                            },
+                                            model: {
+                                              value: _vm.form.phone,
+                                              callback: function($$v) {
+                                                _vm.$set(_vm.form, "phone", $$v)
+                                              },
+                                              expression: "form.phone"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "12" } },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              outlined: "",
+                                              name: "input-7-4",
+                                              label: "Message"
+                                            },
+                                            model: {
+                                              value: _vm.form.message,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.form,
+                                                  "message",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "form.message"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticStyle: { "margin-left": "12px" },
+                                      attrs: {
+                                        color: "#f2efeb",
+                                        type: "submit"
+                                      }
+                                    },
+                                    [_vm._v("Send")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        : _c(
+                            "v-form",
+                            {
+                              staticClass: "form",
+                              on: {
+                                submit: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.send($event)
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "v-container",
+                                [
+                                  _c(
+                                    "v-row",
+                                    [
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "6" } },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: " اﻷسم",
+                                              required: "",
+                                              dir: "rtl"
+                                            },
+                                            model: {
+                                              value: _vm.form.name,
+                                              callback: function($$v) {
+                                                _vm.$set(_vm.form, "name", $$v)
+                                              },
+                                              expression: "form.name"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "6" } },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "البريد اﻷلكتروني",
+                                              required: "",
+                                              dir: "rtl"
+                                            },
+                                            model: {
+                                              value: _vm.form.email,
+                                              callback: function($$v) {
+                                                _vm.$set(_vm.form, "email", $$v)
+                                              },
+                                              expression: "form.email"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "12" } },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "رقم التليفون الخاص بك",
+                                              required: "",
+                                              dir: "rtl"
+                                            },
+                                            model: {
+                                              value: _vm.form.phone,
+                                              callback: function($$v) {
+                                                _vm.$set(_vm.form, "phone", $$v)
+                                              },
+                                              expression: "form.phone"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        { attrs: { cols: "12", md: "12" } },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              outlined: "",
+                                              name: "input-7-4",
+                                              label: "اكتب رسالتك",
+                                              dir: "rtl"
+                                            },
+                                            model: {
+                                              value: _vm.form.message,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.form,
+                                                  "message",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "form.message"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticStyle: {
+                                        "margin-left": "12px",
+                                        float: "right"
+                                      },
+                                      attrs: {
+                                        color: "#f2efeb",
+                                        type: "submit"
+                                      }
+                                    },
+                                    [_vm._v("ارسال")]
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", { staticStyle: { clear: "both" } })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                    ],
+                    1
+                  )
+                : _vm._e()
+            ])
+          ])
+        : _vm._e()
+    ]),
+    _vm._v(" "),
     _c("div", { staticClass: "artists mt-4 mb-2" }, [
       !_vm.artist
         ? _c(
@@ -46208,11 +47273,11 @@ var render = function() {
                   class: { active: index === 0 },
                   attrs: {
                     "data-target": "#carouselExampleCaptions",
-                    "data-slide-to": "artist.id"
+                    "data-slide-to": index
                   },
                   on: {
                     click: function($event) {
-                      return _vm.getdata(artist.id)
+                      return _vm.getdata(index)
                     }
                   }
                 },
@@ -46225,7 +47290,7 @@ var render = function() {
           _c(
             "div",
             { staticClass: "carousel-inner " },
-            _vm._l(_vm.artists, function(artist) {
+            _vm._l(_vm.artists, function(artist, index) {
               return _c(
                 "div",
                 {
@@ -46354,7 +47419,7 @@ var render = function() {
                       },
                       on: {
                         click: function($event) {
-                          return _vm.getdata(artist.id)
+                          return _vm.getdata(index + 1)
                         }
                       }
                     },
@@ -46379,7 +47444,7 @@ var render = function() {
                       },
                       on: {
                         click: function($event) {
-                          return _vm.getdata(artist.id)
+                          return _vm.getdata(index - 1)
                         }
                       }
                     },
@@ -46537,33 +47602,61 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c(
-                  "button",
-                  {
-                    staticClass: "btn add-button addToCart ",
-                    on: {
-                      click: function($event) {
-                        return _vm.addtocart(
-                          _vm.minPalettesActive.id,
-                          _vm.minPalettesActive.M_price,
-                          _vm.avilableTarget,
-                          _vm.sizeTarget
-                        )
-                      }
-                    }
-                  },
+                  "div",
+                  { staticClass: "text-center" },
                   [
-                    _vm.active_el == 2
-                      ? _c("span", [
-                          _vm._v("$" + _vm._s(_vm.minPalettesActive.M_price))
-                        ])
-                      : _vm._e(),
-                    _vm._v(" "),
-                    _vm._v(
-                      "\n                      -" +
-                        _vm._s(_vm.$t("message.cart")) +
-                        "\n\n                     "
-                    )
-                  ]
+                    _vm.minPalettesActive.M_avalible > 0
+                      ? _c(
+                          "button",
+                          {
+                            staticClass: "btn add-button addToCart ",
+                            on: {
+                              click: function($event) {
+                                return _vm.addtocart(
+                                  _vm.minPalettesActive.id,
+                                  _vm.minPalettesActive.M_price,
+                                  _vm.avilableTarget,
+                                  _vm.sizeTarget
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _vm.active_el == 2
+                              ? _c("span", [
+                                  _vm._v(
+                                    "$" + _vm._s(_vm.minPalettesActive.M_price)
+                                  )
+                                ])
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _vm._v(
+                              "\n                             -" +
+                                _vm._s(_vm.$t("message.cart")) +
+                                "\n\n                             "
+                            )
+                          ]
+                        )
+                      : _c(
+                          "v-btn",
+                          {
+                            staticClass: "mb-2 size_btn small",
+                            staticStyle: {
+                              cursor: "not-allowed",
+                              "background-color": "#737373",
+                              color: "#fff",
+                              border: "none"
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                                     \n\n                             " +
+                                _vm._s(_vm.$t("message.solidout"))
+                            )
+                          ]
+                        )
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
@@ -46905,14 +47998,7 @@ var render = function() {
               _c("div", { staticClass: "product-grid-item" }, [
                 _c(
                   "div",
-                  {
-                    staticClass: "product-grid-item__image",
-                    on: {
-                      click: function($event) {
-                        return _vm.showmore(data.id)
-                      }
-                    }
-                  },
+                  { staticClass: "product-grid-item__image" },
                   [
                     _c(
                       "router-link",
@@ -107410,7 +108496,7 @@ var messages = {
       // footer
       logo: "ecstase",
       lorem: "lorem text"
-    }, _defineProperty(_message, "email", "E-mail"), _defineProperty(_message, "firstname", "First Name"), _defineProperty(_message, "lastname", "Last Name"), _defineProperty(_message, "address", "Address"), _defineProperty(_message, "appartment", "Apartment, Suite, etc. (optional)"), _defineProperty(_message, "city", "City"), _defineProperty(_message, "phone", "Phone"), _defineProperty(_message, "postcode", "Post Code "), _defineProperty(_message, "discount", "Discount"), _defineProperty(_message, "Aplly", "APPLY"), _defineProperty(_message, "subtotal", "Sub Total"), _defineProperty(_message, "total", "Total"), _defineProperty(_message, "calulated", "Calculated at next"), _defineProperty(_message, "toshipping", "Continue to Shipping"), _defineProperty(_message, "select_size", 'Please Select Size'), _defineProperty(_message, "empty", '      '), _defineProperty(_message, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message, "shopfooter", 'Shop artworks'), _defineProperty(_message, "aboutfooter", 'About our products'), _defineProperty(_message, "carreerfooter", 'Careers'), _defineProperty(_message, "aboutusfooter", 'About us'), _defineProperty(_message, "artistfooter", 'Our Artist'), _defineProperty(_message, "contactfooter", 'Contact us'), _defineProperty(_message, "termsfooter", 'Terms of use'), _defineProperty(_message, "privacyfooter", 'Privacy Policy'), _defineProperty(_message, "refundpolicy", 'Refund Policy'), _defineProperty(_message, "socialLink", 'SocialLink'), _message)
+    }, _defineProperty(_message, "email", "E-mail"), _defineProperty(_message, "firstname", "First Name"), _defineProperty(_message, "lastname", "Last Name"), _defineProperty(_message, "address", "Address"), _defineProperty(_message, "appartment", "Apartment, Suite, etc. (optional)"), _defineProperty(_message, "city", "City"), _defineProperty(_message, "phone", "Phone"), _defineProperty(_message, "postcode", "Post Code "), _defineProperty(_message, "discount", "Discount"), _defineProperty(_message, "Aplly", "APPLY"), _defineProperty(_message, "subtotal", "Sub Total"), _defineProperty(_message, "total", "Total"), _defineProperty(_message, "calulated", "Calculated at next"), _defineProperty(_message, "toshipping", "Continue to Shipping"), _defineProperty(_message, "select_size", 'Please Select Size'), _defineProperty(_message, "empty", '      '), _defineProperty(_message, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message, "shopfooter", 'Shop artworks'), _defineProperty(_message, "aboutfooter", 'About our products'), _defineProperty(_message, "carreerfooter", 'Careers'), _defineProperty(_message, "aboutusfooter", 'About us'), _defineProperty(_message, "artistfooter", 'Our Artist'), _defineProperty(_message, "contactfooter", 'Contact us'), _defineProperty(_message, "termsfooter", 'Terms of use'), _defineProperty(_message, "privacyfooter", 'Privacy Policy'), _defineProperty(_message, "refundpolicy", 'Refund Policy'), _defineProperty(_message, "socialLink", 'SocialLink'), _defineProperty(_message, "solidout", 'Solid Out'), _defineProperty(_message, "support", 'Support'), _defineProperty(_message, "support_text", 'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.'), _defineProperty(_message, "Product", 'Product'), _defineProperty(_message, "Shipping", 'Shipping'), _defineProperty(_message, "Collabs", 'Collabs'), _defineProperty(_message, "contact", 'Contact'), _defineProperty(_message, "product_text1", 'What are Walltones?'), _defineProperty(_message, "product_text2", 'What are Knitworks?'), _defineProperty(_message, "product_text3", 'How do I assemble my Walltone?'), _defineProperty(_message, "product_text4", 'How do I assemble my Knitwork?'), _defineProperty(_message, "product_text5", 'What are the exact dimensions/materials of my artwork?'), _defineProperty(_message, "product_text6", 'I need any tools to hang my artwork?'), _defineProperty(_message, "product_text7", 'Walltones are our affordable and easy to hang canvas posters. They come in three different sizes, always complete with a special magnetic frame. Each Walltone is part of a limited edition.'), _defineProperty(_message, "product_text8", 'Knitworks are luxurious artworks on fabric, often using a combination of printing and painting techniques. The fabric is stretchedinto a sturdy metal frame. Like Walltones, they are always part of a limited edition.'), _defineProperty(_message, "product_text9", 'Align the pairs of magnetic frames with the top and bottom of your artwork.The included adhesive strips or screw can be used to stick only the top frame, or both frames to your wall.'), _defineProperty(_message, "product_text10", 'You can find Knitwork assembly instructions on the manual inside the box.'), _defineProperty(_message, "product_text11", 'When you buy an artwork, you can find the specifications in the dropdown menus underneath the product description. If you have any questions not answered in there, feel free to ask us.'), _defineProperty(_message, "product_text12", 'If the included adhesive strips are not suitable for your wall,you can use the included screw and plug. Only when using the screw and plug you will need a drill and screwdriver.'), _defineProperty(_message, "ship_text1", 'Do you ship to my country?'), _defineProperty(_message, "ship_text2", 'What about returns and shipping time?'), _defineProperty(_message, "ship_text3", 'We ship worldwide. If you are worried that your country might not accept our products because of regulation or customs policies, please send us an email explaining the situation and we will try to find out what is the best solution.'), _defineProperty(_message, "ship_text4", 'After placing your order, the whole process of preparing, packing and shipping to your doorstep can take approximately 15 business days depending on your location. Orders get sent out within 24 hours on average, after which you wont be able to cancel our order since the package will already be in transit. You can however, return your package for a full refund within 30 days.'), _defineProperty(_message, "Collabs_text1", 'I am an artist, how can we work together?'), _defineProperty(_message, "Collabs_text2", 'I am an influencer, how can we work together?'), _defineProperty(_message, "Collabs_text3", 'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.'), _defineProperty(_message, "Collabs_text4", 'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!'), _message)
   },
   ar: {
     message: (_message2 = {
@@ -107465,7 +108551,7 @@ var messages = {
       // footer
       logo: "اسم الموقع",
       lorem: "نص تجريبى "
-    }, _defineProperty(_message2, "email", "البريد الإلكترونى"), _defineProperty(_message2, "firstname", "الإسم الأول "), _defineProperty(_message2, "lastname", "الإسم الأخير"), _defineProperty(_message2, "address", "العنوان"), _defineProperty(_message2, "appartment", "طاقم العمل "), _defineProperty(_message2, "city", "المدينه"), _defineProperty(_message2, "phone", "رقم الموبايل"), _defineProperty(_message2, "postcode", "الرمز البريدى"), _defineProperty(_message2, "discount", "الخصم"), _defineProperty(_message2, "Aplly", "الحصول"), _defineProperty(_message2, "subtotal", "الخصم"), _defineProperty(_message2, "total", "السعر الإجمالى"), _defineProperty(_message2, "calulated", "الحساب سيتم الكرة القادة "), _defineProperty(_message2, "toshipping", "متابعة الشراء"), _defineProperty(_message2, "select_size", 'من فضلك اختر الحجم'), _defineProperty(_message2, "empty", '      '), _defineProperty(_message2, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message2, "shopfooter", 'تسوق الأعمال الفنية'), _defineProperty(_message2, "aboutfooter", 'حول منتجاتنا'), _defineProperty(_message2, "carreerfooter", 'وظائف'), _defineProperty(_message2, "aboutusfooter", 'معلومات عنا'), _defineProperty(_message2, "artistfooter", 'الفنانون'), _defineProperty(_message2, "contactfooter", 'اتصل بنا'), _defineProperty(_message2, "termsfooter", 'شروط الاستخدام'), _defineProperty(_message2, "privacyfooter", 'سياسة خاصة'), _defineProperty(_message2, "refundpolicy", 'سياسة الاسترجاع'), _defineProperty(_message2, "socialLink", 'رابط التواصل اﻷجتماعي'), _message2)
+    }, _defineProperty(_message2, "email", "البريد الإلكترونى"), _defineProperty(_message2, "firstname", "الإسم الأول "), _defineProperty(_message2, "lastname", "الإسم الأخير"), _defineProperty(_message2, "address", "العنوان"), _defineProperty(_message2, "appartment", "طاقم العمل "), _defineProperty(_message2, "city", "المدينه"), _defineProperty(_message2, "phone", "رقم الموبايل"), _defineProperty(_message2, "postcode", "الرمز البريدى"), _defineProperty(_message2, "discount", "الخصم"), _defineProperty(_message2, "Aplly", "الحصول"), _defineProperty(_message2, "subtotal", "الخصم"), _defineProperty(_message2, "total", "السعر الإجمالى"), _defineProperty(_message2, "calulated", "الحساب سيتم الكرة القادة "), _defineProperty(_message2, "toshipping", "متابعة الشراء"), _defineProperty(_message2, "select_size", 'من فضلك اختر الحجم'), _defineProperty(_message2, "empty", '      '), _defineProperty(_message2, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message2, "shopfooter", 'تسوق الأعمال الفنية'), _defineProperty(_message2, "aboutfooter", 'حول منتجاتنا'), _defineProperty(_message2, "carreerfooter", 'وظائف'), _defineProperty(_message2, "aboutusfooter", 'معلومات عنا'), _defineProperty(_message2, "artistfooter", 'الفنانون'), _defineProperty(_message2, "contactfooter", 'اتصل بنا'), _defineProperty(_message2, "termsfooter", 'شروط الاستخدام'), _defineProperty(_message2, "privacyfooter", 'سياسة خاصة'), _defineProperty(_message2, "refundpolicy", 'سياسة الاسترجاع'), _defineProperty(_message2, "socialLink", 'رابط التواصل اﻷجتماعي'), _defineProperty(_message2, "solidout", 'نفذت الكميه'), _defineProperty(_message2, "support", 'ألدعم'), _defineProperty(_message2, "support_text", ' هل لديك اسئلة؟ ألق نظرة على الفئات أدناه ، وإذا كانت لا تتضمن الإجابة التي كنت تبحث عنها ، فلا تتردد في إرسال بريد إلكتروني إلينا.'), _defineProperty(_message2, "Product", 'المنتج'), _defineProperty(_message2, "Shipping", 'الشحن'), _defineProperty(_message2, "Collabs", 'تعاون'), _defineProperty(_message2, "contact", 'اتصل بنا'), _defineProperty(_message2, "product_text1", ' ؟ Walltones ما هو'), _defineProperty(_message2, "product_text2", '؟ Knitworks ما هو'), _defineProperty(_message2, "product_text3", 'كيف اقوم بتجميع نغمه walltone الخاصه بي ؟'), _defineProperty(_message2, "product_text4", '  كيف أقوم بتجميع Knitwork الخاص بي؟'), _defineProperty(_message2, "product_text5", 'ما هي الأبعاد / المواد الدقيقة لأعمالي الفنية؟'), _defineProperty(_message2, "product_text6", 'أحتاج إلى أي أدوات لتعليق أعمالي الفنية؟'), _defineProperty(_message2, "product_text7", 'Walltones هي ملصقاتنا بأسعار معقولة وسهلة التعليق. تأتي في ثلاثة أحجام مختلفة ، كاملة دائمًا بإطار مغناطيسي خاص. كل Walltone جزء من إصدار محدود.'), _defineProperty(_message2, "product_text8", ' أعمال التريكو هي أعمال فنية فاخرة على القماش ، غالبًا ما تستخدم مزيجًا من تقنيات الطباعة والطلاء. تمدد القماش في إطار معدني قوي. مثل Walltones ، فهي دائمًا جزء من إصدار محدود.'), _defineProperty(_message2, "product_text9", ' قم بمحاذاة أزواج الإطارات المغناطيسية مع الجزء العلوي والسفلي من عملك الفني. يمكن استخدام الشرائط اللاصقة أو اللولب المتضمن في لصق الإطار العلوي فقط ، أو كلا الإطارين على الحائط.'), _defineProperty(_message2, "product_text10", ' يمكنك العثور على تعليمات تجميع Knitwork في الدليل الموجود داخل الصندوق.'), _defineProperty(_message2, "product_text11", ' عند شراء عمل فني ، يمكنك العثور على المواصفات في القوائم المنسدلة أسفل وصف المنتج. إذا كانت لديك أية أسئلة لم تتم الإجابة عليها ، فلا تتردد في طرحها علينا.'), _defineProperty(_message2, "product_text12", ' إذا كانت الشرائط اللاصقة المرفقة غير مناسبة لجدارك ، يمكنك استخدام المسمار والمكونات المدرجة. ستحتاج إلى مثقاب ومفك فقط عند استخدام المسمار والمقبس.'), _defineProperty(_message2, "ship_text1", 'هل تشحن إلى بلدي؟'), _defineProperty(_message2, "ship_text2", 'ماذا عن المرتجعات ووقت الشحن؟'), _defineProperty(_message2, "ship_text3", ' نحن نشحن عالميا. إذا كنت قلقًا من أن بلدك قد لا يقبل منتجاتنا لأن التنظيم أو السياسات الجمركية ، يرجى إرسال بريد إلكتروني إلينا لشرح الوضع وسنقوم بذلك حاول معرفة الحل الأفضل.'), _defineProperty(_message2, "ship_text4", ' بعد وضع طلبك ، تتم عملية التحضير والتعبئة والشحن بأكملها إلى باب منزلك يمكن أن يستغرق ما يقرب من 15 يوم عمل حسب موقعك. يتم إرسال الطلبات في غضون 24 ساعة في المتوسط ​​، وبعد ذلك لن تتمكن من الإلغاء نظامنا لأن الحزمة ستكون بالفعل في العبور. ومع ذلك ، يمكنك إرجاع حزمة لاسترداد كامل في غضون 30 يوما.'), _defineProperty(_message2, "Collabs_text1", 'أنا فنان ، كيف يمكننا العمل معًا؟ '), _defineProperty(_message2, "Collabs_text2", 'أنا مؤثر ، كيف يمكننا العمل معًا؟'), _defineProperty(_message2, "Collabs_text3", ' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.'), _defineProperty(_message2, "Collabs_text4", ' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!'), _message2)
   }
 };
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]({

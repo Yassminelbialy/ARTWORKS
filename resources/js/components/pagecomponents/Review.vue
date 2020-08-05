@@ -214,7 +214,7 @@ export default {
     }),
         methods:{
         send(){
-            axios.post('/reviews',this.form)
+            axios.post('/reviews-api',this.form)
             .then(res =>{
                 this.review=false
                 this.reviews.unshift(res.data.review)

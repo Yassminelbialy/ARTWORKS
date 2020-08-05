@@ -116,10 +116,34 @@ const messages = {
             termsfooter:'Terms of use',
             privacyfooter:'Privacy Policy',
             refundpolicy:'Refund Policy',
-            socialLink:'SocialLink'
-
-
-
+            socialLink:'SocialLink',
+            solidout:'Solid Out',
+            support:'Support',
+            support_text:'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.',
+            Product:'Product',
+            Shipping:'Shipping',
+            Collabs:'Collabs',
+            contact:'Contact',
+            product_text1:'What are Walltones?',
+            product_text2:'What are Knitworks?',
+            product_text3:'How do I assemble my Walltone?',
+            product_text4:'How do I assemble my Knitwork?',
+            product_text5:'What are the exact dimensions/materials of my artwork?',
+            product_text6:'I need any tools to hang my artwork?',
+            product_text7:'Walltones are our affordable and easy to hang canvas posters. They come in three different sizes, always complete with a special magnetic frame. Each Walltone is part of a limited edition.',
+            product_text8:'Knitworks are luxurious artworks on fabric, often using a combination of printing and painting techniques. The fabric is stretchedinto a sturdy metal frame. Like Walltones, they are always part of a limited edition.',
+            product_text9:'Align the pairs of magnetic frames with the top and bottom of your artwork.The included adhesive strips or screw can be used to stick only the top frame, or both frames to your wall.',
+            product_text10:'You can find Knitwork assembly instructions on the manual inside the box.',
+            product_text11:'When you buy an artwork, you can find the specifications in the dropdown menus underneath the product description. If you have any questions not answered in there, feel free to ask us.',
+            product_text12:'If the included adhesive strips are not suitable for your wall,you can use the included screw and plug. Only when using the screw and plug you will need a drill and screwdriver.',
+            ship_text1:'Do you ship to my country?',
+            ship_text2:'What about returns and shipping time?',
+            ship_text3:'We ship worldwide. If you are worried that your country might not accept our products because of regulation or customs policies, please send us an email explaining the situation and we will try to find out what is the best solution.',
+            ship_text4:'After placing your order, the whole process of preparing, packing and shipping to your doorstep can take approximately 15 business days depending on your location. Orders get sent out within 24 hours on average, after which you wont be able to cancel our order since the package will already be in transit. You can however, return your package for a full refund within 30 days.',
+            Collabs_text1:'I am an artist, how can we work together?',
+            Collabs_text2:'I am an influencer, how can we work together?',
+            Collabs_text3:'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.',
+            Collabs_text4:'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!',
         }
     },
     ar: {
@@ -208,10 +232,34 @@ const messages = {
              termsfooter:'شروط الاستخدام',
              privacyfooter:'سياسة خاصة',
              refundpolicy:'سياسة الاسترجاع',
-             socialLink:'رابط التواصل اﻷجتماعي'
-
-
-
+             socialLink:'رابط التواصل اﻷجتماعي',
+             solidout:'نفذت الكميه',
+             support:'ألدعم',
+             support_text:' هل لديك اسئلة؟ ألق نظرة على الفئات أدناه ، وإذا كانت لا تتضمن الإجابة التي كنت تبحث عنها ، فلا تتردد في إرسال بريد إلكتروني إلينا.',
+             Product:'المنتج',
+             Shipping:'الشحن',
+             Collabs:'تعاون',
+             contact:'اتصل بنا',
+             product_text1:' ؟ Walltones ما هو',
+             product_text2:'؟ Knitworks ما هو',
+             product_text3:'كيف اقوم بتجميع نغمه walltone الخاصه بي ؟',
+             product_text4:'  كيف أقوم بتجميع Knitwork الخاص بي؟',
+             product_text5:'ما هي الأبعاد / المواد الدقيقة لأعمالي الفنية؟',
+             product_text6:'أحتاج إلى أي أدوات لتعليق أعمالي الفنية؟',
+             product_text7:'Walltones هي ملصقاتنا بأسعار معقولة وسهلة التعليق. تأتي في ثلاثة أحجام مختلفة ، كاملة دائمًا بإطار مغناطيسي خاص. كل Walltone جزء من إصدار محدود.',
+             product_text8:' أعمال التريكو هي أعمال فنية فاخرة على القماش ، غالبًا ما تستخدم مزيجًا من تقنيات الطباعة والطلاء. تمدد القماش في إطار معدني قوي. مثل Walltones ، فهي دائمًا جزء من إصدار محدود.',
+             product_text9:' قم بمحاذاة أزواج الإطارات المغناطيسية مع الجزء العلوي والسفلي من عملك الفني. يمكن استخدام الشرائط اللاصقة أو اللولب المتضمن في لصق الإطار العلوي فقط ، أو كلا الإطارين على الحائط.',
+             product_text10:' يمكنك العثور على تعليمات تجميع Knitwork في الدليل الموجود داخل الصندوق.',
+             product_text11:' عند شراء عمل فني ، يمكنك العثور على المواصفات في القوائم المنسدلة أسفل وصف المنتج. إذا كانت لديك أية أسئلة لم تتم الإجابة عليها ، فلا تتردد في طرحها علينا.',
+             product_text12:' إذا كانت الشرائط اللاصقة المرفقة غير مناسبة لجدارك ، يمكنك استخدام المسمار والمكونات المدرجة. ستحتاج إلى مثقاب ومفك فقط عند استخدام المسمار والمقبس.',
+             ship_text1:'هل تشحن إلى بلدي؟',
+             ship_text2:'ماذا عن المرتجعات ووقت الشحن؟',
+             ship_text3:' نحن نشحن عالميا. إذا كنت قلقًا من أن بلدك قد لا يقبل منتجاتنا لأن التنظيم أو السياسات الجمركية ، يرجى إرسال بريد إلكتروني إلينا لشرح الوضع وسنقوم بذلك حاول معرفة الحل الأفضل.',
+             ship_text4:' بعد وضع طلبك ، تتم عملية التحضير والتعبئة والشحن بأكملها إلى باب منزلك يمكن أن يستغرق ما يقرب من 15 يوم عمل حسب موقعك. يتم إرسال الطلبات في غضون 24 ساعة في المتوسط ​​، وبعد ذلك لن تتمكن من الإلغاء نظامنا لأن الحزمة ستكون بالفعل في العبور. ومع ذلك ، يمكنك إرجاع حزمة لاسترداد كامل في غضون 30 يوما.',
+             Collabs_text1:'أنا فنان ، كيف يمكننا العمل معًا؟ ',
+             Collabs_text2:'أنا مؤثر ، كيف يمكننا العمل معًا؟',
+             Collabs_text3:' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.',
+             Collabs_text4:' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!',
         }
     }
 };
