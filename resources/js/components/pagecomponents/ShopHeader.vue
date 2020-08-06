@@ -235,6 +235,8 @@ export default {
 
         }
     },mounted(){
+
+
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 3,
                 spaceBetween: 30,
@@ -262,7 +264,7 @@ export default {
                 observerParents:true,
 
             });
-            swiper.update();
+            // swiper.update();
         },
 
 
@@ -270,12 +272,38 @@ export default {
 
         if(this.$route.query.mydata)
         {
-                 this.addActive(this.$route.query.mydata)
+                  axios.get('/api/palettes')
+      .then(response =>{
+          this.artists = response.data.artists
+          this.first = response.data.artists[0].id
+        axios.get("/api/view?id="+ this.first)
+        .then(response =>{
+            this.palettes = response.data.palettes
+            this.name=response.data.palettes[0].name,
+            this.cardId=response.data.palettes[0].id,
+            this.S_copies=response.data.palettes[0].S_copies,
+            this.S_avalible=response.data.palettes[0].S_avalible,
+            this.S_price=response.data.palettes[0].S_price,
+            this.M_copies=response.data.palettes[0].M_copies,
+            this.M_avalible=response.data.palettes[0].M_avalible,
+            this.M_price=response.data.palettes[0].M_price,
+            this.L_copies=response.data.palettes[0].L_copies,
+            this.L_avalible=response.data.palettes[0].L_avalible,
+            this.L_price=response.data.palettes[0].L_price,
+            this.sizing_details=response.data.palettes[0].sizing_details
+            this.palettesArtists = response.data.palettesArtists
+        })
+        .catch(error => console.log(error.response.data))
+      }
+
+    ).catch(error => console.log(error.response.data));
+
+            //this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
 
                 this.minPalettes = response.data.minPalettes
-                console.log(this.$route.query.mydata );
+
 
                 })
             .catch(error => console.log(error.response.data))
@@ -283,7 +311,6 @@ export default {
 
 
         }else{
-
 
       axios.get('/api/palettes')
       .then(response =>{
@@ -471,12 +498,12 @@ export default {
 
         },
         addActive($minPalette_id,index){
-console.log(  this.$refs.myActive)
-          let myActive =  this.$refs.myActive[index]
+// console.log(  this.$refs.myActive)
+        //   let myActive =  this.$refs.myActive[index]
 
 
 
-                $(myActive).addClass('active').siblings().removeClass('active');
+        //         $(myActive).addClass('active').siblings().removeClass('active');
 
 
             $("html,body").animate({
@@ -685,7 +712,7 @@ console.log(  this.$refs.myActive)
         }
     } */
  .wrapper .row{
-         transform: scale(.4);
+         transform: scale(.5);
 
         }
     .wrapper .details .content{
@@ -705,7 +732,7 @@ console.log(  this.$refs.myActive)
         z-index: 2;
         top: 10px;
         padding: 0 20px;
-        border: 4px solid rgba(0,0,0,-7.25);;
+        border: 4px solid rgba(0,0,0,-7.25);
     }
         /* @media(max-width: 991px){
         .wrapper .details .content{
@@ -843,7 +870,7 @@ top: -12px;
 left: -20px;
 position: relative;
 transform: scale(.7);
-background-repeat: ;
+
 }
 
 /* Start Responsive */

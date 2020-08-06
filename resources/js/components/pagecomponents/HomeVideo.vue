@@ -1,5 +1,5 @@
 <template>
-    <header :style="'background-image:url('+data+')'"  class="about-us">
+    <header :style="`background-image:url(${data})`" class="about-us">
         <div class="overlay"></div>
 
         <div class="text mb-4 about-content">
@@ -42,9 +42,14 @@ export default {
 <style scoped>
 .about-us .about-content{
     position: relative;
-    top:342px;
+    top:322px;
+}
 
-
+@media(max-width: 400px){
+    .about-us .about-content{
+        position: relative;
+        top:431px;
+     }
 }
 .about-us{
     background-repeat: no-repeat;
