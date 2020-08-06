@@ -101782,13 +101782,13 @@ var routes = [{
   path: '/',
   name: 'home',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../components/Page/Home */ "./resources/js/components/Page/Home.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../components/Page/Home */ "./resources/js/components/Page/Home.vue"));
   }
 }, {
   path: '/shop',
   name: 'shop',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../components/Page/ShopArt */ "./resources/js/components/Page/ShopArt.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../components/Page/ShopArt */ "./resources/js/components/Page/ShopArt.vue"));
   }
 }, {
   path: '/about',
@@ -101798,27 +101798,27 @@ var routes = [{
 }, {
   path: '/terms',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../components/Page/Terms */ "./resources/js/components/Page/Terms.vue"));
+    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../components/Page/Terms */ "./resources/js/components/Page/Terms.vue"));
   }
 }, {
   path: '/privacy',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../components/Page/Privacy */ "./resources/js/components/Page/Privacy.vue"));
+    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../components/Page/Privacy */ "./resources/js/components/Page/Privacy.vue"));
   }
 }, {
   path: '/refund',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ../components/Page/Refund */ "./resources/js/components/Page/Refund.vue"));
+    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../components/Page/Refund */ "./resources/js/components/Page/Refund.vue"));
   }
 }, {
   path: '/payment',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 8).then(__webpack_require__.bind(null, /*! ../components/Page/Payment */ "./resources/js/components/Page/Payment.vue"));
+    return __webpack_require__.e(/*! import() */ 5).then(__webpack_require__.bind(null, /*! ../components/Page/Payment */ "./resources/js/components/Page/Payment.vue"));
   }
 }, {
   path: '/joinus',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 7).then(__webpack_require__.bind(null, /*! ../components/Page/JoinUs */ "./resources/js/components/Page/JoinUs.vue"));
+    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../components/Page/JoinUs */ "./resources/js/components/Page/JoinUs.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
