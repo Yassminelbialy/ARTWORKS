@@ -104,6 +104,9 @@
                             <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
+                            <h3 class="mt-4 mb-4" v-if="active_el==2">Medium  </h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{minPalettesActive.S_copies}}/{{minPalettesActive.S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3>
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{minPalettesActive.L_copies}}/{{minPalettesActive.L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
@@ -118,7 +121,7 @@
 
                                 </button>
                                 <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
-                                        
+
 
                                 {{ $t("message.solidout") }}</v-btn>
                         </div>
@@ -222,6 +225,8 @@ export default {
 
         }
     },mounted(){
+
+
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 3,
                 spaceBetween: 30,
@@ -272,11 +277,13 @@ export default {
       }
 
     ).catch(error => console.log(error.response.data));
-            
+
             //this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
                 this.minPalettes = response.data.minPalettes
+
+
                 })
             .catch(error => console.log(error.response.data))
         }else{
@@ -314,7 +321,7 @@ export default {
             (total, product) => total + product.quantity,
             0);
 
-        } 
+        }
       },
     methods:{
         addToCart(product){
@@ -347,7 +354,7 @@ export default {
                 $id = this.artists[$id].id
             } else if($id > this.artists.length-1)
             {
-             $id = this.artists[0].id;   
+             $id = this.artists[0].id;
             }
             else{
                 $id = this.artists[this.artists.length-1].id;
@@ -630,7 +637,7 @@ export default {
         }
     } */
  .wrapper .row{
-         transform: scale(.4);
+         transform: scale(.5);
 
         }
     .wrapper .details .content{
@@ -650,7 +657,7 @@ export default {
         z-index: 2;
         top: 10px;
         padding: 0 20px;
-        border: 4px solid rgba(0,0,0,-7.25);;
+        border: 4px solid rgba(0,0,0,-7.25);
     }
         /* @media(max-width: 991px){
         .wrapper .details .content{

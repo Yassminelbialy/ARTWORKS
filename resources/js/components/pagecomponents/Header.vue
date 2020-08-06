@@ -6,7 +6,7 @@
         <div class="col-md-12"    >
             <img style="width:100%;height:500px" class="hero-image-pc" :src="data.image" alt="Fine art">
             <div class="hero-content">
-                <p v-if="$i18n.locale == 'en'" class="hero-subtitle">{{ data.word1_en }}</p>
+                <p  v-if="$i18n.locale == 'en'" class="hero-subtitle">{{ data.word1_en }}</p>
                 <p v-else class="hero-subtitle">{{ data.word1_ar }}</p>
                 <h3 v-if="$i18n.locale == 'en'" class="hero-title">{{ data.word2_en }}</h3>
                 <h3 v-else class="hero-title">{{ data.word2_ar }}</h3>
@@ -69,7 +69,17 @@ export default {
 @media(max-width:991px)
 {
     .hero .hero-title{
-        font-size: 65px;
+        font-size: 60px;
+        padding: 0 10px ;
+    }
+}
+
+@media(max-width:550px)
+{
+    .hero .hero-title{
+        font-size: 40px;
+        padding: 0 10px ;
+        margin:20px 0 10px 0;
     }
 }
 </style>

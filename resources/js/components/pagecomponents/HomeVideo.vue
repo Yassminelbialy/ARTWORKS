@@ -19,12 +19,16 @@ export default {
         }
     },
     beforeCreate(){
+
                 axios.get('/api/homedata').then((result) => {
 
             if(result.data.status)
             {
 
-                this.data="/"+result.data.data.video
+
+
+                this.data=result.data.data.video
+                console.log("images",result.data.data.video)
             }
         }).catch((err) => {
             console.log(err.data);
@@ -38,9 +42,14 @@ export default {
 <style scoped>
 .about-us .about-content{
     position: relative;
-    top:342px;
+    top:322px;
+}
 
-
+@media(max-width: 400px){
+    .about-us .about-content{
+        position: relative;
+        top:431px;
+     }
 }
 .about-us{
     background-repeat: no-repeat;

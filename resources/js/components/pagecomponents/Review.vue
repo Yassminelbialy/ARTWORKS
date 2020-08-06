@@ -152,10 +152,10 @@
                <i class="fa fa-share-square"></i> {{ $t("message.share") }}
             </v-btn> -->
             <!-- <span style="float:right;position:relative;left:-35px" v-if="$i18n.locale == 'en'">
-                {{ $t("message.checkreview") }}
-                <v-btn class="ma-2"  text icon @click.once="like(review.id,$event)">
+                {{ $t("message.checkreview") }} -->
+                <!-- <v-btn class="ma-2"  text icon @click.once="like(review.id,$event)">
                     <v-icon >mdi-thumb-up</v-icon><span :id="review.id">{{review.like_counter}}</span>
-                </v-btn> 
+                </v-btn>
 
                 <v-btn class="ma-2" text icon @click.once="dislike(review.id,$event)">
                     <v-icon >mdi-thumb-down</v-icon> &nbsp;<span :id="review.id+'d'">{{review.dislike_counter}}</span>

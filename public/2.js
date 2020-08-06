@@ -146,7 +146,8 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get('/api/homedata').then(function (result) {
       if (result.data.status) {
-        _this.data = "/" + result.data.data.video;
+        _this.data = result.data.data.video;
+        console.log("images", result.data.data.video);
       }
     })["catch"](function (err) {
       console.log(err.data);
@@ -187,7 +188,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n@media(max-width:991px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 65px;\n}\n}\n", ""]);
+exports.push([module.i, "\n@media(max-width:991px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 60px;\n        padding: 0 10px ;\n}\n}\n@media(max-width:550px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 40px;\n        padding: 0 10px ;\n        margin:20px 0 10px 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -206,7 +207,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:342px;\n}\n.about-us[data-v-bb44e346]{\n    background-repeat: no-repeat;\n    background-size: cover  ;\n    background-position: center;\n}\n", ""]);
+exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:322px;\n}\n@media(max-width: 400px){\n.about-us .about-content[data-v-bb44e346]{\n        position: relative;\n        top:431px;\n}\n}\n.about-us[data-v-bb44e346]{\n    background-repeat: no-repeat;\n    background-size: cover  ;\n    background-position: center;\n}\n", ""]);
 
 // exports
 
