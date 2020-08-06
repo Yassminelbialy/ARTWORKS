@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 // use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -34,12 +33,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Palette extends Model
 {
-    use SoftDeletes;
 
     public $table = 'palettes';
 
 
-    protected $dates = ['deleted_at'];
 
 
 

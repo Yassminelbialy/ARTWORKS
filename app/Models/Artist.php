@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Artist
@@ -18,12 +17,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Artist extends Model
 {
-    use SoftDeletes;
 
     public $table = 'artists';
-    
 
-    protected $dates = ['deleted_at'];
+
 
 
 
@@ -58,5 +55,5 @@ class Artist extends Model
         'name' => 'required'
     ];
 
-    
+
 }

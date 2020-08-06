@@ -50,6 +50,20 @@ class PaletteAPIController extends AppBaseController
                 $item->extraimg  =  'https://previews.123rf.com/images/eyematrix/eyematrix1712/eyematrix171200014/91720468-used-artists-paint-brushes-different-colors-on-palette-background.jpg';
             }
 
+        } //add extra img attr  for slider img
+
+                foreach ($artists as $key=>$item) {
+
+            $palettesArtists = Palette::where('artist_id',$item->id)->limit(3)->get();
+                    $item->key=$key;
+            if($palettesArtists)
+            {
+                 $item->artist_palettes = $palettesArtists ;
+            }else
+            {
+                $item->artist_palettes  = [];
+            }
+
         }
 
 
@@ -84,11 +98,9 @@ class PaletteAPIController extends AppBaseController
     }
     public function Palettes(Request $request){
 
-
         $palettesArtists = Palette::where('artist_id',$request->id)->limit(3)->get();
-        $artists = Artist::all();
         $palettes = Palette::where('artist_id',$request->id)->limit(6)->get();
-        return response()->json([ 'palettesArtists' =>$palettesArtists,'palettes' =>$palettes,'artists' => $artists]);
+        return response()->json([ 'palettesArtists' =>$palettesArtists,'palettes' =>$palettes]);
     }
     public function viewMinPalettes(Request $request){
 

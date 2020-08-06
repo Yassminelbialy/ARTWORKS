@@ -1,5 +1,5 @@
 <template>
-  <section style="min-height:200px">
+  <section style="min-height:486px">
         <div class="spinner-content">
          <div class="spinner"></div>
         </div>
@@ -35,6 +35,263 @@
           <p>
             {{ about.body2_ar}}&nbsp;
           </p>
+        </div>
+      </div>
+    </div>
+    <div class="support mt-4">
+      <h3 class="title" @click="support = !support" v-if="!support"><span>{{ $t("message.support") }} </span > <span class="plus" v-if="support==false">+</span>  </h3>
+      <h3 class="title" @click="support = !support" v-else>  <span > {{ $t("message.support") }} </span > <span class="plus" v-if="support==true">-</span>  </h3>
+      <div class="mt-5" v-if="support">
+        <p
+          class="text-center"
+        >{{ $t("message.support_text") }}</p>
+        <div class="row justify-content-md-center support_div text-center ">
+          <div class="col-md-2 content" @click="activate(1)" :class="{ active : active_el == 1 }">
+            <img
+              src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-1.svg?v=12010384132983907058"
+              style="height: 110px"
+            />
+            <h3 class="mt-4">{{ $t("message.Product") }}</h3>
+          </div>
+          <div class="col-md-2 content" @click="activate(2)" :class="{ active : active_el == 2 }">
+            <img
+              src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-2.svg?v=16172020802828672890"
+              style="height: 110px"
+            />
+            <h3 class="mt-4">{{ $t("message.Shipping") }}</h3>
+          </div>
+          <div class="col-md-2 content" @click="activate(3)" :class="{ active : active_el == 3 }">
+            <img
+              src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-3.svg?v=6657556400331861725"
+              style="height: 110px"
+            />
+            <h3 class="mt-4">{{ $t("message.Collabs") }}</h3>
+          </div>
+          <div class="col-md-2 content" @click="activate(4)" :class="{ active : active_el == 4 }">
+            <img
+              src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-4.svg?v=13401101258815370791"
+              style="height: 110px"
+            />
+            <h3 class="mt-4">{{ $t("message.Terms") }}</h3>
+          </div>
+          <div class="col-md-2 content" @click="activate(5)" :class="{ active : active_el == 5 }">
+            <img
+              src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-5.svg?v=6164253995379968036"
+              style="height: 110px"
+            />
+            <h3 class="mt-4">{{ $t("message.contact") }}</h3>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-sm-12" v-if="active_el==1">
+            <div class="row" v-if=" $i18n.locale == 'en'">
+              <div class="col-sm-5 text-center left">
+                <p class="font-weight-bold mb-5">{{ $t("message.product_text1") }}</p>
+                <p class="font-weight-bold mb-5">{{ $t("message.product_text2") }}</p>
+                <p class="font-weight-bold mb-4">{{ $t("message.product_text3") }}</p>
+                <p class="font-weight-bold mb-4">{{ $t("message.product_text4") }}</p>
+                <p
+                  class="font-weight-bold mb-4"
+                >{{ $t("message.product_text5") }}</p>
+                <p class="font-weight-bold mb-4">{{ $t("message.product_text6") }}</p>
+              </div>
+              <div class="col-sm-7">
+                <p>
+                    {{ $t("message.product_text7") }}
+                </p>
+                <p>
+                   {{ $t("message.product_text8") }}
+                </p>
+                <p>
+                    {{ $t("message.product_text9") }}
+                </p>
+                <p> {{ $t("message.product_text10") }}</p>
+                <p>
+                    {{ $t("message.product_text11") }}
+                </p>
+                <p>
+                   {{ $t("message.product_text12") }}
+                </p>
+              </div>
+            </div>
+              <div class="row" v-else>
+                <div class="col-sm-7">
+                <p>
+                  {{ $t("message.product_text7") }}
+                </p>
+                <p>
+                  {{ $t("message.product_text8") }}
+                </p>
+                <p>
+                  {{ $t("message.product_text9") }}
+                </p>
+                <p> {{ $t("message.product_text10") }}</p>
+                <p>
+                    {{ $t("message.product_text11") }}
+                </p>
+                <p>
+                    {{ $t("message.product_text12") }}
+                </p>
+              </div>
+              <div class="col-sm-5 text-center right">
+                <p class="font-weight-bold mb-5">{{ $t("message.product_text1") }}</p>
+                <p class="font-weight-bold mb-5">{{ $t("message.product_text2") }}</p>
+                <p class="font-weight-bold mb-5">{{ $t("message.product_text3") }}</p>
+                <p class="font-weight-bold mb-5">{{ $t("message.product_text4") }}</p>
+                <p
+                  class="font-weight-bold mb-5"
+                >{{ $t("message.product_text5") }}</p>
+                <p class="font-weight-bold mb-4">{{ $t("message.product_text6") }}</p>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-sm-12" v-if="active_el==2">
+            <div class="row" v-if=" $i18n.locale == 'en'">
+              <div class="col-sm-5 text-center left">
+                <p class="font-weight-bold mb-5">{{ $t("message.ship_text1") }}</p>
+                <p class="font-weight-bold mt-3">{{ $t("message.ship_text2") }}</p>
+              </div>
+              <div class="col-sm-7">
+                <p>
+                  {{ $t("message.ship_text3") }}
+                </p>
+                <p>
+                  {{ $t("message.ship_text4") }}
+                </p>
+              </div>
+            </div>
+            <div class="row" v-else>
+              <div class="col-sm-7">
+                <p>
+                  {{ $t("message.ship_text3") }}
+                </p>
+                <p>
+                  {{ $t("message.ship_text4") }}
+                </p>
+              </div>
+              <div class="col-sm-5 text-center right">
+                <p class="font-weight-bold mb-5">{{ $t("message.ship_text1") }}</p>
+                <p class="font-weight-bold mt-5">{{ $t("message.ship_text2") }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12" v-if="active_el==3">
+            <div class="row" v-if=" $i18n.locale == 'en'">
+              <div class="col-sm-5 text-center left">
+                <p class="font-weight-bold mb-4">{{ $t("message.Collabs_text1") }}</p>
+                <p class="font-weight-bold">{{ $t("message.Collabs_text2") }}</p>
+              </div>
+              <div class="col-sm-7">
+                <p>
+                  {{ $t("message.Collabs_text3") }}
+                </p>
+                <p>
+                  {{ $t("message.Collabs_text4") }}
+                </p>
+              </div>
+            </div>
+            <div class="row" v-else>
+              <div class="col-sm-7">
+                <p>
+                  {{ $t("message.Collabs_text3") }}
+                </p>
+                <p>
+                  {{ $t("message.Collabs_text4") }}
+                </p>
+              </div>
+              <div class="col-sm-5 text-center right">
+                <p class="font-weight-bold mb-4">{{ $t("message.Collabs_text1") }}</p>
+                <p class="font-weight-bold">{{ $t("message.Collabs_text2") }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12" v-if="active_el==4">
+            <div class="row" v-if=" $i18n.locale == 'en'">
+              <div class="col-sm-5 text-center left">
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text1") }}</p>
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text2") }}</p>
+                <p class="font-weight-bold">{{ $t("message.Terms_text3") }}</p>
+              </div>
+              <div class="col-sm-7 term_text">
+                <p>
+                  {{ $t("message.Terms_text4") }}
+                  <router-link to="/terms">here</router-link>.
+                </p>
+                <p>
+                  {{ $t("message.Terms_text5") }}
+                  <router-link to="/privacy">here</router-link>.
+                </p>
+                <p>
+                  {{ $t("message.Terms_text6") }}
+                  <router-link to="/refund">here</router-link>.
+                </p>
+              </div>
+            </div>
+            <div class="row" v-else>
+              <div class="col-sm-7 text-right term_text">
+                <p>
+                  {{ $t("message.Terms_text4") }}
+                  <router-link to="/terms">من هنا</router-link>
+                </p>
+                <p>
+                  {{ $t("message.Terms_text5") }}
+                  <router-link to="/privacy">من هنا</router-link>
+                </p>
+                <p>
+                  {{ $t("message.Terms_text6") }}
+                  <router-link to="/refund">من هنا</router-link>
+                </p>
+              </div>
+              <div class="col-sm-5 text-center right">
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text1") }}</p>
+                <p class="font-weight-bold mb-3">{{ $t("message.Terms_text2") }}</p>
+                <p class="font-weight-bold">{{ $t("message.Terms_text3") }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12" v-if="active_el==5">
+            <v-form class="form" @submit.prevent="send" v-if=" $i18n.locale == 'en'">
+              <v-container>
+                <v-row>
+                  <v-col cols="12" md="6">
+                    <v-text-field v-model="form.name" label="First name" required></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="6">
+                    <v-text-field v-model="form.email" label="E-mail" required></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="12">
+                    <v-text-field v-model="form.phone" label="Phone Number" required></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="12">
+                    <v-textarea v-model="form.message" outlined name="input-7-4" label="Message"></v-textarea>
+                  </v-col>
+                </v-row>
+                <v-btn color="#252524" style="margin-left:12px;color:#fff" type="submit">Send</v-btn>
+              </v-container>
+            </v-form>
+            <v-form class="form" @submit.prevent="send" v-else>
+              <v-container>
+                <v-row>
+                  <v-col cols="12" md="6">
+                    <v-text-field v-model="form.name" label=" اﻷسم" required dir="rtl"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="6">
+                    <v-text-field v-model="form.email" label="البريد اﻷلكتروني" required dir="rtl"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="12">
+                    <v-text-field v-model="form.phone" label="رقم التليفون الخاص بك" required dir="rtl"></v-text-field>
+                  </v-col>
+                  <v-col cols="12" md="12">
+                    <v-textarea v-model="form.message" outlined name="input-7-4" label="اكتب رسالتك" dir="rtl"></v-textarea>
+                  </v-col>
+                </v-row>
+                <v-btn color="#252524" style="margin-left:12px;float:right;color:#fff" type="submit">ارسال</v-btn>
+                <div style="clear:both"></div>
+              </v-container>
+            </v-form>
+          </div>
         </div>
       </div>
     </div>
@@ -76,19 +333,54 @@ export default {
       about:{},
       mission: true,
       artist: false,
+      support: false,
+      active_el: 1,
+      form: {
+        name: null,
+        email: null,
+        phone: null,
+        message: null
+      },
       errors: {}
     };
   },
   created() {
+    if(this.$route.query.mydata=='artist')
+    {
+      this.artist=true;
+      this.mission=false;
+    } else if(this.$route.query.mydata=='contact'){
+      this.support=true;
+      this.mission=false;
+      this.active_el=5;
+    }else if(this.$route.query.mydata=='product'){
+      this.support=true;
+      this.mission=false;
+1    }
     axios
       .get("/api/get-about-content")
       .then(response => {
         this.artists = response.data.dataArtist;
         this.about = response.data.data
+        if(this.about ==null)
+        {
+          this.about = ''
+        }
       })
       .catch(error => this.errors=error.response.data);
   },
+  methods: {
+    activate: function(el) {
+      this.active_el = el;
+    },
+    send()
+    {
+      axios.post("/aboutContacts-api",this.form)
+      .then(res=>this.form='')
+      .catch(error => this.errors=error.response.data);
 
+    }
+  }
 };
 </script>
 
@@ -124,6 +416,14 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
+.support_div .content {
+  color: grey;
+  cursor: pointer;
+}
+.support_div .active {
+  color: black;
+  font-weight: bold;
+}
 .left {
   border-right: 2px solid #000;
   padding-left: 300px;
@@ -136,7 +436,27 @@ export default {
 }
 @media (min-width: 992px) and (max-width: 1999px) {
   .left {
-    padding-left: 150px;
+    padding-left: 200px;
+  }
+}
+.right {
+  border-left: 2px solid #000;
+  padding-right: 300px;
+}
+@media (max-width: 991px) {
+  .right {
+    border-left: none;
+    padding-right: 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1999px) {
+  .right {
+    padding-right: 200px;
+  }
+}
+@media(max-width:991px){
+  .term_text{
+    text-align: center !important;
   }
 }
 .form {

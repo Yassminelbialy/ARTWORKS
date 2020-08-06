@@ -69,3 +69,7 @@
     <a href="{{ route('aboutAretists.index') }}"><i class="fa fa-edit"></i><span>About P:Artists</span></a>
 </li>
 
+<li class="{{ Request::is('aboutContacts*') ? 'active' : '' }}">
+    <a href="{{ route('aboutContacts.index') }}"><i class="fa fa-edit"></i><span>About  Contacts</span></a>
+</li>
+

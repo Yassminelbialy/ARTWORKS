@@ -155,23 +155,23 @@
                 {{ $t("message.checkreview") }} -->
                 <!-- <v-btn class="ma-2"  text icon @click.once="like(review.id,$event)">
                     <v-icon >mdi-thumb-up</v-icon><span :id="review.id">{{review.like_counter}}</span>
-                </v-btn> -->
-<!--
+                </v-btn>
+
                 <v-btn class="ma-2" text icon @click.once="dislike(review.id,$event)">
                     <v-icon >mdi-thumb-down</v-icon> &nbsp;<span :id="review.id+'d'">{{review.dislike_counter}}</span>
-                </v-btn> -->
-            <!-- </span> -->
-            <!-- <span style="float:right" v-else> -->
-                <!-- <v-btn class="ma-2" text icon @click.once="like(review.id,$event)">
+                </v-btn>
+            </span> -->
+            <!-- <span style="float:right" v-else>
+                <v-btn class="ma-2" text icon @click.once="like(review.id,$event)">
                     <v-icon >mdi-thumb-up</v-icon><span :id="review.id">{{review.like_counter}}</span>
                 </v-btn>
 
                 <v-btn class="ma-2" text icon @click.once="dislike(review.id,$event)">
                     <v-icon >mdi-thumb-down</v-icon> &nbsp;<span :id="review.id+'d'">{{review.dislike_counter}}</span>
-                </v-btn> -->
-                <!-- {{ $t("message.checkreview") }} -->
-            <!-- </span> -->
-            <div style="clear:both"></div>
+                </v-btn>
+                {{ $t("message.checkreview") }}
+            </span> -->
+            <!-- <div style="clear:both"></div> -->
             </v-card-actions>
         </v-card>
           <div class="text-center">
@@ -214,7 +214,7 @@ export default {
     }),
         methods:{
         send(){
-            axios.post('/reviews',this.form)
+            axios.post('/reviews-api',this.form)
             .then(res =>{
                 this.review=false
                 this.reviews.unshift(res.data.review)

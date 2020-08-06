@@ -1,5 +1,5 @@
 <template>
-    <section class="myhome">
+    <section >
 
    <div class="swiper-container pallete-swiper text-center d-sm-none ">
         <div class="swiper-wrapper">
@@ -21,21 +21,20 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" v-for="(artist) in artists" :class="{ 'active': artist.id === 1 }" @click="getdata(artist.id)" :key="artist.id" data-slide-to="artist.id" >{{artist.name}}</li>
+                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
-                <div class="carousel-item" v-for="(artist ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
+                <div class="carousel-item" v-for="(artist,index ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
                 <!---------------------------- start regular pallete----------------------- -->
                     <div class="wrapper d-none d-sm-block ">
                         <div class=" row  d-flex justify-content-center">
-                            <div  class="details myhome col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                            <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                                <div class="details-content">
                                     <img    :src="palettesArtist.img" class="details_img" alt="...">
                                     <div class="content" :class="{ 'active': index == 0 }" >
                                         <div class="triangle"></div>
                                         <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
-
                                         <div class="infor">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
                                         <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
                                     </div>
@@ -57,12 +56,11 @@
 
                     </div>
 
-
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" @click="getdata(artist.id+1)" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" @click="getdata(index+1)" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" @click="getdata(artist.id-1)" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" @click="getdata(index-1)" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -72,7 +70,7 @@
 
         </div>
         <div class="header_sm mb-2"></div>
-        <div class="container myhome mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
+        <div class="container  mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
             <div class="row">
                 <div class="col-lg-7" >
                     <div class="row">
@@ -81,46 +79,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="myhome col-lg-5">
+                <div class=" col-lg-5">
                     <div class="add-cart p-3">
                         <p>Art paper framed by a wooden frame and non-reflective glass</p>
-                        <h2 class="font-weight-bold ">{{name}} II
-                        <span v-if="active_el==1">${{S_price}}</span>
-                        <span v-if="active_el==2">${{M_price}}</span>
-                        <span v-if="active_el==3">${{L_price}}</span>
+                        <h2 class="font-weight-bold ">{{minPalettesActive.name}} II
+                        <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
+                        <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                        <span v-if="active_el==3">${{minPalettesActive.L_price}}</span>
 
                         </h2>
                         <div class="mb-3 mt-2"> <span>silkscreen</span></div>
                         <div>
 
-                            <!-- <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="S_avalible>0"  @click="small(1,S_price,S_avalible,cardId)">S</v-btn>
+                            <!-- <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="minPalettesActive.S_avalible>0"  @click="small(1,minPalettesActive.S_price,minPalettesActive.S_avalible,minPalettesActive.id)">S</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
-                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="M_avalible>0" @click="medium(2,M_price, M_avalible ,cardId)">M</v-btn>
+                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="minPalettesActive.M_avalible>0" @click="medium(2,minPalettesActive.M_price, minPalettesActive.M_avalible ,minPalettesActive.id)">M</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
 
                                 {{ $t("message.empty") }}</v-btn>
-                            <!-- <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="L_avalible>0" @click="larg(3,L_price,L_avalible,cardId )">L</v-btn> -->
+                            <!-- <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="minPalettesActive.L_avalible>0" @click="larg(3,minPalettesActive.L_price,minPalettesActive.L_avalible,minPalettesActive.id )">L</v-btn> -->
                             <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <h3 class="mt-4 mb-4" v-if="active_el==2">Medium  </h3>
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{minPalettesActive.S_copies}}/{{minPalettesActive.S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
+                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{minPalettesActive.L_copies}}/{{minPalettesActive.L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
-                        <button @click="addtocart(cardId,M_price, avilableTarget , sizeTarget)"  class="btn add-button addToCart ">
+                        <div class="text-center">
+                            <button @click="addtocart(minPalettesActive.id,minPalettesActive.M_price, avilableTarget , sizeTarget)" v-if="minPalettesActive.M_avalible>0"  class="btn add-button addToCart ">
+                            <!-- <span v-if="active_el==1">${{minPalettesActive.S_price}}</span> -->
+                                <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                                <!-- <span v-if="active_el==3">${{minPalettesActive.L_price}}</span> -->
+                                -{{ $t("message.cart") }}
+
+                                </button>
+                                <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
 
 
-
-                       <!-- <span v-if="active_el==1">${{S_price}}</span> -->
-                        <span v-if="active_el==2">${{M_price}}</span>
-                        <!-- <span v-if="active_el==3">${{L_price}}</span> -->
-                         -{{ $t("message.cart") }}
-
-                        </button>
+                                {{ $t("message.solidout") }}</v-btn>
+                        </div>
                         <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >{{ $t("message.select_size") }}</v-btn> -->
 
                         <p>
@@ -151,7 +155,7 @@
                                     <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="size">
-                                    {{sizing_details}} CM
+                                    {{minPalettesActive.sizing_details}} CM
                                 </span>
                             </li>
                             <li class="list-group-item" @click="details = !details">
@@ -162,9 +166,7 @@
                                     <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="details">
-                                    it is delivered as the artwork comes ready to be hung on your wall.
-                                    The classical design and  releases in this series make it an elegant
-                                    way to add a high-end.
+                                    {{minPalettesActive.frame_material}}
                                 </span>
                             </li>
                             <li class="list-group-item" @click="shipping = !shipping">
@@ -174,9 +176,7 @@
                                     <i v-else class="fa fa-chevron-up" style="float:right"></i>
                                 </h4>
                                 <span v-if="shipping">
-                                    it is delivered as the artwork comes ready to be hung on your wall.
-                                    The classical design and releases in this series make it an elegant
-                                    way to add a high-end.
+                                    {{minPalettesActive.frame_finish}}
                                 </span>
                             </li>
                         </ul>
@@ -212,25 +212,14 @@ export default {
             first:null,
             firstpalettesArtists:null,
             firstminPalettes:null,
+            minPalettesActive:{},
             active_el:2,
-            S_copies:'',
-            S_avalible:'',
-            S_price:'',
-            M_copies:'',
-            M_avalible:'',
-            M_price:'',
-            L_copies:'',
-            L_avalible:'',
-            L_price:'',
-            sizing_details:'',
-            name:'',
-            cardId:'',
             priceTarget:'',
             avilableTarget:'',
             sizeTarget:'medium',
             button:false,
-            sizeCm:""
-
+            artistID:'',
+            sizeCm:"",
 
 
         }
@@ -275,22 +264,12 @@ export default {
                   axios.get('/api/palettes')
       .then(response =>{
           this.artists = response.data.artists
+
           this.first = response.data.artists[0].id
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
             this.palettes = response.data.palettes
-            this.name=response.data.palettes[0].name,
-            this.cardId=response.data.palettes[0].id,
-            this.S_copies=response.data.palettes[0].S_copies,
-            this.S_avalible=response.data.palettes[0].S_avalible,
-            this.S_price=response.data.palettes[0].S_price,
-            this.M_copies=response.data.palettes[0].M_copies,
-            this.M_avalible=response.data.palettes[0].M_avalible,
-            this.M_price=response.data.palettes[0].M_price,
-            this.L_copies=response.data.palettes[0].L_copies,
-            this.L_avalible=response.data.palettes[0].L_avalible,
-            this.L_price=response.data.palettes[0].L_price,
-            this.sizing_details=response.data.palettes[0].sizing_details
+            this.minPalettesActive=response.data.palettes[0],
             this.palettesArtists = response.data.palettesArtists
         })
         .catch(error => console.log(error.response.data))
@@ -301,15 +280,11 @@ export default {
             //this.addActive(this.$route.query.mydata)
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
-
                 this.minPalettes = response.data.minPalettes
 
 
                 })
             .catch(error => console.log(error.response.data))
-
-
-
         }else{
 
       axios.get('/api/palettes')
@@ -319,20 +294,8 @@ export default {
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
             this.palettes = response.data.palettes
-            this.name=response.data.palettes[0].name,
-            this.cardId=response.data.palettes[0].id,
-            this.S_copies=response.data.palettes[0].S_copies,
-            this.S_avalible=response.data.palettes[0].S_avalible,
-            this.S_price=response.data.palettes[0].S_price,
-            this.M_copies=response.data.palettes[0].M_copies,
-            this.M_avalible=response.data.palettes[0].M_avalible,
-            this.M_price=response.data.palettes[0].M_price,
-            this.L_copies=response.data.palettes[0].L_copies,
-            this.L_avalible=response.data.palettes[0].L_avalible,
-            this.L_price=response.data.palettes[0].L_price,
-            this.sizing_details=response.data.palettes[0].sizing_details
+            this.minPalettesActive=response.data.palettes[0],
             this.palettesArtists = response.data.palettesArtists
-
             this.firstpalettesArtists = response.data.palettesArtists[0].id
             axios.get("/api/viewMinPalettes?id=" + this.firstpalettesArtists)
             .then(response =>{
@@ -344,30 +307,22 @@ export default {
       }
 
     ).catch(error => console.log(error.response.data));
-        }//////
-
-
+        }
     },
 
       computed: {
+        cart() {
+            return this.products.filter(product => product.quantity > 0);
+        },
+        totalQuantity() {
+            return this.products.reduce(
+            (total, product) => total + product.quantity,
+            0);
 
-      cart() {
-        return this.products.filter(product => product.quantity > 0);
+        }
       },
-      totalQuantity() {
-        return this.products.reduce(
-        (total, product) => total + product.quantity,
-        0);
-
-      } },
-
-
-
     methods:{
-
-
         addToCart(product){
-
             this.$store.dispatch('addProductToCart',{
                  product,
                 quantity:1
@@ -391,41 +346,31 @@ export default {
       }
       ,
         getdata($id){
+            // let id = 0;
+            if(this.artists[$id])
+            {
+                $id = this.artists[$id].id
+            } else if($id > this.artists.length-1)
+            {
+             $id = this.artists[0].id;
+            }
+            else{
+                $id = this.artists[this.artists.length-1].id;
+            }
         axios.get("/api/view?id=" +$id)
+
         .then(response =>{
+
             this.palettes = response.data.palettes
-            this.palettesArtists = response.data.palettesArtists
+            this.minPalettesActive=response.data.palettes[0]
+            if(this.minPalettesActive == null)
+            {
+                this.minPalettesActive = ''
+            }
             if(response.data.palettesArtists.length>0){
                 this.firstminPalettes = response.data.palettesArtists[0].id
             } else {
                 this.firstminPalettes = null
-            }
-
-            if($id > response.data.artists.length){
-                axios.get("/api/view?id=" +1)
-                .then(response =>{
-                    this.palettesArtists = response.data.palettesArtists
-                     this.firstminPalettes = response.data.palettesArtists[0].id
-                    axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-                    .then(response =>{
-                        this.minPalettes = response.data.minPalettes
-                        })
-                        .catch(error => console.log(error.response.data))
-                    })
-                .catch(error => console.log(error.response.data))
-            } else if($id == 0) {
-
-                axios.get("/api/view?id=" + response.data.artists.length )
-                .then(response =>{
-                    this.palettesArtists = response.data.palettesArtists
-                     this.firstminPalettes = response.data.palettesArtists[0].id
-                    axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
-                    .then(response =>{
-                        this.minPalettes = response.data.minPalettes
-                        })
-                        .catch(error => console.log(error.response.data))
-                    })
-                .catch(error => console.log(error.response.data))
             }
 
             axios.get("/api/viewMinPalettes?id=" + this.firstminPalettes)
@@ -450,13 +395,10 @@ export default {
 
             // $(".details .content").css({marginTop:"27px"})
 
-
             $(".details.active .details_img").css({
                 transform:"scale(.7)"
             })
             $(".details.active .content").css({marginTop:"-27px"})
-
-
         },
         medium(el,price,avilable,cardId){
             this.sizeTarget="medium"
@@ -466,20 +408,15 @@ export default {
             this.button=true;
             this.sizeCm="50x66.5cm (20x26)"
 
-
             //  $(".details .details_img").css({
             //      transform:"scale(1)"
             //  })
             // $(".details .content").css({marginTop:"27px"})
 
-
             // $(".details.active .details_img").css({
             //     transform:"scale(.8)"
             // })
             // $(".details.active .content").css({marginTop:"-17px"})
-
-
-
 
         },
         larg(el,price,avilable,cardId){
@@ -498,13 +435,10 @@ export default {
 
         },
         addActive($minPalette_id,index){
-// console.log(  this.$refs.myActive)
-        //   let myActive =  this.$refs.myActive[index]
+            // console.log(  this.$refs.myActive)
+            let myActive =  this.$refs.myActive[index]
 
-
-
-        //         $(myActive).addClass('active').siblings().removeClass('active');
-
+            $(myActive).addClass('active').siblings().removeClass('active');
 
             $("html,body").animate({
                 scrollTop:"450px"
@@ -513,29 +447,17 @@ export default {
                 axios.get("/api/viewMinPalettes?id=" + $minPalette_id)
                 .then(response =>{
                     this.minPalettes = response.data.minPalettes
-                    this.name=response.data.palettes[0].name,
-                    this.cardId=response.data.palettes[0].id,
-                    this.S_copies=response.data.palettes[0].S_copies,
-                    this.S_avalible=response.data.palettes[0].S_avalible,
-                    this.S_price=response.data.palettes[0].S_price,
-                    this.M_copies=response.data.palettes[0].M_copies,
-                    this.M_avalible=response.data.palettes[0].M_avalible,
-                    this.M_price=response.data.palettes[0].M_price,
-                    this.L_copies=response.data.palettes[0].L_copies,
-                    this.L_avalible=response.data.palettes[0].L_avalible,
-                    this.L_price=response.data.palettes[0].L_price,
-                    this.sizing_details=response.data.palettes[0].sizing_details
+                    this.minPalettesActive=response.data.palettes[0]
                     })
                 .catch(error => console.log(error.response.data))
 
         },
         addtocart($id,price,avilableTarget, sizeTarget,sizeCm){
 
-
             axios.post('/api/addtocart?id=' + $id)
             .then(res=>{
 
-            console.log(res.data.paletteCart)
+            // console.log(res.data.paletteCart)
 
                 // $('#count')[0].innerText++
 
@@ -543,30 +465,30 @@ export default {
 
            if(sizeTarget=='large')
            {
-               if(this.L_avalible<=0)
+               if(this.minPalettesActive.L_avalible<=0)
                {
 
-                this.L_avalible=0;
+                this.minPalettesActive.L_avalible=0;
                 return
                }
-               --this.L_avalible;
+               --this.minPalettesActive.L_avalible;
            }else if(sizeTarget=='small')
            {
-                if(this.S_avalible<=0)
+                if(this.minPalettesActive.S_avalible<=0)
                {
-               this.S_avalible =  0;
+               this.minPalettesActive.S_avalible =  0;
                return
                }
-                --this.S_avalible;
+                --this.minPalettesActive.S_avalible;
 
            }else{
-             if(this.M_avalible<=0)
+             if(this.minPalettesActive.M_avalible<=0)
                {
-                    this.M_avalible=0;
+                    this.minPalettesActive.M_avalible=0;
                     return
 
                }
-               --this.M_avalible;
+               --this.minPalettesActive.M_avalible;
 
            }
             this.$store.dispatch('addProductToCart',{
@@ -586,17 +508,17 @@ export default {
     watch:{
     $route (to, from){
 
-            this.addActive(this.$route.query.mydata)
-            axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
-            .then(response =>{
+        this.addActive(this.$route.query.mydata)
+        axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
+        .then(response =>{
 
-                this.minPalettes = response.data.minPalettes
-                console.log(this.$route.query.mydata );
+            this.minPalettes = response.data.minPalettes
+            // console.log(this.$route.query.mydata );
 
-                })
-            .catch(error => console.log(error.response.data))
+            })
+        .catch(error => console.log(error.response.data))
 
-}
+    }
 }
 
 }
@@ -1067,13 +989,14 @@ transform: scale(.7);
 
 .pallete-swiper .content .triangle{
 
-    left: 58%;
+    left: 55%;
 
 
 }
 
 .pallete-swiper .swiper-slide {
          width: 70% !important;
+         margin-right:0px  !important;
 
 }
 }
