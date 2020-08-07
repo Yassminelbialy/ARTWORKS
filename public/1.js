@@ -561,7 +561,8 @@ __webpack_require__.r(__webpack_exports__);
       sizeTarget: 'medium',
       button: false,
       artistID: '',
-      sizeCm: ""
+      sizeCm: "",
+      artist_text: ''
     };
   },
   mounted: function mounted() {
@@ -598,6 +599,7 @@ __webpack_require__.r(__webpack_exports__);
     if (this.$route.query.mydata) {
       axios.get('/api/palettes').then(function (response) {
         _this.artists = response.data.artists;
+        _this.artist_text = response.data.artists[0].Plates_description;
         _this.first = response.data.artists[0].id;
         axios.get("/api/view?id=" + _this.first).then(function (response) {
           _this.palettes = response.data.palettes;
@@ -618,6 +620,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/api/palettes').then(function (response) {
         _this.artists = response.data.artists;
         _this.first = response.data.artists[0].id;
+        _this.artist_text = response.data.artists[0].Plates_description;
         axios.get("/api/view?id=" + _this.first).then(function (response) {
           _this.palettes = response.data.palettes;
           _this.minPalettesActive = response.data.palettes[0], _this.palettesArtists = response.data.palettesArtists;
@@ -683,6 +686,7 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get("/api/view?id=" + $id).then(function (response) {
         _this2.palettes = response.data.palettes;
+        _this2.artist_text = response.data.artist[0];
         _this2.minPalettesActive = response.data.palettes[0];
 
         if (_this2.minPalettesActive == null) {
@@ -1948,11 +1952,7 @@ var render = function() {
             _vm._v(" "),
             _c("div", { staticClass: " col-lg-5" }, [
               _c("div", { staticClass: "add-cart p-3" }, [
-                _c("p", [
-                  _vm._v(
-                    "Art paper framed by a wooden frame and non-reflective glass"
-                  )
-                ]),
+                _c("p", [_vm._v(_vm._s(_vm.artist_text))]),
                 _vm._v(" "),
                 _c("h2", { staticClass: "font-weight-bold " }, [
                   _vm._v(
@@ -1978,9 +1978,11 @@ var render = function() {
                     : _vm._e()
                 ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("div", { staticClass: "mb-3 mt-2" }, [
+                  _c("span", [_vm._v(_vm._s(_vm.minPalettesActive.tag))])
+                ]),
                 _vm._v(" "),
-                _vm._m(2),
+                _vm._m(1),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -2235,14 +2237,6 @@ var staticRenderFns = [
           alt: ""
         }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-3 mt-2" }, [
-      _c("span", [_vm._v("silkscreen")])
     ])
   },
   function() {

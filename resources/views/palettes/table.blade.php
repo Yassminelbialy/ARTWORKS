@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Tag Name</th>
                 <th>Image</th>
                 <th>All Copies</th>
                 <!-- <th>Avalible Copies</th> -->
@@ -29,6 +30,7 @@
             @foreach($palettes as $palette)
             <tr>
                 <td>{{ $palette->name }}</td>
+                <td>{{$palette->tag}}</td>
                 <td><img height="50" width="50" src="{{ $palette->img }}" /></td>
                 <td>{{ $palette->palette_copies }}</td>
                 <!-- <td>{{ $palette->avalible_copies }}</td> -->

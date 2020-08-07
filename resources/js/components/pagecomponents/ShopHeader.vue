@@ -84,14 +84,14 @@
                 </div>
                 <div class=" col-lg-5">
                     <div class="add-cart p-3">
-                        <p>Art paper framed by a wooden frame and non-reflective glass</p>
+                        <p>{{artist_text}}</p>
                         <h2 class="font-weight-bold ">{{minPalettesActive.name}} II
                         <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
                         <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
                         <span v-if="active_el==3">${{minPalettesActive.L_price}}</span>
 
                         </h2>
-                        <div class="mb-3 mt-2"> <span>silkscreen</span></div>
+                        <div class="mb-3 mt-2"> <span>{{minPalettesActive.tag}}</span></div>
                         <div>
 
                             <!-- <v-btn class="mb-2 size_btn small"  :class="{ active_btn : active_el == 1 }" v-if="minPalettesActive.S_avalible>0"  @click="small(1,minPalettesActive.S_price,minPalettesActive.S_avalible,minPalettesActive.id)">S</v-btn>
@@ -223,6 +223,7 @@ export default {
             button:false,
             artistID:'',
             sizeCm:"",
+            artist_text:''
 
 
         }
@@ -267,7 +268,7 @@ export default {
                   axios.get('/api/palettes')
       .then(response =>{
           this.artists = response.data.artists
-
+          this.artist_text = response.data.artists[0].Plates_description
           this.first = response.data.artists[0].id
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
@@ -294,6 +295,7 @@ export default {
       .then(response =>{
           this.artists = response.data.artists
           this.first = response.data.artists[0].id
+          this.artist_text = response.data.artists[0].Plates_description
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
             this.palettes = response.data.palettes
@@ -365,6 +367,7 @@ export default {
         .then(response =>{
 
             this.palettes = response.data.palettes
+            this.artist_text = response.data.artist[0]
             this.minPalettesActive=response.data.palettes[0]
             if(this.minPalettesActive == null)
             {
