@@ -44,7 +44,12 @@
       <div class="mt-5" v-if="support">
         <p
           class="text-center"
-        >{{ $t("message.support_text") }}</p>
+          v-if=" $i18n.locale == 'en'"
+        >{{ text_contact.text_en }}</p>
+        <p
+          class="text-center"
+          v-else
+        >{{ text_contact.text_ar }}</p>
         <div class="row justify-content-md-center support_div text-center ">
           <!-- <div class="col-md-2 content" @click="activate(1)" :class="{ active : active_el == 1 }">
             <img
@@ -335,6 +340,7 @@ export default {
       artist: false,
       support: false,
       active_el: 1,
+      text_contact:{},
       form: {
         name: null,
         email: null,
@@ -366,6 +372,13 @@ export default {
         {
           this.about = ''
         }
+      })
+      .catch(error => this.errors=error.response.data);
+
+      axios.get('/api/get-about-contents')
+      .then(res=>{
+        this.text_contact = res.data.data
+
       })
       .catch(error => this.errors=error.response.data);
   },

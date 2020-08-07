@@ -39,8 +39,12 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('aboutContents', 'AboutContentController');
     Route::resource('aboutAretists', 'AboutAretistsController');
     Route::resource('aboutContacts', 'About_ContactController');
+    Route::resource('discounts', 'DiscountController');
+    Route::resource('aboutContactsTexts', 'About_Contacts_TextController');
 
 });
+Route::get('orders', 'OrderController@index')->middleware('modirator');
+Route::get('appliedorders/{id?}', 'OrderController@orderindex')->name('appliedorder.show')->middleware('modirator'); 
 
 Route::get('/home', 'HomeController@index')->name("home.index");
 Route::post('reviews-api','ReviewController@store');
@@ -55,22 +59,8 @@ Route::post('like', 'ReviewController@like');
 Route::post('dislike', 'ReviewController@dislike');
 
 
-
-Route::resource('discounts', 'DiscountController');
-
 Route::get('payment/{id?}', function ($id=null) {
 
 })->name('payment');
 Route::view('/{any}','userLayout.home');
-
-
-
-
-
-
-
-
-
-
-
 

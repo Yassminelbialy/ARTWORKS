@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 use App\Models\AboutAretists;
 use App\Models\AboutContent;
+use App\Models\About_Contacts_Text;
 
 
 use App\Http\Controllers\Controller;
@@ -53,6 +54,12 @@ class AboutController extends Controller
 
         }
 
+
+    }
+
+    public function get_about_contents_text(){
+        $data = About_Contacts_Text::latest()->first();
+        return response( )->json(['data'=>$data]);
 
     }
 

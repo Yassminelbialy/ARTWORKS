@@ -337,6 +337,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -347,6 +352,7 @@ __webpack_require__.r(__webpack_exports__);
       artist: false,
       support: false,
       active_el: 1,
+      text_contact: {},
       form: {
         name: null,
         email: null,
@@ -379,6 +385,11 @@ __webpack_require__.r(__webpack_exports__);
       if (_this.about == null) {
         _this.about = '';
       }
+    })["catch"](function (error) {
+      return _this.errors = error.response.data;
+    });
+    axios.get('/api/get-about-contents').then(function (res) {
+      _this.text_contact = res.data.data;
     })["catch"](function (error) {
       return _this.errors = error.response.data;
     });
@@ -605,9 +616,13 @@ var render = function() {
       _vm._v(" "),
       _vm.support
         ? _c("div", { staticClass: "mt-5" }, [
-            _c("p", { staticClass: "text-center" }, [
-              _vm._v(_vm._s(_vm.$t("message.support_text")))
-            ]),
+            _vm.$i18n.locale == "en"
+              ? _c("p", { staticClass: "text-center" }, [
+                  _vm._v(_vm._s(_vm.text_contact.text_en))
+                ])
+              : _c("p", { staticClass: "text-center" }, [
+                  _vm._v(_vm._s(_vm.text_contact.text_ar))
+                ]),
             _vm._v(" "),
             _c(
               "div",
