@@ -97,12 +97,10 @@ class PaletteAPIController extends AppBaseController
         // return response()->json(['review' => $review]);
     }
     public function Palettes(Request $request){
-
-
+        $artist = Artist::where('id',$request->id)->pluck('Plates_description');
         $palettesArtists = Palette::where('artist_id',$request->id)->limit(3)->get();
-        $artists = Artist::all();
         $palettes = Palette::where('artist_id',$request->id)->limit(6)->get();
-        return response()->json([ 'palettesArtists' =>$palettesArtists,'palettes' =>$palettes,'artists' => $artists]);
+        return response()->json([ 'palettesArtists' =>$palettesArtists,'palettes' =>$palettes,'artist'=>$artist]);
     }
     public function viewMinPalettes(Request $request){
 

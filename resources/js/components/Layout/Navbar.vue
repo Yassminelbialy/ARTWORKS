@@ -80,8 +80,8 @@
                                 </div>
                                 <div class="col-md-sm-8 ml-3 " style="margin-right:50px">
                                     <span> <strong>{{ item.product.name }}</strong></span>
-                                     <h6  style="font-size:14px">{{ item.sizeTarget }}  {{item.sizeCm}} </h6>
-                                    <h6>{{ item.quantity }} x ${{item.price}}</h6>
+                                     <!-- <h6  style="font-size:14px">{{ item.sizeTarget }}  {{item.sizeCm}} </h6> -->
+                                    <h6 style="margin-top:10px">{{ item.quantity }} x ${{item.price}}</h6>
                                 </div>
                                   <div class="pro">
                                 <v-form style="width:50%;display:inline-block">

@@ -75,6 +75,7 @@ class PaletteController extends AppBaseController
             'L_price' => 'required',
             'artist_id' => 'required',
             'img' => 'mimes:jpeg,jpg,png,gif|required|max:10000',
+            'tag' =>'required'
         ]);
         // $input = $request->all();
 

@@ -27,6 +27,8 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('palettes', 'PaletteController');
     Route::resource('paletteimages', 'PaletteimageController');
 
+    Route::get('orders', 'OrderController@index');
+    Route::get('appliedorders/{id?}', 'OrderController@orderindex')->name('appliedorder.show');
 
     Route::get('addpaletteimages/{palette?}/create','PaletteimageController@create')->name("addimgpalette");
     Route::get('changeStatus', 'UserController@changeStatus');
@@ -36,12 +38,14 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('homeDatas', 'HomeDataController');
     Route::resource('aboutContents', 'AboutContentController');
     Route::resource('aboutAretists', 'AboutAretistsController');
+    Route::resource('aboutContacts', 'About_ContactController');
 
 });
-Route::get('orders', 'orderController@index');
-Route::get('appliedorders/{id?}', 'orderController@orderindex')->name('appliedorder.show');
 
 Route::get('/home', 'HomeController@index')->name("home.index");
+Route::post('reviews-api','ReviewController@store');
+Route::post('aboutContacts-api','About_ContactController@store');
+Route::get('/home', 'HomeController@index')->middleware('verified')->name("home.index");
 Route::get('/', 'HomeController@index');
 
 
@@ -58,6 +62,8 @@ Route::get('payment/{id?}', function ($id=null) {
 
 })->name('payment');
 Route::view('/{any}','userLayout.home');
+
+
 
 
 

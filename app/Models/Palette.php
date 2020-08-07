@@ -60,7 +60,8 @@ class Palette extends Model
         'print_finish',
         'frame_material',
         'frame_finish',
-        'artist_id'
+        'artist_id',
+        'tag'
     ];
 
     /**
@@ -89,7 +90,8 @@ class Palette extends Model
         'print_finish' => 'string',
         'frame_material' => 'string',
         'frame_finish' => 'string',
-        'artist_id' => 'integer'
+        'artist_id' => 'integer',
+        'tag' => 'string'
     ];
 
     /**
@@ -98,7 +100,7 @@ class Palette extends Model
      * @var array
      */
     public static $rules = [
-
+        'tag' => 'required',
     ];
     public function images()
     {

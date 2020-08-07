@@ -4,6 +4,13 @@
     <p>{{ $palette->name }}</p>
 </div>
 
+<!-- Tag Field -->
+<div class="form-group">
+    {!! Form::label('tag', 'Tag:') !!}
+    <p>{{ $palette->tag }}</p>
+</div>
+
+
 <!-- Img Field -->
 <div class="form-group">
     {!! Form::label('img', 'Img:') !!}

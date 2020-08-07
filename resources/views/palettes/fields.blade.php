@@ -4,6 +4,12 @@
     {!! Form::text('name', null, ['class' => 'form-control','required']) !!}
 </div>
 
+<!-- Tag Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('tag', 'Tag:') !!}
+    {!! Form::text('tag', null, ['class' => 'form-control','required']) !!}
+</div>
+
 <!-- Img Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('img', 'Img:') !!}
