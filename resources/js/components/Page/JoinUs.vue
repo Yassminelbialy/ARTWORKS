@@ -77,7 +77,7 @@
                 >
                 <v-text-field
                     v-model="form.name"
-                    
+
                     label="أسمك"
                     required
                     loading
@@ -130,7 +130,7 @@
                 <div style="clear:both"></div>
             </v-container>
         </v-form>
-        
+
     </div>
 
 </template>
@@ -174,4 +174,20 @@ export default {
     .label{
         left: 90%;
     }
+
+.v-btn:not(.v-btn--round).v-size--default{
+    font-size: 16px !important;
+    font-weight: bold !important;
+    display: inline-block !important;
+    padding: 20px 38px !important;
+    cursor: pointer !important;
+    transition: all .4s ease-out !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    color: #fff !important;
+    border: none !important;
+    background-color: #000 !important;
+    height:  auto!important;
+    border-radius: 0!important;
+}
 </style>

@@ -20,7 +20,7 @@
 
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
-            <ol class="carousel-indicators">
+            <ol class="carousel-indicators text-center">
                 <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
@@ -35,7 +35,10 @@
                                     <div class="content" :class="{ 'active': index == 0 }" >
                                         <div class="triangle"></div>
                                         <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
-                                        <div class="infor">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
+                                        <div class="infor" v-if="palettesArtist.M_avalible >0">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
+                                          <div class="infor" v-else>
+                                             <span class="badge badge-pill badge-danger"> {{ $t("message.solidout") }}</span>
+                                          </div>
                                         <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
                                     </div>
                                 </div>
@@ -60,7 +63,7 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" @click="getdata(index-1)" data-slide="prev">
+                    <a class="carousel-control-prev " href="#carouselExampleCaptions" role="button" @click="getdata(index-1)" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
@@ -95,20 +98,20 @@
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
-                            <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="minPalettesActive.M_avalible>0" @click="medium(2,minPalettesActive.M_price, minPalettesActive.M_avalible ,minPalettesActive.id)">M</v-btn>
+                            <!-- <v-btn class="mb-2 size_btn medium" :class="{ active_btn : active_el == 2 }" v-if="minPalettesActive.M_avalible>0" @click="medium(2,minPalettesActive.M_price, minPalettesActive.M_avalible ,minPalettesActive.id)">M</v-btn>
                             <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
 
-                                {{ $t("message.empty") }}</v-btn>
+                                {{ $t("message.empty") }}</v-btn> -->
                             <!-- <v-btn class="mb-2 size_btn larg" :class="{ active_btn : active_el == 3 }" v-if="minPalettesActive.L_avalible>0" @click="larg(3,minPalettesActive.L_price,minPalettesActive.L_avalible,minPalettesActive.id )">L</v-btn> -->
                             <!-- <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
                                 <div class="rotate"></div>
                                 {{ $t("message.empty") }}</v-btn> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{S_copies}}/{{S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
-                            <h3 class="mt-4 mb-4" v-if="active_el==2">Medium  </h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==2">Medium  </h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{minPalettesActive.S_copies}}/{{minPalettesActive.S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
-                            <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==2">medium  <strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{minPalettesActive.L_copies}}/{{minPalettesActive.L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
@@ -117,7 +120,7 @@
                             <!-- <span v-if="active_el==1">${{minPalettesActive.S_price}}</span> -->
                                 <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
                                 <!-- <span v-if="active_el==3">${{minPalettesActive.L_price}}</span> -->
-                                -{{ $t("message.cart") }}
+                                {{ $t("message.cart") }}
 
                                 </button>
                                 <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
@@ -437,12 +440,16 @@ export default {
         addActive($minPalette_id,index){
             // console.log(  this.$refs.myActive)
             let myActive =  this.$refs.myActive[index]
+                       $(myActive).addClass('active').siblings().removeClass('active');
 
-            $(myActive).addClass('active').siblings().removeClass('active');
+        $(".details").on("click",function(){
+                  $(this).addClass('active').siblings().removeClass('active');
+        })
+
 
             $("html,body").animate({
                 scrollTop:"450px"
-            },1000)
+            },500)
 
                 axios.get("/api/viewMinPalettes?id=" + $minPalette_id)
                 .then(response =>{
@@ -762,7 +769,7 @@ export default {
     }
 }
 .carousel-indicators .active{
-    border-bottom: 3px solid #25d1e2;
+    border-bottom: 3px solid #00aeef;
 }
 .small, .medium, .larg{
     padding: 30px !important;

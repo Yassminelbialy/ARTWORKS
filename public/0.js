@@ -123,7 +123,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.swiper-pagination[data-v-40f21cb0]{\n    position: relative;\n    top: 2px;\n}\n@media(max-width: 767px){\n.product-grid-item__title[data-v-40f21cb0]{\n        font-size: 16px;\n}\n}\n\n", ""]);
+exports.push([module.i, "\n.swiper-pagination[data-v-40f21cb0]{\r\n    position: relative;\r\n    top: 2px;\n}\n@media(max-width: 767px){\n.product-grid-item__title[data-v-40f21cb0]{\r\n        font-size: 16px;\n}\n}\r\n\r\n", ""]);
 
 // exports
 

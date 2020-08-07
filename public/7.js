@@ -1,8 +1,8 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/Refund.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Page/JoinUs.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Page/Refund.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -146,98 +146,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      form: {
-        phone: '',
-        name: '',
-        email: '',
-        socialLink: ''
-      },
-      errors: [],
-      message: '',
-      loading: false
-    };
-  },
-  methods: {
-    send: function send() {
-      var _this = this;
-
-      axios.post('/api/artist-request', this.form).then(function (res) {
-        if (!res.data.status) {
-          _this.errors = res.data.errors;
-        } else {
-          _this.message = 'Successful';
-          _this.form.phone = "";
-          _this.form.name = "";
-          _this.form.email = "";
-          _this.form.socialLink = "";
-
-          _this.$router.push('/');
-        }
-      })["catch"](function (error) {
-        return _this.errors = error.response.data.errors;
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.label[data-v-0bb49026]{\n    left: 90%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=template&id=0bb49026&scoped=true&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Page/JoinUs.vue?vue&type=template&id=0bb49026&scoped=true& ***!
-  \**************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/Refund.vue?vue&type=template&id=3642c9fd&":
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Page/Refund.vue?vue&type=template&id=3642c9fd& ***!
+  \**************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -249,315 +228,276 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _vm.errors.length > 0 && !_vm.message
-        ? _c("div", { staticClass: "alert alert-warning text-center" }, [
-            _c("strong", [_vm._v("Sorry!")]),
-            _vm._v(
-              " You should check in on some of those fields below.\n        "
-            ),
-            _c("br"),
-            _vm._v(" "),
-            _c(
-              "ul",
-              { staticStyle: { "list-style": "none" } },
-              _vm._l(_vm.errors, function(item) {
-                return _c("li", { key: item.id }, [
-                  _vm._v("\n                " + _vm._s(item) + "\n            ")
-                ])
-              }),
-              0
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.message.length > 0
-        ? _c("div", { staticClass: "alert alert-info text-center" }, [
-            _c("h1", [_vm._v(" " + _vm._s(_vm.message))])
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.$i18n.locale == "en"
-        ? _c(
-            "v-form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.send($event)
-                }
-              }
-            },
-            [
-              _c(
-                "v-container",
-                [
-                  _c(
-                    "v-row",
-                    [
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "Your Name",
-                              required: "",
-                              loading: "",
-                              clearable: ""
-                            },
-                            model: {
-                              value: _vm.form.name,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "name", $$v)
-                              },
-                              expression: "form.name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "E-mail",
-                              required: "",
-                              loading: "",
-                              clearable: ""
-                            },
-                            model: {
-                              value: _vm.form.email,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "email", $$v)
-                              },
-                              expression: "form.email"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "Your Phone Number",
-                              required: "",
-                              loading: "",
-                              clearable: ""
-                            },
-                            model: {
-                              value: _vm.form.phone,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "phone", $$v)
-                              },
-                              expression: "form.phone"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "Your Social Link",
-                              required: "",
-                              loading: "",
-                              clearable: ""
-                            },
-                            model: {
-                              value: _vm.form.socialLink,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "socialLink", $$v)
-                              },
-                              expression: "form.socialLink"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-btn", { attrs: { color: "#f2efeb", type: "submit" } }, [
-                    _vm._v("Join Us")
-                  ])
-                ],
-                1
-              )
-            ],
-            1
-          )
-        : _c(
-            "v-form",
-            {
-              on: {
-                submit: function($event) {
-                  $event.preventDefault()
-                  return _vm.send($event)
-                }
-              }
-            },
-            [
-              _c(
-                "v-container",
-                [
-                  _c(
-                    "v-row",
-                    [
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "أسمك",
-                              required: "",
-                              loading: "",
-                              clearable: "",
-                              dir: "rtl"
-                            },
-                            model: {
-                              value: _vm.form.name,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "name", $$v)
-                              },
-                              expression: "form.name"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "بريدك اﻷلكتروني",
-                              loading: "",
-                              clearable: "",
-                              required: "",
-                              dir: "rtl"
-                            },
-                            model: {
-                              value: _vm.form.email,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "email", $$v)
-                              },
-                              expression: "form.email"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "رقم الموبايل الخاص بك",
-                              required: "",
-                              loading: "",
-                              clearable: "",
-                              dir: "rtl"
-                            },
-                            model: {
-                              value: _vm.form.phone,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "phone", $$v)
-                              },
-                              expression: "form.phone"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-col",
-                        { attrs: { cols: "12", md: "12" } },
-                        [
-                          _c("v-text-field", {
-                            attrs: {
-                              label: "رابط التواصل الاجتماعي",
-                              required: "",
-                              loading: "",
-                              clearable: "",
-                              dir: "rtl"
-                            },
-                            model: {
-                              value: _vm.form.socialLink,
-                              callback: function($$v) {
-                                _vm.$set(_vm.form, "socialLink", $$v)
-                              },
-                              expression: "form.socialLink"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-btn",
-                    {
-                      staticStyle: { float: "right" },
-                      attrs: { color: "#f2efeb", type: "submit" }
-                    },
-                    [_vm._v("أشترك معنا")]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticStyle: { clear: "both" } })
-                ],
-                1
-              )
-            ],
-            1
-          )
-    ],
-    1
-  )
+  return _c("div", [
+    _vm.$i18n.locale == "en"
+      ? _c("main", [_vm._m(0)])
+      : _c("main", { staticClass: "text-right" }, [_vm._m(1)])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-width" }, [
+      _c("div", { staticClass: "grid" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "grid__item medium-up--five-sixths medium-up--push-one-twelfth"
+          },
+          [
+            _c("div", { staticClass: "section-header text-center" }, [
+              _c("h1", { staticClass: "text-left " }, [_vm._v("Refund Policy")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rte" }, [
+              _c("meta", { attrs: { charset: "utf-8" } }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [
+                  _vm._v(
+                    "What is the policy if the product arrives\n                                damaged at my place?"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            Take pictures of the damaged part(s) and send\n                            them to info@ecstase.com. You will receive a\n                            full refund or we will send you a new product in\n                            case your product is damaged. Resends go out the\n                            next day and you will be provided with new\n                            shipping information immediately to the same\n                            email address.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [
+                  _vm._v(
+                    "What if I want to send my product back, but\n                                it is not damaged?"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            That is possible, you can find the return\n                            shipping address at the bottom of this page. In\n                            this case, you pay for the shipping costs.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [
+                  _vm._v(
+                    "What is the next step in the return\n                                process?"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            You can send us an email to info@ecstase.com\n                            requesting your refund. After you have posted\n                            the package to the returns address and forwarded\n                            the tracking number to info@ecstase.com, we will\n                            refund your purchase.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [
+                  _vm._v(
+                    "How long does it take for me to receive my\n                                fee or new product?"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            We aim to send a replacement product within 24\n                            hours after the resend has been approved, the\n                            same goes for refunds.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [
+                  _vm._v(
+                    "How many days do I have to return\n                                something?"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v("You have 10 days to return your product.")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _c("strong", [
+                  _vm._v(
+                    "Who will pay for the return of the\n                                product?"
+                  )
+                ])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            You will have to pay for shipping the product\n                            back to us, but we we refund your initial\n                            shipping costs.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [_c("strong", [_vm._v("Return address:")])]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            If you wish to return your product, please email\n                            us to info@ecstase.com\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" })
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-width" }, [
+      _c("div", { staticClass: "grid" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "grid__item medium-up - خمسة أسداس متوسطة للأعلى - ضغط بمقدار واحد إلى اثني عشر"
+          },
+          [
+            _c("div", { staticClass: "section-header text-center" }, [
+              _c("h1", { staticClass: "text-right" }, [
+                _vm._v(" سياسة رد الأموال ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "rte" }, [
+              _c("meta", { attrs: { charset: "utf-8" } }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n                                ما هي السياسة في حالة وصول المنتج\n                                تالف في مكاني؟\n\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            التقاط صور للجزء (الأجزاء) التالفة وإرسالها\n                            منهم إلى info@ecstase.com. سوف تتلقى\n                            استرداد كامل أو سنرسل لك منتجًا جديدًا\n                            في حالة تلف منتجك. إعادة إرسال الخروج\n                            في اليوم التالي وسيتم تزويدك بجديد\n                            معلومات الشحن على الفور إلى نفسه\n                            عنوان البريد الالكترونى.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n                              ماذا لو أردت إعادة المنتج الخاص بي ، ولكن\n                                لا يتضرر؟\n\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            هذا ممكن ، يمكنك أن تجد العائد\n                            عنوان الشحن في أسفل هذه الصفحة. في\n                            في هذه الحالة ، تدفع تكاليف الشحن.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n                                > ما هي الخطوة التالية في العودة\n                                عملية؟\n\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            يمكنك إرسال بريد إلكتروني إلينا على info@ecstase.com\n                            طلب استرداد أموالك. بعد أن نشرت\n                            الحزمة إلى عنوان المرسل وإعادة توجيهها\n                            رقم التتبع إلى info@ecstase.com ، سنقوم بذلك\n                            برد مشترياتك.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n                               كم من الوقت يستغرق لتلقي\n                                رسوم أم منتج جديد؟\n\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            نهدف إلى إرسال منتج بديل خلال 24\n                            بعد ساعات من الموافقة على إعادة الإرسال ، فإن\n                            الشيء نفسه ينطبق على المبالغ المستردة.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n                                كم يوم يجب علي العودة\n                                شيء؟\n\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v(" أمامك 10 أيام لإرجاع منتجك. ")]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n\n                              من سيدفع مقابل عودة\n                                المنتج؟\n\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            سوف تضطر إلى الدفع مقابل شحن المنتج\n                            بالعودة إلينا ، لكننا نقوم برد مبلغك الأولي\n                            تكاليف الشحن.\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" }),
+              _vm._v(" "),
+              _c("p", [_vm._v(" عنوان المرسل: ")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "\n                            إذا كنت ترغب في إرجاع منتجك ، يرجى إرسال بريد إلكتروني\n                            لنا إلى info@ecstase.com\n                        "
+                )
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "margin" })
+            ])
+          ]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/js/components/Page/JoinUs.vue":
+/***/ "./resources/js/components/Page/Refund.vue":
 /*!*************************************************!*\
-  !*** ./resources/js/components/Page/JoinUs.vue ***!
+  !*** ./resources/js/components/Page/Refund.vue ***!
   \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _JoinUs_vue_vue_type_template_id_0bb49026_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./JoinUs.vue?vue&type=template&id=0bb49026&scoped=true& */ "./resources/js/components/Page/JoinUs.vue?vue&type=template&id=0bb49026&scoped=true&");
-/* harmony import */ var _JoinUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./JoinUs.vue?vue&type=script&lang=js& */ "./resources/js/components/Page/JoinUs.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css& */ "./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* harmony import */ var _Refund_vue_vue_type_template_id_3642c9fd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Refund.vue?vue&type=template&id=3642c9fd& */ "./resources/js/components/Page/Refund.vue?vue&type=template&id=3642c9fd&");
+/* harmony import */ var _Refund_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Refund.vue?vue&type=script&lang=js& */ "./resources/js/components/Page/Refund.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -565,67 +505,51 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _JoinUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _JoinUs_vue_vue_type_template_id_0bb49026_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _JoinUs_vue_vue_type_template_id_0bb49026_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Refund_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Refund_vue_vue_type_template_id_3642c9fd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Refund_vue_vue_type_template_id_3642c9fd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "0bb49026",
+  null,
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/Page/JoinUs.vue"
+component.options.__file = "resources/js/components/Page/Refund.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/Page/JoinUs.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/components/Page/Refund.vue?vue&type=script&lang=js&":
 /*!**************************************************************************!*\
-  !*** ./resources/js/components/Page/JoinUs.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/components/Page/Refund.vue?vue&type=script&lang=js& ***!
   \**************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./JoinUs.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Refund_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Refund.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/Refund.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Refund_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css&":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css& ***!
-  \**********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=style&index=0&id=0bb49026&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_style_index_0_id_0bb49026_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Page/JoinUs.vue?vue&type=template&id=0bb49026&scoped=true&":
-/*!********************************************************************************************!*\
-  !*** ./resources/js/components/Page/JoinUs.vue?vue&type=template&id=0bb49026&scoped=true& ***!
-  \********************************************************************************************/
+/***/ "./resources/js/components/Page/Refund.vue?vue&type=template&id=3642c9fd&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/Page/Refund.vue?vue&type=template&id=3642c9fd& ***!
+  \********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_template_id_0bb49026_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./JoinUs.vue?vue&type=template&id=0bb49026&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/JoinUs.vue?vue&type=template&id=0bb49026&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_template_id_0bb49026_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Refund_vue_vue_type_template_id_3642c9fd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Refund.vue?vue&type=template&id=3642c9fd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Page/Refund.vue?vue&type=template&id=3642c9fd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Refund_vue_vue_type_template_id_3642c9fd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_JoinUs_vue_vue_type_template_id_0bb49026_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Refund_vue_vue_type_template_id_3642c9fd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
