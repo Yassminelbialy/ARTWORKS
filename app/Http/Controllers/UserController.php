@@ -27,6 +27,15 @@ class UserController extends Controller
         return response()->json(['success'=>'Status change successfully.']);
     }
 
+    public function changeStatus_2(Request $request)
+    {
+        $user = User::find($request->user_id);
+        $user->admin_role = $request->status;
+        $user->save();
+
+        return response()->json(['success'=>'Status change successfully.']);
+    }
+
 
 
 }
