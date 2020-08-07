@@ -6856,7 +6856,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.row[data-v-78547fe5]{\r\n    margin-left: 0;\r\n    margin-right: 0;\n}\n.col-lg-3[data-v-78547fe5],.col-sm-6[data-v-78547fe5]{\r\n    padding: 0;\n}\n@media (max-width: 991px){\n.footer-col-2[data-v-78547fe5] {\r\n    width: 91%;\r\n    margin-left: 5%;\n}\n}\n.lead[data-v-78547fe5]{\r\n    font-size: 16px!important;\n}\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.row[data-v-78547fe5]{\n    margin-left: 0;\n    margin-right: 0;\n}\n.col-lg-3[data-v-78547fe5],.col-sm-6[data-v-78547fe5]{\n    padding: 0;\n}\n@media (max-width: 991px){\n.footer-col-2[data-v-78547fe5] {\n    width: 91%;\n    margin-left: 5%;\n}\n}\n.lead[data-v-78547fe5]{\n    font-size: 16px!important;\n}\n\n\n", ""]);
 
 // exports
 
@@ -38744,7 +38744,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
- * vue-i18n v8.20.0 
+ * vue-i18n v8.19.0 
  * (c) 2020 kazuya kawaguchi
  * Released under the MIT License.
  */
@@ -39112,7 +39112,7 @@ var interpolationComponent = {
   functional: true,
   props: {
     tag: {
-      type: [String, Boolean, Object],
+      type: [String, Boolean],
       default: 'span'
     },
     path: {
@@ -39219,7 +39219,7 @@ var numberComponent = {
   functional: true,
   props: {
     tag: {
-      type: [String, Boolean, Object],
+      type: [String, Boolean],
       default: 'span'
     },
     value: {
@@ -40870,7 +40870,7 @@ Object.defineProperty(VueI18n, 'availabilities', {
 });
 
 VueI18n.install = install;
-VueI18n.version = '8.20.0';
+VueI18n.version = '8.19.0';
 
 /* harmony default export */ __webpack_exports__["default"] = (VueI18n);
 
@@ -40953,60 +40953,8 @@ var render = function() {
                 _c("li", { staticClass: "footer-title" }, [
                   _vm._v(
                     "\n                            " +
-                      _vm._s(_vm.$t("message.Limitworks")) +
-                      "\n                        "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("router-link", { attrs: { to: "/shop" } }, [
-                  _c("li", { staticClass: "footer-menu-item" }, [
-                    _c("a", { staticClass: "footer-menu-item-link" }, [
-                      _vm._v("  " + _vm._s(_vm.$t("message.shopfooter")))
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    attrs: {
-                      to: { path: "/about", query: { mydata: "product" } }
-                    }
-                  },
-                  [
-                    _c("li", { staticClass: "footer-menu-item" }, [
-                      _c("a", { staticClass: "footer-menu-item-link" }, [
-                        _vm._v("  " + _vm._s(_vm.$t("message.aboutfooter")))
-                      ])
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 col-lg-3 mb-2" }, [
-            _c(
-              "ul",
-              { staticClass: "footer-menu" },
-              [
-                _c("li", { staticClass: "footer-title" }, [
-                  _vm._v(
-                    "\n                            " +
                       _vm._s(_vm.$t("message.company")) +
                       "\n                        "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "footer-menu-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "footer-menu-item-link",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v(_vm._s(_vm.$t("message.carreerfooter")))]
                   )
                 ]),
                 _vm._v(" "),
@@ -56955,7 +56903,7 @@ var __assign = undefined && undefined.__assign || function () {
       }, this.computedIcon);
     },
     classes: function classes() {
-      var classes = __assign(__assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      var classes = __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-alert--border': Boolean(this.border),
         'v-alert--dense': this.dense,
         'v-alert--outlined': this.outlined,
@@ -57019,7 +56967,6 @@ var __assign = undefined && undefined.__assign || function () {
         attrs: {
           role: 'alert'
         },
-        on: this.listeners$,
         class: this.classes,
         style: this.styles,
         directives: [{
@@ -57287,7 +57234,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
       !this.value);
     },
     classes: function classes() {
-      return __assign(__assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-toolbar--collapse': this.collapse || this.collapseOnScroll,
         'v-app-bar': true,
         'v-app-bar--clipped': this.clippedLeft || this.clippedRight,
@@ -57371,7 +57318,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
       return _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.isProminent.call(this) || this.shrinkOnScroll;
     },
     styles: function styles() {
-      return __assign(__assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this)), {
+      return __assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this), {
         fontSize: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["convertToUnit"])(this.computedFontSize, 'rem'),
         marginTop: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["convertToUnit"])(this.computedMarginTop),
         transform: "translateY(" + Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["convertToUnit"])(this.computedTransform) + ")",
@@ -57491,7 +57438,7 @@ var __assign = undefined && undefined.__assign || function () {
         data = _a.data;
     var d = Object.assign(data, {
       staticClass: ("v-app-bar__nav-icon " + (data.staticClass || '')).trim(),
-      props: __assign(__assign({}, props), {
+      props: __assign({}, props, {
         icon: true
       }),
       on: listeners
@@ -57581,7 +57528,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 
-var defaultMenuProps = __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["defaultMenuProps"]), {
+var defaultMenuProps = __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["defaultMenuProps"], {
   offsetY: true,
   offsetOverflow: true,
   transition: false
@@ -57626,7 +57573,7 @@ var defaultMenuProps = __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-autocomplete': true,
         'v-autocomplete--is-selecting-index': this.selectedIndex > -1
       });
@@ -57687,7 +57634,7 @@ var defaultMenuProps = __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_
     $_menuProps: function $_menuProps() {
       var props = _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.$_menuProps.call(this);
       props.contentClass = ("v-autocomplete__content " + (props.contentClass || '')).trim();
-      return __assign(__assign({}, defaultMenuProps), props);
+      return __assign({}, defaultMenuProps, props);
     },
     searchIsDirty: function searchIsDirty() {
       return this.internalSearch != null && this.internalSearch !== '';
@@ -57702,7 +57649,7 @@ var defaultMenuProps = __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_
     },
     listData: function listData() {
       var data = _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.listData.call(this);
-      data.props = __assign(__assign({}, data.props), {
+      data.props = __assign({}, data.props, {
         items: this.virtualizedItems,
         noFilter: this.noFilter || !this.isSearching || !this.filteredItems.length,
         searchInput: this.internalSearch
@@ -58373,7 +58320,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-banner--has-icon': this.hasIcon,
         'v-banner--is-mobile': this.isMobile,
         'v-banner--single-line': this.singleLine,
@@ -58601,7 +58548,7 @@ var __assign = undefined && undefined.__assign || function () {
       };
     },
     styles: function styles() {
-      return __assign(__assign({}, this.measurableStyles), {
+      return __assign({}, this.measurableStyles, {
         transform: this.isActive ? 'none' : 'translateY(100%)'
       });
     }
@@ -58731,7 +58678,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VDialog_VDialog__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VDialog_VDialog__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-bottom-sheet': true,
         'v-bottom-sheet--inset': this.inset
       });
@@ -58943,8 +58890,8 @@ var __assign = undefined && undefined.__assign || function () {
         tag = _a.tag,
         data = _a.data;
 
-    return h('li', [h(tag, __assign(__assign({}, data), {
-      attrs: __assign(__assign({}, data.attrs), {
+    return h('li', [h(tag, __assign({}, data, {
+      attrs: __assign({}, data.attrs, {
         'aria-current': this.isActive && this.isLink ? 'page' : undefined
       })
     }), this.$slots.default)]);
@@ -59116,9 +59063,9 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign(__assign(__assign(__assign({
+      return __assign({
         'v-btn': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this)), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this), {
         'v-btn--absolute': this.absolute,
         'v-btn--block': this.block,
         'v-btn--bottom': this.bottom,
@@ -59139,7 +59086,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
         'v-btn--text': this.text,
         'v-btn--tile': this.tile,
         'v-btn--top': this.top
-      }), this.themeClasses), this.groupClasses), this.elevationClasses), this.sizeableClasses);
+      }, this.themeClasses, this.groupClasses, this.elevationClasses, this.sizeableClasses);
     },
     contained: function contained() {
       return Boolean(!this.isFlat && !this.depressed && // Contained class only adds elevation
@@ -59147,12 +59094,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
       !this.elevation);
     },
     computedRipple: function computedRipple() {
-      var _a;
-
       var defaultRipple = this.icon || this.fab ? {
         circle: true
       } : true;
-      if (this.disabled) return false;else return (_a = this.ripple) !== null && _a !== void 0 ? _a : defaultRipple;
+      if (this.disabled) return false;else return this.ripple != null ? this.ripple : defaultRipple;
     },
     isFlat: function isFlat() {
       return Boolean(this.icon || this.text || this.outlined);
@@ -59303,7 +59248,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign({}, _mixins_button_group__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _mixins_button_group__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-btn-toggle': true,
         'v-btn-toggle--borderless': this.borderless,
         'v-btn-toggle--dense': this.dense,
@@ -59311,7 +59256,7 @@ var __assign = undefined && undefined.__assign || function () {
         'v-btn-toggle--rounded': this.rounded,
         'v-btn-toggle--shaped': this.shaped,
         'v-btn-toggle--tile': this.tile
-      }), this.themeClasses);
+      }, this.themeClasses);
     }
   },
   methods: {
@@ -59391,7 +59336,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (_mixins_calendar_with_events__WEBPACK_IMPORTED_MODULE_0__["default"].extend({
   name: 'v-calendar',
-  props: __assign(__assign(__assign(__assign({}, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].calendar), _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].weeks), _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].intervals), _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].category),
+  props: __assign({}, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].calendar, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].weeks, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].intervals, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].category),
   data: function data() {
     return {
       lastStart: null,
@@ -59725,7 +59670,7 @@ var __assign = undefined && undefined.__assign || function () {
       class: {
         'v-calendar-events': !this.noEvents
       },
-      props: __assign(__assign({}, this.$props), {
+      props: __assign({}, this.$props, {
         start: start.date,
         end: end.date,
         maxDays: maxDays,
@@ -59739,7 +59684,7 @@ var __assign = undefined && undefined.__assign || function () {
         name: 'resize',
         value: this.updateEventVisibility
       }],
-      on: __assign(__assign({}, this.$listeners), {
+      on: __assign({}, this.$listeners, {
         'click:date': function clickDate(day) {
           if (_this.$listeners['input']) {
             _this.$emit('input', day.date);
@@ -59829,9 +59774,9 @@ var __assign = undefined && undefined.__assign || function () {
         staticClass: 'v-calendar-category__columns'
       };
 
-      var scope = __assign(__assign({
+      var scope = __assign({
         week: this.days
-      }, day), {
+      }, day, {
         index: index
       });
 
@@ -59841,7 +59786,7 @@ var __assign = undefined && undefined.__assign || function () {
       return [this.$createElement('div', data, children)];
     },
     getCategoryScope: function getCategoryScope(scope, category) {
-      return __assign(__assign({}, scope), {
+      return __assign({}, scope, {
         category: category === this.categoryForInvalid ? null : category
       });
     },
@@ -60047,9 +59992,9 @@ var __spread = undefined && undefined.__spread || function () {
       var _this = this;
 
       return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["getSlot"])(this, 'day-header', function () {
-        return __assign(__assign({
+        return __assign({
           week: _this.days
-        }, day), {
+        }, day, {
           index: index
         });
       }) || [];
@@ -60984,8 +60929,6 @@ var MINUTES_IN_DAY = 1440;
     genEvent: function genEvent(event, scopeInput, timedEvent, data) {
       var _this = this;
 
-      var _a;
-
       var slot = this.$scopedSlots.event;
       var text = this.eventTextColorFunction(event.input);
       var background = this.eventColorFunction(event.input);
@@ -61014,7 +60957,7 @@ var MINUTES_IN_DAY = 1440;
         return name;
       };
 
-      var scope = __assign(__assign({}, scopeInput), {
+      var scope = __assign({}, scopeInput, {
         event: event.input,
         outside: scopeInput.day.outside,
         singline: singline,
@@ -61026,13 +60969,13 @@ var MINUTES_IN_DAY = 1440;
 
       return this.$createElement('div', this.setTextColor(text, this.setBackgroundColor(background, __assign({
         on: this.getDefaultMouseEventHandlers(':event', function (nativeEvent) {
-          return __assign(__assign({}, scope), {
+          return __assign({}, scope, {
             nativeEvent: nativeEvent
           });
         }),
         directives: [{
           name: 'ripple',
-          value: (_a = this.eventRipple) !== null && _a !== void 0 ? _a : true
+          value: this.eventRipple != null ? this.eventRipple : true
         }]
       }, data))), slot ? slot(scope) : [this.genName(eventSummary)]);
     },
@@ -61060,8 +61003,6 @@ var MINUTES_IN_DAY = 1440;
     genMore: function genMore(day) {
       var _this = this;
 
-      var _a;
-
       var eventHeight = this.eventHeight;
       var eventMarginBottom = this.eventMarginBottom;
       return this.$createElement('div', {
@@ -61075,7 +61016,7 @@ var MINUTES_IN_DAY = 1440;
         },
         directives: [{
           name: 'ripple',
-          value: (_a = this.eventRipple) !== null && _a !== void 0 ? _a : true
+          value: this.eventRipple != null ? this.eventRipple : true
         }],
         on: {
           click: function click() {
@@ -61167,7 +61108,7 @@ var MINUTES_IN_DAY = 1440;
       var slotDay = slots.day;
       var slotDayHeader = slots['day-header'];
       var slotDayBody = slots['day-body'];
-      return __assign(__assign({}, slots), {
+      return __assign({}, slots, {
         day: function day(_day) {
           var children = getSlotChildren(_day, _this.getEventsForDay, _this.genDayEvent, false);
 
@@ -61816,11 +61757,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common */ "./src/components/VCalendar/modes/common.ts");
 /* harmony import */ var _util_timestamp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/timestamp */ "./src/components/VCalendar/util/timestamp.ts");
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -61829,7 +61769,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 
 var __read = undefined && undefined.__read || function (o, n) {
@@ -63257,16 +63196,16 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign({
+      return __assign({
         'v-card': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this), {
         'v-card--flat': this.flat,
         'v-card--hover': this.hover,
         'v-card--link': this.isClickable,
         'v-card--loading': this.loading,
         'v-card--disabled': this.disabled,
         'v-card--raised': this.raised
-      }), _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this));
+      }, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this));
     },
     styles: function styles() {
       var style = __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this));
@@ -63449,7 +63388,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-carousel': true,
         'v-carousel--hide-delimiter-background': this.hideDelimiterBackground,
         'v-carousel--vertical-delimiters': this.isVertical
@@ -63627,7 +63566,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_V
     genDefaultSlot: function genDefaultSlot() {
       return [this.$createElement(_VImg__WEBPACK_IMPORTED_MODULE_1__["VImg"], {
         staticClass: 'v-carousel__item',
-        props: __assign(__assign({}, this.$attrs), {
+        props: __assign({}, this.$attrs, {
           height: this.windowGroup.internalHeight
         }),
         on: this.$listeners,
@@ -63757,7 +63696,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this), {
         'v-input--selection-controls': true,
         'v-input--checkbox': true,
         'v-input--indeterminate': this.inputIndeterminate
@@ -63810,7 +63749,7 @@ var __assign = undefined && undefined.__assign || function () {
           dark: this.dark,
           light: this.light
         }
-      }), this.computedIcon), this.genInput('checkbox', __assign(__assign({}, this.attrs$), {
+      }), this.computedIcon), this.genInput('checkbox', __assign({}, this.attrs$, {
         'aria-checked': this.inputIndeterminate ? 'mixed' : this.isActive.toString()
       })), this.genRipple(this.setTextColor(this.rippleState))]);
     },
@@ -63884,7 +63823,7 @@ var __assign = undefined && undefined.__assign || function () {
   directives: {
     ripple: _directives_ripple__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: __assign(__assign(__assign({}, _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.props), _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__["default"].options.props), {
+  props: __assign({}, _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.props, _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__["default"].options.props, {
     disabled: Boolean,
     ripple: {
       type: Boolean,
@@ -64119,9 +64058,9 @@ var __read = undefined && undefined.__read || function (o, n) {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign(__assign(__assign({
+      return __assign({
         'v-chip': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_8__["default"].options.computed.classes.call(this)), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_8__["default"].options.computed.classes.call(this), {
         'v-chip--clickable': this.isClickable,
         'v-chip--disabled': this.disabled,
         'v-chip--draggable': this.draggable,
@@ -64131,7 +64070,7 @@ var __read = undefined && undefined.__read || function (o, n) {
         'v-chip--outlined': this.outlined,
         'v-chip--pill': this.pill,
         'v-chip--removable': this.hasClose
-      }), this.themeClasses), this.sizeableClasses), this.groupClasses);
+      }, this.themeClasses, this.sizeableClasses, this.groupClasses);
     },
     hasClose: function hasClose() {
       return Boolean(this.close);
@@ -64207,7 +64146,7 @@ var __read = undefined && undefined.__read || function (o, n) {
         tag = _a.tag,
         data = _a.data;
 
-    data.attrs = __assign(__assign({}, data.attrs), {
+    data.attrs = __assign({}, data.attrs, {
       draggable: this.draggable ? 'true' : undefined,
       tabindex: this.chipGroup && !this.disabled ? 0 : data.attrs.tabindex
     });
@@ -64304,7 +64243,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__["BaseSlideGroup"].options.computed.classes.call(this)), {
+      return __assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__["BaseSlideGroup"].options.computed.classes.call(this), {
         'v-chip-group': true,
         'v-chip-group--column': this.column
       });
@@ -64545,9 +64484,9 @@ var __assign = undefined && undefined.__assign || function () {
   render: function render(h) {
     return h(_VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"], {
       staticClass: 'v-color-picker',
-      class: __assign(__assign({
+      class: __assign({
         'v-color-picker--flat': this.flat
-      }, this.themeClasses), this.elevationClasses),
+      }, this.themeClasses, this.elevationClasses),
       props: {
         maxWidth: this.width
       }
@@ -65033,7 +64972,7 @@ var __assign = undefined && undefined.__assign || function () {
         },
         on: {
           input: function input(val) {
-            return _this.color.alpha !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign(__assign({}, _this.color.hsva), {
+            return _this.color.alpha !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign({}, _this.color.hsva, {
               a: val
             })));
           }
@@ -65069,7 +65008,7 @@ var __assign = undefined && undefined.__assign || function () {
         },
         on: {
           input: function input(val) {
-            return _this.color.hue !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign(__assign({}, _this.color.hsva), {
+            return _this.color.hue !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign({}, _this.color.hsva, {
               h: val
             })));
           }
@@ -65077,9 +65016,9 @@ var __assign = undefined && undefined.__assign || function () {
       });
     },
     genTrack: function genTrack(options) {
-      return this.$createElement(_VSlider_VSlider__WEBPACK_IMPORTED_MODULE_1__["default"], __assign(__assign({
+      return this.$createElement(_VSlider_VSlider__WEBPACK_IMPORTED_MODULE_1__["default"], __assign({
         class: 'v-color-picker__track'
-      }, options), {
+      }, options, {
         props: __assign({
           disabled: this.disabled
         }, options.props)
@@ -65373,15 +65312,15 @@ function parseColor(color, oldColor) {
     var a = color.hasOwnProperty('a') ? parseFloat(color.a) : 1;
 
     if (has(color, ['r', 'g', 'b'])) {
-      if (oldColor && color === oldColor.rgba) return oldColor;else return fromRGBA(__assign(__assign({}, color), {
+      if (oldColor && color === oldColor.rgba) return oldColor;else return fromRGBA(__assign({}, color, {
         a: a
       }));
     } else if (has(color, ['h', 's', 'l'])) {
-      if (oldColor && color === oldColor.hsla) return oldColor;else return fromHSLA(__assign(__assign({}, color), {
+      if (oldColor && color === oldColor.hsla) return oldColor;else return fromHSLA(__assign({}, color, {
         a: a
       }));
     } else if (has(color, ['h', 's', 'v'])) {
-      if (oldColor && color === oldColor.hsva) return oldColor;else return fromHSVA(__assign(__assign({}, color), {
+      if (oldColor && color === oldColor.hsva) return oldColor;else return fromHSVA(__assign({}, color, {
         a: a
       }));
     }
@@ -65535,7 +65474,7 @@ var __assign = undefined && undefined.__assign || function () {
       var chip = _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genChipSelection.call(this, item, index); // Allow user to update an existing value
 
       if (this.multiple) {
-        chip.componentOptions.listeners = __assign(__assign({}, chip.componentOptions.listeners), {
+        chip.componentOptions.listeners = __assign({}, chip.componentOptions.listeners, {
           dblclick: function dblclick() {
             _this.editingIndex = index;
             _this.internalSearch = _this.getText(item);
@@ -65607,7 +65546,7 @@ var __assign = undefined && undefined.__assign || function () {
       }
     },
     setValue: function setValue(value) {
-      _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.setValue.call(this, value !== null && value !== void 0 ? value : this.internalSearch);
+      _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.setValue.call(this, value != null ? value : this.internalSearch);
     },
     updateEditing: function updateEditing() {
       var value = this.internalValue.slice();
@@ -66261,7 +66200,7 @@ var __spread = undefined && undefined.__spread || function () {
       });
     },
     updateOptions: function updateOptions(options) {
-      this.internalOptions = __assign(__assign(__assign({}, this.internalOptions), options), {
+      this.internalOptions = __assign({}, this.internalOptions, options, {
         page: this.serverItemsLength < 0 ? Math.max(1, Math.min(options.page || this.internalOptions.page, this.pageCount)) : options.page || this.internalOptions.page
       });
     },
@@ -66607,7 +66546,7 @@ var __read = undefined && undefined.__read || function (o, n) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_mixins_mobile__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]).extend({
   name: 'v-data-iterator',
-  props: __assign(__assign({}, _VData__WEBPACK_IMPORTED_MODULE_0__["VData"].options.props), {
+  props: __assign({}, _VData__WEBPACK_IMPORTED_MODULE_0__["VData"].options.props, {
     itemKey: {
       type: String,
       default: 'id'
@@ -66625,7 +66564,7 @@ var __read = undefined && undefined.__read || function (o, n) {
         return [];
       }
     },
-    mobileBreakpoint: __assign(__assign({}, _mixins_mobile__WEBPACK_IMPORTED_MODULE_2__["default"].options.props.mobileBreakpoint), {
+    mobileBreakpoint: __assign({}, _mixins_mobile__WEBPACK_IMPORTED_MODULE_2__["default"].options.props.mobileBreakpoint, {
       default: 600
     }),
     singleExpand: Boolean,
@@ -66851,7 +66790,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       if (empty) return [empty];
 
       if (this.$scopedSlots.default) {
-        return this.$scopedSlots.default(__assign(__assign({}, props), {
+        return this.$scopedSlots.default(__assign({}, props, {
           isSelected: this.isSelected,
           select: this.select,
           isExpanded: this.isExpanded,
@@ -66870,7 +66809,7 @@ var __read = undefined && undefined.__read || function (o, n) {
     genFooter: function genFooter(props) {
       if (this.hideDefaultFooter) return null;
       var data = {
-        props: __assign(__assign({}, this.sanitizedFooterProps), {
+        props: __assign({}, this.sanitizedFooterProps, {
           options: props.options,
           pagination: props.pagination
         }),
@@ -66886,7 +66825,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       }, data));
     },
     genDefaultScopedSlot: function genDefaultScopedSlot(props) {
-      var outerProps = __assign(__assign({}, props), {
+      var outerProps = __assign({}, props, {
         someItems: this.someItems,
         everyItem: this.everyItem,
         toggleSelectAll: this.toggleSelectAll
@@ -67052,7 +66991,7 @@ var __assign = undefined && undefined.__assign || function () {
         class: classes
       }, mobileRowChildren);
     });
-    return h('tr', __assign(__assign({}, data), {
+    return h('tr', __assign({}, data, {
       staticClass: 'v-data-table__mobile-table-row'
     }), columns);
   }
@@ -67416,18 +67355,18 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
         var index = headers.findIndex(function (h) {
           return h.value === 'data-table-select';
         });
-        if (index < 0) headers.unshift(__assign(__assign({}, defaultHeader), {
+        if (index < 0) headers.unshift(__assign({}, defaultHeader, {
           value: 'data-table-select'
-        }));else headers.splice(index, 1, __assign(__assign({}, defaultHeader), headers[index]));
+        }));else headers.splice(index, 1, __assign({}, defaultHeader, headers[index]));
       }
 
       if (this.showExpand) {
         var index = headers.findIndex(function (h) {
           return h.value === 'data-table-expand';
         });
-        if (index < 0) headers.unshift(__assign(__assign({}, defaultHeader), {
+        if (index < 0) headers.unshift(__assign({}, defaultHeader, {
           value: 'data-table-expand'
-        }));else headers.splice(index, 1, __assign(__assign({}, defaultHeader), headers[index]));
+        }));else headers.splice(index, 1, __assign({}, defaultHeader, headers[index]));
       }
 
       return headers;
@@ -67544,7 +67483,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
     },
     genHeaders: function genHeaders(props) {
       var data = {
-        props: __assign(__assign({}, this.sanitizedHeaderProps), {
+        props: __assign({}, this.sanitizedHeaderProps, {
           headers: this.computedHeaders,
           options: props.options,
           mobile: this.isMobile,
@@ -67564,7 +67503,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 
       if (!this.hideDefaultHeader) {
         var scopedSlots = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPrefixedScopedSlots"])('header.', this.$scopedSlots);
-        children.push(this.$createElement(_VDataTableHeader__WEBPACK_IMPORTED_MODULE_4__["default"], __assign(__assign({}, data), {
+        children.push(this.$createElement(_VDataTableHeader__WEBPACK_IMPORTED_MODULE_4__["default"], __assign({}, data, {
           scopedSlots: scopedSlots
         })));
       }
@@ -67691,7 +67630,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 
       for (var i = 0; i < items.length; i++) {
         var item = items[i];
-        rows.push(this.$scopedSlots.item(__assign(__assign({}, this.createItemProps(item)), {
+        rows.push(this.$scopedSlots.item(__assign({}, this.createItemProps(item), {
           index: i
         })));
 
@@ -67788,7 +67727,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 
       return this.$createElement(this.isMobile ? _MobileRow__WEBPACK_IMPORTED_MODULE_10__["default"] : _Row__WEBPACK_IMPORTED_MODULE_6__["default"], {
         key: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getObjectValueByPath"])(item, this.itemKey),
-        class: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_16__["mergeClasses"])(__assign(__assign({}, classes), {
+        class: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_16__["mergeClasses"])(__assign({}, classes, {
           'v-data-table__selected': data.isSelected
         }), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPropertyFromItem"])(item, this.itemClass)),
         props: {
@@ -67814,7 +67753,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
       });
     },
     genBody: function genBody(props) {
-      var data = __assign(__assign({}, props), {
+      var data = __assign({}, props, {
         expand: this.expand,
         headers: this.computedHeaders,
         isExpanded: this.isExpanded,
@@ -67847,7 +67786,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
       var children = [Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getSlot"])(this, 'footer', data, true)];
 
       if (!this.hideDefaultFooter) {
-        children.push(this.$createElement(_VDataIterator__WEBPACK_IMPORTED_MODULE_2__["VDataFooter"], __assign(__assign({}, data), {
+        children.push(this.$createElement(_VDataIterator__WEBPACK_IMPORTED_MODULE_2__["VDataFooter"], __assign({}, data, {
           scopedSlots: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPrefixedScopedSlots"])('footer.', this.$scopedSlots)
         })));
       }
@@ -67891,7 +67830,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
     var _this = this;
 
     return this.$createElement(_VData__WEBPACK_IMPORTED_MODULE_1__["VData"], {
-      props: __assign(__assign({}, this.$props), {
+      props: __assign({}, this.$props, {
         customFilter: this.customFilterWithColumns,
         customSort: this.customSortWithHeaders,
         itemsPerPage: this.computedItemsPerPage
@@ -68004,7 +67943,7 @@ var __assign = undefined && undefined.__assign || function () {
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_7___default.a.extend({
   name: 'v-data-table-header',
   functional: true,
-  props: __assign(__assign({}, _mixins_header__WEBPACK_IMPORTED_MODULE_3__["default"].options.props), {
+  props: __assign({}, _mixins_header__WEBPACK_IMPORTED_MODULE_3__["default"].options.props, {
     mobile: Boolean
   }),
   render: function render(h, _a) {
@@ -68470,10 +68409,12 @@ __webpack_require__.r(__webpack_exports__);
         staticClass: 'v-small-dialog__content',
         on: {
           keydown: function keydown(e) {
+            var input = _this.$refs.content.querySelector('input');
+
             e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].esc && _this.cancel();
 
-            if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].enter) {
-              _this.save(_this.returnValue);
+            if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].enter && input) {
+              _this.save(input.value);
 
               _this.$emit('save');
             }
@@ -71137,7 +71078,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_10__["default"])(_
       };
 
       if (!this.fullscreen) {
-        data.style = __assign(__assign({}, data.style), {
+        data.style = __assign({}, data.style, {
           maxWidth: this.maxWidth === 'none' ? undefined : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_12__["convertToUnit"])(this.maxWidth),
           width: this.width === 'auto' ? undefined : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_12__["convertToUnit"])(this.width)
         });
@@ -71569,7 +71510,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_m
         name: 'ripple',
         value: this.ripple
       }],
-      on: __assign(__assign({}, this.$listeners), {
+      on: __assign({}, this.$listeners, {
         click: this.onClick,
         mousedown: function mousedown() {
           return _this.hasMousedown = true;
@@ -71643,7 +71584,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this)), {
+      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this), {
         'v-expansion-panels': true,
         'v-expansion-panels--accordion': this.accordion,
         'v-expansion-panels--flat': this.flat,
@@ -71863,7 +71804,7 @@ var __spread = undefined && undefined.__spread || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-file-input': true
       });
     },
@@ -72034,7 +71975,7 @@ var __spread = undefined && undefined.__spread || function () {
       var _this = this;
 
       var node = _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genTextFieldSlot.call(this);
-      node.data.on = __assign(__assign({}, node.data.on || {}), {
+      node.data.on = __assign({}, node.data.on || {}, {
         click: function click() {
           return _this.$refs.input.click();
         }
@@ -72155,7 +72096,7 @@ var __assign = undefined && undefined.__assign || function () {
       return this.inset ? 'insetFooter' : 'footer';
     },
     classes: function classes() {
-      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-footer--absolute': this.absolute,
         'v-footer--fixed': !this.absolute && (this.app || this.fixed),
         'v-footer--padless': this.padless,
@@ -72179,7 +72120,7 @@ var __assign = undefined && undefined.__assign || function () {
     },
     styles: function styles() {
       var height = parseInt(this.height);
-      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this)), {
+      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this), {
         height: isNaN(height) ? height : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(height),
         left: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(this.computedLeft),
         right: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(this.computedRight),
@@ -72522,22 +72463,22 @@ var cache = new Map();
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
   name: 'v-col',
   functional: true,
-  props: __assign(__assign(__assign(__assign(__assign(__assign({
+  props: __assign({
     cols: {
       type: [Boolean, String, Number],
       default: false
     }
-  }, breakpointProps), {
+  }, breakpointProps, {
     offset: {
       type: [String, Number],
       default: null
     }
-  }), offsetProps), {
+  }, offsetProps, {
     order: {
       type: [String, Number],
       default: null
     }
-  }), orderProps), {
+  }, orderProps, {
     alignSelf: {
       type: String,
       default: null,
@@ -72870,7 +72811,7 @@ var cache = new Map();
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
   name: 'v-row',
   functional: true,
-  props: __assign(__assign(__assign(__assign(__assign({
+  props: __assign({
     tag: {
       type: String,
       default: 'div'
@@ -72882,19 +72823,19 @@ var cache = new Map();
       default: null,
       validator: alignValidator
     }
-  }, alignProps), {
+  }, alignProps, {
     justify: {
       type: String,
       default: null,
       validator: justifyValidator
     }
-  }), justifyProps), {
+  }, justifyProps, {
     alignContent: {
       type: String,
       default: null,
       validator: alignContentValidator
     }
-  }), alignContentProps),
+  }, alignContentProps),
   render: function render(h, _a) {
     var _b;
 
@@ -73320,7 +73261,7 @@ var VIcon = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"])(_mixins
       return data;
     },
     applyColors: function applyColors(data) {
-      data.class = __assign(__assign({}, data.class), this.themeClasses);
+      data.class = __assign({}, data.class, this.themeClasses);
       this.setTextColor(this.color, data);
     },
     renderFontIcon: function renderFontIcon(icon, h) {
@@ -73352,7 +73293,7 @@ var VIcon = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"])(_mixins
     renderSvgIcon: function renderSvgIcon(icon, h) {
       var fontSize = this.getSize();
 
-      var wrapperData = __assign(__assign({}, this.getDefaultData()), {
+      var wrapperData = __assign({}, this.getDefaultData(), {
         style: fontSize ? {
           fontSize: fontSize,
           height: fontSize,
@@ -74738,11 +74679,10 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -74751,7 +74691,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Styles
 
 
@@ -74794,7 +74733,7 @@ var __values = undefined && undefined.__values || function (o) {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-list--dense': this.dense,
         'v-list--disabled': this.disabled,
         'v-list--flat': this.flat,
@@ -75019,7 +74958,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
           name: 'ripple',
           value: this.ripple
         }],
-        on: __assign(__assign({}, this.listeners$), {
+        on: __assign({}, this.listeners$, {
           click: this.click
         })
       }, [this.genPrependIcon(), this.$slots.activator, this.genAppendIcon()]);
@@ -75193,16 +75132,16 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_9__["default"])(_m
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign({
+      return __assign({
         'v-list-item': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this)), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this), {
         'v-list-item--dense': this.dense,
         'v-list-item--disabled': this.disabled,
         'v-list-item--link': this.isClickable && !this.inactive,
         'v-list-item--selectable': this.selectable,
         'v-list-item--three-line': this.threeLine,
         'v-list-item--two-line': this.twoLine
-      }), this.themeClasses);
+      }, this.themeClasses);
     },
     isClickable: function isClickable() {
       return Boolean(_mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.isClickable.call(this) || this.listItemGroup);
@@ -75248,8 +75187,8 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_9__["default"])(_m
         tag = _a.tag,
         data = _a.data;
 
-    data.attrs = __assign(__assign({}, data.attrs), this.genAttrs());
-    data[this.to ? 'nativeOn' : 'on'] = __assign(__assign({}, data[this.to ? 'nativeOn' : 'on']), {
+    data.attrs = __assign({}, data.attrs, this.genAttrs());
+    data[this.to ? 'nativeOn' : 'on'] = __assign({}, data[this.to ? 'nativeOn' : 'on'], {
       keydown: function keydown(e) {
         /* istanbul ignore else */
         if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_7__["keyCodes"].enter) _this.click(e);
@@ -75348,9 +75287,9 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({
+      return __assign({
         'v-list-item__avatar--horizontal': this.horizontal
-      }, _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this)), {
+      }, _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this), {
         'v-avatar--tile': this.tile || this.horizontal
       });
     }
@@ -75424,14 +75363,14 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this)), {
+      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this), {
         'v-list-item-group': true
       });
     }
   },
   methods: {
     genData: function genData() {
-      return this.setTextColor(this.color, __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.methods.genData.call(this)), {
+      return this.setTextColor(this.color, __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.methods.genData.call(this), {
         attrs: {
           role: 'listbox'
         }
@@ -75937,7 +75876,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       var attributes = _mixins_activatable__WEBPACK_IMPORTED_MODULE_2__["default"].options.methods.genActivatorAttributes.call(this);
 
       if (this.activeTile && this.activeTile.id) {
-        return __assign(__assign({}, attributes), {
+        return __assign({}, attributes, {
           'aria-activedescendant': this.activeTile.id
         });
       }
@@ -75993,11 +75932,11 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       var _this = this;
 
       var options = {
-        attrs: __assign(__assign({}, this.getScopeIdAttrs()), {
+        attrs: __assign({}, this.getScopeIdAttrs(), {
           role: 'role' in this.$attrs ? this.$attrs.role : 'menu'
         }),
         staticClass: 'v-menu__content',
-        class: __assign(__assign(__assign({}, this.rootThemeClasses), this.roundedClasses), (_a = {
+        class: __assign({}, this.rootThemeClasses, this.roundedClasses, (_a = {
           'v-menu__content--auto': this.auto,
           'v-menu__content--fixed': this.activatorFixed,
           menuable__content__active: this.isActive
@@ -76765,7 +76704,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VAutocomplete__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VAutocomplete__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this), {
         'v-overflow-btn': true,
         'v-overflow-btn--segmented': this.segmented,
         'v-overflow-btn--editable': this.editable
@@ -77568,11 +77507,11 @@ var __assign = undefined && undefined.__assign || function () {
   render: function render(h) {
     return h('div', {
       staticClass: 'v-picker v-card',
-      class: __assign(__assign({
+      class: __assign({
         'v-picker--flat': this.flat,
         'v-picker--landscape': this.landscape,
         'v-picker--full-width': this.fullWidth
-      }, this.themeClasses), this.elevationClasses)
+      }, this.themeClasses, this.elevationClasses)
     }, [this.$slots.title ? this.genTitle() : null, this.genBody(), this.$slots.actions ? this.genActions() : null]);
   }
 }));
@@ -78077,7 +78016,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../mixins/selectable */ "./src/mixins/selectable/index.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-/* harmony import */ var _util_mergeData__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../util/mergeData */ "./src/util/mergeData.ts");
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -78106,7 +78044,6 @@ var __assign = undefined && undefined.__assign || function () {
 
 
  // Utilities
-
 
 
 
@@ -78141,10 +78078,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({
+      return __assign({
         'v-radio--is-disabled': this.isDisabled,
         'v-radio--is-focused': this.isFocused
-      }, this.themeClasses), this.groupClasses);
+      }, this.themeClasses, this.groupClasses);
     },
     computedColor: function computedColor() {
       return _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__["default"].options.computed.computedColor.call(this);
@@ -78187,11 +78124,19 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
       return _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__["default"].options.methods.genInput.call(this, 'radio', args);
     },
     genLabel: function genLabel() {
+      var _this = this;
+
       if (!this.hasLabel) return null;
       return this.$createElement(_VLabel__WEBPACK_IMPORTED_MODULE_1__["default"], {
         on: {
-          // Label shouldn't cause the input to focus
-          click: _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__["prevent"]
+          click: function click(e) {
+            // Prevent label from
+            // causing the input
+            // to focus
+            e.preventDefault();
+
+            _this.onChange();
+          }
         },
         attrs: {
           for: this.computedId
@@ -78231,10 +78176,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
   render: function render(h) {
     var data = {
       staticClass: 'v-radio',
-      class: this.classes,
-      on: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_12__["mergeListeners"])({
-        click: this.onChange
-      }, this.listeners$)
+      class: this.classes
     };
     return h('div', data, [this.genRadio(), this.genLabel()]);
   }
@@ -78324,7 +78266,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__["default"])(_m
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this), {
         'v-input--selection-controls v-input--radio-group': true,
         'v-input--radio-group--column': this.column && !this.row,
         'v-input--radio-group--row': this.row
@@ -78490,7 +78432,7 @@ var __spread = undefined && undefined.__spread || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VSlider__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VSlider__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-input--range-slider': true
       });
     },
@@ -79124,11 +79066,10 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -79137,7 +79078,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Styles
 
 
@@ -79248,7 +79188,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       return this.filterDuplicates(this.cachedItems.concat(this.items));
     },
     classes: function classes() {
-      return __assign(__assign({}, _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this), {
         'v-select': true,
         'v-select--chips': this.hasChips,
         'v-select--chips--small': this.smallChips,
@@ -79294,7 +79234,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       var scopeId = this.$vnode && this.$vnode.context.$options._scopeId;
       var attrs = scopeId ? (_a = {}, _a[scopeId] = true, _a) : {};
       return {
-        attrs: __assign(__assign({}, attrs), {
+        attrs: __assign({}, attrs, {
           id: this.computedOwns
         }),
         props: {
@@ -79340,11 +79280,11 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
         }, {});
       }
 
-      return __assign(__assign(__assign({}, defaultMenuProps), {
+      return __assign({}, defaultMenuProps, {
         eager: this.eager,
         value: this.menuCanShow && this.isMenuActive,
         nudgeBottom: normalisedProps.offsetY ? 1 : 0
-      }), normalisedProps);
+      }, normalisedProps);
     }
   },
   watch: {
@@ -79536,7 +79476,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
     },
     genInputSlot: function genInputSlot() {
       var render = _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_6__["default"].options.methods.genInputSlot.call(this);
-      render.data.attrs = __assign(__assign({}, render.data.attrs), {
+      render.data.attrs = __assign({}, render.data.attrs, {
         role: 'button',
         'aria-haspopup': 'listbox',
         'aria-expanded': String(this.isMenuActive),
@@ -80148,7 +80088,7 @@ var __assign = undefined && undefined.__assign || function () {
       var scopedSlot = this.$scopedSlots.item({
         parent: parent,
         item: item,
-        attrs: __assign(__assign({}, tile.attrs), tile.props),
+        attrs: __assign({}, tile.attrs, tile.props),
         on: tile.on
       });
       return this.needsTile(scopedSlot) ? this.$createElement(_VList__WEBPACK_IMPORTED_MODULE_3__["VListItem"], tile, scopedSlot) : scopedSlot;
@@ -80304,11 +80244,11 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign({
+      return __assign({
         'v-sheet': true,
         'v-sheet--outlined': this.outlined,
         'v-sheet--shaped': this.shaped
-      }, this.themeClasses), this.elevationClasses), this.roundedClasses);
+      }, this.themeClasses, this.elevationClasses, this.roundedClasses);
     },
     styles: function styles() {
       return this.measurableStyles;
@@ -80450,11 +80390,11 @@ var __read = undefined && undefined.__read || function (o, n) {
       }, this.$attrs) : {};
     },
     classes: function classes() {
-      return __assign(__assign({
+      return __assign({
         'v-skeleton-loader--boilerplate': this.boilerplate,
         'v-skeleton-loader--is-loading': this.isLoading,
         'v-skeleton-loader--tile': this.tile
-      }, this.themeClasses), this.elevationClasses);
+      }, this.themeClasses, this.elevationClasses);
     },
     isLoading: function isLoading() {
       return !('default' in this.$scopedSlots) || this.loading;
@@ -80720,7 +80660,7 @@ var BaseSlideGroup = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"]
       return this.genTransition('prev');
     },
     classes: function classes() {
-      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__["BaseItemGroup"].options.computed.classes.call(this)), {
+      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__["BaseItemGroup"].options.computed.classes.call(this), {
         'v-slide-group': true,
         'v-slide-group--has-affixes': this.hasAffixes,
         'v-slide-group--is-overflowing': this.isOverflowing
@@ -80954,9 +80894,9 @@ var BaseSlideGroup = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"]
       var itemOffset = clientWidth + offsetLeft;
       var additionalOffset = clientWidth * 0.4;
 
-      if (offsetLeft <= currentScrollOffset) {
+      if (offsetLeft < currentScrollOffset) {
         currentScrollOffset = Math.max(offsetLeft - additionalOffset, 0);
-      } else if (totalWidth <= itemOffset) {
+      } else if (totalWidth < itemOffset) {
         currentScrollOffset = Math.min(currentScrollOffset - (totalWidth - itemOffset - additionalOffset), widths.content - widths.wrapper);
       }
 
@@ -81195,7 +81135,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-input__slider': true,
         'v-input__slider--vertical': this.vertical,
         'v-input__slider--inverse-label': this.inverseLabel
@@ -82245,7 +82185,7 @@ var __assign = undefined && undefined.__assign || function () {
     },
     genTrend: function genTrend() {
       return this.$createElement('svg', this.setTextColor(this.color, {
-        attrs: __assign(__assign({}, this.$attrs), {
+        attrs: __assign({}, this.$attrs, {
           display: 'block',
           'stroke-width': this._lineWidth || 1,
           viewBox: "0 0 " + this.width + " " + this.totalHeight
@@ -83259,7 +83199,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this), {
         'v-input--selection-controls v-input--switch': true,
         'v-input--switch--flat': this.flat,
         'v-input--switch--inset': this.inset
@@ -83294,7 +83234,7 @@ var __assign = undefined && undefined.__assign || function () {
     genSwitch: function genSwitch() {
       return this.$createElement('div', {
         staticClass: 'v-input--selection-controls__input'
-      }, [this.genInput('checkbox', __assign(__assign({}, this.attrs), this.attrs$)), this.genRipple(this.setTextColor(this.validationState, {
+      }, [this.genInput('checkbox', __assign({}, this.attrs, this.attrs$)), this.genRipple(this.setTextColor(this.validationState, {
         directives: [{
           name: 'touch',
           value: {
@@ -83524,11 +83464,11 @@ Object(_mixins_groupable__WEBPACK_IMPORTED_MODULE_0__["factory"])('tabsBar'), _m
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign({
+      return __assign({
         'v-tab': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-tab--disabled': this.disabled
-      }), this.groupClasses);
+      }, this.groupClasses);
     },
     value: function value() {
       var to = this.to || this.href || '';
@@ -83562,12 +83502,12 @@ Object(_mixins_groupable__WEBPACK_IMPORTED_MODULE_0__["factory"])('tabsBar'), _m
         tag = _a.tag,
         data = _a.data;
 
-    data.attrs = __assign(__assign({}, data.attrs), {
+    data.attrs = __assign({}, data.attrs, {
       'aria-selected': String(this.isActive),
       role: 'tab',
       tabindex: 0
     });
-    data.on = __assign(__assign({}, data.on), {
+    data.on = __assign({}, data.on, {
       keydown: function keydown(e) {
         if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].enter) _this.click(e);
 
@@ -83982,11 +83922,10 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -83995,7 +83934,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Extensions
 
 
@@ -84016,12 +83954,12 @@ var __values = undefined && undefined.__values || function (o) {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign(__assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_0__["BaseSlideGroup"].options.computed.classes.call(this)), {
+      return __assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_0__["BaseSlideGroup"].options.computed.classes.call(this), {
         'v-tabs-bar': true,
         'v-tabs-bar--is-mobile': this.isMobile,
         // TODO: Remove this and move to v-slide-group
         'v-tabs-bar--show-arrows': this.showArrows
-      }), this.themeClasses);
+      }, this.themeClasses);
     }
   },
   watch: {
@@ -84130,7 +84068,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this), {
         'v-tabs-items': true
       });
     },
@@ -84338,7 +84276,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
   },
   computed: {
     classes: function classes() {
-      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-text-field': true,
         'v-text-field--full-width': this.fullWidth,
         'v-text-field--prefix': this.prefix,
@@ -84384,9 +84322,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
       }
     },
     isDirty: function isDirty() {
-      var _a;
-
-      return ((_a = this.lazyValue) === null || _a === void 0 ? void 0 : _a.toString().length) > 0 || this.badInput;
+      return this.lazyValue != null && this.lazyValue.toString().length > 0 || this.badInput;
     },
     isEnclosed: function isEnclosed() {
       return this.filled || this.isSolo || this.outlined;
@@ -84605,7 +84541,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
         domProps: {
           value: this.type === 'number' && Object.is(this.lazyValue, -0) ? '-0' : this.lazyValue
         },
-        attrs: __assign(__assign({}, this.attrs$), {
+        attrs: __assign({}, this.attrs$, {
           autofocus: this.autofocus,
           disabled: this.isDisabled,
           id: this.computedId,
@@ -85639,7 +85575,7 @@ var __assign = undefined && undefined.__assign || function () {
       class: __assign({
         'v-time-picker-clock--indeterminate': this.value == null
       }, this.themeClasses),
-      on: this.readonly || this.disabled ? undefined : {
+      on: this.readonly || this.disabled ? undefined : Object.assign({
         mousedown: this.onMouseDown,
         mouseup: this.onMouseUp,
         mouseleave: function mouseleave(e) {
@@ -85649,14 +85585,11 @@ var __assign = undefined && undefined.__assign || function () {
         touchend: this.onMouseUp,
         mousemove: this.onDragMove,
         touchmove: this.onDragMove
-      },
+      }, this.scrollable ? {
+        wheel: this.wheel
+      } : {}),
       ref: 'clock'
     };
-
-    if (this.scrollable && data.on) {
-      data.on.wheel = this.wheel;
-    }
-
     return h('div', data, [h('div', {
       staticClass: 'v-time-picker-clock__inner',
       ref: 'innerClock'
@@ -86149,7 +86082,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       return 64;
     },
     classes: function classes() {
-      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
         'v-toolbar': true,
         'v-toolbar--absolute': this.absolute,
         'v-toolbar--bottom': this.bottom,
@@ -86169,7 +86102,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       return this.prominent;
     },
     styles: function styles() {
-      return __assign(__assign({}, this.measurableStyles), {
+      return __assign({}, this.measurableStyles, {
         height: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["convertToUnit"])(this.computedHeight)
       });
     }
@@ -86339,7 +86272,10 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       default: 'span'
     },
-    transition: String
+    transition: String,
+    zIndex: {
+      default: null
+    }
   },
   data: function data() {
     return {
@@ -86601,11 +86537,10 @@ var __spread = undefined && undefined.__spread || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -86614,7 +86549,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Styles
 
 
@@ -87870,7 +87804,7 @@ var __assign = undefined && undefined.__assign || function () {
       return this.transitionCount > 0;
     },
     classes: function classes() {
-      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_4__["BaseItemGroup"].options.computed.classes.call(this)), {
+      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_4__["BaseItemGroup"].options.computed.classes.call(this), {
         'v-window--show-arrows-on-hover': this.showArrowsOnHover
       });
     },
@@ -88909,15 +88843,17 @@ __webpack_require__.r(__webpack_exports__);
       el._parent = el.parentNode;
       el._initialStyle = (_a = {
         transition: el.style.transition,
+        visibility: el.style.visibility,
         overflow: el.style.overflow
       }, _a[sizeProperty] = el.style[sizeProperty], _a);
     },
     enter: function enter(el) {
       var initialStyle = el._initialStyle;
-      el.style.setProperty('transition', 'none', 'important'); // Hide overflow to account for collapsed margins in the calculated height
-
-      el.style.overflow = 'hidden';
       var offset = el[offsetProperty] + "px";
+      el.style.setProperty('transition', 'none', 'important');
+      el.style.visibility = 'hidden';
+      el.style.visibility = initialStyle.visibility;
+      el.style.overflow = 'hidden';
       el.style[sizeProperty] = '0';
       void el.offsetHeight; // force reflow
 
@@ -88938,6 +88874,7 @@ __webpack_require__.r(__webpack_exports__);
 
       el._initialStyle = (_a = {
         transition: '',
+        visibility: '',
         overflow: el.style.overflow
       }, _a[sizeProperty] = el.style[sizeProperty], _a);
       el.style.overflow = 'hidden';
@@ -90002,7 +89939,7 @@ function () {
 
   Vuetify.install = _install__WEBPACK_IMPORTED_MODULE_0__["install"];
   Vuetify.installed = false;
-  Vuetify.version = "2.3.7";
+  Vuetify.version = "2.3.6";
   Vuetify.config = {
     silent: false
   };
@@ -90121,7 +90058,7 @@ function install(Vue, args) {
       var options = this.$options;
 
       if (options.vuetify) {
-        options.vuetify.init(this, this.$ssrContext);
+        options.vuetify.init(this, options.ssrContext);
         this.$vuetify = Vue.observable(options.vuetify.framework);
       } else {
         this.$vuetify = options.parent && options.parent.$vuetify || this;
@@ -93059,11 +92996,10 @@ __webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -93072,7 +93008,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Mixins
 
 
@@ -93615,12 +93550,12 @@ var __read = undefined && undefined.__read || function (o, n) {
       }
 
       if (Object(_util_colorUtils__WEBPACK_IMPORTED_MODULE_2__["isCssColor"])(color)) {
-        data.style = __assign(__assign({}, data.style), {
+        data.style = __assign({}, data.style, {
           'background-color': "" + color,
           'border-color': "" + color
         });
       } else if (color) {
-        data.class = __assign(__assign({}, data.class), (_a = {}, _a[color] = true, _a));
+        data.class = __assign({}, data.class, (_a = {}, _a[color] = true, _a));
       }
 
       return data;
@@ -93647,7 +93582,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       }
 
       if (Object(_util_colorUtils__WEBPACK_IMPORTED_MODULE_2__["isCssColor"])(color)) {
-        data.style = __assign(__assign({}, data.style), {
+        data.style = __assign({}, data.style, {
           color: "" + color,
           'caret-color': "" + color
         });
@@ -93656,7 +93591,7 @@ var __read = undefined && undefined.__read || function (o, n) {
             colorName = _b[0],
             colorModifier = _b[1];
 
-        data.class = __assign(__assign({}, data.class), (_a = {}, _a[colorName + '--text'] = true, _a));
+        data.class = __assign({}, data.class, (_a = {}, _a[colorName + '--text'] = true, _a));
 
         if (colorModifier) {
           data.class['text--' + colorModifier] = true;
@@ -94085,7 +94020,8 @@ __webpack_require__.r(__webpack_exports__);
 // Mixins
 
 function factory(namespace, child, parent) {
-  return Object(_registrable__WEBPACK_IMPORTED_MODULE_0__["inject"])(namespace, child, parent).extend({
+  // TODO: ts 3.4 broke directly returning this
+  var R = Object(_registrable__WEBPACK_IMPORTED_MODULE_0__["inject"])(namespace, child, parent).extend({
     name: 'groupable',
     props: {
       activeClass: {
@@ -94122,6 +94058,7 @@ function factory(namespace, child, parent) {
       }
     }
   });
+  return R;
 }
 /* eslint-disable-next-line no-redeclare */
 
@@ -95267,6 +95204,10 @@ function provide(namespace, self) {
 
   return vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
     name: 'registrable-provide',
+    methods: self ? {} : {
+      register: null,
+      unregister: null
+    },
     provide: function provide() {
       var _a;
 
@@ -95370,8 +95311,12 @@ __webpack_require__.r(__webpack_exports__);
           center: true
         }
       });
+      data.on = Object.assign({
+        click: this.onChange
+      }, this.$listeners);
       return this.$createElement('div', data);
-    }
+    },
+    onChange: function onChange() {}
   }
 }));
 
@@ -95389,11 +95334,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -95402,7 +95346,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 
 
@@ -95528,9 +95471,7 @@ var __assign = undefined && undefined.__assign || function () {
       return classes;
     },
     computedRipple: function computedRipple() {
-      var _a;
-
-      return (_a = this.ripple) !== null && _a !== void 0 ? _a : !this.disabled && this.isClickable;
+      return this.ripple != null ? this.ripple : !this.disabled && this.isClickable;
     },
     isClickable: function isClickable() {
       if (this.disabled) return false;
@@ -95566,7 +95507,7 @@ var __assign = undefined && undefined.__assign || function () {
           name: 'ripple',
           value: this.computedRipple
         }]
-      }, _a[this.to ? 'nativeOn' : 'on'] = __assign(__assign({}, this.$listeners), {
+      }, _a[this.to ? 'nativeOn' : 'on'] = __assign({}, this.$listeners, {
         click: this.click
       }), _a.ref = 'link', _a);
 
@@ -95738,12 +95679,11 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************!*\
   !*** ./src/mixins/selectable/index.ts ***!
   \****************************************/
-/*! exports provided: prevent, default */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prevent", function() { return prevent; });
 /* harmony import */ var _components_VInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/VInput */ "./src/components/VInput/index.ts");
 /* harmony import */ var _rippleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../rippleable */ "./src/mixins/rippleable/index.ts");
 /* harmony import */ var _comparable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comparable */ "./src/mixins/comparable/index.ts");
@@ -95755,9 +95695,6 @@ __webpack_require__.r(__webpack_exports__);
  // Utilities
 
 
-function prevent(e) {
-  e.preventDefault();
-}
 /* @vue/component */
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_components_VInput__WEBPACK_IMPORTED_MODULE_0__["default"], _rippleable__WEBPACK_IMPORTED_MODULE_1__["default"], _comparable__WEBPACK_IMPORTED_MODULE_2__["default"]).extend({
@@ -95827,11 +95764,19 @@ function prevent(e) {
   },
   methods: {
     genLabel: function genLabel() {
+      var _this = this;
+
       var label = _components_VInput__WEBPACK_IMPORTED_MODULE_0__["default"].options.methods.genLabel.call(this);
       if (!label) return label;
       label.data.on = {
-        // Label shouldn't cause the input to focus
-        click: prevent
+        click: function click(e) {
+          // Prevent label from
+          // causing the input
+          // to focus
+          e.preventDefault();
+
+          _this.onChange();
+        }
       };
       return label;
     },
@@ -95852,18 +95797,13 @@ function prevent(e) {
           blur: this.onBlur,
           change: this.onChange,
           focus: this.onFocus,
-          keydown: this.onKeydown,
-          click: prevent
+          keydown: this.onKeydown
         },
         ref: 'input'
       });
     },
     onBlur: function onBlur() {
       this.isFocused = false;
-    },
-    onClick: function onClick(e) {
-      this.onChange();
-      this.$emit('click', e);
     },
     onChange: function onChange() {
       var _this = this;
@@ -96122,7 +96062,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 function functionalThemeClasses(context) {
-  var vm = __assign(__assign({}, context.props), context.injections);
+  var vm = __assign({}, context.props, context.injections);
 
   var isDark = Themeable.options.computed.isDark.call(vm);
   return Themeable.options.computed.themeClasses.call({
@@ -98063,7 +98003,7 @@ function (_super) {
 
       this.checkOrCreateStyleElement() && (this.styleEl.innerHTML = val);
     },
-    enumerable: false,
+    enumerable: true,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "dark", {
@@ -98077,7 +98017,7 @@ function (_super) {
 
       oldDark != null && this.applyTheme();
     },
-    enumerable: false,
+    enumerable: true,
     configurable: true
   }); // Apply current theme default
   // only called on client side
@@ -98248,7 +98188,7 @@ function (_super) {
       var target = this.dark ? 'dark' : 'light';
       return this.themes[target];
     },
-    enumerable: false,
+    enumerable: true,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "generatedStyles", {
@@ -98278,14 +98218,14 @@ function (_super) {
 
       return css;
     },
-    enumerable: false,
+    enumerable: true,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "parsedTheme", {
     get: function get() {
       return _utils__WEBPACK_IMPORTED_MODULE_1__["parse"](this.currentTheme || {}, undefined, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["getNestedValue"])(this.options, ['variations'], true));
     },
-    enumerable: false,
+    enumerable: true,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "isVueMeta23", {
@@ -98294,7 +98234,7 @@ function (_super) {
     get: function get() {
       return typeof this.vueMeta.addApp === 'function';
     },
-    enumerable: false,
+    enumerable: true,
     configurable: true
   });
   Theme.property = 'theme';
@@ -98864,7 +98804,7 @@ function RGBAtoCSS(rgba) {
   return "rgba(" + rgba.r + ", " + rgba.g + ", " + rgba.b + ", " + rgba.a + ")";
 }
 function RGBtoCSS(rgba) {
-  return RGBAtoCSS(__assign(__assign({}, rgba), {
+  return RGBAtoCSS(__assign({}, rgba, {
     a: 1
   }));
 }
@@ -99627,9 +99567,9 @@ function directiveConfig(binding, defaults) {
     defaults = {};
   }
 
-  return __assign(__assign(__assign(__assign({}, defaults), binding.modifiers), {
+  return __assign({}, defaults, binding.modifiers, {
     value: binding.arg
-  }), binding.value || {});
+  }, binding.value || {});
 }
 function addOnceEventListener(el, eventName, cb, options) {
   if (options === void 0) {
@@ -100116,11 +100056,10 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var s = typeof Symbol === "function" && Symbol.iterator,
-      m = s && o[s],
+  var m = typeof Symbol === "function" && o[Symbol.iterator],
       i = 0;
   if (m) return m.call(o);
-  if (o && typeof o.length === "number") return {
+  return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -100129,7 +100068,6 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
-  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 
 var __read = undefined && undefined.__read || function (o, n) {
@@ -100292,7 +100230,7 @@ function mergeData() {
               mergeTarget[prop] = {};
             }
 
-            mergeTarget[prop] = __assign(__assign({}, arguments[i][prop]), mergeTarget[prop]);
+            mergeTarget[prop] = __assign({}, arguments[i][prop], mergeTarget[prop]);
             break;
           // Reassignment strategy (no merge)
 
@@ -102684,8 +102622,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Art\ARTWORKS\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Art\ARTWORKS\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

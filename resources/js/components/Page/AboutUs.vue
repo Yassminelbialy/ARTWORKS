@@ -46,7 +46,7 @@
           class="text-center"
         >{{ $t("message.support_text") }}</p>
         <div class="row justify-content-md-center support_div text-center ">
-          <div class="col-md-2 content" @click="activate(1)" :class="{ active : active_el == 1 }">
+          <!-- <div class="col-md-2 content" @click="activate(1)" :class="{ active : active_el == 1 }">
             <img
               src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-1.svg?v=12010384132983907058"
               style="height: 110px"
@@ -73,7 +73,7 @@
               style="height: 110px"
             />
             <h3 class="mt-4">{{ $t("message.Terms") }}</h3>
-          </div>
+          </div> -->
           <div class="col-md-2 content" @click="activate(5)" :class="{ active : active_el == 5 }">
             <img
               src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-5.svg?v=6164253995379968036"
@@ -84,7 +84,7 @@
         </div>
 
         <div class="row mt-5">
-          <div class="col-sm-12" v-if="active_el==1">
+          <!-- <div class="col-sm-12" v-if="active_el==1">
             <div class="row" v-if=" $i18n.locale == 'en'">
               <div class="col-sm-5 text-center left">
                 <p class="font-weight-bold mb-5">{{ $t("message.product_text1") }}</p>
@@ -250,7 +250,7 @@
                 <p class="font-weight-bold">{{ $t("message.Terms_text3") }}</p>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-sm-12" v-if="active_el==5">
             <v-form class="form" @submit.prevent="send" v-if=" $i18n.locale == 'en'">
               <v-container>

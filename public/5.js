@@ -454,7 +454,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.form[data-v-dc37895e] {\r\n  width: 60%;\r\n  margin: auto;\n}\n.img[data-v-dc37895e]{\r\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\r\n  width: 62px;\r\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\r\n  width: 70%;\r\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\r\n  width: 65%;\n}\n.price[data-v-dc37895e]{\r\n    position: relative;\r\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\r\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\r\n    text-align: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  width: 70%;\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n", ""]);
 
 // exports
 
