@@ -26,6 +26,7 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('reviews', 'ReviewController');
     Route::resource('palettes', 'PaletteController');
     Route::resource('paletteimages', 'PaletteimageController');
+
     Route::get('orders', 'OrderController@index');
     Route::get('appliedorders/{id?}', 'OrderController@orderindex')->name('appliedorder.show');
 
@@ -33,12 +34,15 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::get('changeStatus', 'UserController@changeStatus');
     Route::get('users', 'UserController@index');
     Route::get('changeStatus', 'UserController@changeStatus');
+    Route::get('changeStatus_2', 'UserController@changeStatus_2');
     Route::resource('homeDatas', 'HomeDataController');
     Route::resource('aboutContents', 'AboutContentController');
     Route::resource('aboutAretists', 'AboutAretistsController');
     Route::resource('aboutContacts', 'About_ContactController');
 
 });
+
+Route::get('/home', 'HomeController@index')->name("home.index");
 Route::post('reviews-api','ReviewController@store');
 Route::post('aboutContacts-api','About_ContactController@store');
 Route::get('/home', 'HomeController@index')->middleware('verified')->name("home.index");

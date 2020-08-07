@@ -19,7 +19,10 @@ class CheckAdmin
         if(Auth::check() && Auth::user()->admin_role==1)
         {
             return $next($request);
-        }else{
+        }else if(Auth::check() && Auth::user()->admin_role==2)
+        {
+            return redirect('/orders');
+                }else{
             Auth::logout();
             return redirect('/login');
         }
