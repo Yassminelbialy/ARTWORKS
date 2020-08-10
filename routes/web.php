@@ -41,6 +41,8 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('aboutContacts', 'About_ContactController');
 
 });
+Route::get('orders', 'orderController@index');
+Route::get('appliedorders/{id?}', 'orderController@orderindex')->name('appliedorder.show');
 
 Route::get('/home', 'HomeController@index')->name("home.index");
 Route::post('reviews-api','ReviewController@store');
