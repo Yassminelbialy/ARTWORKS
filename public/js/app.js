@@ -40953,60 +40953,8 @@ var render = function() {
                 _c("li", { staticClass: "footer-title" }, [
                   _vm._v(
                     "\n                            " +
-                      _vm._s(_vm.$t("message.Limitworks")) +
-                      "\n                        "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("router-link", { attrs: { to: "/shop" } }, [
-                  _c("li", { staticClass: "footer-menu-item" }, [
-                    _c("a", { staticClass: "footer-menu-item-link" }, [
-                      _vm._v("  " + _vm._s(_vm.$t("message.shopfooter")))
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    attrs: {
-                      to: { path: "/about", query: { mydata: "product" } }
-                    }
-                  },
-                  [
-                    _c("li", { staticClass: "footer-menu-item" }, [
-                      _c("a", { staticClass: "footer-menu-item-link" }, [
-                        _vm._v("  " + _vm._s(_vm.$t("message.aboutfooter")))
-                      ])
-                    ])
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 col-lg-3 mb-2" }, [
-            _c(
-              "ul",
-              { staticClass: "footer-menu" },
-              [
-                _c("li", { staticClass: "footer-title" }, [
-                  _vm._v(
-                    "\n                            " +
                       _vm._s(_vm.$t("message.company")) +
                       "\n                        "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "footer-menu-item" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "footer-menu-item-link",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v(_vm._s(_vm.$t("message.carreerfooter")))]
                   )
                 ]),
                 _vm._v(" "),

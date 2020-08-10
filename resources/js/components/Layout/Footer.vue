@@ -13,7 +13,7 @@
         </div>
         <div class="col-md-8 ">
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-2">
+                <!-- <div class="col-md-6 col-lg-3 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.Limitworks") }}
@@ -29,15 +29,15 @@
                             </li>
                         </router-link>
                     </ul>
-                </div>
+                </div> -->
                 <div class="col-md-6 col-lg-3 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.company") }}
                         </li>
-                        <li class="footer-menu-item">
+                        <!-- <li class="footer-menu-item">
                             <a href="#" class="footer-menu-item-link">{{ $t("message.carreerfooter") }}</a>
-                        </li>
+                        </li> -->
                         <router-link to="/about">
                             <li class="footer-menu-item">
                                 <a class="footer-menu-item-link">{{ $t("message.aboutusfooter") }}</a>

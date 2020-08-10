@@ -40,6 +40,7 @@ Route::post('removefromcart','PaletteAPIController@removefromcart');
 
     Route::get('get-about-content' ,'AboutController@get_about_content');
     Route::get('get-about-artists' ,'AboutController@get_about_artist');
+    Route::get('get-about-contents' ,'AboutController@get_about_contents_text');
 
 
 });

@@ -11,6 +11,7 @@
     }
 </style>
 <br>
+@if(Auth::user()->admin_role==1)
 <li class="{{ Request::is('admin*') ? 'active' : '' }}">
     <a href="{{ route('admin.index') }}"><i class="fa fa-tachometer"></i><span>Dashboard</span></a>
 </li>
@@ -71,5 +72,14 @@
 
 <li class="{{ Request::is('aboutContacts*') ? 'active' : '' }}">
     <a href="{{ route('aboutContacts.index') }}"><i class="fa fa-edit"></i><span>About  Contacts</span></a>
+</li>
+@else
+<li class="{{ Request::is('appliedartists*') ? 'active' : '' }}">
+    <a href="/orders"><i class="fas fa-money-check-alt"></i>
+        <span>Orders Requests</span></a>
+</li>
+@endif
+<li class="{{ Request::is('aboutContactsTexts*') ? 'active' : '' }}">
+    <a href="{{ route('aboutContactsTexts.index') }}"><i class="fa fa-edit"></i><span>About  Contacts  Texts</span></a>
 </li>
 

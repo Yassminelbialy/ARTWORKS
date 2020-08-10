@@ -1982,7 +1982,23 @@ var render = function() {
                   _c("span", [_vm._v(_vm._s(_vm.minPalettesActive.tag))])
                 ]),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("div", [
+                  _vm.active_el == 2
+                    ? _c("h3", { staticClass: "mt-4 mb-4" }, [
+                        _c("strong", { staticStyle: { float: "right" } }, [
+                          _vm._v(
+                            _vm._s(_vm.minPalettesActive.M_copies) +
+                              "/" +
+                              _vm._s(_vm.minPalettesActive.M_avalible) +
+                              "  " +
+                              _vm._s(_vm.$t("message.left"))
+                          )
+                        ])
+                      ])
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticStyle: { clear: "both" } })
+                ]),
                 _vm._v(" "),
                 _c(
                   "div",
@@ -2238,12 +2254,6 @@ var staticRenderFns = [
         }
       })
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("div", { staticStyle: { clear: "both" } })])
   }
 ]
 render._withStripped = true

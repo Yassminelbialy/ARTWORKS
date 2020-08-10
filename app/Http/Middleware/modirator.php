@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class CheckAdmin
+class modirator
 {
     /**
      * Handle an incoming request.
@@ -16,20 +16,15 @@ class CheckAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->admin_role==1)
+        if(Auth::check() && Auth::user()->admin_role)
         {
             return $next($request);
         }
-        
-        else if(Auth::check() && Auth::user()->admin_role==2)
-        {
-            return redirect('/orders');
-                }else{
+        else{
             Auth::logout();
             return redirect('/login');
         }
-
-
-
+        
+        
     }
 }
