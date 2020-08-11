@@ -125,7 +125,7 @@ class OrderController extends Controller
         $locale = app()->getLocale();
         if ( $validator->errors()->count()>0)
         {
-            return response()->json(['status'=>false,'errors'=>$validator->errors()->all(),__('orderrequest.failed')]);
+            return response()->json(['status'=>false,'errors'=>$validator->errors(),__('orderrequest.failed')]);
             // discount_percentage
         }
         $totalprice =$this->totalprice($request->items,$request->promocode);

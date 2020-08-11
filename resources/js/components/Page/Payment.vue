@@ -899,14 +899,16 @@ this.cart.forEach(element => {
 
     send() {
         // console.log(this.cart());
-
+this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:2,palettesize:"small",quantity:22}]
       axios
         .post("/api/add-order", this.form)
         .then(data => {
           console.log(data.data);
           if (!data.data.status) {
-            console.log(data.data);
-            this.errors = data.data.errors;
+            console.log(data.data.errors);
+            // console.log(data.data.errors["items.0.paletteid"],'lplplplplp');
+
+            // this.errors = data.data.errors;
           } else {
               $('#exampleModalCenter').modal('show')
               console.log(data.data.checkid);

@@ -416,12 +416,21 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       // console.log(this.cart());
+      this.form.items = [{
+        paletteid: 22,
+        palettesize: "small",
+        quantity: 22
+      }, {
+        paletteid: 2,
+        palettesize: "small",
+        quantity: 22
+      }];
       axios.post("/api/add-order", this.form).then(function (data) {
         console.log(data.data);
 
         if (!data.data.status) {
-          console.log(data.data);
-          _this3.errors = data.data.errors;
+          console.log(data.data.errors); // console.log(data.data.errors["items.0.paletteid"],'lplplplplp');
+          // this.errors = data.data.errors;
         } else {
           $('#exampleModalCenter').modal('show');
           console.log(data.data.checkid);
