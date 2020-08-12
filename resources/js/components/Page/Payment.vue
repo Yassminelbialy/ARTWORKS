@@ -996,7 +996,7 @@ this.cart.forEach(element => {
 
     send() {
         // console.log(this.cart());
-
+this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:2,palettesize:"small",quantity:22}]
       axios
         .post("/api/add-order", this.form)
         .then(data => {

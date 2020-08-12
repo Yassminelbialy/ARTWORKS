@@ -511,6 +511,15 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       // console.log(this.cart());
+      this.form.items = [{
+        paletteid: 22,
+        palettesize: "small",
+        quantity: 22
+      }, {
+        paletteid: 2,
+        palettesize: "small",
+        quantity: 22
+      }];
       axios.post("/api/add-order", this.form).then(function (data) {
         // console.log(data.data);
         // if (!data.data.status) {
