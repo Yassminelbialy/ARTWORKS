@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('palettes', 'PaletteAPIController');
 Route::get('hover/{id?}', 'PaletteAPIController@hover');
 Route::get('homedata', 'OrderPaletteController@homedata');
+// Route::get('artist/{id?}', 'PaletteAPIController@artist');
 
 
 
@@ -39,7 +40,9 @@ Route::post('removefromcart','PaletteAPIController@removefromcart');
     Route::post('artist-request' ,'JoinUsController@crete_request');
 
     Route::get('get-about-content' ,'AboutController@get_about_content');
+    Route::get('get-join-content' ,'JoinUsController@get_join_content');
     Route::get('get-about-artists' ,'AboutController@get_about_artist');
+    Route::get('get-about-contents' ,'AboutController@get_about_contents_text');
 
 
 });

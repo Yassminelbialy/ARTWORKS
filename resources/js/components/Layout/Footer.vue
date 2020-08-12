@@ -1,7 +1,7 @@
 <template>
   <footer  class="myhome">
     <div class="row mb-3 pl-2">
-        <div class="col-md-4 footer-col-1">
+        <div class="col-md-5 footer-col-1">
             <a href="" class="footer-logo">{{$t("message.logo") }}</a>
             <div class="footer-info">
                 <p class="lead">{{ $t("message.addressfooter") }}<br></p>
@@ -11,9 +11,9 @@
                 <a href="" class="custom-social-link "><i class="fa fa-instagram instagram"></i></a>
             </div>
         </div>
-        <div class="col-md-8 ">
+        <div class="col-md-7 ">
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-2">
+                <!-- <div class="col-md-6 col-lg-3 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.Limitworks") }}
@@ -29,15 +29,15 @@
                             </li>
                         </router-link>
                     </ul>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-2">
+                </div> -->
+                <div class="col-md-6 col-lg-4 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.company") }}
                         </li>
-                        <li class="footer-menu-item">
+                        <!-- <li class="footer-menu-item">
                             <a href="#" class="footer-menu-item-link">{{ $t("message.carreerfooter") }}</a>
-                        </li>
+                        </li> -->
                         <router-link to="/about">
                             <li class="footer-menu-item">
                                 <a class="footer-menu-item-link">{{ $t("message.aboutusfooter") }}</a>
@@ -55,7 +55,7 @@
                          </router-link>
                     </ul>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-2">
+                <div class="col-md-6 col-lg-4 mb-2">
                     <ul class="footer-menu">
                         <li class="footer-title">
                             {{ $t("message.others") }}
@@ -77,11 +77,11 @@
                         </router-link>
                     </ul>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-2 pl-0">
+                <div class="col-md-6 col-lg-4 mb-2 pl-0">
                     <div class="footer-col footer-col-2">
                         <h3 class="footer-title">{{ $t("message.Newsletter") }}</h3>
                         <p >{{ $t("message.signup") }}</p>
-                        <router-link to="/joinus">
+                        <router-link  :to="{ path: '/about', query: { mydata: 'join'}}">
                             <a class="btn signUp btn-primary">{{ $t("message.SUBSCRIBE") }}</a>
                         </router-link>
                     </div>

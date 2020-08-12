@@ -25,6 +25,11 @@ class CreateArtistRequest extends FormRequest
      */
     public function rules()
     {
-        return Artist::$rules;
+        return [
+            'name' =>'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'socialLink' => 'required'
+        ];
     }
 }

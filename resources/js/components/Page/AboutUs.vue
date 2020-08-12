@@ -1,5 +1,5 @@
 <template>
-  <section style="min-height:486px">
+  <section style="min-height:519px">
         <div class="spinner-content">
          <div class="spinner"></div>
         </div>
@@ -38,15 +38,47 @@
         </div>
       </div>
     </div>
+
+    <div class="artists mt-4">
+        <h3 class="title" @click="artist = !artist" v-if="!artist"> <span>{{ $t("message.artists") }}</span > <span class="plus" v-if="artist==false">+</span>   </h3>
+        <h3 class="title" @click="artist = !artist" v-else>{{ $t("message.artists") }} <span class="false" v-if="artist==true">-</span> </h3>
+        <div class=" mt-5 text-center" v-if="artist">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="text-center">
+                      {{ $t("message.artisttext") }}
+                    </p>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row justify-content-sm-center">
+                        <div class="col-sm-4 col-md-3 col-lg-2" v-for="artist in artists" :key="artist.id">
+                          <div class="about-team__people">
+                            <a :href="artist.sociallink" style="color:#000" target="_blank">
+                              <img :src="artist.image_ar" alt="artist" style="border-radius:28%;width:100px;height:100px">
+                              <h4 class="about-team__name" v-if=" $i18n.locale == 'en'">{{artist.name_en}}</h4>
+                              <h4 class="about-team__name" v-else>{{artist.name_ar}}</h4>
+                            </a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
     <div class="support mt-4">
       <h3 class="title" @click="support = !support" v-if="!support"><span>{{ $t("message.support") }} </span > <span class="plus" v-if="support==false">+</span>  </h3>
       <h3 class="title" @click="support = !support" v-else>  <span > {{ $t("message.support") }} </span > <span class="plus" v-if="support==true">-</span>  </h3>
       <div class="mt-5" v-if="support">
         <p
           class="text-center"
-        >{{ $t("message.support_text") }}</p>
+          v-if=" $i18n.locale == 'en'"
+        >{{ text_contact.text_en }}</p>
+        <p
+          class="text-center"
+          v-else
+        >{{ text_contact.text_ar }}</p>
         <div class="row justify-content-md-center support_div text-center ">
-          <div class="col-md-2 content" @click="activate(1)" :class="{ active : active_el == 1 }">
+          <!-- <div class="col-md-2 content" @click="activate(1)" :class="{ active : active_el == 1 }">
             <img
               src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-1.svg?v=12010384132983907058"
               style="height: 110px"
@@ -73,18 +105,18 @@
               style="height: 110px"
             />
             <h3 class="mt-4">{{ $t("message.Terms") }}</h3>
-          </div>
-          <div class="col-md-2 content" @click="activate(5)" :class="{ active : active_el == 5 }">
-            <img
+          </div> -->
+          <div class="col-md-2 content">
+            <!-- <img
               src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/support-5.svg?v=6164253995379968036"
               style="height: 110px"
-            />
+            /> -->
             <h3 class="mt-4">{{ $t("message.contact") }}</h3>
           </div>
         </div>
 
         <div class="row mt-5">
-          <div class="col-sm-12" v-if="active_el==1">
+          <!-- <div class="col-sm-12" v-if="active_el==1">
             <div class="row" v-if=" $i18n.locale == 'en'">
               <div class="col-sm-5 text-center left">
                 <p class="font-weight-bold mb-5">{{ $t("message.product_text1") }}</p>
@@ -250,22 +282,26 @@
                 <p class="font-weight-bold">{{ $t("message.Terms_text3") }}</p>
               </div>
             </div>
-          </div>
-          <div class="col-sm-12" v-if="active_el==5">
+          </div> -->
+          <div class="col-sm-12" v-if="support">
             <v-form class="form" @submit.prevent="send" v-if=" $i18n.locale == 'en'">
               <v-container>
                 <v-row>
                   <v-col cols="12" md="6">
                     <v-text-field v-model="form.name" label="First name" required></v-text-field>
+                    <span class="red--text" v-if="errors.name">{{errors.name[0]}}</span>
                   </v-col>
                   <v-col cols="12" md="6">
                     <v-text-field v-model="form.email" label="E-mail" required></v-text-field>
+                    <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
                   </v-col>
                   <v-col cols="12" md="12">
                     <v-text-field v-model="form.phone" label="Phone Number" required></v-text-field>
+                    <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
                   </v-col>
                   <v-col cols="12" md="12">
                     <v-textarea v-model="form.message" outlined name="input-7-4" label="Message"></v-textarea>
+                    <span class="red--text" v-if="errors.message">{{errors.message[0]}}</span>
                   </v-col>
                 </v-row>
                 <v-btn color="#252524" style="margin-left:12px;color:#fff" type="submit">Send</v-btn>
@@ -276,15 +312,19 @@
                 <v-row>
                   <v-col cols="12" md="6">
                     <v-text-field v-model="form.name" label=" اﻷسم" required dir="rtl"></v-text-field>
+                    <span class="red--text" v-if="errors.name">{{errors.name[0]}}</span>
                   </v-col>
                   <v-col cols="12" md="6">
                     <v-text-field v-model="form.email" label="البريد اﻷلكتروني" required dir="rtl"></v-text-field>
+                    <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
                   </v-col>
                   <v-col cols="12" md="12">
                     <v-text-field v-model="form.phone" label="رقم التليفون الخاص بك" required dir="rtl"></v-text-field>
+                    <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
                   </v-col>
                   <v-col cols="12" md="12">
                     <v-textarea v-model="form.message" outlined name="input-7-4" label="اكتب رسالتك" dir="rtl"></v-textarea>
+                    <span class="red--text" v-if="errors.message">{{errors.message[0]}}</span>
                   </v-col>
                 </v-row>
                 <v-btn color="#252524" style="margin-left:12px;float:right;color:#fff" type="submit">ارسال</v-btn>
@@ -295,38 +335,35 @@
         </div>
       </div>
     </div>
-    <div class="artists mt-4 mb-2">
-        <h3 class="title" @click="artist = !artist" v-if="!artist"> <span>{{ $t("message.artists") }}</span > <span class="plus" v-if="artist==false">+</span>   </h3>
-        <h3 class="title" @click="artist = !artist" v-else>{{ $t("message.artists") }} <span class="false" v-if="artist==true">-</span> </h3>
-        <div class=" mt-5 text-center" v-if="artist">
-            <div class="row">
+        <div class="joinus mt-4 mb-2">
+        <h3 class="title" @click="joinus = !joinus" v-if="!joinus"> <span>{{ $t("message.SUBSCRIBE") }}</span > <span class="plus" v-if="joinus==false">+</span>   </h3>
+        <h3 class="title" @click="joinus = !joinus" v-else>{{ $t("message.SUBSCRIBE") }} <span class="false" v-if="joinus==true">-</span> </h3>
+        <div class=" mt-5 text-center" v-if="joinus">
+            <div class="row justify-content-sm-center">
                 <div class="col-sm-12">
-                    <p class="text-center">
-                      {{ $t("message.artisttext") }}
+                    <p class="text-center" v-if="$i18n.locale == 'en'">
+                      {{ jointext.text_en}}
+                    </p>
+                    <p class="text-center" v-else>
+                      {{ jointext.text_ar}}
                     </p>
                 </div>
-                <div class="col-sm-12">
-                    <div class="row justify-content-sm-center">
-                        <div class="col-sm-4 col-md-3 col-lg-2" v-for="artist in artists" :key="artist.id">
-                          <div class="about-team__people">
-                            <a :href="artist.sociallink" style="color:#000" target="_blank">
-                              <img :src="artist.image_ar" alt="artist" style="border-radius:28%;width:100px;height:100px">
-                              <h4 class="about-team__name" v-if=" $i18n.locale == 'en'">{{artist.name_en}}</h4>
-                              <h4 class="about-team__name" v-else>{{artist.name_ar}}</h4>
-                            </a>
-                          </div>
-                        </div>
-                    </div>
+                  <div class="col-sm-12">
+                      <app-Joinus></app-Joinus>
                 </div>
             </div>
-          </div>
-      </div>
+        </div>
+    </div>
   </section>
 </template>
 
 <script>
 import $ from "jquery";
+import JoinUS from './JoinUs';
 export default {
+  components:{
+    appJoinus:JoinUS
+  },
   data() {
     return {
       artists: [],
@@ -334,14 +371,17 @@ export default {
       mission: true,
       artist: false,
       support: false,
+      joinus:false,
       active_el: 1,
+      text_contact:{},
       form: {
         name: null,
         email: null,
         phone: null,
         message: null
       },
-      errors: {}
+      errors: {},
+      jointext:{}
     };
   },
   created() {
@@ -352,10 +392,9 @@ export default {
     } else if(this.$route.query.mydata=='contact'){
       this.support=true;
       this.mission=false;
-      this.active_el=5;
-    }else if(this.$route.query.mydata=='product'){
-      this.support=true;
+    }else if(this.$route.query.mydata=='join'){
       this.mission=false;
+      this.joinus=true;
 1    }
     axios
       .get("/api/get-about-content")
@@ -368,6 +407,21 @@ export default {
         }
       })
       .catch(error => this.errors=error.response.data);
+
+      axios.get('/api/get-about-contents')
+      .then(res=>{
+        this.text_contact = res.data.data
+         if(this.text_contact ==null)
+        {
+          this.text_contact = ''
+        }
+
+      })
+      .catch(error => this.errors=error.response.data);
+        axios.get('/api/get-join-content')
+        .then(res=>{this.jointext=res.data.data
+        })
+        .catch(error => console.log(error.response.data))
   },
   methods: {
     activate: function(el) {
@@ -377,7 +431,7 @@ export default {
     {
       axios.post("/aboutContacts-api",this.form)
       .then(res=>this.form='')
-      .catch(error => this.errors=error.response.data);
+      .catch(error => this.errors=error.response.data.errors);
 
     }
   }

@@ -5,12 +5,12 @@
         </button>
         <a class="navbar-brand" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
     <div class="d-sm-block d-none">
-        <LanguageDropdown></LanguageDropdown>
+        <LanguageDropdown class="lang"></LanguageDropdown>
     </div>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav  mx-auto mt-2 mt-lg-0">
-                <li class=" d-block d-sm-none about">
-                   <LanguageDropdown></LanguageDropdown>
+            <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-if=" $i18n.locale == 'en'">
+                <li class="nav-item d-block d-sm-none about text-center" style="margin: auto;">
+                   <LanguageDropdown class="nav-link"></LanguageDropdown>
                 </li>
                 <li class="nav-item home active">
                     <router-link to="/">
@@ -30,10 +30,16 @@
                 </li>
 
             </ul>
-            <!-- <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
+            <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
+                <li class="nav-item d-block d-sm-none about" style="margin: auto;">
+                   <LanguageDropdown class="nav-link"></LanguageDropdown>
+                </li>
                 <li class="nav-item about">
-                    <router-link to="/about">
+                    <router-link to="/about" class="lg">
                         <a class="nav-link">{{ $t("message.about") }}</a>
+                    </router-link>
+                    <router-link to="/" class="sm">
+                        <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
                 </li>
 
@@ -43,12 +49,14 @@
                     </router-link>
                 </li>
                 <li class="nav-item active home">
-                    <router-link to="/">
+                    <router-link to="/" class="lg">
                         <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
-
+                    <router-link to="/about" class="sm">
+                        <a class="nav-link">{{ $t("message.about") }}</a>
+                    </router-link>
                 </li>
-            </ul> -->
+            </ul>
         </div>
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
             <button class="nav-btns" @click="showsModal()">
@@ -423,4 +431,19 @@ svg{
 }
 @keyframes i{0%{transform:translate(-50%,calc(-50% + 35px));opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
 
+.lang:hover{
+    border-bottom: 2px solid rgb(27, 26, 26);
+}
+.sm{
+    display: none;
+}
+@media(max-width: 991px)
+{
+    .lg{
+        display: none;
+    }
+    .sm{
+        display: block;
+    }
+}
 </style>
