@@ -7,7 +7,7 @@
         <div class="col-md-5 sm_discount mt-4" style="background-color:#eaeaea">
           <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
             <span>
-              <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span> 
+              <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span>
             <span class="plus" v-if="discount_section==false"><i class="fa fa-chevron-down"></i></span>
               <span style="float:right;" class="mr-3">
                 <span style="color:#737171;"></span> $ {{totalprice_2}}
@@ -16,7 +16,7 @@
           </div>
           <div class="clickdown" @click="discount_section = !discount_section" v-else>
             <span ><i class="fa fa-shopping-cart ml-2 mr-2"></i> {{ $t("message.hideorder") }} </span >
-            <span class="plus" v-if="discount_section==true"><i class="fa fa-chevron-up"></i></span> 
+            <span class="plus" v-if="discount_section==true"><i class="fa fa-chevron-up"></i></span>
             <span style="float:right;" class="mr-3">
                 <span style="color:#737171;"></span> $ {{totalprice_2}}
             </span>
@@ -43,7 +43,7 @@
             <div class="discount">
               <v-form class="form_discount">
                 <v-text-field v-model="discount" label="Discount"></v-text-field>
-                <v-btn @click="apply_discount()" class="mr-4">Apply</v-btn>
+                <v-btn @click="apply_discount()" class="mr-4" style="margin-top:24px;">Apply</v-btn>
               </v-form>
             </div>
             <hr />
@@ -211,7 +211,7 @@
           <div class="col-md-5 sm_discount mt-4" style="background-color:#eaeaea">
           <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
             <span>
-              <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span> 
+              <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span>
             <span class="plus" v-if="discount_section==false"><i class="fa fa-chevron-down"></i></span>
               <span style="float:right;" class="mr-3">
                 <span style="color:#737171;"></span> $ {{totalprice_2}}
@@ -220,7 +220,7 @@
           </div>
           <div class="clickdown" @click="discount_section = !discount_section" v-else>
             <span ><i class="fa fa-shopping-cart ml-2 mr-2"></i> {{ $t("message.hideorder") }} </span >
-            <span class="plus" v-if="discount_section==true"><i class="fa fa-chevron-up"></i></span> 
+            <span class="plus" v-if="discount_section==true"><i class="fa fa-chevron-up"></i></span>
             <span style="float:right;" class="mr-3">
                 <span style="color:#737171;"></span> $ {{totalprice_2}}
             </span>
@@ -952,7 +952,7 @@ export default {
       message: "",
       formview:'',
       discount_section:false,
-      
+
     };
   },
   created(){
@@ -1008,7 +1008,7 @@ this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:
               $('#exampleModalCenter').modal('show')
               // console.log(data.data.checkid);
               // console.log(data.data.orderid);
-            
+
             this.formview=data.data.orderid
             this.id=data.data.orderid
 
@@ -1084,5 +1084,9 @@ this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:
   cursor: pointer;
   font-size: 18px;
   color: #197bbd;
+}
+.theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: #f5f5f5;
+    margin-top: 24px;
 }
 </style>
