@@ -104,14 +104,16 @@ const messages = {
             calulated:"Calculated at next",
             toshipping:"Continue to Shipping",
             select_size:'Please Select Size',
+            showorder:'Show Order Summary',
+            hideorder:'Hide Order Summary',
             empty:'      ',
             // Start Footer
             addressfooter:'ecstase BV. Westplein 123016BM RotterdamThe Netherlands',
             shopfooter:'Shop artworks',
             aboutfooter:'About our products',
             carreerfooter:'Careers',
-            aboutusfooter:'About us',
-            artistfooter:'Our Artist',
+            aboutusfooter:'Our Mission',
+            artistfooter:'Our Artists',
             contactfooter:'Contact us',
             termsfooter:'Terms of use',
             privacyfooter:'Privacy Policy',
@@ -151,6 +153,7 @@ const messages = {
             Terms_text4:'Read our terms',
             Terms_text5:'Read our Privacy Policy',
             Terms_text6:'Read our Refund Policy',
+            noitem:'There are no products. Please add an entry to complete the process!!',
         }
     },
     ar: {
@@ -227,6 +230,8 @@ const messages = {
              calulated:"الحساب سيتم الكرة القادة ",
              toshipping:"متابعة الشراء",
              select_size:'من فضلك اختر الحجم',
+             showorder:' إظهار ملخص الطلب',
+             hideorder:' إخفاء ملخص الطلب',
              empty:'      ',
             //  Start Footer
              addressfooter:'ecstase BV. Westplein 123016BM RotterdamThe Netherlands',
@@ -274,6 +279,7 @@ const messages = {
              Terms_text4:'اقرأ شروط الموقع',
              Terms_text5:'اقرأ سياسة الخصوصية',
              Terms_text6:'اقرأ سياسة اﻷسترداد',
+             noitem:'!! لا يوجد منتجات. الرجاء إضافة منتج لإكمال العملية'
         }
     }
 };

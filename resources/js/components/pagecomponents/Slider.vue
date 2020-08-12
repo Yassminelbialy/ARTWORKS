@@ -6,7 +6,7 @@
             <span>{{ $t("message.newrelease") }}</span>
             <span class="sTitle">{{ $t("message.newreleaseheader") }}</span>
         </h2>
-        <div class="swiper-container mt-5">
+        <div class="swiper-container mt-5" >
             <div class="swiper-wrapper">
               <div class="swiper-slide " v-for="data in sliderPalettes" :key="data.id">
                 <div class="product-grid-item">
@@ -23,16 +23,12 @@
                                 <a href="#" data-cart-add="32583351402599" class="">S</a>
                             </div>
                         </div>
-                        <div class="product-grid-item__tags">
-                            <div class="cms-special-description">
-                                <span class="cms-special-label color-4">{{data.name}}</span>
-                                <p>Walltones-studio added diamond dust to this print for a glittering effect that makes the artwork even more enticing. Additionally, keep in mind that each artwork is done by hand and therefore may slightly vary from the exemplary product images.</p>
-                            </div>
+                        <!-- <div class="product-grid-item__tags">
                             <div class="cms-special-description">
                                 <span class="cms-special-label color-7">{{ $t("message.newreleaseheader") }}</span>
                                 <p>This artwork was added recently (but will likely be sold out soon)</p>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="product-grid-item__info">
                         <div class="product-grid-item__title">
@@ -102,6 +98,9 @@
 </script>
 
 <style scoped>
+.swiper-container{
+    margin-bottom: 50px;
+}
 .swiper-pagination{
     position: relative;
     top: 2px;

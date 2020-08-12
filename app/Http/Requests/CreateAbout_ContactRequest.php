@@ -25,6 +25,11 @@ class CreateAbout_ContactRequest extends FormRequest
      */
     public function rules()
     {
-        return About_Contact::$rules;
+        return [
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'phone' => 'required|numeric',
+            'message' => 'required|string'
+        ];
     }
 }

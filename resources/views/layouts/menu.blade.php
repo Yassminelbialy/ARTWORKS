@@ -83,3 +83,7 @@
     <a href="{{ route('aboutContactsTexts.index') }}"><i class="fa fa-edit"></i><span>About  Contacts  Texts</span></a>
 </li>
 
+<li class="{{ Request::is('joinusTexts*') ? 'active' : '' }}">
+    <a href="{{ route('joinusTexts.index') }}"><i class="fa fa-edit"></i><span>Joinus  Texts</span></a>
+</li>
+

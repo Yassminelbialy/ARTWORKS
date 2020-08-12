@@ -41,6 +41,7 @@ Route::group(['middleware' => 'isadmin'], function () {
     Route::resource('aboutContacts', 'About_ContactController');
     Route::resource('discounts', 'DiscountController');
     Route::resource('aboutContactsTexts', 'About_Contacts_TextController');
+    Route::resource('joinusTexts', 'joinus_TextController');
 
 });
 Route::get('orders', 'OrderController@index')->middleware('modirator');
@@ -63,4 +64,6 @@ Route::get('payment/{id?}', function ($id=null) {
 
 })->name('payment');
 Route::view('/{any}','userLayout.home');
+
+
 

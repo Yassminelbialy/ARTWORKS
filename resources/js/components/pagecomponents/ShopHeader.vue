@@ -5,13 +5,11 @@
         <div class="swiper-wrapper">
             <div  class="swiper-slide text-center "    v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                 <img :src="palettesArtist.img" alt="...">
-                       <div class="content" :class="{ 'active': index == 0 }" >
-                                        <div class="triangle"></div>
-                                        <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
-
-                                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
-                                        <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
-                                    </div>
+                    <div class="content" :class="{ 'active': index == 0 }" >
+                        <div class="triangle"></div>
+                        <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
+                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
+                    </div>
             </div>
         </div>
                             <!-- Add Pagination -->
@@ -21,7 +19,7 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators text-center">
-                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': index === 0 }"  :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
+                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': artist.id == 1 }" :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
                 <div class="carousel-item" v-for="(artist,index ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
@@ -29,9 +27,9 @@
                 <!---------------------------- start regular pallete----------------------- -->
                     <div class="wrapper d-none d-sm-block ">
                         <div class=" row  d-flex justify-content-center">
-                            <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive"   v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                            <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive" v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                                <div class="details-content">
-                                    <img    :src="palettesArtist.img" class="details_img" alt="...">
+                                    <img    :src="palettesArtist.artist_min_palettes.img" class="details_img" alt="...">
                                     <div class="content" :class="{ 'active': index == 0 }" >
                                         <div class="triangle"></div>
                                         <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
@@ -47,7 +45,6 @@
                         </div>
                     </div>
                     <!---------------------------- start carousel pallete----------------------- -->
-
 
                     <div class="parent d-sm-none">
                         <div>
@@ -68,9 +65,7 @@
                         <span class="sr-only">Previous</span>
                     </a>
                 </div>
-
             </div>
-
         </div>
         <div class="header_sm mb-2"></div>
         <div class="container  mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
@@ -118,7 +113,7 @@
                         <div class="text-center">
                             <button @click="addtocart(minPalettesActive.id,minPalettesActive.M_price, avilableTarget , sizeTarget)" v-if="minPalettesActive.M_avalible>0"  class="btn add-button addToCart ">
                             <!-- <span v-if="active_el==1">${{minPalettesActive.S_price}}</span> -->
-                                <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                                <span v-if="active_el==2" style="font-size:23px">${{minPalettesActive.M_price}}</span>
                                 <!-- <span v-if="active_el==3">${{minPalettesActive.L_price}}</span> -->
                                 {{ $t("message.cart") }}
 
@@ -223,9 +218,8 @@ export default {
             button:false,
             artistID:'',
             sizeCm:"",
-            artist_text:''
-
-
+            artist_text:'',
+            artist_active:''
         }
     },mounted(){
 
@@ -258,6 +252,14 @@ export default {
 
             });
             // swiper.update();
+            // if(this.$route.query.mydata)
+            // {
+            //     axios.get("/api/artist?id=" + this.$route.query.mydata)
+            //     .then(response =>{
+            //         this.artist_active = response.data.artist[0].id
+            //     })
+            //     .catch(error => console.log(error.response.data))
+            // }
         },
 
 
@@ -265,8 +267,9 @@ export default {
 
         if(this.$route.query.mydata)
         {
-                  axios.get('/api/palettes')
-      .then(response =>{
+
+        axios.get('/api/palettes')
+        .then(response =>{
           this.artists = response.data.artists
           this.artist_text = response.data.artists[0].Plates_description
           this.first = response.data.artists[0].id
@@ -277,6 +280,7 @@ export default {
             this.palettesArtists = response.data.palettesArtists
         })
         .catch(error => console.log(error.response.data))
+
       }
 
     ).catch(error => console.log(error.response.data));
@@ -285,7 +289,6 @@ export default {
             axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata)
             .then(response =>{
                 this.minPalettes = response.data.minPalettes
-
 
                 })
             .catch(error => console.log(error.response.data))
@@ -327,6 +330,7 @@ export default {
         }
       },
     methods:{
+
         addToCart(product){
             this.$store.dispatch('addProductToCart',{
                  product,
@@ -362,9 +366,9 @@ export default {
             else{
                 $id = this.artists[this.artists.length-1].id;
             }
-        axios.get("/api/view?id=" +$id)
+            axios.get("/api/view?id=" +$id)
 
-        .then(response =>{
+            .then(response =>{
 
             this.palettes = response.data.palettes
             this.artist_text = response.data.artist[0]
@@ -513,6 +517,7 @@ export default {
             }).catch(error => console.log(error))
 
         },//lklk
+        
 
     },//method
     watch:{
@@ -873,20 +878,6 @@ transform: scale(.7);
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .navigate2 {
     margin: 30px 0;
     text-align: center;
@@ -1018,5 +1009,8 @@ transform: scale(.7);
     height: 82px;
     transform: rotate(49deg);
     background: black;
+}
+.swiper-container{
+    margin-bottom: 50px;
 }
 </style>

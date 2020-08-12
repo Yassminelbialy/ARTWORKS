@@ -2323,6 +2323,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6894,7 +6902,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.modal-mask[data-v-1706a3da] {\n  position: fixed;\n\n  top: 0;\n  left: 0;\n  width: 100%;\n\n  background-color: rgba(0, 0, 0, .5);\n  display: block;\n  transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-1706a3da] {\n  display: table-cell;\n  vertical-align: middle;\n  float: right;\n}\n.modal-content[data-v-1706a3da]{\n    top: -27px;\n    overflow: scroll;\n\n    min-height: 800px;\n}\n.modal-body[data-v-1706a3da] {\n    position: relative;\n    -ms-flex: 1 1 auto;\n    max-height: 500px;\n    flex: 1 1 auto;\n    overflow: auto;\n    padding: 1rem;\n}\n/* .modal-body{\n    position: absolute;\n    width: 400px;\n        overflow: scroll;\n} */\n.modal-body img[data-v-1706a3da]{\n    width: 80px;\n    height: 80px;\n}\n.pro[data-v-1706a3da]{\n    width: 124%;\n}\n.pro button[data-v-1706a3da] {\n    margin-top:-37px ;\n}\n@media(max-width:996px){\nli.nav-item[data-v-1706a3da]{\n        width: 67px;\n}\n}\n.nav-btns[data-v-1706a3da]{\n    margin-left: 27px;\n}\n.delete[data-v-1706a3da]{\n     width: 90px !important;\n    float: right;\n}\n.navbar-brand img[data-v-1706a3da]{\n    width: 42px;\n}\n", ""]);
+exports.push([module.i, "\n.modal-mask[data-v-1706a3da] {\n  position: fixed;\n\n  top: 0;\n  left: 0;\n  width: 100%;\n\n  background-color: rgba(0, 0, 0, .5);\n  display: block;\n  transition: opacity .3s ease;\n}\n.modal-wrapper[data-v-1706a3da] {\n  display: table-cell;\n  vertical-align: middle;\n  float: right;\n}\n.modal-content[data-v-1706a3da]{\n    top: -27px;\n    overflow: scroll;\n\n    min-height: 800px;\n}\n.modal-body[data-v-1706a3da] {\n    position: relative;\n    -ms-flex: 1 1 auto;\n    max-height: 500px;\n    flex: 1 1 auto;\n    overflow: auto;\n    padding: 1rem;\n}\n/* .modal-body{\n    position: absolute;\n    width: 400px;\n        overflow: scroll;\n} */\n.modal-body img[data-v-1706a3da]{\n    width: 80px;\n    height: 80px;\n}\n.pro[data-v-1706a3da]{\n    width: 124%;\n}\n.pro button[data-v-1706a3da] {\n    margin-top:-37px ;\n}\n@media(max-width:996px){\nli.nav-item[data-v-1706a3da]{\n        width: 67px;\n}\n}\n.nav-btns[data-v-1706a3da]{\n    margin-left: 27px;\n}\n.delete[data-v-1706a3da]{\n     width: 90px !important;\n    float: right;\n}\n.navbar-brand img[data-v-1706a3da]{\n    width: 42px;\n}\n.lang[data-v-1706a3da]:hover{\n    border-bottom: 2px solid rgb(27, 26, 26);\n}\n.sm[data-v-1706a3da]{\n    display: none;\n}\n@media(max-width: 991px)\n{\n.lg[data-v-1706a3da]{\n        display: none;\n}\n.sm[data-v-1706a3da]{\n        display: block;\n}\n}\n", ""]);
 
 // exports
 
@@ -40928,7 +40936,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("footer", { staticClass: "myhome" }, [
     _c("div", { staticClass: "row mb-3 pl-2" }, [
-      _c("div", { staticClass: "col-md-4 footer-col-1" }, [
+      _c("div", { staticClass: "col-md-5 footer-col-1" }, [
         _c("a", { staticClass: "footer-logo", attrs: { href: "" } }, [
           _vm._v(_vm._s(_vm.$t("message.logo")))
         ]),
@@ -40943,9 +40951,9 @@ var render = function() {
         _vm._m(0)
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "col-md-8 " }, [
+      _c("div", { staticClass: "col-md-7 " }, [
         _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-6 col-lg-3 mb-2" }, [
+          _c("div", { staticClass: "col-md-6 col-lg-4 mb-2" }, [
             _c(
               "ul",
               { staticClass: "footer-menu" },
@@ -41002,7 +41010,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 col-lg-3 mb-2" }, [
+          _c("div", { staticClass: "col-md-6 col-lg-4 mb-2" }, [
             _c(
               "ul",
               { staticClass: "footer-menu" },
@@ -41043,7 +41051,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 col-lg-3 mb-2 pl-0" }, [
+          _c("div", { staticClass: "col-md-6 col-lg-4 mb-2 pl-0" }, [
             _c(
               "div",
               { staticClass: "footer-col footer-col-2" },
@@ -41054,11 +41062,17 @@ var render = function() {
                 _vm._v(" "),
                 _c("p", [_vm._v(_vm._s(_vm.$t("message.signup")))]),
                 _vm._v(" "),
-                _c("router-link", { attrs: { to: "/joinus" } }, [
-                  _c("a", { staticClass: "btn signUp btn-primary" }, [
-                    _vm._v(_vm._s(_vm.$t("message.SUBSCRIBE")))
-                  ])
-                ])
+                _c(
+                  "router-link",
+                  {
+                    attrs: { to: { path: "/about", query: { mydata: "join" } } }
+                  },
+                  [
+                    _c("a", { staticClass: "btn signUp btn-primary" }, [
+                      _vm._v(_vm._s(_vm.$t("message.SUBSCRIBE")))
+                    ])
+                  ]
+                )
               ],
               1
             )
@@ -41209,7 +41223,7 @@ var render = function() {
       _c(
         "div",
         { staticClass: "d-sm-block d-none" },
-        [_c("LanguageDropdown")],
+        [_c("LanguageDropdown", { staticClass: "lang" })],
         1
       ),
       _vm._v(" "),
@@ -41220,56 +41234,144 @@ var render = function() {
           attrs: { id: "navbarTogglerDemo03" }
         },
         [
-          _c("ul", { staticClass: "navbar-nav  mx-auto mt-2 mt-lg-0" }, [
-            _c(
-              "li",
-              { staticClass: " d-block d-sm-none about" },
-              [_c("LanguageDropdown")],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item home active" },
-              [
-                _c("router-link", { attrs: { to: "/" } }, [
-                  _c("a", { staticClass: "nav-link" }, [
-                    _vm._v(" " + _vm._s(_vm.$t("message.home"))),
-                    _c("span", { staticClass: "sr-only" }, [
-                      _vm._v("(current)")
+          _vm.$i18n.locale == "en"
+            ? _c("ul", { staticClass: "navbar-nav  mx-auto mt-2 mt-lg-0" }, [
+                _c(
+                  "li",
+                  {
+                    staticClass: "nav-item d-block d-sm-none about text-center",
+                    staticStyle: { margin: "auto" }
+                  },
+                  [_c("LanguageDropdown", { staticClass: "nav-link" })],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item home active" },
+                  [
+                    _c("router-link", { attrs: { to: "/" } }, [
+                      _c("a", { staticClass: "nav-link" }, [
+                        _vm._v(" " + _vm._s(_vm.$t("message.home"))),
+                        _c("span", { staticClass: "sr-only" }, [
+                          _vm._v("(current)")
+                        ])
+                      ])
                     ])
-                  ])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item shop" },
-              [
-                _c("router-link", { attrs: { to: "/shop" } }, [
-                  _c("a", { staticClass: "nav-link" }, [
-                    _vm._v(_vm._s(_vm.$t("message.shopart")))
-                  ])
-                ])
-              ],
-              1
-            ),
-            _vm._v(" "),
-            _c(
-              "li",
-              { staticClass: "nav-item about" },
-              [
-                _c("router-link", { attrs: { to: "/about" } }, [
-                  _c("a", { staticClass: "nav-link" }, [
-                    _vm._v(_vm._s(_vm.$t("message.about")))
-                  ])
-                ])
-              ],
-              1
-            )
-          ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item shop" },
+                  [
+                    _c("router-link", { attrs: { to: "/shop" } }, [
+                      _c("a", { staticClass: "nav-link" }, [
+                        _vm._v(_vm._s(_vm.$t("message.shopart")))
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item about" },
+                  [
+                    _c("router-link", { attrs: { to: "/about" } }, [
+                      _c("a", { staticClass: "nav-link" }, [
+                        _vm._v(_vm._s(_vm.$t("message.about")))
+                      ])
+                    ])
+                  ],
+                  1
+                )
+              ])
+            : _c("ul", { staticClass: "navbar-nav  mx-auto mt-2 mt-lg-0" }, [
+                _c(
+                  "li",
+                  {
+                    staticClass: "nav-item d-block d-sm-none about",
+                    staticStyle: { margin: "auto" }
+                  },
+                  [_c("LanguageDropdown", { staticClass: "nav-link" })],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item about" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "lg", attrs: { to: "/about" } },
+                      [
+                        _c("a", { staticClass: "nav-link" }, [
+                          _vm._v(_vm._s(_vm.$t("message.about")))
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      { staticClass: "sm", attrs: { to: "/" } },
+                      [
+                        _c("a", { staticClass: "nav-link" }, [
+                          _vm._v(" " + _vm._s(_vm.$t("message.home"))),
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("(current)")
+                          ])
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item shop" },
+                  [
+                    _c("router-link", { attrs: { to: "/shop" } }, [
+                      _c("a", { staticClass: "nav-link" }, [
+                        _vm._v(_vm._s(_vm.$t("message.shopart")))
+                      ])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item active home" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "lg", attrs: { to: "/" } },
+                      [
+                        _c("a", { staticClass: "nav-link" }, [
+                          _vm._v(" " + _vm._s(_vm.$t("message.home"))),
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("(current)")
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "router-link",
+                      { staticClass: "sm", attrs: { to: "/about" } },
+                      [
+                        _c("a", { staticClass: "nav-link" }, [
+                          _vm._v(_vm._s(_vm.$t("message.about")))
+                        ])
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
         ]
       ),
       _vm._v(" "),
@@ -101721,18 +101823,18 @@ var routes = [{
   path: '/',
   name: 'home',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../components/Page/Home */ "./resources/js/components/Page/Home.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ../components/Page/Home */ "./resources/js/components/Page/Home.vue"));
   }
 }, {
   path: '/shop',
   name: 'shop',
   component: function component() {
-    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ../components/Page/ShopArt */ "./resources/js/components/Page/ShopArt.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ../components/Page/ShopArt */ "./resources/js/components/Page/ShopArt.vue"));
   }
 }, {
   path: '/about',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.bind(null, /*! ../components/Page/AboutUs */ "./resources/js/components/Page/AboutUs.vue"));
+    return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ../components/Page/AboutUs */ "./resources/js/components/Page/AboutUs.vue"));
   }
 }, {
   path: '/terms',
@@ -101757,7 +101859,7 @@ var routes = [{
 }, {
   path: '/joinus',
   component: function component() {
-    return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ../components/Page/JoinUs */ "./resources/js/components/Page/JoinUs.vue"));
+    return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../components/Page/JoinUs */ "./resources/js/components/Page/JoinUs.vue"));
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -101874,7 +101976,7 @@ var messages = {
       // footer
       logo: "ecstase",
       lorem: "lorem text"
-    }, _defineProperty(_message, "email", "E-mail"), _defineProperty(_message, "firstname", "First Name"), _defineProperty(_message, "lastname", "Last Name"), _defineProperty(_message, "address", "Address"), _defineProperty(_message, "appartment", "Apartment, Suite, etc. (optional)"), _defineProperty(_message, "city", "City"), _defineProperty(_message, "phone", "Phone"), _defineProperty(_message, "postcode", "Post Code "), _defineProperty(_message, "discount", "Discount"), _defineProperty(_message, "Aplly", "APPLY"), _defineProperty(_message, "subtotal", "Sub Total"), _defineProperty(_message, "total", "Total"), _defineProperty(_message, "calulated", "Calculated at next"), _defineProperty(_message, "toshipping", "Continue to Shipping"), _defineProperty(_message, "select_size", 'Please Select Size'), _defineProperty(_message, "empty", '      '), _defineProperty(_message, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message, "shopfooter", 'Shop artworks'), _defineProperty(_message, "aboutfooter", 'About our products'), _defineProperty(_message, "carreerfooter", 'Careers'), _defineProperty(_message, "aboutusfooter", 'About us'), _defineProperty(_message, "artistfooter", 'Our Artist'), _defineProperty(_message, "contactfooter", 'Contact us'), _defineProperty(_message, "termsfooter", 'Terms of use'), _defineProperty(_message, "privacyfooter", 'Privacy Policy'), _defineProperty(_message, "refundpolicy", 'Refund Policy'), _defineProperty(_message, "socialLink", 'SocialLink'), _defineProperty(_message, "solidout", 'Solid Out'), _defineProperty(_message, "support", 'Support'), _defineProperty(_message, "support_text", 'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.'), _defineProperty(_message, "Product", 'Product'), _defineProperty(_message, "Shipping", 'Shipping'), _defineProperty(_message, "Collabs", 'Collabs'), _defineProperty(_message, "contact", 'Contact'), _defineProperty(_message, "product_text1", 'What are Walltones?'), _defineProperty(_message, "product_text2", 'What are Knitworks?'), _defineProperty(_message, "product_text3", 'How do I assemble my Walltone?'), _defineProperty(_message, "product_text4", 'How do I assemble my Knitwork?'), _defineProperty(_message, "product_text5", 'What are the exact dimensions/materials of my artwork?'), _defineProperty(_message, "product_text6", 'I need any tools to hang my artwork?'), _defineProperty(_message, "product_text7", 'Walltones are our affordable and easy to hang canvas posters. They come in three different sizes, always complete with a special magnetic frame. Each Walltone is part of a limited edition.'), _defineProperty(_message, "product_text8", 'Knitworks are luxurious artworks on fabric, often using a combination of printing and painting techniques. The fabric is stretchedinto a sturdy metal frame. Like Walltones, they are always part of a limited edition.'), _defineProperty(_message, "product_text9", 'Align the pairs of magnetic frames with the top and bottom of your artwork.The included adhesive strips or screw can be used to stick only the top frame, or both frames to your wall.'), _defineProperty(_message, "product_text10", 'You can find Knitwork assembly instructions on the manual inside the box.'), _defineProperty(_message, "product_text11", 'When you buy an artwork, you can find the specifications in the dropdown menus underneath the product description. If you have any questions not answered in there, feel free to ask us.'), _defineProperty(_message, "product_text12", 'If the included adhesive strips are not suitable for your wall,you can use the included screw and plug. Only when using the screw and plug you will need a drill and screwdriver.'), _defineProperty(_message, "ship_text1", 'Do you ship to my country?'), _defineProperty(_message, "ship_text2", 'What about returns and shipping time?'), _defineProperty(_message, "ship_text3", 'We ship worldwide. If you are worried that your country might not accept our products because of regulation or customs policies, please send us an email explaining the situation and we will try to find out what is the best solution.'), _defineProperty(_message, "ship_text4", 'After placing your order, the whole process of preparing, packing and shipping to your doorstep can take approximately 15 business days depending on your location. Orders get sent out within 24 hours on average, after which you wont be able to cancel our order since the package will already be in transit. You can however, return your package for a full refund within 30 days.'), _defineProperty(_message, "Collabs_text1", 'I am an artist, how can we work together?'), _defineProperty(_message, "Collabs_text2", 'I am an influencer, how can we work together?'), _defineProperty(_message, "Collabs_text3", 'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.'), _defineProperty(_message, "Collabs_text4", 'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!'), _defineProperty(_message, "Terms", 'Terms'), _defineProperty(_message, "Terms_text1", 'What are the terms of this website?'), _defineProperty(_message, "Terms_text2", 'How do you treat my privacy?'), _defineProperty(_message, "Terms_text3", 'How can I get a refund?'), _defineProperty(_message, "Terms_text4", 'Read our terms'), _defineProperty(_message, "Terms_text5", 'Read our Privacy Policy'), _defineProperty(_message, "Terms_text6", 'Read our Refund Policy'), _message)
+    }, _defineProperty(_message, "email", "E-mail"), _defineProperty(_message, "firstname", "First Name"), _defineProperty(_message, "lastname", "Last Name"), _defineProperty(_message, "address", "Address"), _defineProperty(_message, "appartment", "Apartment, Suite, etc. (optional)"), _defineProperty(_message, "city", "City"), _defineProperty(_message, "phone", "Phone"), _defineProperty(_message, "postcode", "Post Code "), _defineProperty(_message, "discount", "Discount"), _defineProperty(_message, "Aplly", "APPLY"), _defineProperty(_message, "subtotal", "Sub Total"), _defineProperty(_message, "total", "Total"), _defineProperty(_message, "calulated", "Calculated at next"), _defineProperty(_message, "toshipping", "Continue to Shipping"), _defineProperty(_message, "select_size", 'Please Select Size'), _defineProperty(_message, "showorder", 'Show Order Summary'), _defineProperty(_message, "hideorder", 'Hide Order Summary'), _defineProperty(_message, "empty", '      '), _defineProperty(_message, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message, "shopfooter", 'Shop artworks'), _defineProperty(_message, "aboutfooter", 'About our products'), _defineProperty(_message, "carreerfooter", 'Careers'), _defineProperty(_message, "aboutusfooter", 'Our Mission'), _defineProperty(_message, "artistfooter", 'Our Artists'), _defineProperty(_message, "contactfooter", 'Contact us'), _defineProperty(_message, "termsfooter", 'Terms of use'), _defineProperty(_message, "privacyfooter", 'Privacy Policy'), _defineProperty(_message, "refundpolicy", 'Refund Policy'), _defineProperty(_message, "socialLink", 'SocialLink'), _defineProperty(_message, "solidout", 'Solid Out'), _defineProperty(_message, "support", 'Support'), _defineProperty(_message, "support_text", 'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.'), _defineProperty(_message, "Product", 'Product'), _defineProperty(_message, "Shipping", 'Shipping'), _defineProperty(_message, "Collabs", 'Collabs'), _defineProperty(_message, "contact", 'Contact'), _defineProperty(_message, "product_text1", 'What are Walltones?'), _defineProperty(_message, "product_text2", 'What are Knitworks?'), _defineProperty(_message, "product_text3", 'How do I assemble my Walltone?'), _defineProperty(_message, "product_text4", 'How do I assemble my Knitwork?'), _defineProperty(_message, "product_text5", 'What are the exact dimensions/materials of my artwork?'), _defineProperty(_message, "product_text6", 'I need any tools to hang my artwork?'), _defineProperty(_message, "product_text7", 'Walltones are our affordable and easy to hang canvas posters. They come in three different sizes, always complete with a special magnetic frame. Each Walltone is part of a limited edition.'), _defineProperty(_message, "product_text8", 'Knitworks are luxurious artworks on fabric, often using a combination of printing and painting techniques. The fabric is stretchedinto a sturdy metal frame. Like Walltones, they are always part of a limited edition.'), _defineProperty(_message, "product_text9", 'Align the pairs of magnetic frames with the top and bottom of your artwork.The included adhesive strips or screw can be used to stick only the top frame, or both frames to your wall.'), _defineProperty(_message, "product_text10", 'You can find Knitwork assembly instructions on the manual inside the box.'), _defineProperty(_message, "product_text11", 'When you buy an artwork, you can find the specifications in the dropdown menus underneath the product description. If you have any questions not answered in there, feel free to ask us.'), _defineProperty(_message, "product_text12", 'If the included adhesive strips are not suitable for your wall,you can use the included screw and plug. Only when using the screw and plug you will need a drill and screwdriver.'), _defineProperty(_message, "ship_text1", 'Do you ship to my country?'), _defineProperty(_message, "ship_text2", 'What about returns and shipping time?'), _defineProperty(_message, "ship_text3", 'We ship worldwide. If you are worried that your country might not accept our products because of regulation or customs policies, please send us an email explaining the situation and we will try to find out what is the best solution.'), _defineProperty(_message, "ship_text4", 'After placing your order, the whole process of preparing, packing and shipping to your doorstep can take approximately 15 business days depending on your location. Orders get sent out within 24 hours on average, after which you wont be able to cancel our order since the package will already be in transit. You can however, return your package for a full refund within 30 days.'), _defineProperty(_message, "Collabs_text1", 'I am an artist, how can we work together?'), _defineProperty(_message, "Collabs_text2", 'I am an influencer, how can we work together?'), _defineProperty(_message, "Collabs_text3", 'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.'), _defineProperty(_message, "Collabs_text4", 'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!'), _defineProperty(_message, "Terms", 'Terms'), _defineProperty(_message, "Terms_text1", 'What are the terms of this website?'), _defineProperty(_message, "Terms_text2", 'How do you treat my privacy?'), _defineProperty(_message, "Terms_text3", 'How can I get a refund?'), _defineProperty(_message, "Terms_text4", 'Read our terms'), _defineProperty(_message, "Terms_text5", 'Read our Privacy Policy'), _defineProperty(_message, "Terms_text6", 'Read our Refund Policy'), _defineProperty(_message, "noitem", 'There are no products. Please add an entry to complete the process!!'), _message)
   },
   ar: {
     message: (_message2 = {
@@ -101929,7 +102031,7 @@ var messages = {
       // footer
       logo: "اسم الموقع",
       lorem: "نص تجريبى "
-    }, _defineProperty(_message2, "email", "البريد الإلكترونى"), _defineProperty(_message2, "firstname", "الإسم الأول "), _defineProperty(_message2, "lastname", "الإسم الأخير"), _defineProperty(_message2, "address", "العنوان"), _defineProperty(_message2, "appartment", "طاقم العمل "), _defineProperty(_message2, "city", "المدينه"), _defineProperty(_message2, "phone", "رقم الموبايل"), _defineProperty(_message2, "postcode", "الرمز البريدى"), _defineProperty(_message2, "discount", "الخصم"), _defineProperty(_message2, "Aplly", "الحصول"), _defineProperty(_message2, "subtotal", "الخصم"), _defineProperty(_message2, "total", "السعر الإجمالى"), _defineProperty(_message2, "calulated", "الحساب سيتم الكرة القادة "), _defineProperty(_message2, "toshipping", "متابعة الشراء"), _defineProperty(_message2, "select_size", 'من فضلك اختر الحجم'), _defineProperty(_message2, "empty", '      '), _defineProperty(_message2, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message2, "shopfooter", 'تسوق الأعمال الفنية'), _defineProperty(_message2, "aboutfooter", 'حول منتجاتنا'), _defineProperty(_message2, "carreerfooter", 'وظائف'), _defineProperty(_message2, "aboutusfooter", 'معلومات عنا'), _defineProperty(_message2, "artistfooter", 'الفنانون'), _defineProperty(_message2, "contactfooter", 'اتصل بنا'), _defineProperty(_message2, "termsfooter", 'شروط الاستخدام'), _defineProperty(_message2, "privacyfooter", 'سياسة خاصة'), _defineProperty(_message2, "refundpolicy", 'سياسة الاسترجاع'), _defineProperty(_message2, "socialLink", 'رابط التواصل اﻷجتماعي'), _defineProperty(_message2, "solidout", 'نفذت الكميه'), _defineProperty(_message2, "support", 'ألدعم'), _defineProperty(_message2, "support_text", ' هل لديك اسئلة؟ ألق نظرة على الفئات أدناه ، وإذا كانت لا تتضمن الإجابة التي كنت تبحث عنها ، فلا تتردد في إرسال بريد إلكتروني إلينا.'), _defineProperty(_message2, "Product", 'المنتج'), _defineProperty(_message2, "Shipping", 'الشحن'), _defineProperty(_message2, "Collabs", 'تعاون'), _defineProperty(_message2, "contact", 'اتصل بنا'), _defineProperty(_message2, "product_text1", ' ؟ Walltones ما هو'), _defineProperty(_message2, "product_text2", '؟ Knitworks ما هو'), _defineProperty(_message2, "product_text3", 'كيف اقوم بتجميع نغمه walltone الخاصه بي ؟'), _defineProperty(_message2, "product_text4", '  كيف أقوم بتجميع Knitwork الخاص بي؟'), _defineProperty(_message2, "product_text5", 'ما هي الأبعاد / المواد الدقيقة لأعمالي الفنية؟'), _defineProperty(_message2, "product_text6", 'أحتاج إلى أي أدوات لتعليق أعمالي الفنية؟'), _defineProperty(_message2, "product_text7", 'Walltones هي ملصقاتنا بأسعار معقولة وسهلة التعليق. تأتي في ثلاثة أحجام مختلفة ، كاملة دائمًا بإطار مغناطيسي خاص. كل Walltone جزء من إصدار محدود.'), _defineProperty(_message2, "product_text8", ' أعمال التريكو هي أعمال فنية فاخرة على القماش ، غالبًا ما تستخدم مزيجًا من تقنيات الطباعة والطلاء. تمدد القماش في إطار معدني قوي. مثل Walltones ، فهي دائمًا جزء من إصدار محدود.'), _defineProperty(_message2, "product_text9", ' قم بمحاذاة أزواج الإطارات المغناطيسية مع الجزء العلوي والسفلي من عملك الفني. يمكن استخدام الشرائط اللاصقة أو اللولب المتضمن في لصق الإطار العلوي فقط ، أو كلا الإطارين على الحائط.'), _defineProperty(_message2, "product_text10", ' يمكنك العثور على تعليمات تجميع Knitwork في الدليل الموجود داخل الصندوق.'), _defineProperty(_message2, "product_text11", ' عند شراء عمل فني ، يمكنك العثور على المواصفات في القوائم المنسدلة أسفل وصف المنتج. إذا كانت لديك أية أسئلة لم تتم الإجابة عليها ، فلا تتردد في طرحها علينا.'), _defineProperty(_message2, "product_text12", ' إذا كانت الشرائط اللاصقة المرفقة غير مناسبة لجدارك ، يمكنك استخدام المسمار والمكونات المدرجة. ستحتاج إلى مثقاب ومفك فقط عند استخدام المسمار والمقبس.'), _defineProperty(_message2, "ship_text1", 'هل تشحن إلى بلدي؟'), _defineProperty(_message2, "ship_text2", 'ماذا عن المرتجعات ووقت الشحن؟'), _defineProperty(_message2, "ship_text3", ' نحن نشحن عالميا. إذا كنت قلقًا من أن بلدك قد لا يقبل منتجاتنا لأن التنظيم أو السياسات الجمركية ، يرجى إرسال بريد إلكتروني إلينا لشرح الوضع وسنقوم بذلك حاول معرفة الحل الأفضل.'), _defineProperty(_message2, "ship_text4", ' بعد وضع طلبك ، تتم عملية التحضير والتعبئة والشحن بأكملها إلى باب منزلك يمكن أن يستغرق ما يقرب من 15 يوم عمل حسب موقعك. يتم إرسال الطلبات في غضون 24 ساعة في المتوسط ​​، وبعد ذلك لن تتمكن من الإلغاء نظامنا لأن الحزمة ستكون بالفعل في العبور. ومع ذلك ، يمكنك إرجاع حزمة لاسترداد كامل في غضون 30 يوما.'), _defineProperty(_message2, "Collabs_text1", 'أنا فنان ، كيف يمكننا العمل معًا؟ '), _defineProperty(_message2, "Collabs_text2", 'أنا مؤثر ، كيف يمكننا العمل معًا؟'), _defineProperty(_message2, "Collabs_text3", ' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.'), _defineProperty(_message2, "Collabs_text4", ' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!'), _defineProperty(_message2, "Terms", 'الشروط'), _defineProperty(_message2, "Terms_text1", 'ما هي شروط الموقع'), _defineProperty(_message2, "Terms_text2", 'كيف تتعامل مع خصوصيتك'), _defineProperty(_message2, "Terms_text3", 'كيف يمكنني استرداد اﻷموال'), _defineProperty(_message2, "Terms_text4", 'اقرأ شروط الموقع'), _defineProperty(_message2, "Terms_text5", 'اقرأ سياسة الخصوصية'), _defineProperty(_message2, "Terms_text6", 'اقرأ سياسة اﻷسترداد'), _message2)
+    }, _defineProperty(_message2, "email", "البريد الإلكترونى"), _defineProperty(_message2, "firstname", "الإسم الأول "), _defineProperty(_message2, "lastname", "الإسم الأخير"), _defineProperty(_message2, "address", "العنوان"), _defineProperty(_message2, "appartment", "طاقم العمل "), _defineProperty(_message2, "city", "المدينه"), _defineProperty(_message2, "phone", "رقم الموبايل"), _defineProperty(_message2, "postcode", "الرمز البريدى"), _defineProperty(_message2, "discount", "الخصم"), _defineProperty(_message2, "Aplly", "الحصول"), _defineProperty(_message2, "subtotal", "الخصم"), _defineProperty(_message2, "total", "السعر الإجمالى"), _defineProperty(_message2, "calulated", "الحساب سيتم الكرة القادة "), _defineProperty(_message2, "toshipping", "متابعة الشراء"), _defineProperty(_message2, "select_size", 'من فضلك اختر الحجم'), _defineProperty(_message2, "showorder", ' إظهار ملخص الطلب'), _defineProperty(_message2, "hideorder", ' إخفاء ملخص الطلب'), _defineProperty(_message2, "empty", '      '), _defineProperty(_message2, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message2, "shopfooter", 'تسوق الأعمال الفنية'), _defineProperty(_message2, "aboutfooter", 'حول منتجاتنا'), _defineProperty(_message2, "carreerfooter", 'وظائف'), _defineProperty(_message2, "aboutusfooter", 'معلومات عنا'), _defineProperty(_message2, "artistfooter", 'الفنانون'), _defineProperty(_message2, "contactfooter", 'اتصل بنا'), _defineProperty(_message2, "termsfooter", 'شروط الاستخدام'), _defineProperty(_message2, "privacyfooter", 'سياسة خاصة'), _defineProperty(_message2, "refundpolicy", 'سياسة الاسترجاع'), _defineProperty(_message2, "socialLink", 'رابط التواصل اﻷجتماعي'), _defineProperty(_message2, "solidout", 'نفذت الكميه'), _defineProperty(_message2, "support", 'ألدعم'), _defineProperty(_message2, "support_text", ' هل لديك اسئلة؟ ألق نظرة على الفئات أدناه ، وإذا كانت لا تتضمن الإجابة التي كنت تبحث عنها ، فلا تتردد في إرسال بريد إلكتروني إلينا.'), _defineProperty(_message2, "Product", 'المنتج'), _defineProperty(_message2, "Shipping", 'الشحن'), _defineProperty(_message2, "Collabs", 'تعاون'), _defineProperty(_message2, "contact", 'اتصل بنا'), _defineProperty(_message2, "product_text1", ' ؟ Walltones ما هو'), _defineProperty(_message2, "product_text2", '؟ Knitworks ما هو'), _defineProperty(_message2, "product_text3", 'كيف اقوم بتجميع نغمه walltone الخاصه بي ؟'), _defineProperty(_message2, "product_text4", '  كيف أقوم بتجميع Knitwork الخاص بي؟'), _defineProperty(_message2, "product_text5", 'ما هي الأبعاد / المواد الدقيقة لأعمالي الفنية؟'), _defineProperty(_message2, "product_text6", 'أحتاج إلى أي أدوات لتعليق أعمالي الفنية؟'), _defineProperty(_message2, "product_text7", 'Walltones هي ملصقاتنا بأسعار معقولة وسهلة التعليق. تأتي في ثلاثة أحجام مختلفة ، كاملة دائمًا بإطار مغناطيسي خاص. كل Walltone جزء من إصدار محدود.'), _defineProperty(_message2, "product_text8", ' أعمال التريكو هي أعمال فنية فاخرة على القماش ، غالبًا ما تستخدم مزيجًا من تقنيات الطباعة والطلاء. تمدد القماش في إطار معدني قوي. مثل Walltones ، فهي دائمًا جزء من إصدار محدود.'), _defineProperty(_message2, "product_text9", ' قم بمحاذاة أزواج الإطارات المغناطيسية مع الجزء العلوي والسفلي من عملك الفني. يمكن استخدام الشرائط اللاصقة أو اللولب المتضمن في لصق الإطار العلوي فقط ، أو كلا الإطارين على الحائط.'), _defineProperty(_message2, "product_text10", ' يمكنك العثور على تعليمات تجميع Knitwork في الدليل الموجود داخل الصندوق.'), _defineProperty(_message2, "product_text11", ' عند شراء عمل فني ، يمكنك العثور على المواصفات في القوائم المنسدلة أسفل وصف المنتج. إذا كانت لديك أية أسئلة لم تتم الإجابة عليها ، فلا تتردد في طرحها علينا.'), _defineProperty(_message2, "product_text12", ' إذا كانت الشرائط اللاصقة المرفقة غير مناسبة لجدارك ، يمكنك استخدام المسمار والمكونات المدرجة. ستحتاج إلى مثقاب ومفك فقط عند استخدام المسمار والمقبس.'), _defineProperty(_message2, "ship_text1", 'هل تشحن إلى بلدي؟'), _defineProperty(_message2, "ship_text2", 'ماذا عن المرتجعات ووقت الشحن؟'), _defineProperty(_message2, "ship_text3", ' نحن نشحن عالميا. إذا كنت قلقًا من أن بلدك قد لا يقبل منتجاتنا لأن التنظيم أو السياسات الجمركية ، يرجى إرسال بريد إلكتروني إلينا لشرح الوضع وسنقوم بذلك حاول معرفة الحل الأفضل.'), _defineProperty(_message2, "ship_text4", ' بعد وضع طلبك ، تتم عملية التحضير والتعبئة والشحن بأكملها إلى باب منزلك يمكن أن يستغرق ما يقرب من 15 يوم عمل حسب موقعك. يتم إرسال الطلبات في غضون 24 ساعة في المتوسط ​​، وبعد ذلك لن تتمكن من الإلغاء نظامنا لأن الحزمة ستكون بالفعل في العبور. ومع ذلك ، يمكنك إرجاع حزمة لاسترداد كامل في غضون 30 يوما.'), _defineProperty(_message2, "Collabs_text1", 'أنا فنان ، كيف يمكننا العمل معًا؟ '), _defineProperty(_message2, "Collabs_text2", 'أنا مؤثر ، كيف يمكننا العمل معًا؟'), _defineProperty(_message2, "Collabs_text3", ' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.'), _defineProperty(_message2, "Collabs_text4", ' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!'), _defineProperty(_message2, "Terms", 'الشروط'), _defineProperty(_message2, "Terms_text1", 'ما هي شروط الموقع'), _defineProperty(_message2, "Terms_text2", 'كيف تتعامل مع خصوصيتك'), _defineProperty(_message2, "Terms_text3", 'كيف يمكنني استرداد اﻷموال'), _defineProperty(_message2, "Terms_text4", 'اقرأ شروط الموقع'), _defineProperty(_message2, "Terms_text5", 'اقرأ سياسة الخصوصية'), _defineProperty(_message2, "Terms_text6", 'اقرأ سياسة اﻷسترداد'), _defineProperty(_message2, "noitem", '!! لا يوجد منتجات. الرجاء إضافة منتج لإكمال العملية'), _message2)
   }
 };
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]({

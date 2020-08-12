@@ -10,6 +10,7 @@ use  App\Models\Discount;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderResquest;
 use Illuminate\Support\Facades\Validator;
 use App\Rules\instock;
 
@@ -99,35 +100,19 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderResquest $request)
     {
 
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email:rfc,dns',
-            'fname' => 'required|string|max:100',
-            'lname' => 'required|string|max:100',
-            'address' => 'required|string|max:300',
-            'apartment' => 'string|max:300',
-            'city' => 'required|string|max:100',
-            'postcode' => 'required|numeric',
-            'goverment' => 'required|string|max:100',
-            'country' => 'required|string|max:100',
-            'items' => 'required|present|array',
-            'items.*.paletteid' => 'required|numeric|exists:App\Models\Palette,id',
+        // $validator = Validator::make($request->all(), [
 
-            'items.*.palettesize' => 'required|in:"small","large","medium"',
-            'items.*.quantity' => 'required|numeric|gt:0',
-            'items.*' => new instock(),
-            ]);
-
+        //     ]);
         // app()->setLocale('ar');
-
         $locale = app()->getLocale();
-        if ( $validator->errors()->count()>0)
-        {
-            return response()->json(['status'=>false,'errors'=>$validator->errors()->all(),__('orderrequest.failed')]);
-            // discount_percentage
-        }
+        // if ( $validator->errors()->count()>0)
+        // {
+        //     return response()->json(['status'=>false,'errors'=>$validator->errors()->all(),__('orderrequest.failed')]);
+        //     // discount_percentage
+        // }
         $totalprice =$this->totalprice($request->items,$request->promocode);
         $request['paymentstatus'] = 'pending';
         $request['totalprice'] = $totalprice['totalprice'];

@@ -4,57 +4,101 @@
 
 
       <div class="row"  v-if="$i18n.locale == 'en'">
+        <div class="col-md-5 sm_discount mt-4" style="background-color:#eaeaea">
+          <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
+            <span>
+              <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span> 
+            <span class="plus" v-if="discount_section==false"><i class="fa fa-chevron-down"></i></span>
+              <span style="float:right;" class="mr-3">
+                <span style="color:#737171;"></span> $ {{totalprice_2}}
+              </span>
+              <div style="clear:both"></div>
+          </div>
+          <div class="clickdown" @click="discount_section = !discount_section" v-else>
+            <span ><i class="fa fa-shopping-cart ml-2 mr-2"></i> {{ $t("message.hideorder") }} </span >
+            <span class="plus" v-if="discount_section==true"><i class="fa fa-chevron-up"></i></span> 
+            <span style="float:right;" class="mr-3">
+                <span style="color:#737171;"></span> $ {{totalprice_2}}
+            </span>
+            <div style="clear:both"></div>
+          </div>
+          <div class="discount_section mt-5" v-if="discount_section">
+            <div class="border-bottom  p-2 img"
+                v-for="item in cart"
+                :key="item.product.id"
+
+                >
+                <span class="quantity"> {{ item.quantity }} </span>
+              <img
+              :src="item.product.img"
+              />
+              <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
+              <div style="float:right">
+                  {{ item.quantity }} x ${{item.price}}
+              </div>
+              <div style="clear:both"></div>
+              <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6>
+            </div>
+
+            <div class="discount">
+              <v-form class="form_discount">
+                <v-text-field v-model="discount" label="Discount"></v-text-field>
+                <v-btn @click="apply_discount()" class="mr-4">Apply</v-btn>
+              </v-form>
+            </div>
+            <hr />
+            <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
+              <div>
+                <span style="font-size:14px;padding:10px;color:#444f58">Sub Value</span>
+                <span style="float:right;font-size:14px;color:#444f58">$ {{discount_value}}</span>
+                <div style="clear:both"></div>
+              </div>
+              <hr/>
+              <!-- <div class="mt-3">
+                <span>Shipping</span>
+                <span style="float:right">calculated at next</span>
+                <div style="clear:both"></div>
+              </div> -->
+            <!-- </div> -->
+
+            <div style="font-size:18px;padding:10px">
+              <span> Total Price : </span>
+              <span style="float:right;">
+                <span style="color:#737171;"></span> $ {{totalprice_2}}
+              </span>
+              <div style="clear:both"></div>
+            </div>
+          </div>
+        </div>
       <div class="col-md-7">
-                                                                      <!-- Button trigger modal -->
-
-
-                                <!-- Modal -->
-                                <div    class="modal show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" show='true'>
-                                         <div class="modal-dialog modal-dialog-centered" role="document">
-                                                     <div class="modal-content" style="display: contents;">
-
-
-                                                        <div class="moda-body">
-                                                                ss
-                                                          <form :action="`/api/payment/${this.id}`" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
-
-                                                        </div>
-
-
-
-                                                 </div>
-                                        </div>
-                                 </div>
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" show='true'>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content" style="display: contents;">
+                  <div class="moda-body">
+                          ss
+                    <form :action="`/api/payment/${this.id}`" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
+                  </div>
+                </div>
+            </div>
+          </div>
         <v-form class="form" @submit.prevent="send">
           <v-container>
-                            <div   v-if="errors.length > 0 && !message" class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>Sorry!</strong> You should check in on some of those fields below.
-                                    <br>
-                                    <ul >
-                                        <li v-for="item in errors " :key="item">
-                                            {{ item }}
-                                        </li>
-                                    </ul>
-
-
-
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-                            <div   v-if=" message.length >0 " class="alert alert-warning alert-dismissible fade show" role="alert">
-                                  <h1> Done</h1>
-
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-
-
+            <div class="alert text-center mb-3">
+              <h5 class="red--text" v-if="errors.items">{{ $t("message.noitem") }}</h5>
+            </div>
+              <div v-if=" message.length >0 " class="alert alert-info alert-dismissible fade show" role="alert">
+                  <h1 class="text-center"> Done</h1>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
             <v-row>
               <h4>Contacts information </h4>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.email" label="E-mail" required></v-text-field>
+                 <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
               </v-col>
               <!-- <v-checkbox
                         v-model="form.checkbox"
@@ -65,22 +109,28 @@
 
               <v-col cols="12" md="6">
                 <v-text-field v-model="form.fname" label="First Name" required></v-text-field>
+                 <span class="red--text" v-if="errors.fname">{{errors.fname[0]}}</span>
               </v-col>
 
               <v-col cols="12" md="6">
                 <v-text-field v-model="form.lname" label="Last Name" required></v-text-field>
+                 <span class="red--text" v-if="errors.lname">{{errors.lname[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.address" label=" Address " required></v-text-field>
+                 <span class="red--text" v-if="errors.address">{{errors.address[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.apartment" label="Appartment"></v-text-field>
+                 <span class="red--text" v-if="errors.apartment">{{errors.apartment[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.city" label="city" required></v-text-field>
+                 <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
               <v-col class="d-flex" cols="12" sm="8">
                 <v-select v-model="form.country" :items="item" label="country" outlined></v-select>
+                 <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
                 <v-select
@@ -95,9 +145,11 @@
               </v-col> -->
               <v-col cols="12" sm="4">
                 <v-text-field v-model="form.postcode" label="Post Code" required></v-text-field>
+                 <span class="red--text" v-if="errors.postcode">{{errors.postcode[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.phone" label="Phone" required></v-text-field>
+                 <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
             <v-btn color="#5cbbff" type="submit">Continue to Shipping</v-btn>
@@ -105,23 +157,22 @@
           </v-container>
         </v-form>
       </div>
-      <div class="col-md-5" style="background-color:#eaeaea">
-
+      <div class="col-md-5 lg_discount" style="background-color:#eaeaea">
         <div class="discount_section mt-5">
           <div class="border-bottom  p-2 img"
-       v-for="item in cart"
-      :key="item.product.id"
-
-          >
+              v-for="item in cart"
+              :key="item.product.id"
+              >
+              <span class="quantity">{{ item.quantity }}</span>
             <img
              :src="item.product.img"
             />
-            <span class="price"> <strong>{{ item.product.name }}</strong></span>
+            <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
             <div style="float:right">
                 {{ item.quantity }} x ${{item.price}}
             </div>
             <div style="clear:both"></div>
-            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} - {{item.sizeCm}} </h6>
+            <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6>
           </div>
 
           <div class="discount">
@@ -133,10 +184,11 @@
           <hr />
           <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
             <div>
-              <span>Sub Value</span>
-              <span style="float:right">${{discount_value}}</span>
+              <span style="font-size:14px;padding:10px;color:#444f58">Sub Value</span>
+              <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
               <div style="clear:both"></div>
             </div>
+            <hr/>
             <!-- <div class="mt-3">
               <span>Shipping</span>
               <span style="float:right">calculated at next</span>
@@ -155,59 +207,97 @@
       </div>
     </div>
 
-
     <div class="row"  v-else>
+          <div class="col-md-5 sm_discount mt-4" style="background-color:#eaeaea">
+          <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
+            <span>
+              <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span> 
+            <span class="plus" v-if="discount_section==false"><i class="fa fa-chevron-down"></i></span>
+              <span style="float:right;" class="mr-3">
+                <span style="color:#737171;"></span> $ {{totalprice_2}}
+              </span>
+              <div style="clear:both"></div>
+          </div>
+          <div class="clickdown" @click="discount_section = !discount_section" v-else>
+            <span ><i class="fa fa-shopping-cart ml-2 mr-2"></i> {{ $t("message.hideorder") }} </span >
+            <span class="plus" v-if="discount_section==true"><i class="fa fa-chevron-up"></i></span> 
+            <span style="float:right;" class="mr-3">
+                <span style="color:#737171;"></span> $ {{totalprice_2}}
+            </span>
+            <div style="clear:both"></div>
+          </div>
+          <div class="discount_section mt-5" v-if="discount_section">
+            <div class="border-bottom  p-2 img"
+                v-for="item in cart"
+                :key="item.product.id"
+
+                >
+                <span class="quantity"> {{ item.quantity }} </span>
+              <img
+              :src="item.product.img"
+              />
+              <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
+              <div style="float:right">
+                  {{ item.quantity }} x ${{item.price}}
+              </div>
+              <div style="clear:both"></div>
+              <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6>
+            </div>
+
+            <div class="discount">
+              <v-form class="form_discount">
+                <v-text-field v-model="discount" label="الكوبون"></v-text-field>
+                <v-btn @click="apply_discount()" class="mr-4">خصم الأن</v-btn>
+              </v-form>
+            </div>
+            <hr />
+            <div class="discount_text" style="color:#737171;padding:10px">
+              <div>
+                <span style="font-size:14px;padding:10px;color:#444f58">الخصم</span>
+                <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
+                <div style="clear:both"></div>
+              </div>
+
+            </div>
+
+            <div style="font-size:20px;padding:10px">
+              <span style="float:right;">الحساب الإجمالى</span>
+              <span >
+                <span style="color:#737171;"></span> $ {{totalprice_2}}
+              </span>
+              <div style="clear:both"></div>
+            </div>
+          </div>
+        </div>
       <div class="col-md-7">
-                                                                      <!-- Button trigger modal -->
-
-
-                                <!-- Modal -->
-                                <div    class="modal show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" show='true'>
-                                         <div class="modal-dialog modal-dialog-centered" role="document">
-                                                     <div class="modal-content" style="display: contents;">
-
-
-                                                        <div class="moda-body">
-                                                                ss
-                                                          <form action="/api/payment/40" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
-
-                                                        </div>
-
-
-
-                                                 </div>
-                                        </div>
-                                 </div>
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal show" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" show='true'>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content" style="display: contents;">
+                  <div class="moda-body">
+                          ss
+                    <form action="/api/payment/40" class="paymentWidgets" data-brands="VISA MASTER AMEX"></form>
+                  </div>
+              </div>
+            </div>
+          </div>
         <v-form class="form" @submit.prevent="send">
           <v-container>
-                            <div   v-if="errors.length > 0 && !message" class="alert alert-warning alert-dismissible fade show" role="alert">
-                                    <strong>Sorry!</strong> You should check in on some of those fields below.
-                                    <br>
-                                    <ul >
-                                        <li v-for="item in errors" :key="item">
-                                            {{ item }}
-                                        </li>
-                                    </ul>
-
-
-
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-                            <div   v-if=" message.length >0 " class="alert alert-warning alert-dismissible fade show" role="alert">
-                                  <h1> Done</h1>
-
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                            </div>
-
-
+            <div class="alert text-center mb-3">
+              <h5 class="red--text" v-if="errors.items">{{ $t("message.noitem") }}</h5>
+            </div>
+            <div v-if=" message.length >0 " class="alert alert-info alert-dismissible fade show" role="alert">
+                <h1 class="text-center"> Done</h1>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
             <v-row>
               <h4>تسجيل البيانات</h4>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.email" label="البريد الإلكترومى" required></v-text-field>
+                 <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
               </v-col>
               <!-- <v-checkbox
                         v-model="form.checkbox"
@@ -218,22 +308,28 @@
 
               <v-col cols="12" md="6">
                 <v-text-field v-model="form.fname" label="الإسم الأول" required></v-text-field>
+                 <span class="red--text" v-if="errors.fname">{{errors.fname[0]}}</span>
               </v-col>
 
               <v-col cols="12" md="6">
                 <v-text-field v-model="form.lname" label="الإسم الأخير" required></v-text-field>
+                 <span class="red--text" v-if="errors.lname">{{errors.lname[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.address" label="العنوان" required></v-text-field>
+                 <span class="red--text" v-if="errors.address">{{errors.address[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.apartment" label="المنزل"></v-text-field>
+                 <span class="red--text" v-if="errors.apartment">{{errors.apartment[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.city" label="المدينة" required></v-text-field>
+                 <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
               <v-col class="d-flex" cols="12" sm="8">
                 <v-select v-model="form.country" :items="item_ar" value='اليمن' label="الدولة" outlined></v-select>
+                 <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
                 <v-select
@@ -247,24 +343,23 @@
               </v-col> -->
               <v-col cols="12" sm="4">
                 <v-text-field v-model="form.postcode" label="رمز البريد" required></v-text-field>
+                 <span class="red--text" v-if="errors.postcode">{{errors.postcode[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
                 <v-text-field v-model="form.phone" label="الهاتف" required></v-text-field>
+                 <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
             <v-btn color="#5cbbff" type="submit">متابعة الشراء</v-btn>
-            <span v-if="errors">{{errors}}</span>
-            <span v-else>{{message}}</span>
           </v-container>
         </v-form>
       </div>
-      <div class="col-md-5" style="background-color:#eaeaea">
+      <div class="col-md-5 lg_discount" style="background-color:#eaeaea">
 
         <div class="discount_section mt-5">
           <div class="border-bottom  p-2 img"
-       v-for="item in cart"
-      :key="item.product.id"
-
+            v-for="item in cart"
+            :key="item.product.id"
           >
             <img
              :src="item.product.img"
@@ -274,7 +369,7 @@
                 {{ item.quantity }} x ${{item.price}}
             </div>
             <div style="clear:both"></div>
-            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} - {{item.sizeCm}} </h6>
+            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} </h6>
           </div>
 
           <div class="discount">
@@ -286,8 +381,8 @@
           <hr />
           <div class="discount_text" style="color:#737171;padding:10px">
             <div>
-              <span style="float:right">الخصم</span>
-              <span >${{discount_value}}</span>
+              <span style="font-size:14px;padding:10px;color:#444f58">الخصم</span>
+              <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
               <div style="clear:both"></div>
             </div>
 
@@ -330,6 +425,7 @@ export default {
   },
   data() {
     return {
+       errors: {},
       form: {
         email: null,
         lname: null,
@@ -850,12 +946,13 @@ export default {
                 "زامبيا" ,
                 "زيمبابوي" ,
                 "جزر آلاند"
-            ],
-      errors: [],
+          ],
       nameRules: [v => !!v || "Name is required"],
       checkbox: false,
       message: "",
       formview:'',
+      discount_section:false,
+      
     };
   },
   created(){
@@ -876,7 +973,7 @@ this.cart.forEach(element => {
       apply_discount(){
             console.log(this.discount);
             axios.post('/api/check-promo',{code:this.discount}).then((data)=>{
-                console.log(data.data);
+                // console.log(data.data);
                 if(data.data.status)
                 {
                     var price=parseInt(data.data.percentage);
@@ -903,26 +1000,27 @@ this.cart.forEach(element => {
       axios
         .post("/api/add-order", this.form)
         .then(data => {
-          console.log(data.data);
-          if (!data.data.status) {
-            console.log(data.data);
-            this.errors = data.data.errors;
-          } else {
+          // console.log(data.data);
+          // if (!data.data.status) {
+          //   // console.log(data.data);
+          //   this.errors = data.data.errors;
+          // } else {
               $('#exampleModalCenter').modal('show')
-              console.log(data.data.checkid);
-              console.log(data.data.orderid);
-
+              // console.log(data.data.checkid);
+              // console.log(data.data.orderid);
+            
             this.formview=data.data.orderid
             this.id=data.data.orderid
 
             this.message = "donnnnnnnnnnnnnnnnne";
-                          let tag = document.createElement("script");
-                              tag.setAttribute("src", "https://test.oppwa.com/v1/paymentWidgets.js?checkoutId="+data.data.checkid);
-                              document.head.appendChild(tag);
-          }
+            let tag = document.createElement("script");
+                tag.setAttribute("src", "https://test.oppwa.com/v1/paymentWidgets.js?checkoutId="+data.data.checkid);
+                document.head.appendChild(tag);
+              this.errors=""
+          //}
         })
 
-        .catch(error => (this.errors = error.response.data.errors));
+      .catch(error => this.errors = error.response.data.errors)
     }
   }
 };
@@ -959,5 +1057,32 @@ this.cart.forEach(element => {
 
 .alert{
     text-align: center;
+}
+.sm_discount{
+  display: none;
+}
+@media (max-width:767px)
+{
+  .lg_discount{
+    display: none;
+  }
+  .sm_discount{
+    display: block;
+  }
+}
+.quantity{
+    position: absolute;
+    left: 70px;
+    width: 25px;
+    height: 25px;
+    background: darkgray;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px
+}
+.clickdown{
+  cursor: pointer;
+  font-size: 18px;
+  color: #197bbd;
 }
 </style>

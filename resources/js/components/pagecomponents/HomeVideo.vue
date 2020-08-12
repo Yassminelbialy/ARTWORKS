@@ -18,17 +18,11 @@ export default {
             data:'',
         }
     },
-    beforeCreate(){
-
-                axios.get('/api/homedata').then((result) => {
-
+    created(){
+        axios.get('/api/homedata').then((result) => {
             if(result.data.status)
             {
-
-
-
                 this.data=result.data.data.video
-                console.log("images",result.data.data.video)
             }
         }).catch((err) => {
             console.log(err.data);
@@ -40,9 +34,13 @@ export default {
 </script>
 
 <style scoped>
+header{
+    margin-bottom: 50px;
+}
 .about-us .about-content{
     position: relative;
     top:322px;
+    
 }
 
 @media(max-width: 400px){

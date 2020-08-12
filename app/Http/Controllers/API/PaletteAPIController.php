@@ -52,12 +52,22 @@ class PaletteAPIController extends AppBaseController
 
         } //add extra img attr  for slider img
 
-                foreach ($artists as $key=>$item) {
+        foreach ($artists as $key=>$item) {
 
             $palettesArtists = Palette::where('artist_id',$item->id)->limit(3)->get();
-                    $item->key=$key;
+            $item->key=$key;
             if($palettesArtists)
             {
+                foreach($palettesArtists as $item2)
+                {                    
+                    $minPalettes = Paletteimage::where('palatte_id',$item2->id)->first();
+                    if($minPalettes){
+                        $item2->artist_min_palettes = $minPalettes ;
+                    }else
+                    {
+                        $item2->artist_min_palettes  = [];
+                    }
+                }
                  $item->artist_palettes = $palettesArtists ;
             }else
             {
@@ -65,6 +75,7 @@ class PaletteAPIController extends AppBaseController
             }
 
         }
+        
 
 
         return response()->json(['artists' => $artists,'palettesSlider' =>$palettesSlider]);
@@ -88,10 +99,14 @@ class PaletteAPIController extends AppBaseController
 
         }else
         return response()->json([ 'status'=>false,'error'=>'error acccured']  );
-
-
-
     }
+
+    // public function artist(Request $request){
+    //     $palette = Palette::find($request->id);
+    //     $artist = Artist::where('id',$palette->artist_id)->get('id');
+    //     return response()->json(['artist'=>$artist]);   
+    // }
+
     public function getReviews(){
         return Review::latest()->paginate(3);
         // return response()->json(['review' => $review]);

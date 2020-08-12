@@ -1,14 +1,5 @@
 <template>
     <div>
-        <div   v-if="errors.length > 0 && !message" class="alert alert-warning text-center">
-            <strong>Sorry!</strong> You should check in on some of those fields below.
-            <br>
-            <ul style="list-style:none">
-                <li v-for="item in errors" :key="item.id">
-                    {{ item }}
-                </li>
-            </ul>
-        </div>
         <div   v-if=" message.length >0 " class="alert alert-info text-center">
             <h1> {{message}}</h1>
         </div>
@@ -26,6 +17,7 @@
                     loading
                     clearable
                 ></v-text-field>
+                 <span class="red--text" v-if="errors.name">{{errors.name[0]}}</span>
                 </v-col>
 
                 <v-col
@@ -39,6 +31,7 @@
                     loading
                     clearable
                 ></v-text-field>
+                <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
                 </v-col>
                 <v-col
                 cols="12"
@@ -51,6 +44,7 @@
                     loading
                     clearable
                 ></v-text-field>
+                <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
                 </v-col>
                 <v-col
                 cols="12"
@@ -63,6 +57,7 @@
                     loading
                     clearable
                 ></v-text-field>
+                <span class="red--text" v-if="errors.socialLink">{{errors.socialLink[0]}}</span>
                 </v-col>
             </v-row>
                 <v-btn color="#f2efeb" type="submit">Join Us</v-btn>
@@ -84,6 +79,7 @@
                     clearable
                     dir="rtl"
                 ></v-text-field>
+                <span class="red--text" v-if="errors.name">{{errors.name[0]}}</span>
                 </v-col>
 
                 <v-col
@@ -98,6 +94,7 @@
                     required
                     dir="rtl"
                 ></v-text-field>
+                <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
                 </v-col>
                 <v-col
                 cols="12"
@@ -111,6 +108,7 @@
                     clearable
                     dir="rtl"
                 ></v-text-field>
+                <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
                 </v-col>
                 <v-col
                 cols="12"
@@ -124,6 +122,7 @@
                     clearable
                     dir="rtl"
                 ></v-text-field>
+                <span class="red--text" v-if="errors.socialLink">{{errors.socialLink[0]}}</span>
                 </v-col>
             </v-row>
                 <v-btn color="#f2efeb" style="float:right" type="submit">أشترك معنا</v-btn>
@@ -139,7 +138,7 @@
 export default {
     data:()=>({
         form:{phone:'',name:'',email:'',socialLink:''},
-        errors:[],
+        errors:{},
         message:'',
         loading: false,
     }),
@@ -147,22 +146,13 @@ export default {
         send(){
     axios.post('/api/artist-request',this.form)
     .then(res =>{
+        this.message = 'Successful';
+        this.form.phone="";
+        this.form.name="";
+        this.form.email="";
+        this.form.socialLink="";
+        this.errors="";
 
-        if (!res.data.status)
-        {
-            this.errors = res.data.errors;
-
-
-        }else{
-            this.message = 'Successful';
-            this.form.phone="";
-            this.form.name="";
-            this.form.email="";
-            this.form.socialLink="";
-            this.$router.push('/')
-
-
-        }
     })
     .catch(error => this.errors = error.response.data.errors)
         }
