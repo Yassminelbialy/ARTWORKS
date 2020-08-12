@@ -23,7 +23,7 @@
                         <a class="nav-link">{{ $t("message.shopart") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item about">
+                <li class="nav-item about"  >
                     <router-link to="/about">
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
@@ -51,14 +51,14 @@
             </ul> -->
         </div>
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <button class="nav-btns" @click="showModal = true">
+            <button class="nav-btns" @click="showsModal()">
         <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" alt="Shopping Cart" width="33px">
          <span id="count">{{cartItemCount}}</span>
           </button>
-            <div v-if="showModal">
+            <div >
                 <transition name="modal">
-                <div class="modal-mask">
-                    <div class="modal-wrapper">
+                <div class="modal-mask" ref="mycart">
+                    <div class="modal-wrapper"  >
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
@@ -66,10 +66,16 @@
 
                             <h5 class="modal-title"> {{ $t("message.cartname") }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" @click="showModal = false">&times;</span>
+                            <span aria-hidden="true" @click="closeModal()">
+                                <svg role="presentation" viewBox="0 0 16 14">
+                                     <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd"></path>
+                                </svg>
+                            </span>
+
                             </button>
                         </div>
                         <div class="modal-body" >
+                            <p class="cart-empty" v-if="cartItemCount==0">Your cart is empty.</p>
 
 <!-- -------------------------------------------pallalet cart----------------- -->
                             <div class="row p-4 mt-2 border-bottom"
@@ -78,19 +84,20 @@
                                 <div class="col-md-sm-4 ml-1">
                                     <img :src="item.product.img">
                                 </div>
-                                <div class="col-md-sm-8 ml-3 " style="margin-right:50px">
-                                    <span> <strong>{{ item.product.name }}</strong></span>
+                                <div class="col-md-sm-8 ml-3 ">
+                                    <span class="move move1"> <strong>{{ item.product.name }}</strong></span>
                                      <!-- <h6  style="font-size:14px">{{ item.sizeTarget }}  {{item.sizeCm}} </h6> -->
-                                    <h6 style="margin-top:10px">{{ item.quantity }} x ${{item.price}}</h6>
-                                </div>
-                                  <div class="pro">
-                                <v-form style="width:50%;display:inline-block">
-                                    <!-- <v-text-field  v-model=" item.quantity  ">
+                                    <h6 class="move" style="margin-top:10px"> ${{item.price}}.00</h6>
+                                      <v-form class="control-increse" style="width:50%;display:inline-block">
+                                    <v-text-field  v-model=" item.quantity  ">
                                         <v-icon slot="append" @click="addToCart(item.product )">mdi-plus</v-icon>
                                         <v-icon slot="prepend"  @click.prevent="decreaseProduct(item.product)"  >mdi-minus</v-icon>
-                                    </v-text-field> -->
+                                    </v-text-field>
                                 </v-form>
-                                <button class="ml-3 btn delete btn-danger" @click.prevent="clearProductFromCart(index)"> {{ $t("message.remove") }}</button>
+                                </div>
+                                  <div class="pro">
+
+                                <button class="ml-3 btn delete " @click.prevent="clearProductFromCart(index)"> {{ $t("message.remove") }}</button>
                             </div>
                             </div>
 
@@ -98,10 +105,10 @@
 
                         </div>
 
-                        <div class="modal-footer">
+                        <div class="modal-footer modal-cart-footer" v-if="cartItemCount>0">
                             <router-link style="margin: auto;color: #fff;"
                             :to="{ path: '/payment', query: { myprop: this.pallatecart }}">
-                                <button type="button" class="btn btn-dark" style="font-size: 18px;"> {{ $t("message.total") }} : $ {{cartTotalPrice}} &nbsp;  <strong>.</strong> &nbsp;  {{ $t("message.checkout") }}</button>
+                                <button type="button" class="btn checkout" style="font-size: 18px;"> {{ $t("message.total") }} : $ {{cartTotalPrice}} &nbsp;  <strong>.</strong> &nbsp;  {{ $t("message.checkout") }}</button>
                             </router-link>
 
                         </div>
@@ -138,11 +145,13 @@ export default {
             value:1,
             pallatecart:[],
             cartcount:'',
-            expand:false
+            expand:false,
+            mycart:''
         }
     },
     mounted(){
-
+this.mycart=$(".modal-wrapper")
+console.log(this.mycart)
         // let infoUrl = window.location.href
         // let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
         // $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
@@ -156,6 +165,27 @@ export default {
         .catch(error => console.log(error.response.data))
     },
     methods:{
+        closeModal(){
+
+            let mycarts=this.$refs.mycart
+            $(mycarts).css({
+                left:"100%",
+                backgroundColor:"transparent"
+            })
+             $(".modal-cart-footer").removeClass("animation","i 1s ")
+        },
+        showsModal(){
+
+            let mycarts=this.$refs.mycart
+            $(mycarts).css("left",0)
+            setTimeout(()=>{
+                $(mycarts).css("backgroundColor","rgba(0,0,0,.5)")
+            },800)
+              $(".modal-cart-footer").addClass("animation","i 1s ")
+
+        }
+        ,
+
         expanding(){
             this.expand=!this.expand;
             $(".navbar-collapse").toggleClass("show")
@@ -203,29 +233,38 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 .modal-mask {
   position: fixed;
-
   top: 0;
-  left: 0;
-  width: 100%;
 
-  background-color: rgba(0, 0, 0, .5);
+  left: 100%;
+  width: 100%;
+  display: none;
+
   display: block;
-  transition: opacity .3s ease;
+  transition: left .8s , backgroundColor 0s;
+
 }
 
 .modal-wrapper {
   display: table-cell;
   vertical-align: middle;
   float: right;
+  position: relative;
+
+  transition: all 1s;
+  /* left: 15px; */
 }
 .modal-content{
-    top: -27px;
+    top: -30px;
     overflow: scroll;
-
+    width: 436px;
     min-height: 800px;
+    border-radius: 0;
+    left: 4%;
+    background: #f2efeb;
+
 
 }
 .modal-body {
@@ -271,4 +310,117 @@ export default {
 .navbar-brand img{
     width: 42px;
 }
+.v-text-field>.v-input__control>.v-input__slot:before {
+    border-style: none !important;
+}
+
+.theme--light.v-input{
+    border: 1px solid #cfcfcf;
+    padding:8px 10px 1px;
+}
+.v-text-field>.v-input__control>.v-input__slot:before {
+    border-color: inherit;
+    border-style: dashed !important;
+    border-width:  0 0 !important;
+}
+.v-text-field__details{
+  display: none;
+}
+.v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot  input{
+    text-align: center;
+    margin-left: -2px;
+}
+.control-increse{
+transform: scale(.8);
+}
+.move{
+    position: relative;
+    font-size:11px;
+    color: #6a6a6a;
+    left: 12px;
+}
+.move1{
+   color:#0074d9 ;
+    font-size: 12px;
+}
+.delete {
+    font-size: 10px;
+    position: relative;
+    margin: 8px 0;
+    padding: 0;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #6a6a6a;
+    border: 0;
+    background: none;
+    width: 50px !important;
+}
+.delete:before {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    content: "";
+    transition: transform .2s ease-in-out;
+    transform: scale(1);
+    transform-origin: left center;
+    background: currentColor;
+
+}
+.delete:hover:before{
+     transform: scaleX(0);
+}
+.modal-footer{
+transform: translateY(-25px);
+ background: #f2efeb;
+}
+.checkout{
+font-size: 12px!important;
+    /* display: flex; */
+    padding: 12px 110px;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 23px;
+
+}
+.checkout:hover{
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+svg{
+    stroke-width: 1.5px;
+    stroke: #000;
+    width: 15px;
+    height: 15px;
+}
+.close{
+    color: black!important;
+}
+.cart-empty{
+    position: absolute;
+    font-size: 15px;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    transform: translate(-50%,-50%);
+    animation: i .8s cubic-bezier(.215,.61,.355,1);
+
+
+}
+.modal-title,.cart-empty{
+    text-align: center;
+    letter-spacing: .2em;
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+@keyframes i{0%{transform:translate(-50%,calc(-50% + 35px));opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
+
 </style>

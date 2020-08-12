@@ -111,5 +111,8 @@
         font-size: 16px;
     }
 }
+.swiper-pagination[data-v-40f21cb0] {
 
+    margin-bottom: 11px;
+}
 </style>

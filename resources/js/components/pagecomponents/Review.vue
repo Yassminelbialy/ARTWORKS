@@ -304,4 +304,5 @@ export default {
     border-top-right-radius: none !important;
 
 }
+
 </style>
