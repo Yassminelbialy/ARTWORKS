@@ -19,10 +19,10 @@
 
         <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
             <ol class="carousel-indicators text-center">
-                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': artist.id == 1 }" :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
+                <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': artist.id == artist_active }" :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
             </ol>
             <div class="carousel-inner ">
-                <div class="carousel-item" v-for="(artist,index ) in artists" :class="{ 'active':  artist.id === 1 }" :key="artist.id">
+                <div class="carousel-item" v-for="(artist,index ) in artists" :class="{ 'active':  artist.id === artist_active }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
                 <!---------------------------- start regular pallete----------------------- -->
                     <div class="wrapper d-none d-sm-block ">
@@ -252,14 +252,6 @@ export default {
 
             });
             // swiper.update();
-            // if(this.$route.query.mydata)
-            // {
-            //     axios.get("/api/artist?id=" + this.$route.query.mydata)
-            //     .then(response =>{
-            //         this.artist_active = response.data.artist[0].id
-            //     })
-            //     .catch(error => console.log(error.response.data))
-            // }
         },
 
 
@@ -292,12 +284,18 @@ export default {
 
                 })
             .catch(error => console.log(error.response.data))
+            axios.get("/api/artist?id=" + this.$route.query.mydata)
+                .then(response =>{
+                    this.artist_active = response.data.artist[0].id
+                })
+                .catch(error => console.log(error.response.data))
         }else{
 
       axios.get('/api/palettes')
       .then(response =>{
           this.artists = response.data.artists
           this.first = response.data.artists[0].id
+          this.artist_active = this.first;
           this.artist_text = response.data.artists[0].Plates_description
         axios.get("/api/view?id="+ this.first)
         .then(response =>{
@@ -531,6 +529,11 @@ export default {
             // console.log(this.$route.query.mydata );
 
             })
+        .catch(error => console.log(error.response.data))
+            axios.get("/api/artist?id=" + this.$route.query.mydata)
+        .then(response =>{
+            this.artist_active = response.data.artist[0].id
+        })
         .catch(error => console.log(error.response.data))
 
     }

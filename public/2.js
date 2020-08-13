@@ -588,14 +588,6 @@ __webpack_require__.r(__webpack_exports__);
       observer: true,
       observerParents: true
     }); // swiper.update();
-    // if(this.$route.query.mydata)
-    // {
-    //     axios.get("/api/artist?id=" + this.$route.query.mydata)
-    //     .then(response =>{
-    //         this.artist_active = response.data.artist[0].id
-    //     })
-    //     .catch(error => console.log(error.response.data))
-    // }
   },
   created: function created() {
     var _this = this;
@@ -620,10 +612,16 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
+      axios.get("/api/artist?id=" + this.$route.query.mydata).then(function (response) {
+        _this.artist_active = response.data.artist[0].id;
+      })["catch"](function (error) {
+        return console.log(error.response.data);
+      });
     } else {
       axios.get('/api/palettes').then(function (response) {
         _this.artists = response.data.artists;
         _this.first = response.data.artists[0].id;
+        _this.artist_active = _this.first;
         _this.artist_text = response.data.artists[0].Plates_description;
         axios.get("/api/view?id=" + _this.first).then(function (response) {
           _this.palettes = response.data.palettes;
@@ -831,6 +829,11 @@ __webpack_require__.r(__webpack_exports__);
       this.addActive(this.$route.query.mydata);
       axios.get("/api/viewMinPalettes?id=" + this.$route.query.mydata).then(function (response) {
         _this5.minPalettes = response.data.minPalettes; // console.log(this.$route.query.mydata );
+      })["catch"](function (error) {
+        return console.log(error.response.data);
+      });
+      axios.get("/api/artist?id=" + this.$route.query.mydata).then(function (response) {
+        _this5.artist_active = response.data.artist[0].id;
       })["catch"](function (error) {
         return console.log(error.response.data);
       });
@@ -1699,7 +1702,7 @@ var render = function() {
                 "li",
                 {
                   key: artist.id,
-                  class: { active: artist.id == 1 },
+                  class: { active: artist.id == _vm.artist_active },
                   attrs: {
                     "data-target": "#carouselExampleCaptions",
                     "data-slide-to": index
@@ -1725,7 +1728,7 @@ var render = function() {
                 {
                   key: artist.id,
                   staticClass: "carousel-item",
-                  class: { active: artist.id === 1 }
+                  class: { active: artist.id === _vm.artist_active }
                 },
                 [
                   _c("img", {

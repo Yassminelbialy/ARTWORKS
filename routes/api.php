@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('palettes', 'PaletteAPIController');
 Route::get('hover/{id?}', 'PaletteAPIController@hover');
 Route::get('homedata', 'OrderPaletteController@homedata');
-// Route::get('artist/{id?}', 'PaletteAPIController@artist');
+Route::get('artist/{id?}', 'PaletteAPIController@artist');
 
 
 

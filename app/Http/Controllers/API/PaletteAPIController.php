@@ -101,11 +101,11 @@ class PaletteAPIController extends AppBaseController
         return response()->json([ 'status'=>false,'error'=>'error acccured']  );
     }
 
-    // public function artist(Request $request){
-    //     $palette = Palette::find($request->id);
-    //     $artist = Artist::where('id',$palette->artist_id)->get('id');
-    //     return response()->json(['artist'=>$artist]);   
-    // }
+    public function artist(Request $request){
+        $palette = Palette::find($request->id);
+        $artist = Artist::where('id',$palette->artist_id)->get('id');
+        return response()->json(['artist'=>$artist]);   
+    }
 
     public function getReviews(){
         return Review::latest()->paginate(3);
