@@ -109,8 +109,6 @@
                             </div>
                             </div>
 
-
-
                         </div>
 
                         <div class="modal-footer modal-cart-footer" v-if="cartItemCount>0">
@@ -241,7 +239,7 @@ console.log(this.mycart)
 }
 </script>
 
-<style >
+<style>
 .modal-mask {
   position: fixed;
   top: 0;

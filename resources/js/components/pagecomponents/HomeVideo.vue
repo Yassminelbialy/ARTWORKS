@@ -34,13 +34,9 @@ export default {
 </script>
 
 <style scoped>
-header{
-    margin-bottom: 50px;
-}
 .about-us .about-content{
     position: relative;
-    top:322px;
-    
+    top:322px;   
 }
 
 @media(max-width: 400px){
