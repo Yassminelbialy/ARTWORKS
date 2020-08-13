@@ -8,36 +8,50 @@ export const SET_PRODUCT = (state, product) => {
     state.product = product;
 };
 // we size
-export const ADD_TO_CART = (state, { product, quantity, price,avilableTarget,sizeTarget,sizeCm }) => {
+export const ADD_TO_CART = (
+    state,
+    { product, quantity, price, avilableTarget, sizeTarget, sizeCm }
+) => {
+    //     var check = false
 
+    //     var productInCart = state.cart.find(item => {
 
+    //         if(  item.product.id == product.id && item.sizeTarget ==sizeTarget){
+    //             check =true
+    //            return item.product
+    //         }
+    //         else{
+    //             check = false
+    //         }
 
+    //     });
 
-    var check = false
+    //     if (check==true) {
+    //         productInCart.quantity++;
+    //         productInCart.avilableTarget--
+
+    //     } if(check==false ) {
+
+    //         state.cart.push({
+    //             product,
+    //             quantity,
+    //             price,
+    //             avilableTarget,
+    //             sizeTarget,
+    //             sizeCm
+    //         });
+
+    // }
 
     var productInCart = state.cart.find(item => {
-
-        if(  item.product.id == product.id && item.sizeTarget ==sizeTarget){
-            check =true
-           return item.product
+        if (item.product.id == product.id) {
+            return item.product;
         }
-        else{
-            check = false
-        }
-
-
     });
 
-
-
-    if (check==true) {
+    if (productInCart) {
         productInCart.quantity++;
-        productInCart.avilableTarget--
-
-
-    } if(check==false ) {
-
-
+    } else {
         state.cart.push({
             product,
             quantity,
@@ -46,12 +60,7 @@ export const ADD_TO_CART = (state, { product, quantity, price,avilableTarget,siz
             sizeTarget,
             sizeCm
         });
-
-
-
-
-}
-
+    }
 };
 
 export const SET_CART = (state, cartItems) => {
@@ -59,7 +68,7 @@ export const SET_CART = (state, cartItems) => {
 };
 
 export const DELETE_PRODUCT = (state, index) => {
-  return  state.cart.splice(index,1)
+    return state.cart.splice(index, 1);
 };
 
 export const DECREASE_PRODUCT = (state, { product, quantity }) => {
@@ -81,22 +90,7 @@ export const DELETE_CART = state => {
     state.cart = [];
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // export const ADD_TO_CART = (state, { product, quantity, price,avilableTarget,sizeTarget }) => {
-
-
 
 //     var ckeckAvaiable=0
 //     var check = false
@@ -119,7 +113,6 @@ export const DELETE_CART = state => {
 
 //         if(ckeckAvaiable>=0){
 
-
 //             if (check==true) {
 //                 productInCart.quantity++;
 //                 productInCart.avilableTarget--
@@ -127,9 +120,7 @@ export const DELETE_CART = state => {
 //                     productInCart.avilableTarget=0
 //                 }
 
-
 //             } if(check==false) {
-
 
 //                 state.cart.push({
 //                     product,
@@ -138,8 +129,6 @@ export const DELETE_CART = state => {
 //                     avilableTarget,
 //                     sizeTarget
 //                 });
-
-
 
 //             }
 

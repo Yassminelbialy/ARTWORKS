@@ -35,7 +35,7 @@
                                         <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
                                         <div class="infor" v-if="palettesArtist.M_avalible >0">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
                                           <div class="infor" v-else>
-                                             <span class="badge badge-pill badge-danger"> {{ $t("message.solidout") }}</span>
+                                             <span style="color:red"> {{ $t("message.solidout") }}</span>
                                           </div>
                                         <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
                                     </div>
@@ -68,21 +68,21 @@
             </div>
         </div>
         <div class="header_sm mb-2"></div>
-        <div class="container  mt-5" style="padding-left:0 !important ; padding-right:0 !important;max-width:80% !important" >
+        <div class="container" style="max-width:1260px!important">
             <div class="row">
-                <div class="col-lg-7" >
+                <div class="col-lg-8" style="margin-top:70px">
                     <div class="row">
-                        <div class="col-md-6 mb-3 targ pl-1" v-for="minPalette in minPalettes"  :key="minPalette.id" >
+                        <div class="col-md-6 custom-padding " v-for="minPalette in minPalettes"  :key="minPalette.id" >
                             <img :src="minPalette.img" style="height:400px" class="w-100"  alt="...">
                         </div>
                     </div>
                 </div>
-                <div class=" col-lg-5">
-                    <div class="add-cart p-3">
+                <div class=" col-lg-4" style="margin-top:78px">
+                    <div class="add-cart">
                         <p>{{artist_text}}</p>
-                        <h2 class="font-weight-bold ">{{minPalettesActive.name}} II
+                        <h2 class="font-weight-bold ">{{minPalettesActive.name}}
                         <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
-                        <span v-if="active_el==2">${{minPalettesActive.M_price}}</span>
+                        <span v-if="active_el==2" style="float: right;font-weight: normal">${{minPalettesActive.M_price}}</span>
                         <span v-if="active_el==3">${{minPalettesActive.L_price}}</span>
 
                         </h2>
@@ -330,6 +330,7 @@ export default {
     methods:{
 
         addToCart(product){
+
             this.$store.dispatch('addProductToCart',{
                  product,
                 quantity:1
@@ -466,6 +467,12 @@ export default {
         },
         addtocart($id,price,avilableTarget, sizeTarget,sizeCm){
 
+
+            $(".modal-mask").css("left",0)
+            $(".modal-cart-footer").addClass("animation","i 1s ")
+            setTimeout(()=>{
+                $(".modal-mask").css("backgroundColor","rgba(0,0,0,.5)")
+            },800)
             axios.post('/api/addtocart?id=' + $id)
             .then(res=>{
 
@@ -515,7 +522,7 @@ export default {
             }).catch(error => console.log(error))
 
         },//lklk
-        
+
 
     },//method
     watch:{
@@ -569,13 +576,14 @@ export default {
         }
     }
     .wrapper{
-   position: absolute;
-    top: -2%;
-    transform: translate(-50%, 0);
-    left: 50.5%;
-    width: 100%
-
+        position: absolute;
+        top: -3%;
+        transform: translate(-50%, 0);
+        left: 51%;
+        width: 100%;
     }
+
+
     .details{
     color: #fff;
     cursor: pointer;
@@ -586,7 +594,7 @@ export default {
     .details img{
           width: 83%;
     transition: all 1s;
-    height: 357px;
+    height: 400px;
     /* box-shadow: 5px 5px 5px black; */
     border-top: 8px solid #111;
     border-bottom: 8px solid #111;
@@ -705,6 +713,9 @@ export default {
     } */
     .details:hover {
         transform: scale(1.1);
+    }
+    .add-cart {
+        padding-left:50px ;
     }
     .add-cart div span{
         font-size: 15px;
@@ -1013,6 +1024,25 @@ transform: scale(.7);
     transform: rotate(49deg);
     background: black;
 }
+
+.carousel-indicators li{
+    width: auto;
+    padding: 0 10px;
+}
+
+.custom-padding:nth-child(odd){
+    padding-right: 5px !important;
+     padding-left: 20px !important;
+    padding-bottom: .3px !important;
+
+}
+
+.custom-padding:nth-child(even){
+    padding-right: 10px;
+    padding-left: 5px!important;
+    padding-bottom: .3px;
+}
+
 .swiper-container{
     margin-bottom: 50px;
 }

@@ -363,6 +363,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -439,7 +447,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post("/aboutContacts-api", this.form).then(function (res) {
         return _this2.form = '';
       })["catch"](function (error) {
-        return _this2.errors = error.response.data;
+        return _this2.errors = error.response.data.errors;
       });
     }
   }
@@ -459,7 +467,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.support_div .content[data-v-2fea7dd6] {\n  color: grey;\n  cursor: pointer;\n}\n.support_div .active[data-v-2fea7dd6] {\n  color: black;\n  font-weight: bold;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 200px;\n}\n}\n.right[data-v-2fea7dd6] {\n  border-left: 2px solid #000;\n  padding-right: 300px;\n}\n@media (max-width: 991px) {\n.right[data-v-2fea7dd6] {\n    border-left: none;\n    padding-right: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.right[data-v-2fea7dd6] {\n    padding-right: 200px;\n}\n}\n@media(max-width:991px){\n.term_text[data-v-2fea7dd6]{\n    text-align: center !important;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\n  width:90%;\n  height:370px;\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\n    width: 100% !important;\n}\n}\n\n\n", ""]);
+exports.push([module.i, "\n.row[data-v-2fea7dd6] {\r\n  margin: 0;\r\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\r\n  font-size: 34px;\r\n  font-weight: bold;\r\n  line-height: 60px;\r\n  margin: 0;\r\n  margin-bottom: 1px;\r\n  cursor: pointer;\r\n  transition: all 0.4s;\r\n  text-align: center;\r\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\r\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\r\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\r\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\r\n  margin-bottom: 30px;\r\n  border-bottom: 2px solid #eee;\r\n  width: 70%;\r\n  margin-left: auto;\r\n  margin-right: auto;\n}\n.support_div .content[data-v-2fea7dd6] {\r\n  color: grey;\r\n  cursor: pointer;\n}\n.support_div .active[data-v-2fea7dd6] {\r\n  color: black;\r\n  font-weight: bold;\n}\n.left[data-v-2fea7dd6] {\r\n  border-right: 2px solid #000;\r\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\r\n    border-right: none;\r\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\r\n    padding-left: 200px;\n}\n}\n.right[data-v-2fea7dd6] {\r\n  border-left: 2px solid #000;\r\n  padding-right: 300px;\n}\n@media (max-width: 991px) {\n.right[data-v-2fea7dd6] {\r\n    border-left: none;\r\n    padding-right: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.right[data-v-2fea7dd6] {\r\n    padding-right: 200px;\n}\n}\n@media(max-width:991px){\n.term_text[data-v-2fea7dd6]{\r\n    text-align: center !important;\n}\n}\n.form[data-v-2fea7dd6] {\r\n  width: 50%;\r\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\r\n  width:90%;\r\n  height:370px;\r\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\r\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\r\n    width: 100% !important;\n}\n}\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -823,7 +831,19 @@ var render = function() {
                                               },
                                               expression: "form.name"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.name
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.errors.name[0])
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -844,7 +864,19 @@ var render = function() {
                                               },
                                               expression: "form.email"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.email
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.errors.email[0])
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -865,7 +897,19 @@ var render = function() {
                                               },
                                               expression: "form.phone"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.phone
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.errors.phone[0])
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -891,7 +935,21 @@ var render = function() {
                                               },
                                               expression: "form.message"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.message
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.errors.message[0]
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       )
@@ -954,7 +1012,19 @@ var render = function() {
                                               },
                                               expression: "form.name"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.name
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.errors.name[0])
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -976,7 +1046,19 @@ var render = function() {
                                               },
                                               expression: "form.email"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.email
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.errors.email[0])
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -998,7 +1080,19 @@ var render = function() {
                                               },
                                               expression: "form.phone"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.phone
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(_vm.errors.phone[0])
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       ),
@@ -1025,7 +1119,21 @@ var render = function() {
                                               },
                                               expression: "form.message"
                                             }
-                                          })
+                                          }),
+                                          _vm._v(" "),
+                                          _vm.errors.message
+                                            ? _c(
+                                                "span",
+                                                { staticClass: "red--text" },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(
+                                                      _vm.errors.message[0]
+                                                    )
+                                                  )
+                                                ]
+                                              )
+                                            : _vm._e()
                                         ],
                                         1
                                       )
