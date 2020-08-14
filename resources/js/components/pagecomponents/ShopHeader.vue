@@ -96,10 +96,6 @@
                 </div>
                 <div class=" col-lg-4" style="margin-top:78px">
                     <div class="add-cart">
-<<<<<<< HEAD
-=======
-                        <!-- <p>{{artist_text}}</p> -->
->>>>>>> e6fdac9794c34559c455a06583d275100d9edc14
                         <h2 class="font-weight-bold ">{{minPalettesActive.name}}
                         <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
                         <span v-if="active_el==2" style="float: right;font-weight: normal">${{minPalettesActive.M_price}}</span>

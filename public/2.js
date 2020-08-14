@@ -542,10 +542,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2026,14 +2022,10 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "add-cart" }, [
-                  _vm._v("\n<<<<<<< HEAD\n=======\n                        "),
-                  _vm._v(
-                    "\n>>>>>>> e6fdac9794c34559c455a06583d275100d9edc14\n                        "
-                  ),
                   _c("h2", { staticClass: "font-weight-bold " }, [
                     _vm._v(
                       _vm._s(_vm.minPalettesActive.name) +
-                        "\n                        "
+                        "\n                    "
                     ),
                     _vm.active_el == 1
                       ? _c("span", [
@@ -2102,9 +2094,9 @@ var render = function() {
                                 : _vm._e(),
                               _vm._v(" "),
                               _vm._v(
-                                "\n                                " +
+                                "\n                            " +
                                   _vm._s(_vm.$t("message.cart")) +
-                                  "\n\n                                "
+                                  "\n\n                            "
                               )
                             ]
                           )
@@ -2122,7 +2114,7 @@ var render = function() {
                             },
                             [
                               _vm._v(
-                                "\n\n\n                                " +
+                                "\n\n\n                            " +
                                   _vm._s(_vm.$t("message.solidout"))
                               )
                             ]
@@ -2138,13 +2130,13 @@ var render = function() {
                         _vm._v("This is the Classic")
                       ]),
                       _vm._v(
-                        ", designed and manufactured by Ecstase,\n                            the Classic is made up of a wooden frame, a passe-partout,\n                            and non-reflective glass. Each of the artworks chosen for\n                            the Classic has been hand made or hand-retouched on art-grade paper,\n                            and is delivered already professionally framed to ensure\n                            the longevity of the artwork. You can install it as soon as\n                            "
+                        ", designed and manufactured by Ecstase,\n                        the Classic is made up of a wooden frame, a passe-partout,\n                        and non-reflective glass. Each of the artworks chosen for\n                        the Classic has been hand made or hand-retouched on art-grade paper,\n                        and is delivered already professionally framed to ensure\n                        the longevity of the artwork. You can install it as soon as\n                        "
                       ),
                       _c("transition", [
                         _vm.show
                           ? _c("span", [
                               _vm._v(
-                                "\n                                    it is delivered as the artwork comes ready to be hung on your wall.\n                                    The classical design and releases in this series make it an elegant\n                                    way to add a high-end touch to your space. Each artwork contains\n                                    a signed certificate of authenticity that guarantees its originality.\n                                    Curated by Ecstase in a collaboration with Seamless for a limited edition of 50.\n                                    This psychedelic triple artwork capitalizes on brilliant negative space and amazing detail.\n                                "
+                                "\n                                it is delivered as the artwork comes ready to be hung on your wall.\n                                The classical design and releases in this series make it an elegant\n                                way to add a high-end touch to your space. Each artwork contains\n                                a signed certificate of authenticity that guarantees its originality.\n                                Curated by Ecstase in a collaboration with Seamless for a limited edition of 50.\n                                This psychedelic triple artwork capitalizes on brilliant negative space and amazing detail.\n                            "
                               )
                             ])
                           : _vm._e()
@@ -2193,9 +2185,9 @@ var render = function() {
                       [
                         _c("h4", { staticClass: "font-weight-bold " }, [
                           _vm._v(
-                            "\n                                   " +
+                            "\n                               " +
                               _vm._s(_vm.$t("message.size")) +
-                              "\n                                    "
+                              "\n                                "
                           ),
                           !_vm.size
                             ? _c("i", {
@@ -2211,9 +2203,9 @@ var render = function() {
                         _vm.size
                           ? _c("span", [
                               _vm._v(
-                                "\n                                    " +
+                                "\n                                " +
                                   _vm._s(_vm.minPalettesActive.sizing_details) +
-                                  " CM\n                                "
+                                  " CM\n                            "
                               )
                             ])
                           : _vm._e()
@@ -2233,9 +2225,9 @@ var render = function() {
                       [
                         _c("h4", { staticClass: "font-weight-bold " }, [
                           _vm._v(
-                            "\n\n                                   " +
+                            "\n\n                               " +
                               _vm._s(_vm.$t("message.productDetails")) +
-                              "\n                                    "
+                              "\n                                "
                           ),
                           !_vm.details
                             ? _c("i", {
@@ -2251,9 +2243,9 @@ var render = function() {
                         _vm.details
                           ? _c("span", [
                               _vm._v(
-                                "\n                                    " +
+                                "\n                                " +
                                   _vm._s(_vm.minPalettesActive.frame_material) +
-                                  "\n                                "
+                                  "\n                            "
                               )
                             ])
                           : _vm._e()
@@ -2273,9 +2265,9 @@ var render = function() {
                       [
                         _c("h4", { staticClass: "font-weight-bold " }, [
                           _vm._v(
-                            "\n                                     " +
+                            "\n                                 " +
                               _vm._s(_vm.$t("message.shipping")) +
-                              "\n                                    "
+                              "\n                                "
                           ),
                           !_vm.shipping
                             ? _c("i", {
@@ -2291,9 +2283,9 @@ var render = function() {
                         _vm.shipping
                           ? _c("span", [
                               _vm._v(
-                                "\n                                    " +
+                                "\n                                " +
                                   _vm._s(_vm.minPalettesActive.frame_finish) +
-                                  "\n                                "
+                                  "\n                            "
                               )
                             ])
                           : _vm._e()
