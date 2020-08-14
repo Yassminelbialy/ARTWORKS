@@ -49,7 +49,7 @@
                                         <h6><span class="px-1">{{palettesArtist.name}} </span> | <span class="price px-1">${{palettesArtist.M_price}}</span> </h6>
                                         <div class="infor" v-if="palettesArtist.M_avalible >0">    <span><span class="text-success">{{ palettesArtist.M_avalible  }}</span>/{{ palettesArtist.M_copies  }}   {{ $t("message.left") }}</span></div>
                                           <div class="infor" v-else>
-                                             <span style="color:red"> {{ $t("message.solidout") }}</span>
+                                             <span style="color:red; font-weight:bolder"> {{ $t("message.solidout") }}</span>
                                           </div>
                                         <!-- <button  @click="addToCart(palettesArtist)"  class="form-control btn btn-info border-0">{{ $t("message.cart") }}</button> -->
                                     </div>
@@ -96,6 +96,10 @@
                 </div>
                 <div class=" col-lg-4" style="margin-top:78px">
                     <div class="add-cart">
+<<<<<<< HEAD
+=======
+                        <!-- <p>{{artist_text}}</p> -->
+>>>>>>> e6fdac9794c34559c455a06583d275100d9edc14
                         <h2 class="font-weight-bold ">{{minPalettesActive.name}}
                         <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
                         <span v-if="active_el==2" style="float: right;font-weight: normal">${{minPalettesActive.M_price}}</span>
@@ -134,7 +138,7 @@
                                 {{ $t("message.cart") }}
 
                                 </button>
-                                <v-btn class="mb-2 size_btn small" style="cursor: not-allowed;background-color:#737373;color:#fff;border:none" v-else >
+                                <v-btn class="mb-2 size_btn small " style="cursor: not-allowed;background-color:#737373;color:#fff;border:none; margin-bottom:45px!important " v-else >
 
 
                                 {{ $t("message.solidout") }}</v-btn>
@@ -755,7 +759,7 @@ export default {
         line-height: 70px;
         display: block;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 40px;
         cursor: pointer;
         text-align: center;
         text-decoration: none;
@@ -1056,10 +1060,30 @@ transform: scale(.7);
 }
 
 .custom-padding:nth-child(even){
-    padding-right: 10px;
+    padding-right: 20px;
     padding-left: 5px!important;
     padding-bottom: .3px;
 }
+
+@media(max-width: 767px){
+    .custom-padding:nth-child(odd){
+    padding-right: 11px !important;
+    padding-left: 11px !important;
+    padding-bottom: .3px !important;
+}
+
+.custom-padding:nth-child(even){
+    padding-right: 11px;
+    padding-left: 11px!important;
+    padding-bottom: .3px;
+    }
+.add-cart[data-v-266b1872] {
+        padding-left: 6px;
+    }
+}
+
+
+
 
 .swiper-container{
     margin-bottom: 50px;

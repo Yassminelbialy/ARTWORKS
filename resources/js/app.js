@@ -86,7 +86,7 @@ const messages = {
             cartname:"Cart",
 
             // footer
-            logo:"ecstase",
+            logo:"Naqsh",
             lorem:"lorem text",
             // Payment
             email:"E-mail",
@@ -108,7 +108,7 @@ const messages = {
             hideorder:'Hide Order Summary',
             empty:'      ',
             // Start Footer
-            addressfooter:'ecstase BV. Westplein 123016BM RotterdamThe Netherlands',
+            addressfooter:'Naqsh BV. Westplein 123016BM RotterdamThe Netherlands',
             shopfooter:'Shop artworks',
             aboutfooter:'About our products',
             carreerfooter:'Careers',
@@ -119,7 +119,7 @@ const messages = {
             privacyfooter:'Privacy Policy',
             refundpolicy:'Refund Policy',
             socialLink:'SocialLink',
-            solidout:'Solid Out',
+            solidout:'SOLD OUT',
             support:'Support',
             support_text:'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.',
             Product:'Product',
@@ -202,7 +202,7 @@ const messages = {
                 size:"الحجم",
                 productDetails:" تفاصيل المنتج",
                 shipping:"الشحن",
-                left:"الباقى",
+                left:"المتبقى",
                 imgdetails:"تفاصيل المنتج",
                 limitedEdition:"الطبعات المحدودة",
                 DescriptionEdition:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae fugit minima nemo corporis eligendi voluptas quidem eius suscipit dignissimos recusandae soluta alias, provident ipsum officia, tempore laboriosam neque esse cupiditate!",
@@ -212,7 +212,7 @@ const messages = {
             remove:"حذف",
             cartname:"السلة",
             // footer
-            logo:"اسم الموقع",
+            logo:"نقش",
             lorem :"نص تجريبى ",
              // Payment
              email:"البريد الإلكترونى",
@@ -234,7 +234,7 @@ const messages = {
              hideorder:' إخفاء ملخص الطلب',
              empty:'      ',
             //  Start Footer
-             addressfooter:'ecstase BV. Westplein 123016BM RotterdamThe Netherlands',
+             addressfooter:'Naqsh BV. Westplein 123016BM RotterdamThe Netherlands',
              shopfooter:'تسوق الأعمال الفنية',
              aboutfooter:'حول منتجاتنا',
              carreerfooter:'وظائف',

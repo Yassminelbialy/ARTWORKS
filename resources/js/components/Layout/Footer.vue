@@ -91,7 +91,7 @@
     </div>
     <div class="row mt-5 mb-2 footer-img">
         <div class="col-md-6" style="padding-left: 37px">
-            &COPY;ECSTASE
+            &COPY;Naqsh
         </div>
         <div class="col-md-6 mr-auto img">
             <img src="/images/iconfinder_24_Apple_Pay_4518982.png" width="40" alt="Pay">
@@ -110,7 +110,7 @@
 
 export default {
 
-            
+
 }
 
 

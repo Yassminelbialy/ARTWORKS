@@ -378,7 +378,7 @@ transform: scale(.8);
      transform: scaleX(0);
 }
 .modal-footer{
-transform: translateY(-25px);
+transform: translateY(-62px);
  background: #f2efeb;
 }
 .checkout{
@@ -444,4 +444,12 @@ svg{
         display: block;
     }
 }
+
+
+@media (max-width: 991px){
+    .navbar-brand{
+        transform: translate(50%, 0);
+    }
+}
+
 </style>
