@@ -6928,7 +6928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.modal-mask {\n  position: fixed;\n  top: 0;\n\n  left: 100%;\n  width: 100%;\n  display: none;\n\n  display: block;\n  transition: left .8s , backgroundColor 0s;\n}\n.modal-wrapper {\n  display: table-cell;\n  vertical-align: middle;\n  float: right;\n  position: relative;\n\n  transition: all 1s;\n  /* left: 15px; */\n}\n.modal-content{\n    top: -30px;\n    overflow: scroll;\n    width: 436px;\n    min-height: 800px;\n    border-radius: 0;\n    left: 4%;\n    background: #f2efeb;\n}\n.modal-body {\n    position: relative;\n    -ms-flex: 1 1 auto;\n    max-height: 500px;\n    flex: 1 1 auto;\n    overflow: auto;\n    padding: 1rem;\n}\n/* .modal-body{\n    position: absolute;\n    width: 400px;\n        overflow: scroll;\n} */\n.modal-body img{\n    width: 80px;\n    height: 80px;\n}\n.pro{\n    width: 124%;\n}\n.pro button {\n    margin-top:-37px ;\n}\n@media(max-width:996px){\nli.nav-item{\n        width: 67px;\n}\n}\n.nav-btns{\n    margin-left: 27px;\n}\n.delete{\n     width: 90px !important;\n    float: right;\n}\n.navbar-brand img{\n    width: 42px;\n}\n.v-text-field>.v-input__control>.v-input__slot:before {\n    border-style: none !important;\n}\n.theme--light.v-input{\n    border: 1px solid #cfcfcf;\n    padding:8px 10px 1px;\n}\n.v-text-field>.v-input__control>.v-input__slot:before {\n    border-color: inherit;\n    border-style: dashed !important;\n    border-width:  0 0 !important;\n}\n.v-text-field__details{\n  display: none;\n}\n.v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot  input{\n    text-align: center;\n    margin-left: -2px;\n}\n.control-increse{\ntransform: scale(.8);\n}\n.move{\n    position: relative;\n    font-size:11px;\n    color: #6a6a6a;\n    left: 12px;\n}\n.move1{\n   color:#0074d9 ;\n    font-size: 12px;\n}\n.delete {\n    font-size: 10px;\n    position: relative;\n    margin: 8px 0;\n    padding: 0;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: #6a6a6a;\n    border: 0;\n    background: none;\n    width: 50px !important;\n}\n.delete:before {\n    position: absolute;\n    bottom: -1px;\n    left: 0;\n    width: 100%;\n    height: 1px;\n    content: \"\";\n    transition: transform .2s ease-in-out;\n    transform: scale(1);\n    transform-origin: left center;\n    background: currentColor;\n}\n.delete:hover:before{\n     transform: scaleX(0);\n}\n.modal-footer{\ntransform: translateY(-25px);\n background: #f2efeb;\n}\n.checkout{\nfont-size: 12px!important;\n    /* display: flex; */\n    padding: 12px 110px;\n    color: #fff;\n    border: 1px solid transparent;\n    border-radius: 5px;\n    background: #000;\n    align-items: center;\n    justify-content: center;\n    position: relative;\n    top: 23px;\n}\n.checkout:hover{\n    background: white;\n    color: black;\n    border: 2px solid black;\n}\nsvg{\n    stroke-width: 1.5px;\n    stroke: #000;\n    width: 15px;\n    height: 15px;\n}\n.close{\n    color: black!important;\n}\n.cart-empty{\n    position: absolute;\n    font-size: 15px;\n    top: 50%;\n    left: 50%;\n    width: auto;\n    transform: translate(-50%,-50%);\n    -webkit-animation: i .8s cubic-bezier(.215,.61,.355,1);\n            animation: i .8s cubic-bezier(.215,.61,.355,1);\n}\n.modal-title,.cart-empty{\n    text-align: center;\n    letter-spacing: .2em;\n    font-weight: 300;\n    text-transform: uppercase;\n}\n@-webkit-keyframes i{0%{transform:translate(-50%,calc(-50% + 35px));opacity:0}to{transform:translate(-50%,-50%);opacity:1}}\n@keyframes i{0%{transform:translate(-50%,calc(-50% + 35px));opacity:0}to{transform:translate(-50%,-50%);opacity:1}}\n.lang:hover{\n    border-bottom: 2px solid rgb(27, 26, 26);\n}\n.sm{\n    display: none;\n}\n@media(max-width: 991px)\n{\n.lg{\n        display: none;\n}\n.sm{\n        display: block;\n}\n}\n", ""]);
+exports.push([module.i, "\n.modal-mask {\n  position: fixed;\n  top: 0;\n\n  left: 100%;\n  width: 100%;\n  display: none;\n\n  display: block;\n  transition: left .8s , backgroundColor 0s;\n}\n.modal-wrapper {\n  display: table-cell;\n  vertical-align: middle;\n  float: right;\n  position: relative;\n\n  transition: all 1s;\n  /* left: 15px; */\n}\n.modal-content{\n    top: -30px;\n    overflow: scroll;\n    width: 436px;\n    min-height: 800px;\n    border-radius: 0;\n    left: 4%;\n    background: #f2efeb;\n}\n.modal-body {\n    position: relative;\n    -ms-flex: 1 1 auto;\n    max-height: 500px;\n    flex: 1 1 auto;\n    overflow: auto;\n    padding: 1rem;\n}\n/* .modal-body{\n    position: absolute;\n    width: 400px;\n        overflow: scroll;\n} */\n.modal-body img{\n    width: 80px;\n    height: 80px;\n}\n.pro{\n    width: 124%;\n}\n.pro button {\n    margin-top:-37px ;\n}\n@media(max-width:996px){\nli.nav-item{\n        width: 67px;\n}\n}\n.nav-btns{\n    margin-left: 27px;\n}\n.delete{\n     width: 90px !important;\n    float: right;\n}\n.navbar-brand img{\n    width: 42px;\n}\n.v-text-field>.v-input__control>.v-input__slot:before {\n    border-style: none !important;\n}\n.theme--light.v-input{\n    border: 1px solid #cfcfcf;\n    padding:8px 10px 1px;\n}\n.v-text-field>.v-input__control>.v-input__slot:before {\n    border-color: inherit;\n    border-style: dashed !important;\n    border-width:  0 0 !important;\n}\n.v-text-field__details{\n  display: none;\n}\n.v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot  input{\n    text-align: center;\n    margin-left: -2px;\n}\n.control-increse{\ntransform: scale(.8);\n}\n.move{\n    position: relative;\n    font-size:11px;\n    color: #6a6a6a;\n    left: 12px;\n}\n.move1{\n   color:#0074d9 ;\n    font-size: 12px;\n}\n.delete {\n    font-size: 10px;\n    position: relative;\n    margin: 8px 0;\n    padding: 0;\n    letter-spacing: .2em;\n    text-transform: uppercase;\n    color: #6a6a6a;\n    border: 0;\n    background: none;\n    width: 50px !important;\n}\n.delete:before {\n    position: absolute;\n    bottom: -1px;\n    left: 0;\n    width: 100%;\n    height: 1px;\n    content: \"\";\n    transition: transform .2s ease-in-out;\n    transform: scale(1);\n    transform-origin: left center;\n    background: currentColor;\n}\n.delete:hover:before{\n     transform: scaleX(0);\n}\n.modal-footer{\ntransform: translateY(-62px);\n background: #f2efeb;\n}\n.checkout{\nfont-size: 12px!important;\n    /* display: flex; */\n    padding: 12px 110px;\n    color: #fff;\n    border: 1px solid transparent;\n    border-radius: 5px;\n    background: #000;\n    align-items: center;\n    justify-content: center;\n    position: relative;\n    top: 23px;\n}\n.checkout:hover{\n    background: white;\n    color: black;\n    border: 2px solid black;\n}\nsvg{\n    stroke-width: 1.5px;\n    stroke: #000;\n    width: 15px;\n    height: 15px;\n}\n.close{\n    color: black!important;\n}\n.cart-empty{\n    position: absolute;\n    font-size: 15px;\n    top: 50%;\n    left: 50%;\n    width: auto;\n    transform: translate(-50%,-50%);\n    -webkit-animation: i .8s cubic-bezier(.215,.61,.355,1);\n            animation: i .8s cubic-bezier(.215,.61,.355,1);\n}\n.modal-title,.cart-empty{\n    text-align: center;\n    letter-spacing: .2em;\n    font-weight: 300;\n    text-transform: uppercase;\n}\n@-webkit-keyframes i{0%{transform:translate(-50%,calc(-50% + 35px));opacity:0}to{transform:translate(-50%,-50%);opacity:1}}\n@keyframes i{0%{transform:translate(-50%,calc(-50% + 35px));opacity:0}to{transform:translate(-50%,-50%);opacity:1}}\n.lang:hover{\n    border-bottom: 2px solid rgb(27, 26, 26);\n}\n.sm{\n    display: none;\n}\n@media(max-width: 991px)\n{\n.lg{\n        display: none;\n}\n.sm{\n        display: block;\n}\n}\n@media (max-width: 991px){\n.navbar-brand{\n        transform: translate(50%, 0);\n}\n}\n\n", ""]);
 
 // exports
 
@@ -38778,7 +38778,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
- * vue-i18n v8.19.0 
+ * vue-i18n v8.20.0 
  * (c) 2020 kazuya kawaguchi
  * Released under the MIT License.
  */
@@ -39146,7 +39146,7 @@ var interpolationComponent = {
   functional: true,
   props: {
     tag: {
-      type: [String, Boolean],
+      type: [String, Boolean, Object],
       default: 'span'
     },
     path: {
@@ -39253,7 +39253,7 @@ var numberComponent = {
   functional: true,
   props: {
     tag: {
-      type: [String, Boolean],
+      type: [String, Boolean, Object],
       default: 'span'
     },
     value: {
@@ -40904,7 +40904,7 @@ Object.defineProperty(VueI18n, 'availabilities', {
 });
 
 VueI18n.install = install;
-VueI18n.version = '8.19.0';
+VueI18n.version = '8.20.0';
 
 /* harmony default export */ __webpack_exports__["default"] = (VueI18n);
 
@@ -41133,7 +41133,7 @@ var staticRenderFns = [
       _c(
         "div",
         { staticClass: "col-md-6", staticStyle: { "padding-left": "37px" } },
-        [_vm._v("\n            ©ECSTASE\n        ")]
+        [_vm._v("\n            ©Naqsh\n        ")]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-6 mr-auto img" }, [
@@ -57093,7 +57093,7 @@ var __assign = undefined && undefined.__assign || function () {
       }, this.computedIcon);
     },
     classes: function classes() {
-      var classes = __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      var classes = __assign(__assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-alert--border': Boolean(this.border),
         'v-alert--dense': this.dense,
         'v-alert--outlined': this.outlined,
@@ -57157,6 +57157,7 @@ var __assign = undefined && undefined.__assign || function () {
         attrs: {
           role: 'alert'
         },
+        on: this.listeners$,
         class: this.classes,
         style: this.styles,
         directives: [{
@@ -57424,7 +57425,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
       !this.value);
     },
     classes: function classes() {
-      return __assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-toolbar--collapse': this.collapse || this.collapseOnScroll,
         'v-app-bar': true,
         'v-app-bar--clipped': this.clippedLeft || this.clippedRight,
@@ -57508,7 +57509,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
       return _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.isProminent.call(this) || this.shrinkOnScroll;
     },
     styles: function styles() {
-      return __assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this), {
+      return __assign(__assign({}, _VToolbar_VToolbar__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this)), {
         fontSize: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["convertToUnit"])(this.computedFontSize, 'rem'),
         marginTop: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["convertToUnit"])(this.computedMarginTop),
         transform: "translateY(" + Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["convertToUnit"])(this.computedTransform) + ")",
@@ -57628,7 +57629,7 @@ var __assign = undefined && undefined.__assign || function () {
         data = _a.data;
     var d = Object.assign(data, {
       staticClass: ("v-app-bar__nav-icon " + (data.staticClass || '')).trim(),
-      props: __assign({}, props, {
+      props: __assign(__assign({}, props), {
         icon: true
       }),
       on: listeners
@@ -57718,7 +57719,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 
-var defaultMenuProps = __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["defaultMenuProps"], {
+var defaultMenuProps = __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["defaultMenuProps"]), {
   offsetY: true,
   offsetOverflow: true,
   transition: false
@@ -57763,7 +57764,7 @@ var defaultMenuProps = __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1_
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-autocomplete': true,
         'v-autocomplete--is-selecting-index': this.selectedIndex > -1
       });
@@ -57824,7 +57825,7 @@ var defaultMenuProps = __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1_
     $_menuProps: function $_menuProps() {
       var props = _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.$_menuProps.call(this);
       props.contentClass = ("v-autocomplete__content " + (props.contentClass || '')).trim();
-      return __assign({}, defaultMenuProps, props);
+      return __assign(__assign({}, defaultMenuProps), props);
     },
     searchIsDirty: function searchIsDirty() {
       return this.internalSearch != null && this.internalSearch !== '';
@@ -57839,7 +57840,7 @@ var defaultMenuProps = __assign({}, _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1_
     },
     listData: function listData() {
       var data = _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.listData.call(this);
-      data.props = __assign({}, data.props, {
+      data.props = __assign(__assign({}, data.props), {
         items: this.virtualizedItems,
         noFilter: this.noFilter || !this.isSearching || !this.filteredItems.length,
         searchInput: this.internalSearch
@@ -58510,7 +58511,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-banner--has-icon': this.hasIcon,
         'v-banner--is-mobile': this.isMobile,
         'v-banner--single-line': this.singleLine,
@@ -58738,7 +58739,7 @@ var __assign = undefined && undefined.__assign || function () {
       };
     },
     styles: function styles() {
-      return __assign({}, this.measurableStyles, {
+      return __assign(__assign({}, this.measurableStyles), {
         transform: this.isActive ? 'none' : 'translateY(100%)'
       });
     }
@@ -58868,7 +58869,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VDialog_VDialog__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VDialog_VDialog__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-bottom-sheet': true,
         'v-bottom-sheet--inset': this.inset
       });
@@ -59080,8 +59081,8 @@ var __assign = undefined && undefined.__assign || function () {
         tag = _a.tag,
         data = _a.data;
 
-    return h('li', [h(tag, __assign({}, data, {
-      attrs: __assign({}, data.attrs, {
+    return h('li', [h(tag, __assign(__assign({}, data), {
+      attrs: __assign(__assign({}, data.attrs), {
         'aria-current': this.isActive && this.isLink ? 'page' : undefined
       })
     }), this.$slots.default)]);
@@ -59253,9 +59254,9 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign(__assign(__assign(__assign(__assign({
         'v-btn': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this)), {
         'v-btn--absolute': this.absolute,
         'v-btn--block': this.block,
         'v-btn--bottom': this.bottom,
@@ -59276,7 +59277,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
         'v-btn--text': this.text,
         'v-btn--tile': this.tile,
         'v-btn--top': this.top
-      }, this.themeClasses, this.groupClasses, this.elevationClasses, this.sizeableClasses);
+      }), this.themeClasses), this.groupClasses), this.elevationClasses), this.sizeableClasses);
     },
     contained: function contained() {
       return Boolean(!this.isFlat && !this.depressed && // Contained class only adds elevation
@@ -59284,10 +59285,12 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_8__["default"])(_V
       !this.elevation);
     },
     computedRipple: function computedRipple() {
+      var _a;
+
       var defaultRipple = this.icon || this.fab ? {
         circle: true
       } : true;
-      if (this.disabled) return false;else return this.ripple != null ? this.ripple : defaultRipple;
+      if (this.disabled) return false;else return (_a = this.ripple) !== null && _a !== void 0 ? _a : defaultRipple;
     },
     isFlat: function isFlat() {
       return Boolean(this.icon || this.text || this.outlined);
@@ -59438,7 +59441,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _mixins_button_group__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign(__assign({}, _mixins_button_group__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-btn-toggle': true,
         'v-btn-toggle--borderless': this.borderless,
         'v-btn-toggle--dense': this.dense,
@@ -59446,7 +59449,7 @@ var __assign = undefined && undefined.__assign || function () {
         'v-btn-toggle--rounded': this.rounded,
         'v-btn-toggle--shaped': this.shaped,
         'v-btn-toggle--tile': this.tile
-      }, this.themeClasses);
+      }), this.themeClasses);
     }
   },
   methods: {
@@ -59526,7 +59529,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 /* harmony default export */ __webpack_exports__["default"] = (_mixins_calendar_with_events__WEBPACK_IMPORTED_MODULE_0__["default"].extend({
   name: 'v-calendar',
-  props: __assign({}, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].calendar, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].weeks, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].intervals, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].category),
+  props: __assign(__assign(__assign(__assign({}, _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].calendar), _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].weeks), _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].intervals), _util_props__WEBPACK_IMPORTED_MODULE_1__["default"].category),
   data: function data() {
     return {
       lastStart: null,
@@ -59860,7 +59863,7 @@ var __assign = undefined && undefined.__assign || function () {
       class: {
         'v-calendar-events': !this.noEvents
       },
-      props: __assign({}, this.$props, {
+      props: __assign(__assign({}, this.$props), {
         start: start.date,
         end: end.date,
         maxDays: maxDays,
@@ -59874,7 +59877,7 @@ var __assign = undefined && undefined.__assign || function () {
         name: 'resize',
         value: this.updateEventVisibility
       }],
-      on: __assign({}, this.$listeners, {
+      on: __assign(__assign({}, this.$listeners), {
         'click:date': function clickDate(day) {
           if (_this.$listeners['input']) {
             _this.$emit('input', day.date);
@@ -59964,9 +59967,9 @@ var __assign = undefined && undefined.__assign || function () {
         staticClass: 'v-calendar-category__columns'
       };
 
-      var scope = __assign({
+      var scope = __assign(__assign({
         week: this.days
-      }, day, {
+      }, day), {
         index: index
       });
 
@@ -59976,7 +59979,7 @@ var __assign = undefined && undefined.__assign || function () {
       return [this.$createElement('div', data, children)];
     },
     getCategoryScope: function getCategoryScope(scope, category) {
-      return __assign({}, scope, {
+      return __assign(__assign({}, scope), {
         category: category === this.categoryForInvalid ? null : category
       });
     },
@@ -60182,9 +60185,9 @@ var __spread = undefined && undefined.__spread || function () {
       var _this = this;
 
       return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_4__["getSlot"])(this, 'day-header', function () {
-        return __assign({
+        return __assign(__assign({
           week: _this.days
-        }, day, {
+        }, day), {
           index: index
         });
       }) || [];
@@ -61119,6 +61122,8 @@ var MINUTES_IN_DAY = 1440;
     genEvent: function genEvent(event, scopeInput, timedEvent, data) {
       var _this = this;
 
+      var _a;
+
       var slot = this.$scopedSlots.event;
       var text = this.eventTextColorFunction(event.input);
       var background = this.eventColorFunction(event.input);
@@ -61147,7 +61152,7 @@ var MINUTES_IN_DAY = 1440;
         return name;
       };
 
-      var scope = __assign({}, scopeInput, {
+      var scope = __assign(__assign({}, scopeInput), {
         event: event.input,
         outside: scopeInput.day.outside,
         singline: singline,
@@ -61159,13 +61164,13 @@ var MINUTES_IN_DAY = 1440;
 
       return this.$createElement('div', this.setTextColor(text, this.setBackgroundColor(background, __assign({
         on: this.getDefaultMouseEventHandlers(':event', function (nativeEvent) {
-          return __assign({}, scope, {
+          return __assign(__assign({}, scope), {
             nativeEvent: nativeEvent
           });
         }),
         directives: [{
           name: 'ripple',
-          value: this.eventRipple != null ? this.eventRipple : true
+          value: (_a = this.eventRipple) !== null && _a !== void 0 ? _a : true
         }]
       }, data))), slot ? slot(scope) : [this.genName(eventSummary)]);
     },
@@ -61193,6 +61198,8 @@ var MINUTES_IN_DAY = 1440;
     genMore: function genMore(day) {
       var _this = this;
 
+      var _a;
+
       var eventHeight = this.eventHeight;
       var eventMarginBottom = this.eventMarginBottom;
       return this.$createElement('div', {
@@ -61206,7 +61213,7 @@ var MINUTES_IN_DAY = 1440;
         },
         directives: [{
           name: 'ripple',
-          value: this.eventRipple != null ? this.eventRipple : true
+          value: (_a = this.eventRipple) !== null && _a !== void 0 ? _a : true
         }],
         on: {
           click: function click() {
@@ -61298,7 +61305,7 @@ var MINUTES_IN_DAY = 1440;
       var slotDay = slots.day;
       var slotDayHeader = slots['day-header'];
       var slotDayBody = slots['day-body'];
-      return __assign({}, slots, {
+      return __assign(__assign({}, slots), {
         day: function day(_day) {
           var children = getSlotChildren(_day, _this.getEventsForDay, _this.genDayEvent, false);
 
@@ -61947,10 +61954,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./common */ "./src/components/VCalendar/modes/common.ts");
 /* harmony import */ var _util_timestamp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/timestamp */ "./src/components/VCalendar/util/timestamp.ts");
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -61959,6 +61967,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 
 var __read = undefined && undefined.__read || function (o, n) {
@@ -63386,16 +63395,16 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign(__assign({
         'v-card': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
         'v-card--flat': this.flat,
         'v-card--hover': this.hover,
         'v-card--link': this.isClickable,
         'v-card--loading': this.loading,
         'v-card--disabled': this.disabled,
         'v-card--raised': this.raised
-      }, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this));
+      }), _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this));
     },
     styles: function styles() {
       var style = __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this));
@@ -63578,7 +63587,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-carousel': true,
         'v-carousel--hide-delimiter-background': this.hideDelimiterBackground,
         'v-carousel--vertical-delimiters': this.isVertical
@@ -63756,7 +63765,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_V
     genDefaultSlot: function genDefaultSlot() {
       return [this.$createElement(_VImg__WEBPACK_IMPORTED_MODULE_1__["VImg"], {
         staticClass: 'v-carousel__item',
-        props: __assign({}, this.$attrs, {
+        props: __assign(__assign({}, this.$attrs), {
           height: this.windowGroup.internalHeight
         }),
         on: this.$listeners,
@@ -63886,7 +63895,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
         'v-input--selection-controls': true,
         'v-input--checkbox': true,
         'v-input--indeterminate': this.inputIndeterminate
@@ -63939,7 +63948,7 @@ var __assign = undefined && undefined.__assign || function () {
           dark: this.dark,
           light: this.light
         }
-      }), this.computedIcon), this.genInput('checkbox', __assign({}, this.attrs$, {
+      }), this.computedIcon), this.genInput('checkbox', __assign(__assign({}, this.attrs$), {
         'aria-checked': this.inputIndeterminate ? 'mixed' : this.isActive.toString()
       })), this.genRipple(this.setTextColor(this.rippleState))]);
     },
@@ -64013,7 +64022,7 @@ var __assign = undefined && undefined.__assign || function () {
   directives: {
     ripple: _directives_ripple__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: __assign({}, _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.props, _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__["default"].options.props, {
+  props: __assign(__assign(__assign({}, _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.props), _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__["default"].options.props), {
     disabled: Boolean,
     ripple: {
       type: Boolean,
@@ -64248,9 +64257,9 @@ var __read = undefined && undefined.__read || function (o, n) {
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign(__assign(__assign(__assign({
         'v-chip': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_8__["default"].options.computed.classes.call(this), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_8__["default"].options.computed.classes.call(this)), {
         'v-chip--clickable': this.isClickable,
         'v-chip--disabled': this.disabled,
         'v-chip--draggable': this.draggable,
@@ -64260,7 +64269,7 @@ var __read = undefined && undefined.__read || function (o, n) {
         'v-chip--outlined': this.outlined,
         'v-chip--pill': this.pill,
         'v-chip--removable': this.hasClose
-      }, this.themeClasses, this.sizeableClasses, this.groupClasses);
+      }), this.themeClasses), this.sizeableClasses), this.groupClasses);
     },
     hasClose: function hasClose() {
       return Boolean(this.close);
@@ -64336,7 +64345,7 @@ var __read = undefined && undefined.__read || function (o, n) {
         tag = _a.tag,
         data = _a.data;
 
-    data.attrs = __assign({}, data.attrs, {
+    data.attrs = __assign(__assign({}, data.attrs), {
       draggable: this.draggable ? 'true' : undefined,
       tabindex: this.chipGroup && !this.disabled ? 0 : data.attrs.tabindex
     });
@@ -64433,7 +64442,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__["BaseSlideGroup"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_1__["BaseSlideGroup"].options.computed.classes.call(this)), {
         'v-chip-group': true,
         'v-chip-group--column': this.column
       });
@@ -64674,9 +64683,9 @@ var __assign = undefined && undefined.__assign || function () {
   render: function render(h) {
     return h(_VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"], {
       staticClass: 'v-color-picker',
-      class: __assign({
+      class: __assign(__assign({
         'v-color-picker--flat': this.flat
-      }, this.themeClasses, this.elevationClasses),
+      }, this.themeClasses), this.elevationClasses),
       props: {
         maxWidth: this.width
       }
@@ -65162,7 +65171,7 @@ var __assign = undefined && undefined.__assign || function () {
         },
         on: {
           input: function input(val) {
-            return _this.color.alpha !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign({}, _this.color.hsva, {
+            return _this.color.alpha !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign(__assign({}, _this.color.hsva), {
               a: val
             })));
           }
@@ -65198,7 +65207,7 @@ var __assign = undefined && undefined.__assign || function () {
         },
         on: {
           input: function input(val) {
-            return _this.color.hue !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign({}, _this.color.hsva, {
+            return _this.color.hue !== val && _this.$emit('update:color', Object(_util__WEBPACK_IMPORTED_MODULE_4__["fromHSVA"])(__assign(__assign({}, _this.color.hsva), {
               h: val
             })));
           }
@@ -65206,9 +65215,9 @@ var __assign = undefined && undefined.__assign || function () {
       });
     },
     genTrack: function genTrack(options) {
-      return this.$createElement(_VSlider_VSlider__WEBPACK_IMPORTED_MODULE_1__["default"], __assign({
+      return this.$createElement(_VSlider_VSlider__WEBPACK_IMPORTED_MODULE_1__["default"], __assign(__assign({
         class: 'v-color-picker__track'
-      }, options, {
+      }, options), {
         props: __assign({
           disabled: this.disabled
         }, options.props)
@@ -65502,15 +65511,15 @@ function parseColor(color, oldColor) {
     var a = color.hasOwnProperty('a') ? parseFloat(color.a) : 1;
 
     if (has(color, ['r', 'g', 'b'])) {
-      if (oldColor && color === oldColor.rgba) return oldColor;else return fromRGBA(__assign({}, color, {
+      if (oldColor && color === oldColor.rgba) return oldColor;else return fromRGBA(__assign(__assign({}, color), {
         a: a
       }));
     } else if (has(color, ['h', 's', 'l'])) {
-      if (oldColor && color === oldColor.hsla) return oldColor;else return fromHSLA(__assign({}, color, {
+      if (oldColor && color === oldColor.hsla) return oldColor;else return fromHSLA(__assign(__assign({}, color), {
         a: a
       }));
     } else if (has(color, ['h', 's', 'v'])) {
-      if (oldColor && color === oldColor.hsva) return oldColor;else return fromHSVA(__assign({}, color, {
+      if (oldColor && color === oldColor.hsva) return oldColor;else return fromHSVA(__assign(__assign({}, color), {
         a: a
       }));
     }
@@ -65664,7 +65673,7 @@ var __assign = undefined && undefined.__assign || function () {
       var chip = _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genChipSelection.call(this, item, index); // Allow user to update an existing value
 
       if (this.multiple) {
-        chip.componentOptions.listeners = __assign({}, chip.componentOptions.listeners, {
+        chip.componentOptions.listeners = __assign(__assign({}, chip.componentOptions.listeners), {
           dblclick: function dblclick() {
             _this.editingIndex = index;
             _this.internalSearch = _this.getText(item);
@@ -65736,7 +65745,7 @@ var __assign = undefined && undefined.__assign || function () {
       }
     },
     setValue: function setValue(value) {
-      _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.setValue.call(this, value != null ? value : this.internalSearch);
+      _VSelect_VSelect__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.setValue.call(this, value !== null && value !== void 0 ? value : this.internalSearch);
     },
     updateEditing: function updateEditing() {
       var value = this.internalValue.slice();
@@ -66390,7 +66399,7 @@ var __spread = undefined && undefined.__spread || function () {
       });
     },
     updateOptions: function updateOptions(options) {
-      this.internalOptions = __assign({}, this.internalOptions, options, {
+      this.internalOptions = __assign(__assign(__assign({}, this.internalOptions), options), {
         page: this.serverItemsLength < 0 ? Math.max(1, Math.min(options.page || this.internalOptions.page, this.pageCount)) : options.page || this.internalOptions.page
       });
     },
@@ -66736,7 +66745,7 @@ var __read = undefined && undefined.__read || function (o, n) {
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_mixins_mobile__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]).extend({
   name: 'v-data-iterator',
-  props: __assign({}, _VData__WEBPACK_IMPORTED_MODULE_0__["VData"].options.props, {
+  props: __assign(__assign({}, _VData__WEBPACK_IMPORTED_MODULE_0__["VData"].options.props), {
     itemKey: {
       type: String,
       default: 'id'
@@ -66754,7 +66763,7 @@ var __read = undefined && undefined.__read || function (o, n) {
         return [];
       }
     },
-    mobileBreakpoint: __assign({}, _mixins_mobile__WEBPACK_IMPORTED_MODULE_2__["default"].options.props.mobileBreakpoint, {
+    mobileBreakpoint: __assign(__assign({}, _mixins_mobile__WEBPACK_IMPORTED_MODULE_2__["default"].options.props.mobileBreakpoint), {
       default: 600
     }),
     singleExpand: Boolean,
@@ -66980,7 +66989,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       if (empty) return [empty];
 
       if (this.$scopedSlots.default) {
-        return this.$scopedSlots.default(__assign({}, props, {
+        return this.$scopedSlots.default(__assign(__assign({}, props), {
           isSelected: this.isSelected,
           select: this.select,
           isExpanded: this.isExpanded,
@@ -66999,7 +67008,7 @@ var __read = undefined && undefined.__read || function (o, n) {
     genFooter: function genFooter(props) {
       if (this.hideDefaultFooter) return null;
       var data = {
-        props: __assign({}, this.sanitizedFooterProps, {
+        props: __assign(__assign({}, this.sanitizedFooterProps), {
           options: props.options,
           pagination: props.pagination
         }),
@@ -67015,7 +67024,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       }, data));
     },
     genDefaultScopedSlot: function genDefaultScopedSlot(props) {
-      var outerProps = __assign({}, props, {
+      var outerProps = __assign(__assign({}, props), {
         someItems: this.someItems,
         everyItem: this.everyItem,
         toggleSelectAll: this.toggleSelectAll
@@ -67181,7 +67190,7 @@ var __assign = undefined && undefined.__assign || function () {
         class: classes
       }, mobileRowChildren);
     });
-    return h('tr', __assign({}, data, {
+    return h('tr', __assign(__assign({}, data), {
       staticClass: 'v-data-table__mobile-table-row'
     }), columns);
   }
@@ -67545,18 +67554,18 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
         var index = headers.findIndex(function (h) {
           return h.value === 'data-table-select';
         });
-        if (index < 0) headers.unshift(__assign({}, defaultHeader, {
+        if (index < 0) headers.unshift(__assign(__assign({}, defaultHeader), {
           value: 'data-table-select'
-        }));else headers.splice(index, 1, __assign({}, defaultHeader, headers[index]));
+        }));else headers.splice(index, 1, __assign(__assign({}, defaultHeader), headers[index]));
       }
 
       if (this.showExpand) {
         var index = headers.findIndex(function (h) {
           return h.value === 'data-table-expand';
         });
-        if (index < 0) headers.unshift(__assign({}, defaultHeader, {
+        if (index < 0) headers.unshift(__assign(__assign({}, defaultHeader), {
           value: 'data-table-expand'
-        }));else headers.splice(index, 1, __assign({}, defaultHeader, headers[index]));
+        }));else headers.splice(index, 1, __assign(__assign({}, defaultHeader), headers[index]));
       }
 
       return headers;
@@ -67673,7 +67682,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
     },
     genHeaders: function genHeaders(props) {
       var data = {
-        props: __assign({}, this.sanitizedHeaderProps, {
+        props: __assign(__assign({}, this.sanitizedHeaderProps), {
           headers: this.computedHeaders,
           options: props.options,
           mobile: this.isMobile,
@@ -67693,7 +67702,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 
       if (!this.hideDefaultHeader) {
         var scopedSlots = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPrefixedScopedSlots"])('header.', this.$scopedSlots);
-        children.push(this.$createElement(_VDataTableHeader__WEBPACK_IMPORTED_MODULE_4__["default"], __assign({}, data, {
+        children.push(this.$createElement(_VDataTableHeader__WEBPACK_IMPORTED_MODULE_4__["default"], __assign(__assign({}, data), {
           scopedSlots: scopedSlots
         })));
       }
@@ -67820,7 +67829,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 
       for (var i = 0; i < items.length; i++) {
         var item = items[i];
-        rows.push(this.$scopedSlots.item(__assign({}, this.createItemProps(item), {
+        rows.push(this.$scopedSlots.item(__assign(__assign({}, this.createItemProps(item)), {
           index: i
         })));
 
@@ -67917,7 +67926,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
 
       return this.$createElement(this.isMobile ? _MobileRow__WEBPACK_IMPORTED_MODULE_10__["default"] : _Row__WEBPACK_IMPORTED_MODULE_6__["default"], {
         key: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getObjectValueByPath"])(item, this.itemKey),
-        class: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_16__["mergeClasses"])(__assign({}, classes, {
+        class: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_16__["mergeClasses"])(__assign(__assign({}, classes), {
           'v-data-table__selected': data.isSelected
         }), Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPropertyFromItem"])(item, this.itemClass)),
         props: {
@@ -67943,7 +67952,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
       });
     },
     genBody: function genBody(props) {
-      var data = __assign({}, props, {
+      var data = __assign(__assign({}, props), {
         expand: this.expand,
         headers: this.computedHeaders,
         isExpanded: this.isExpanded,
@@ -67976,7 +67985,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
       var children = [Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getSlot"])(this, 'footer', data, true)];
 
       if (!this.hideDefaultFooter) {
-        children.push(this.$createElement(_VDataIterator__WEBPACK_IMPORTED_MODULE_2__["VDataFooter"], __assign({}, data, {
+        children.push(this.$createElement(_VDataIterator__WEBPACK_IMPORTED_MODULE_2__["VDataFooter"], __assign(__assign({}, data), {
           scopedSlots: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_14__["getPrefixedScopedSlots"])('footer.', this.$scopedSlots)
         })));
       }
@@ -68020,7 +68029,7 @@ function searchTableItems(items, search, headersWithCustomFilters, headersWithou
     var _this = this;
 
     return this.$createElement(_VData__WEBPACK_IMPORTED_MODULE_1__["VData"], {
-      props: __assign({}, this.$props, {
+      props: __assign(__assign({}, this.$props), {
         customFilter: this.customFilterWithColumns,
         customSort: this.customSortWithHeaders,
         itemsPerPage: this.computedItemsPerPage
@@ -68133,7 +68142,7 @@ var __assign = undefined && undefined.__assign || function () {
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_7___default.a.extend({
   name: 'v-data-table-header',
   functional: true,
-  props: __assign({}, _mixins_header__WEBPACK_IMPORTED_MODULE_3__["default"].options.props, {
+  props: __assign(__assign({}, _mixins_header__WEBPACK_IMPORTED_MODULE_3__["default"].options.props), {
     mobile: Boolean
   }),
   render: function render(h, _a) {
@@ -68599,12 +68608,10 @@ __webpack_require__.r(__webpack_exports__);
         staticClass: 'v-small-dialog__content',
         on: {
           keydown: function keydown(e) {
-            var input = _this.$refs.content.querySelector('input');
-
             e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].esc && _this.cancel();
 
-            if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].enter && input) {
-              _this.save(input.value);
+            if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].enter) {
+              _this.save(_this.returnValue);
 
               _this.$emit('save');
             }
@@ -71268,7 +71275,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_10__["default"])(_
       };
 
       if (!this.fullscreen) {
-        data.style = __assign({}, data.style, {
+        data.style = __assign(__assign({}, data.style), {
           maxWidth: this.maxWidth === 'none' ? undefined : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_12__["convertToUnit"])(this.maxWidth),
           width: this.width === 'auto' ? undefined : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_12__["convertToUnit"])(this.width)
         });
@@ -71700,7 +71707,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_m
         name: 'ripple',
         value: this.ripple
       }],
-      on: __assign({}, this.$listeners, {
+      on: __assign(__assign({}, this.$listeners), {
         click: this.onClick,
         mousedown: function mousedown() {
           return _this.hasMousedown = true;
@@ -71774,7 +71781,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this)), {
         'v-expansion-panels': true,
         'v-expansion-panels--accordion': this.accordion,
         'v-expansion-panels--flat': this.flat,
@@ -71994,7 +72001,7 @@ var __spread = undefined && undefined.__spread || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-file-input': true
       });
     },
@@ -72165,7 +72172,7 @@ var __spread = undefined && undefined.__spread || function () {
       var _this = this;
 
       var node = _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genTextFieldSlot.call(this);
-      node.data.on = __assign({}, node.data.on || {}, {
+      node.data.on = __assign(__assign({}, node.data.on || {}), {
         click: function click() {
           return _this.$refs.input.click();
         }
@@ -72286,7 +72293,7 @@ var __assign = undefined && undefined.__assign || function () {
       return this.inset ? 'insetFooter' : 'footer';
     },
     classes: function classes() {
-      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-footer--absolute': this.absolute,
         'v-footer--fixed': !this.absolute && (this.app || this.fixed),
         'v-footer--padless': this.padless,
@@ -72310,7 +72317,7 @@ var __assign = undefined && undefined.__assign || function () {
     },
     styles: function styles() {
       var height = parseInt(this.height);
-      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this), {
+      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this)), {
         height: isNaN(height) ? height : Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(height),
         left: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(this.computedLeft),
         right: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(this.computedRight),
@@ -72653,22 +72660,22 @@ var cache = new Map();
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
   name: 'v-col',
   functional: true,
-  props: __assign({
+  props: __assign(__assign(__assign(__assign(__assign(__assign({
     cols: {
       type: [Boolean, String, Number],
       default: false
     }
-  }, breakpointProps, {
+  }, breakpointProps), {
     offset: {
       type: [String, Number],
       default: null
     }
-  }, offsetProps, {
+  }), offsetProps), {
     order: {
       type: [String, Number],
       default: null
     }
-  }, orderProps, {
+  }), orderProps), {
     alignSelf: {
       type: String,
       default: null,
@@ -73001,7 +73008,7 @@ var cache = new Map();
 /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_1___default.a.extend({
   name: 'v-row',
   functional: true,
-  props: __assign({
+  props: __assign(__assign(__assign(__assign(__assign({
     tag: {
       type: String,
       default: 'div'
@@ -73013,19 +73020,19 @@ var cache = new Map();
       default: null,
       validator: alignValidator
     }
-  }, alignProps, {
+  }, alignProps), {
     justify: {
       type: String,
       default: null,
       validator: justifyValidator
     }
-  }, justifyProps, {
+  }), justifyProps), {
     alignContent: {
       type: String,
       default: null,
       validator: alignContentValidator
     }
-  }, alignContentProps),
+  }), alignContentProps),
   render: function render(h, _a) {
     var _b;
 
@@ -73451,7 +73458,7 @@ var VIcon = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"])(_mixins
       return data;
     },
     applyColors: function applyColors(data) {
-      data.class = __assign({}, data.class, this.themeClasses);
+      data.class = __assign(__assign({}, data.class), this.themeClasses);
       this.setTextColor(this.color, data);
     },
     renderFontIcon: function renderFontIcon(icon, h) {
@@ -73483,7 +73490,7 @@ var VIcon = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"])(_mixins
     renderSvgIcon: function renderSvgIcon(icon, h) {
       var fontSize = this.getSize();
 
-      var wrapperData = __assign({}, this.getDefaultData(), {
+      var wrapperData = __assign(__assign({}, this.getDefaultData()), {
         style: fontSize ? {
           fontSize: fontSize,
           height: fontSize,
@@ -74869,10 +74876,11 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -74881,6 +74889,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Styles
 
 
@@ -74923,7 +74932,7 @@ var __values = undefined && undefined.__values || function (o) {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-list--dense': this.dense,
         'v-list--disabled': this.disabled,
         'v-list--flat': this.flat,
@@ -75148,7 +75157,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
           name: 'ripple',
           value: this.ripple
         }],
-        on: __assign({}, this.listeners$, {
+        on: __assign(__assign({}, this.listeners$), {
           click: this.click
         })
       }, [this.genPrependIcon(), this.$slots.activator, this.genAppendIcon()]);
@@ -75322,16 +75331,16 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_9__["default"])(_m
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign(__assign({
         'v-list-item': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this)), {
         'v-list-item--dense': this.dense,
         'v-list-item--disabled': this.disabled,
         'v-list-item--link': this.isClickable && !this.inactive,
         'v-list-item--selectable': this.selectable,
         'v-list-item--three-line': this.threeLine,
         'v-list-item--two-line': this.twoLine
-      }, this.themeClasses);
+      }), this.themeClasses);
     },
     isClickable: function isClickable() {
       return Boolean(_mixins_routable__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.isClickable.call(this) || this.listItemGroup);
@@ -75377,8 +75386,8 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_9__["default"])(_m
         tag = _a.tag,
         data = _a.data;
 
-    data.attrs = __assign({}, data.attrs, this.genAttrs());
-    data[this.to ? 'nativeOn' : 'on'] = __assign({}, data[this.to ? 'nativeOn' : 'on'], {
+    data.attrs = __assign(__assign({}, data.attrs), this.genAttrs());
+    data[this.to ? 'nativeOn' : 'on'] = __assign(__assign({}, data[this.to ? 'nativeOn' : 'on']), {
       keydown: function keydown(e) {
         /* istanbul ignore else */
         if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_7__["keyCodes"].enter) _this.click(e);
@@ -75477,9 +75486,9 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign({
         'v-list-item__avatar--horizontal': this.horizontal
-      }, _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this), {
+      }, _VAvatar__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this)), {
         'v-avatar--tile': this.tile || this.horizontal
       });
     }
@@ -75553,14 +75562,14 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.computed.classes.call(this)), {
         'v-list-item-group': true
       });
     }
   },
   methods: {
     genData: function genData() {
-      return this.setTextColor(this.color, __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.methods.genData.call(this), {
+      return this.setTextColor(this.color, __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_1__["BaseItemGroup"].options.methods.genData.call(this)), {
         attrs: {
           role: 'listbox'
         }
@@ -76066,7 +76075,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       var attributes = _mixins_activatable__WEBPACK_IMPORTED_MODULE_2__["default"].options.methods.genActivatorAttributes.call(this);
 
       if (this.activeTile && this.activeTile.id) {
-        return __assign({}, attributes, {
+        return __assign(__assign({}, attributes), {
           'aria-activedescendant': this.activeTile.id
         });
       }
@@ -76122,11 +76131,11 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       var _this = this;
 
       var options = {
-        attrs: __assign({}, this.getScopeIdAttrs(), {
+        attrs: __assign(__assign({}, this.getScopeIdAttrs()), {
           role: 'role' in this.$attrs ? this.$attrs.role : 'menu'
         }),
         staticClass: 'v-menu__content',
-        class: __assign({}, this.rootThemeClasses, this.roundedClasses, (_a = {
+        class: __assign(__assign(__assign({}, this.rootThemeClasses), this.roundedClasses), (_a = {
           'v-menu__content--auto': this.auto,
           'v-menu__content--fixed': this.activatorFixed,
           menuable__content__active: this.isActive
@@ -76894,7 +76903,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VAutocomplete__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VAutocomplete__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this)), {
         'v-overflow-btn': true,
         'v-overflow-btn--segmented': this.segmented,
         'v-overflow-btn--editable': this.editable
@@ -77697,11 +77706,11 @@ var __assign = undefined && undefined.__assign || function () {
   render: function render(h) {
     return h('div', {
       staticClass: 'v-picker v-card',
-      class: __assign({
+      class: __assign(__assign({
         'v-picker--flat': this.flat,
         'v-picker--landscape': this.landscape,
         'v-picker--full-width': this.fullWidth
-      }, this.themeClasses, this.elevationClasses)
+      }, this.themeClasses), this.elevationClasses)
     }, [this.$slots.title ? this.genTitle() : null, this.genBody(), this.$slots.actions ? this.genActions() : null]);
   }
 }));
@@ -78206,6 +78215,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../mixins/selectable */ "./src/mixins/selectable/index.ts");
 /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
 /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+/* harmony import */ var _util_mergeData__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../util/mergeData */ "./src/util/mergeData.ts");
 var __assign = undefined && undefined.__assign || function () {
   __assign = Object.assign || function (t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -78234,6 +78244,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
  // Utilities
+
 
 
 
@@ -78268,10 +78279,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign({
         'v-radio--is-disabled': this.isDisabled,
         'v-radio--is-focused': this.isFocused
-      }, this.themeClasses, this.groupClasses);
+      }, this.themeClasses), this.groupClasses);
     },
     computedColor: function computedColor() {
       return _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__["default"].options.computed.computedColor.call(this);
@@ -78314,19 +78325,11 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
       return _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__["default"].options.methods.genInput.call(this, 'radio', args);
     },
     genLabel: function genLabel() {
-      var _this = this;
-
       if (!this.hasLabel) return null;
       return this.$createElement(_VLabel__WEBPACK_IMPORTED_MODULE_1__["default"], {
         on: {
-          click: function click(e) {
-            // Prevent label from
-            // causing the input
-            // to focus
-            e.preventDefault();
-
-            _this.onChange();
-          }
+          // Label shouldn't cause the input to focus
+          click: _mixins_selectable__WEBPACK_IMPORTED_MODULE_9__["prevent"]
         },
         attrs: {
           for: this.computedId
@@ -78366,7 +78369,10 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_11__["default"])(_
   render: function render(h) {
     var data = {
       staticClass: 'v-radio',
-      class: this.classes
+      class: this.classes,
+      on: Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_12__["mergeListeners"])({
+        click: this.onChange
+      }, this.listeners$)
     };
     return h('div', data, [this.genRadio(), this.genLabel()]);
   }
@@ -78456,7 +78462,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_5__["default"])(_m
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_2__["default"].options.computed.classes.call(this)), {
         'v-input--selection-controls v-input--radio-group': true,
         'v-input--radio-group--column': this.column && !this.row,
         'v-input--radio-group--row': this.row
@@ -78622,7 +78628,7 @@ var __spread = undefined && undefined.__spread || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VSlider__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSlider__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-input--range-slider': true
       });
     },
@@ -79256,10 +79262,11 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -79268,6 +79275,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Styles
 
 
@@ -79378,7 +79386,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       return this.filterDuplicates(this.cachedItems.concat(this.items));
     },
     classes: function classes() {
-      return __assign({}, _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.classes.call(this)), {
         'v-select': true,
         'v-select--chips': this.hasChips,
         'v-select--chips--small': this.smallChips,
@@ -79424,7 +79432,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
       var scopeId = this.$vnode && this.$vnode.context.$options._scopeId;
       var attrs = scopeId ? (_a = {}, _a[scopeId] = true, _a) : {};
       return {
-        attrs: __assign({}, attrs, {
+        attrs: __assign(__assign({}, attrs), {
           id: this.computedOwns
         }),
         props: {
@@ -79470,11 +79478,11 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
         }, {});
       }
 
-      return __assign({}, defaultMenuProps, {
+      return __assign(__assign(__assign({}, defaultMenuProps), {
         eager: this.eager,
         value: this.menuCanShow && this.isMenuActive,
         nudgeBottom: normalisedProps.offsetY ? 1 : 0
-      }, normalisedProps);
+      }), normalisedProps);
     }
   },
   watch: {
@@ -79666,7 +79674,7 @@ var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_13__["default"])(_
     },
     genInputSlot: function genInputSlot() {
       var render = _VTextField_VTextField__WEBPACK_IMPORTED_MODULE_6__["default"].options.methods.genInputSlot.call(this);
-      render.data.attrs = __assign({}, render.data.attrs, {
+      render.data.attrs = __assign(__assign({}, render.data.attrs), {
         role: 'button',
         'aria-haspopup': 'listbox',
         'aria-expanded': String(this.isMenuActive),
@@ -80278,7 +80286,7 @@ var __assign = undefined && undefined.__assign || function () {
       var scopedSlot = this.$scopedSlots.item({
         parent: parent,
         item: item,
-        attrs: __assign({}, tile.attrs, tile.props),
+        attrs: __assign(__assign({}, tile.attrs), tile.props),
         on: tile.on
       });
       return this.needsTile(scopedSlot) ? this.$createElement(_VList__WEBPACK_IMPORTED_MODULE_3__["VListItem"], tile, scopedSlot) : scopedSlot;
@@ -80434,11 +80442,11 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign(__assign({
         'v-sheet': true,
         'v-sheet--outlined': this.outlined,
         'v-sheet--shaped': this.shaped
-      }, this.themeClasses, this.elevationClasses, this.roundedClasses);
+      }, this.themeClasses), this.elevationClasses), this.roundedClasses);
     },
     styles: function styles() {
       return this.measurableStyles;
@@ -80580,11 +80588,11 @@ var __read = undefined && undefined.__read || function (o, n) {
       }, this.$attrs) : {};
     },
     classes: function classes() {
-      return __assign({
+      return __assign(__assign({
         'v-skeleton-loader--boilerplate': this.boilerplate,
         'v-skeleton-loader--is-loading': this.isLoading,
         'v-skeleton-loader--tile': this.tile
-      }, this.themeClasses, this.elevationClasses);
+      }, this.themeClasses), this.elevationClasses);
     },
     isLoading: function isLoading() {
       return !('default' in this.$scopedSlots) || this.loading;
@@ -80850,7 +80858,7 @@ var BaseSlideGroup = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"]
       return this.genTransition('prev');
     },
     classes: function classes() {
-      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__["BaseItemGroup"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_3__["BaseItemGroup"].options.computed.classes.call(this)), {
         'v-slide-group': true,
         'v-slide-group--has-affixes': this.hasAffixes,
         'v-slide-group--is-overflowing': this.isOverflowing
@@ -81084,9 +81092,9 @@ var BaseSlideGroup = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"]
       var itemOffset = clientWidth + offsetLeft;
       var additionalOffset = clientWidth * 0.4;
 
-      if (offsetLeft < currentScrollOffset) {
+      if (offsetLeft <= currentScrollOffset) {
         currentScrollOffset = Math.max(offsetLeft - additionalOffset, 0);
-      } else if (totalWidth < itemOffset) {
+      } else if (totalWidth <= itemOffset) {
         currentScrollOffset = Math.min(currentScrollOffset - (totalWidth - itemOffset - additionalOffset), widths.content - widths.wrapper);
       }
 
@@ -81325,7 +81333,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-input__slider': true,
         'v-input__slider--vertical': this.vertical,
         'v-input__slider--inverse-label': this.inverseLabel
@@ -82375,7 +82383,7 @@ var __assign = undefined && undefined.__assign || function () {
     },
     genTrend: function genTrend() {
       return this.$createElement('svg', this.setTextColor(this.color, {
-        attrs: __assign({}, this.$attrs, {
+        attrs: __assign(__assign({}, this.$attrs), {
           display: 'block',
           'stroke-width': this._lineWidth || 1,
           viewBox: "0 0 " + this.width + " " + this.totalHeight
@@ -83389,7 +83397,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
         'v-input--selection-controls v-input--switch': true,
         'v-input--switch--flat': this.flat,
         'v-input--switch--inset': this.inset
@@ -83424,7 +83432,7 @@ var __assign = undefined && undefined.__assign || function () {
     genSwitch: function genSwitch() {
       return this.$createElement('div', {
         staticClass: 'v-input--selection-controls__input'
-      }, [this.genInput('checkbox', __assign({}, this.attrs, this.attrs$)), this.genRipple(this.setTextColor(this.validationState, {
+      }, [this.genInput('checkbox', __assign(__assign({}, this.attrs), this.attrs$)), this.genRipple(this.setTextColor(this.validationState, {
         directives: [{
           name: 'touch',
           value: {
@@ -83654,11 +83662,11 @@ Object(_mixins_groupable__WEBPACK_IMPORTED_MODULE_0__["factory"])('tabsBar'), _m
   },
   computed: {
     classes: function classes() {
-      return __assign({
+      return __assign(__assign(__assign({
         'v-tab': true
-      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      }, _mixins_routable__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-tab--disabled': this.disabled
-      }, this.groupClasses);
+      }), this.groupClasses);
     },
     value: function value() {
       var to = this.to || this.href || '';
@@ -83692,12 +83700,12 @@ Object(_mixins_groupable__WEBPACK_IMPORTED_MODULE_0__["factory"])('tabsBar'), _m
         tag = _a.tag,
         data = _a.data;
 
-    data.attrs = __assign({}, data.attrs, {
+    data.attrs = __assign(__assign({}, data.attrs), {
       'aria-selected': String(this.isActive),
       role: 'tab',
       tabindex: 0
     });
-    data.on = __assign({}, data.on, {
+    data.on = __assign(__assign({}, data.on), {
       keydown: function keydown(e) {
         if (e.keyCode === _util_helpers__WEBPACK_IMPORTED_MODULE_3__["keyCodes"].enter) _this.click(e);
 
@@ -84112,10 +84120,11 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -84124,6 +84133,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Extensions
 
 
@@ -84144,12 +84154,12 @@ var __values = undefined && undefined.__values || function (o) {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_0__["BaseSlideGroup"].options.computed.classes.call(this), {
+      return __assign(__assign(__assign({}, _VSlideGroup_VSlideGroup__WEBPACK_IMPORTED_MODULE_0__["BaseSlideGroup"].options.computed.classes.call(this)), {
         'v-tabs-bar': true,
         'v-tabs-bar--is-mobile': this.isMobile,
         // TODO: Remove this and move to v-slide-group
         'v-tabs-bar--show-arrows': this.showArrows
-      }, this.themeClasses);
+      }), this.themeClasses);
     }
   },
   watch: {
@@ -84258,7 +84268,7 @@ var __assign = undefined && undefined.__assign || function () {
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VWindow_VWindow__WEBPACK_IMPORTED_MODULE_0__["default"].options.computed.classes.call(this)), {
         'v-tabs-items': true
       });
     },
@@ -84466,7 +84476,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
   },
   computed: {
     classes: function classes() {
-      return __assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-text-field': true,
         'v-text-field--full-width': this.fullWidth,
         'v-text-field--prefix': this.prefix,
@@ -84512,7 +84522,9 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
       }
     },
     isDirty: function isDirty() {
-      return this.lazyValue != null && this.lazyValue.toString().length > 0 || this.badInput;
+      var _a;
+
+      return ((_a = this.lazyValue) === null || _a === void 0 ? void 0 : _a.toString().length) > 0 || this.badInput;
     },
     isEnclosed: function isEnclosed() {
       return this.filled || this.isSolo || this.outlined;
@@ -84731,7 +84743,7 @@ var dirtyTypes = ['color', 'file', 'time', 'date', 'datetime-local', 'week', 'mo
         domProps: {
           value: this.type === 'number' && Object.is(this.lazyValue, -0) ? '-0' : this.lazyValue
         },
-        attrs: __assign({}, this.attrs$, {
+        attrs: __assign(__assign({}, this.attrs$), {
           autofocus: this.autofocus,
           disabled: this.isDisabled,
           id: this.computedId,
@@ -85765,7 +85777,7 @@ var __assign = undefined && undefined.__assign || function () {
       class: __assign({
         'v-time-picker-clock--indeterminate': this.value == null
       }, this.themeClasses),
-      on: this.readonly || this.disabled ? undefined : Object.assign({
+      on: this.readonly || this.disabled ? undefined : {
         mousedown: this.onMouseDown,
         mouseup: this.onMouseUp,
         mouseleave: function mouseleave(e) {
@@ -85775,11 +85787,14 @@ var __assign = undefined && undefined.__assign || function () {
         touchend: this.onMouseUp,
         mousemove: this.onDragMove,
         touchmove: this.onDragMove
-      }, this.scrollable ? {
-        wheel: this.wheel
-      } : {}),
+      },
       ref: 'clock'
     };
+
+    if (this.scrollable && data.on) {
+      data.on.wheel = this.wheel;
+    }
+
     return h('div', data, [h('div', {
       staticClass: 'v-time-picker-clock__inner',
       ref: 'innerClock'
@@ -86272,7 +86287,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       return 64;
     },
     classes: function classes() {
-      return __assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VSheet_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
         'v-toolbar': true,
         'v-toolbar--absolute': this.absolute,
         'v-toolbar--bottom': this.bottom,
@@ -86292,7 +86307,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       return this.prominent;
     },
     styles: function styles() {
-      return __assign({}, this.measurableStyles, {
+      return __assign(__assign({}, this.measurableStyles), {
         height: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["convertToUnit"])(this.computedHeight)
       });
     }
@@ -86462,10 +86477,7 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       default: 'span'
     },
-    transition: String,
-    zIndex: {
-      default: null
-    }
+    transition: String
   },
   data: function data() {
     return {
@@ -86727,10 +86739,11 @@ var __spread = undefined && undefined.__spread || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -86739,6 +86752,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Styles
 
 
@@ -87994,7 +88008,7 @@ var __assign = undefined && undefined.__assign || function () {
       return this.transitionCount > 0;
     },
     classes: function classes() {
-      return __assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_4__["BaseItemGroup"].options.computed.classes.call(this), {
+      return __assign(__assign({}, _VItemGroup_VItemGroup__WEBPACK_IMPORTED_MODULE_4__["BaseItemGroup"].options.computed.classes.call(this)), {
         'v-window--show-arrows-on-hover': this.showArrowsOnHover
       });
     },
@@ -89033,17 +89047,15 @@ __webpack_require__.r(__webpack_exports__);
       el._parent = el.parentNode;
       el._initialStyle = (_a = {
         transition: el.style.transition,
-        visibility: el.style.visibility,
         overflow: el.style.overflow
       }, _a[sizeProperty] = el.style[sizeProperty], _a);
     },
     enter: function enter(el) {
       var initialStyle = el._initialStyle;
-      var offset = el[offsetProperty] + "px";
-      el.style.setProperty('transition', 'none', 'important');
-      el.style.visibility = 'hidden';
-      el.style.visibility = initialStyle.visibility;
+      el.style.setProperty('transition', 'none', 'important'); // Hide overflow to account for collapsed margins in the calculated height
+
       el.style.overflow = 'hidden';
+      var offset = el[offsetProperty] + "px";
       el.style[sizeProperty] = '0';
       void el.offsetHeight; // force reflow
 
@@ -89064,7 +89076,6 @@ __webpack_require__.r(__webpack_exports__);
 
       el._initialStyle = (_a = {
         transition: '',
-        visibility: '',
         overflow: el.style.overflow
       }, _a[sizeProperty] = el.style[sizeProperty], _a);
       el.style.overflow = 'hidden';
@@ -90129,7 +90140,7 @@ function () {
 
   Vuetify.install = _install__WEBPACK_IMPORTED_MODULE_0__["install"];
   Vuetify.installed = false;
-  Vuetify.version = "2.3.6";
+  Vuetify.version = "2.3.7";
   Vuetify.config = {
     silent: false
   };
@@ -90248,7 +90259,7 @@ function install(Vue, args) {
       var options = this.$options;
 
       if (options.vuetify) {
-        options.vuetify.init(this, options.ssrContext);
+        options.vuetify.init(this, this.$ssrContext);
         this.$vuetify = Vue.observable(options.vuetify.framework);
       } else {
         this.$vuetify = options.parent && options.parent.$vuetify || this;
@@ -93186,10 +93197,11 @@ __webpack_require__.r(__webpack_exports__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -93198,6 +93210,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }; // Mixins
 
 
@@ -93740,12 +93753,12 @@ var __read = undefined && undefined.__read || function (o, n) {
       }
 
       if (Object(_util_colorUtils__WEBPACK_IMPORTED_MODULE_2__["isCssColor"])(color)) {
-        data.style = __assign({}, data.style, {
+        data.style = __assign(__assign({}, data.style), {
           'background-color': "" + color,
           'border-color': "" + color
         });
       } else if (color) {
-        data.class = __assign({}, data.class, (_a = {}, _a[color] = true, _a));
+        data.class = __assign(__assign({}, data.class), (_a = {}, _a[color] = true, _a));
       }
 
       return data;
@@ -93772,7 +93785,7 @@ var __read = undefined && undefined.__read || function (o, n) {
       }
 
       if (Object(_util_colorUtils__WEBPACK_IMPORTED_MODULE_2__["isCssColor"])(color)) {
-        data.style = __assign({}, data.style, {
+        data.style = __assign(__assign({}, data.style), {
           color: "" + color,
           'caret-color': "" + color
         });
@@ -93781,7 +93794,7 @@ var __read = undefined && undefined.__read || function (o, n) {
             colorName = _b[0],
             colorModifier = _b[1];
 
-        data.class = __assign({}, data.class, (_a = {}, _a[colorName + '--text'] = true, _a));
+        data.class = __assign(__assign({}, data.class), (_a = {}, _a[colorName + '--text'] = true, _a));
 
         if (colorModifier) {
           data.class['text--' + colorModifier] = true;
@@ -94210,8 +94223,7 @@ __webpack_require__.r(__webpack_exports__);
 // Mixins
 
 function factory(namespace, child, parent) {
-  // TODO: ts 3.4 broke directly returning this
-  var R = Object(_registrable__WEBPACK_IMPORTED_MODULE_0__["inject"])(namespace, child, parent).extend({
+  return Object(_registrable__WEBPACK_IMPORTED_MODULE_0__["inject"])(namespace, child, parent).extend({
     name: 'groupable',
     props: {
       activeClass: {
@@ -94248,7 +94260,6 @@ function factory(namespace, child, parent) {
       }
     }
   });
-  return R;
 }
 /* eslint-disable-next-line no-redeclare */
 
@@ -95394,10 +95405,6 @@ function provide(namespace, self) {
 
   return vue__WEBPACK_IMPORTED_MODULE_0___default.a.extend({
     name: 'registrable-provide',
-    methods: self ? {} : {
-      register: null,
-      unregister: null
-    },
     provide: function provide() {
       var _a;
 
@@ -95501,12 +95508,8 @@ __webpack_require__.r(__webpack_exports__);
           center: true
         }
       });
-      data.on = Object.assign({
-        click: this.onChange
-      }, this.$listeners);
       return this.$createElement('div', data);
-    },
-    onChange: function onChange() {}
+    }
   }
 }));
 
@@ -95524,10 +95527,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -95536,6 +95540,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 
 
@@ -95661,7 +95666,9 @@ var __assign = undefined && undefined.__assign || function () {
       return classes;
     },
     computedRipple: function computedRipple() {
-      return this.ripple != null ? this.ripple : !this.disabled && this.isClickable;
+      var _a;
+
+      return (_a = this.ripple) !== null && _a !== void 0 ? _a : !this.disabled && this.isClickable;
     },
     isClickable: function isClickable() {
       if (this.disabled) return false;
@@ -95697,7 +95704,7 @@ var __assign = undefined && undefined.__assign || function () {
           name: 'ripple',
           value: this.computedRipple
         }]
-      }, _a[this.to ? 'nativeOn' : 'on'] = __assign({}, this.$listeners, {
+      }, _a[this.to ? 'nativeOn' : 'on'] = __assign(__assign({}, this.$listeners), {
         click: this.click
       }), _a.ref = 'link', _a);
 
@@ -95869,11 +95876,12 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************!*\
   !*** ./src/mixins/selectable/index.ts ***!
   \****************************************/
-/*! exports provided: default */
+/*! exports provided: prevent, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "prevent", function() { return prevent; });
 /* harmony import */ var _components_VInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/VInput */ "./src/components/VInput/index.ts");
 /* harmony import */ var _rippleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../rippleable */ "./src/mixins/rippleable/index.ts");
 /* harmony import */ var _comparable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comparable */ "./src/mixins/comparable/index.ts");
@@ -95885,6 +95893,9 @@ __webpack_require__.r(__webpack_exports__);
  // Utilities
 
 
+function prevent(e) {
+  e.preventDefault();
+}
 /* @vue/component */
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(_components_VInput__WEBPACK_IMPORTED_MODULE_0__["default"], _rippleable__WEBPACK_IMPORTED_MODULE_1__["default"], _comparable__WEBPACK_IMPORTED_MODULE_2__["default"]).extend({
@@ -95954,19 +95965,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     genLabel: function genLabel() {
-      var _this = this;
-
       var label = _components_VInput__WEBPACK_IMPORTED_MODULE_0__["default"].options.methods.genLabel.call(this);
       if (!label) return label;
       label.data.on = {
-        click: function click(e) {
-          // Prevent label from
-          // causing the input
-          // to focus
-          e.preventDefault();
-
-          _this.onChange();
-        }
+        // Label shouldn't cause the input to focus
+        click: prevent
       };
       return label;
     },
@@ -95987,13 +95990,18 @@ __webpack_require__.r(__webpack_exports__);
           blur: this.onBlur,
           change: this.onChange,
           focus: this.onFocus,
-          keydown: this.onKeydown
+          keydown: this.onKeydown,
+          click: prevent
         },
         ref: 'input'
       });
     },
     onBlur: function onBlur() {
       this.isFocused = false;
+    },
+    onClick: function onClick(e) {
+      this.onChange();
+      this.$emit('click', e);
     },
     onChange: function onChange() {
       var _this = this;
@@ -96252,7 +96260,7 @@ var __assign = undefined && undefined.__assign || function () {
 
 
 function functionalThemeClasses(context) {
-  var vm = __assign({}, context.props, context.injections);
+  var vm = __assign(__assign({}, context.props), context.injections);
 
   var isDark = Themeable.options.computed.isDark.call(vm);
   return Themeable.options.computed.themeClasses.call({
@@ -98193,7 +98201,7 @@ function (_super) {
 
       this.checkOrCreateStyleElement() && (this.styleEl.innerHTML = val);
     },
-    enumerable: true,
+    enumerable: false,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "dark", {
@@ -98207,7 +98215,7 @@ function (_super) {
 
       oldDark != null && this.applyTheme();
     },
-    enumerable: true,
+    enumerable: false,
     configurable: true
   }); // Apply current theme default
   // only called on client side
@@ -98378,7 +98386,7 @@ function (_super) {
       var target = this.dark ? 'dark' : 'light';
       return this.themes[target];
     },
-    enumerable: true,
+    enumerable: false,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "generatedStyles", {
@@ -98408,14 +98416,14 @@ function (_super) {
 
       return css;
     },
-    enumerable: true,
+    enumerable: false,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "parsedTheme", {
     get: function get() {
       return _utils__WEBPACK_IMPORTED_MODULE_1__["parse"](this.currentTheme || {}, undefined, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["getNestedValue"])(this.options, ['variations'], true));
     },
-    enumerable: true,
+    enumerable: false,
     configurable: true
   });
   Object.defineProperty(Theme.prototype, "isVueMeta23", {
@@ -98424,7 +98432,7 @@ function (_super) {
     get: function get() {
       return typeof this.vueMeta.addApp === 'function';
     },
-    enumerable: true,
+    enumerable: false,
     configurable: true
   });
   Theme.property = 'theme';
@@ -98994,7 +99002,7 @@ function RGBAtoCSS(rgba) {
   return "rgba(" + rgba.r + ", " + rgba.g + ", " + rgba.b + ", " + rgba.a + ")";
 }
 function RGBtoCSS(rgba) {
-  return RGBAtoCSS(__assign({}, rgba, {
+  return RGBAtoCSS(__assign(__assign({}, rgba), {
     a: 1
   }));
 }
@@ -99757,9 +99765,9 @@ function directiveConfig(binding, defaults) {
     defaults = {};
   }
 
-  return __assign({}, defaults, binding.modifiers, {
+  return __assign(__assign(__assign(__assign({}, defaults), binding.modifiers), {
     value: binding.arg
-  }, binding.value || {});
+  }), binding.value || {});
 }
 function addOnceEventListener(el, eventName, cb, options) {
   if (options === void 0) {
@@ -100246,10 +100254,11 @@ var __assign = undefined && undefined.__assign || function () {
 };
 
 var __values = undefined && undefined.__values || function (o) {
-  var m = typeof Symbol === "function" && o[Symbol.iterator],
+  var s = typeof Symbol === "function" && Symbol.iterator,
+      m = s && o[s],
       i = 0;
   if (m) return m.call(o);
-  return {
+  if (o && typeof o.length === "number") return {
     next: function next() {
       if (o && i >= o.length) o = void 0;
       return {
@@ -100258,6 +100267,7 @@ var __values = undefined && undefined.__values || function (o) {
       };
     }
   };
+  throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 };
 
 var __read = undefined && undefined.__read || function (o, n) {
@@ -100420,7 +100430,7 @@ function mergeData() {
               mergeTarget[prop] = {};
             }
 
-            mergeTarget[prop] = __assign({}, arguments[i][prop], mergeTarget[prop]);
+            mergeTarget[prop] = __assign(__assign({}, arguments[i][prop]), mergeTarget[prop]);
             break;
           // Reassignment strategy (no merge)
 
@@ -102062,9 +102072,9 @@ var messages = {
       remove: "Remove ",
       cartname: "Cart",
       // footer
-      logo: "ecstase",
+      logo: "Naqsh",
       lorem: "lorem text"
-    }, _defineProperty(_message, "email", "E-mail"), _defineProperty(_message, "firstname", "First Name"), _defineProperty(_message, "lastname", "Last Name"), _defineProperty(_message, "address", "Address"), _defineProperty(_message, "appartment", "Apartment, Suite, etc. (optional)"), _defineProperty(_message, "city", "City"), _defineProperty(_message, "phone", "Phone"), _defineProperty(_message, "postcode", "Post Code "), _defineProperty(_message, "discount", "Discount"), _defineProperty(_message, "Aplly", "APPLY"), _defineProperty(_message, "subtotal", "Sub Total"), _defineProperty(_message, "total", "Total"), _defineProperty(_message, "calulated", "Calculated at next"), _defineProperty(_message, "toshipping", "Continue to Shipping"), _defineProperty(_message, "select_size", 'Please Select Size'), _defineProperty(_message, "showorder", 'Show Order Summary'), _defineProperty(_message, "hideorder", 'Hide Order Summary'), _defineProperty(_message, "empty", '      '), _defineProperty(_message, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message, "shopfooter", 'Shop artworks'), _defineProperty(_message, "aboutfooter", 'About our products'), _defineProperty(_message, "carreerfooter", 'Careers'), _defineProperty(_message, "aboutusfooter", 'Our Mission'), _defineProperty(_message, "artistfooter", 'Our Artists'), _defineProperty(_message, "contactfooter", 'Contact us'), _defineProperty(_message, "termsfooter", 'Terms of use'), _defineProperty(_message, "privacyfooter", 'Privacy Policy'), _defineProperty(_message, "refundpolicy", 'Refund Policy'), _defineProperty(_message, "socialLink", 'SocialLink'), _defineProperty(_message, "solidout", 'Solid Out'), _defineProperty(_message, "support", 'Support'), _defineProperty(_message, "support_text", 'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.'), _defineProperty(_message, "Product", 'Product'), _defineProperty(_message, "Shipping", 'Shipping'), _defineProperty(_message, "Collabs", 'Collabs'), _defineProperty(_message, "contact", 'Contact'), _defineProperty(_message, "product_text1", 'What are Walltones?'), _defineProperty(_message, "product_text2", 'What are Knitworks?'), _defineProperty(_message, "product_text3", 'How do I assemble my Walltone?'), _defineProperty(_message, "product_text4", 'How do I assemble my Knitwork?'), _defineProperty(_message, "product_text5", 'What are the exact dimensions/materials of my artwork?'), _defineProperty(_message, "product_text6", 'I need any tools to hang my artwork?'), _defineProperty(_message, "product_text7", 'Walltones are our affordable and easy to hang canvas posters. They come in three different sizes, always complete with a special magnetic frame. Each Walltone is part of a limited edition.'), _defineProperty(_message, "product_text8", 'Knitworks are luxurious artworks on fabric, often using a combination of printing and painting techniques. The fabric is stretchedinto a sturdy metal frame. Like Walltones, they are always part of a limited edition.'), _defineProperty(_message, "product_text9", 'Align the pairs of magnetic frames with the top and bottom of your artwork.The included adhesive strips or screw can be used to stick only the top frame, or both frames to your wall.'), _defineProperty(_message, "product_text10", 'You can find Knitwork assembly instructions on the manual inside the box.'), _defineProperty(_message, "product_text11", 'When you buy an artwork, you can find the specifications in the dropdown menus underneath the product description. If you have any questions not answered in there, feel free to ask us.'), _defineProperty(_message, "product_text12", 'If the included adhesive strips are not suitable for your wall,you can use the included screw and plug. Only when using the screw and plug you will need a drill and screwdriver.'), _defineProperty(_message, "ship_text1", 'Do you ship to my country?'), _defineProperty(_message, "ship_text2", 'What about returns and shipping time?'), _defineProperty(_message, "ship_text3", 'We ship worldwide. If you are worried that your country might not accept our products because of regulation or customs policies, please send us an email explaining the situation and we will try to find out what is the best solution.'), _defineProperty(_message, "ship_text4", 'After placing your order, the whole process of preparing, packing and shipping to your doorstep can take approximately 15 business days depending on your location. Orders get sent out within 24 hours on average, after which you wont be able to cancel our order since the package will already be in transit. You can however, return your package for a full refund within 30 days.'), _defineProperty(_message, "Collabs_text1", 'I am an artist, how can we work together?'), _defineProperty(_message, "Collabs_text2", 'I am an influencer, how can we work together?'), _defineProperty(_message, "Collabs_text3", 'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.'), _defineProperty(_message, "Collabs_text4", 'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!'), _defineProperty(_message, "Terms", 'Terms'), _defineProperty(_message, "Terms_text1", 'What are the terms of this website?'), _defineProperty(_message, "Terms_text2", 'How do you treat my privacy?'), _defineProperty(_message, "Terms_text3", 'How can I get a refund?'), _defineProperty(_message, "Terms_text4", 'Read our terms'), _defineProperty(_message, "Terms_text5", 'Read our Privacy Policy'), _defineProperty(_message, "Terms_text6", 'Read our Refund Policy'), _defineProperty(_message, "noitem", 'There are no products. Please add an entry to complete the process!!'), _message)
+    }, _defineProperty(_message, "email", "E-mail"), _defineProperty(_message, "firstname", "First Name"), _defineProperty(_message, "lastname", "Last Name"), _defineProperty(_message, "address", "Address"), _defineProperty(_message, "appartment", "Apartment, Suite, etc. (optional)"), _defineProperty(_message, "city", "City"), _defineProperty(_message, "phone", "Phone"), _defineProperty(_message, "postcode", "Post Code "), _defineProperty(_message, "discount", "Discount"), _defineProperty(_message, "Aplly", "APPLY"), _defineProperty(_message, "subtotal", "Sub Total"), _defineProperty(_message, "total", "Total"), _defineProperty(_message, "calulated", "Calculated at next"), _defineProperty(_message, "toshipping", "Continue to Shipping"), _defineProperty(_message, "select_size", 'Please Select Size'), _defineProperty(_message, "showorder", 'Show Order Summary'), _defineProperty(_message, "hideorder", 'Hide Order Summary'), _defineProperty(_message, "empty", '      '), _defineProperty(_message, "addressfooter", 'Naqsh BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message, "shopfooter", 'Shop artworks'), _defineProperty(_message, "aboutfooter", 'About our products'), _defineProperty(_message, "carreerfooter", 'Careers'), _defineProperty(_message, "aboutusfooter", 'Our Mission'), _defineProperty(_message, "artistfooter", 'Our Artists'), _defineProperty(_message, "contactfooter", 'Contact us'), _defineProperty(_message, "termsfooter", 'Terms of use'), _defineProperty(_message, "privacyfooter", 'Privacy Policy'), _defineProperty(_message, "refundpolicy", 'Refund Policy'), _defineProperty(_message, "socialLink", 'SocialLink'), _defineProperty(_message, "solidout", 'SOLD OUT'), _defineProperty(_message, "support", 'Support'), _defineProperty(_message, "support_text", 'Do you have any questions? Have a look at the categories below, and if these dont include the answer you were looking for, please feel free to shoot us an email.'), _defineProperty(_message, "Product", 'Product'), _defineProperty(_message, "Shipping", 'Shipping'), _defineProperty(_message, "Collabs", 'Collabs'), _defineProperty(_message, "contact", 'Contact'), _defineProperty(_message, "product_text1", 'What are Walltones?'), _defineProperty(_message, "product_text2", 'What are Knitworks?'), _defineProperty(_message, "product_text3", 'How do I assemble my Walltone?'), _defineProperty(_message, "product_text4", 'How do I assemble my Knitwork?'), _defineProperty(_message, "product_text5", 'What are the exact dimensions/materials of my artwork?'), _defineProperty(_message, "product_text6", 'I need any tools to hang my artwork?'), _defineProperty(_message, "product_text7", 'Walltones are our affordable and easy to hang canvas posters. They come in three different sizes, always complete with a special magnetic frame. Each Walltone is part of a limited edition.'), _defineProperty(_message, "product_text8", 'Knitworks are luxurious artworks on fabric, often using a combination of printing and painting techniques. The fabric is stretchedinto a sturdy metal frame. Like Walltones, they are always part of a limited edition.'), _defineProperty(_message, "product_text9", 'Align the pairs of magnetic frames with the top and bottom of your artwork.The included adhesive strips or screw can be used to stick only the top frame, or both frames to your wall.'), _defineProperty(_message, "product_text10", 'You can find Knitwork assembly instructions on the manual inside the box.'), _defineProperty(_message, "product_text11", 'When you buy an artwork, you can find the specifications in the dropdown menus underneath the product description. If you have any questions not answered in there, feel free to ask us.'), _defineProperty(_message, "product_text12", 'If the included adhesive strips are not suitable for your wall,you can use the included screw and plug. Only when using the screw and plug you will need a drill and screwdriver.'), _defineProperty(_message, "ship_text1", 'Do you ship to my country?'), _defineProperty(_message, "ship_text2", 'What about returns and shipping time?'), _defineProperty(_message, "ship_text3", 'We ship worldwide. If you are worried that your country might not accept our products because of regulation or customs policies, please send us an email explaining the situation and we will try to find out what is the best solution.'), _defineProperty(_message, "ship_text4", 'After placing your order, the whole process of preparing, packing and shipping to your doorstep can take approximately 15 business days depending on your location. Orders get sent out within 24 hours on average, after which you wont be able to cancel our order since the package will already be in transit. You can however, return your package for a full refund within 30 days.'), _defineProperty(_message, "Collabs_text1", 'I am an artist, how can we work together?'), _defineProperty(_message, "Collabs_text2", 'I am an influencer, how can we work together?'), _defineProperty(_message, "Collabs_text3", 'Awesome! Please send us an email with a link to your portfolio, instagram,or any other media you want us to review. We will be happy to take a look.'), _defineProperty(_message, "Collabs_text4", 'We dont work with a lot of influencers, but if you connect with an audience that you think would love our brand, we are very open to talk about it. Please shoot us an email!'), _defineProperty(_message, "Terms", 'Terms'), _defineProperty(_message, "Terms_text1", 'What are the terms of this website?'), _defineProperty(_message, "Terms_text2", 'How do you treat my privacy?'), _defineProperty(_message, "Terms_text3", 'How can I get a refund?'), _defineProperty(_message, "Terms_text4", 'Read our terms'), _defineProperty(_message, "Terms_text5", 'Read our Privacy Policy'), _defineProperty(_message, "Terms_text6", 'Read our Refund Policy'), _defineProperty(_message, "noitem", 'There are no products. Please add an entry to complete the process!!'), _message)
   },
   ar: {
     message: (_message2 = {
@@ -102107,7 +102117,7 @@ var messages = {
       size: "الحجم",
       productDetails: " تفاصيل المنتج",
       shipping: "الشحن",
-      left: "الباقى",
+      left: "المتبقى",
       imgdetails: "تفاصيل المنتج",
       limitedEdition: "الطبعات المحدودة",
       DescriptionEdition: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae fugit minima nemo corporis eligendi voluptas quidem eius suscipit dignissimos recusandae soluta alias, provident ipsum officia, tempore laboriosam neque esse cupiditate!",
@@ -102117,9 +102127,9 @@ var messages = {
       remove: "حذف",
       cartname: "السلة",
       // footer
-      logo: "اسم الموقع",
+      logo: "نقش",
       lorem: "نص تجريبى "
-    }, _defineProperty(_message2, "email", "البريد الإلكترونى"), _defineProperty(_message2, "firstname", "الإسم الأول "), _defineProperty(_message2, "lastname", "الإسم الأخير"), _defineProperty(_message2, "address", "العنوان"), _defineProperty(_message2, "appartment", "طاقم العمل "), _defineProperty(_message2, "city", "المدينه"), _defineProperty(_message2, "phone", "رقم الموبايل"), _defineProperty(_message2, "postcode", "الرمز البريدى"), _defineProperty(_message2, "discount", "الخصم"), _defineProperty(_message2, "Aplly", "الحصول"), _defineProperty(_message2, "subtotal", "الخصم"), _defineProperty(_message2, "total", "السعر الإجمالى"), _defineProperty(_message2, "calulated", "الحساب سيتم الكرة القادة "), _defineProperty(_message2, "toshipping", "متابعة الشراء"), _defineProperty(_message2, "select_size", 'من فضلك اختر الحجم'), _defineProperty(_message2, "showorder", ' إظهار ملخص الطلب'), _defineProperty(_message2, "hideorder", ' إخفاء ملخص الطلب'), _defineProperty(_message2, "empty", '      '), _defineProperty(_message2, "addressfooter", 'ecstase BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message2, "shopfooter", 'تسوق الأعمال الفنية'), _defineProperty(_message2, "aboutfooter", 'حول منتجاتنا'), _defineProperty(_message2, "carreerfooter", 'وظائف'), _defineProperty(_message2, "aboutusfooter", 'معلومات عنا'), _defineProperty(_message2, "artistfooter", 'الفنانون'), _defineProperty(_message2, "contactfooter", 'اتصل بنا'), _defineProperty(_message2, "termsfooter", 'شروط الاستخدام'), _defineProperty(_message2, "privacyfooter", 'سياسة خاصة'), _defineProperty(_message2, "refundpolicy", 'سياسة الاسترجاع'), _defineProperty(_message2, "socialLink", 'رابط التواصل اﻷجتماعي'), _defineProperty(_message2, "solidout", 'نفذت الكميه'), _defineProperty(_message2, "support", 'ألدعم'), _defineProperty(_message2, "support_text", ' هل لديك اسئلة؟ ألق نظرة على الفئات أدناه ، وإذا كانت لا تتضمن الإجابة التي كنت تبحث عنها ، فلا تتردد في إرسال بريد إلكتروني إلينا.'), _defineProperty(_message2, "Product", 'المنتج'), _defineProperty(_message2, "Shipping", 'الشحن'), _defineProperty(_message2, "Collabs", 'تعاون'), _defineProperty(_message2, "contact", 'اتصل بنا'), _defineProperty(_message2, "product_text1", ' ؟ Walltones ما هو'), _defineProperty(_message2, "product_text2", '؟ Knitworks ما هو'), _defineProperty(_message2, "product_text3", 'كيف اقوم بتجميع نغمه walltone الخاصه بي ؟'), _defineProperty(_message2, "product_text4", '  كيف أقوم بتجميع Knitwork الخاص بي؟'), _defineProperty(_message2, "product_text5", 'ما هي الأبعاد / المواد الدقيقة لأعمالي الفنية؟'), _defineProperty(_message2, "product_text6", 'أحتاج إلى أي أدوات لتعليق أعمالي الفنية؟'), _defineProperty(_message2, "product_text7", 'Walltones هي ملصقاتنا بأسعار معقولة وسهلة التعليق. تأتي في ثلاثة أحجام مختلفة ، كاملة دائمًا بإطار مغناطيسي خاص. كل Walltone جزء من إصدار محدود.'), _defineProperty(_message2, "product_text8", ' أعمال التريكو هي أعمال فنية فاخرة على القماش ، غالبًا ما تستخدم مزيجًا من تقنيات الطباعة والطلاء. تمدد القماش في إطار معدني قوي. مثل Walltones ، فهي دائمًا جزء من إصدار محدود.'), _defineProperty(_message2, "product_text9", ' قم بمحاذاة أزواج الإطارات المغناطيسية مع الجزء العلوي والسفلي من عملك الفني. يمكن استخدام الشرائط اللاصقة أو اللولب المتضمن في لصق الإطار العلوي فقط ، أو كلا الإطارين على الحائط.'), _defineProperty(_message2, "product_text10", ' يمكنك العثور على تعليمات تجميع Knitwork في الدليل الموجود داخل الصندوق.'), _defineProperty(_message2, "product_text11", ' عند شراء عمل فني ، يمكنك العثور على المواصفات في القوائم المنسدلة أسفل وصف المنتج. إذا كانت لديك أية أسئلة لم تتم الإجابة عليها ، فلا تتردد في طرحها علينا.'), _defineProperty(_message2, "product_text12", ' إذا كانت الشرائط اللاصقة المرفقة غير مناسبة لجدارك ، يمكنك استخدام المسمار والمكونات المدرجة. ستحتاج إلى مثقاب ومفك فقط عند استخدام المسمار والمقبس.'), _defineProperty(_message2, "ship_text1", 'هل تشحن إلى بلدي؟'), _defineProperty(_message2, "ship_text2", 'ماذا عن المرتجعات ووقت الشحن؟'), _defineProperty(_message2, "ship_text3", ' نحن نشحن عالميا. إذا كنت قلقًا من أن بلدك قد لا يقبل منتجاتنا لأن التنظيم أو السياسات الجمركية ، يرجى إرسال بريد إلكتروني إلينا لشرح الوضع وسنقوم بذلك حاول معرفة الحل الأفضل.'), _defineProperty(_message2, "ship_text4", ' بعد وضع طلبك ، تتم عملية التحضير والتعبئة والشحن بأكملها إلى باب منزلك يمكن أن يستغرق ما يقرب من 15 يوم عمل حسب موقعك. يتم إرسال الطلبات في غضون 24 ساعة في المتوسط ​​، وبعد ذلك لن تتمكن من الإلغاء نظامنا لأن الحزمة ستكون بالفعل في العبور. ومع ذلك ، يمكنك إرجاع حزمة لاسترداد كامل في غضون 30 يوما.'), _defineProperty(_message2, "Collabs_text1", 'أنا فنان ، كيف يمكننا العمل معًا؟ '), _defineProperty(_message2, "Collabs_text2", 'أنا مؤثر ، كيف يمكننا العمل معًا؟'), _defineProperty(_message2, "Collabs_text3", ' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.'), _defineProperty(_message2, "Collabs_text4", ' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!'), _defineProperty(_message2, "Terms", 'الشروط'), _defineProperty(_message2, "Terms_text1", 'ما هي شروط الموقع'), _defineProperty(_message2, "Terms_text2", 'كيف تتعامل مع خصوصيتك'), _defineProperty(_message2, "Terms_text3", 'كيف يمكنني استرداد اﻷموال'), _defineProperty(_message2, "Terms_text4", 'اقرأ شروط الموقع'), _defineProperty(_message2, "Terms_text5", 'اقرأ سياسة الخصوصية'), _defineProperty(_message2, "Terms_text6", 'اقرأ سياسة اﻷسترداد'), _defineProperty(_message2, "noitem", '!! لا يوجد منتجات. الرجاء إضافة منتج لإكمال العملية'), _message2)
+    }, _defineProperty(_message2, "email", "البريد الإلكترونى"), _defineProperty(_message2, "firstname", "الإسم الأول "), _defineProperty(_message2, "lastname", "الإسم الأخير"), _defineProperty(_message2, "address", "العنوان"), _defineProperty(_message2, "appartment", "طاقم العمل "), _defineProperty(_message2, "city", "المدينه"), _defineProperty(_message2, "phone", "رقم الموبايل"), _defineProperty(_message2, "postcode", "الرمز البريدى"), _defineProperty(_message2, "discount", "الخصم"), _defineProperty(_message2, "Aplly", "الحصول"), _defineProperty(_message2, "subtotal", "الخصم"), _defineProperty(_message2, "total", "السعر الإجمالى"), _defineProperty(_message2, "calulated", "الحساب سيتم الكرة القادة "), _defineProperty(_message2, "toshipping", "متابعة الشراء"), _defineProperty(_message2, "select_size", 'من فضلك اختر الحجم'), _defineProperty(_message2, "showorder", ' إظهار ملخص الطلب'), _defineProperty(_message2, "hideorder", ' إخفاء ملخص الطلب'), _defineProperty(_message2, "empty", '      '), _defineProperty(_message2, "addressfooter", 'Naqsh BV. Westplein 123016BM RotterdamThe Netherlands'), _defineProperty(_message2, "shopfooter", 'تسوق الأعمال الفنية'), _defineProperty(_message2, "aboutfooter", 'حول منتجاتنا'), _defineProperty(_message2, "carreerfooter", 'وظائف'), _defineProperty(_message2, "aboutusfooter", 'معلومات عنا'), _defineProperty(_message2, "artistfooter", 'الفنانون'), _defineProperty(_message2, "contactfooter", 'اتصل بنا'), _defineProperty(_message2, "termsfooter", 'شروط الاستخدام'), _defineProperty(_message2, "privacyfooter", 'سياسة خاصة'), _defineProperty(_message2, "refundpolicy", 'سياسة الاسترجاع'), _defineProperty(_message2, "socialLink", 'رابط التواصل اﻷجتماعي'), _defineProperty(_message2, "solidout", 'نفذت الكميه'), _defineProperty(_message2, "support", 'ألدعم'), _defineProperty(_message2, "support_text", ' هل لديك اسئلة؟ ألق نظرة على الفئات أدناه ، وإذا كانت لا تتضمن الإجابة التي كنت تبحث عنها ، فلا تتردد في إرسال بريد إلكتروني إلينا.'), _defineProperty(_message2, "Product", 'المنتج'), _defineProperty(_message2, "Shipping", 'الشحن'), _defineProperty(_message2, "Collabs", 'تعاون'), _defineProperty(_message2, "contact", 'اتصل بنا'), _defineProperty(_message2, "product_text1", ' ؟ Walltones ما هو'), _defineProperty(_message2, "product_text2", '؟ Knitworks ما هو'), _defineProperty(_message2, "product_text3", 'كيف اقوم بتجميع نغمه walltone الخاصه بي ؟'), _defineProperty(_message2, "product_text4", '  كيف أقوم بتجميع Knitwork الخاص بي؟'), _defineProperty(_message2, "product_text5", 'ما هي الأبعاد / المواد الدقيقة لأعمالي الفنية؟'), _defineProperty(_message2, "product_text6", 'أحتاج إلى أي أدوات لتعليق أعمالي الفنية؟'), _defineProperty(_message2, "product_text7", 'Walltones هي ملصقاتنا بأسعار معقولة وسهلة التعليق. تأتي في ثلاثة أحجام مختلفة ، كاملة دائمًا بإطار مغناطيسي خاص. كل Walltone جزء من إصدار محدود.'), _defineProperty(_message2, "product_text8", ' أعمال التريكو هي أعمال فنية فاخرة على القماش ، غالبًا ما تستخدم مزيجًا من تقنيات الطباعة والطلاء. تمدد القماش في إطار معدني قوي. مثل Walltones ، فهي دائمًا جزء من إصدار محدود.'), _defineProperty(_message2, "product_text9", ' قم بمحاذاة أزواج الإطارات المغناطيسية مع الجزء العلوي والسفلي من عملك الفني. يمكن استخدام الشرائط اللاصقة أو اللولب المتضمن في لصق الإطار العلوي فقط ، أو كلا الإطارين على الحائط.'), _defineProperty(_message2, "product_text10", ' يمكنك العثور على تعليمات تجميع Knitwork في الدليل الموجود داخل الصندوق.'), _defineProperty(_message2, "product_text11", ' عند شراء عمل فني ، يمكنك العثور على المواصفات في القوائم المنسدلة أسفل وصف المنتج. إذا كانت لديك أية أسئلة لم تتم الإجابة عليها ، فلا تتردد في طرحها علينا.'), _defineProperty(_message2, "product_text12", ' إذا كانت الشرائط اللاصقة المرفقة غير مناسبة لجدارك ، يمكنك استخدام المسمار والمكونات المدرجة. ستحتاج إلى مثقاب ومفك فقط عند استخدام المسمار والمقبس.'), _defineProperty(_message2, "ship_text1", 'هل تشحن إلى بلدي؟'), _defineProperty(_message2, "ship_text2", 'ماذا عن المرتجعات ووقت الشحن؟'), _defineProperty(_message2, "ship_text3", ' نحن نشحن عالميا. إذا كنت قلقًا من أن بلدك قد لا يقبل منتجاتنا لأن التنظيم أو السياسات الجمركية ، يرجى إرسال بريد إلكتروني إلينا لشرح الوضع وسنقوم بذلك حاول معرفة الحل الأفضل.'), _defineProperty(_message2, "ship_text4", ' بعد وضع طلبك ، تتم عملية التحضير والتعبئة والشحن بأكملها إلى باب منزلك يمكن أن يستغرق ما يقرب من 15 يوم عمل حسب موقعك. يتم إرسال الطلبات في غضون 24 ساعة في المتوسط ​​، وبعد ذلك لن تتمكن من الإلغاء نظامنا لأن الحزمة ستكون بالفعل في العبور. ومع ذلك ، يمكنك إرجاع حزمة لاسترداد كامل في غضون 30 يوما.'), _defineProperty(_message2, "Collabs_text1", 'أنا فنان ، كيف يمكننا العمل معًا؟ '), _defineProperty(_message2, "Collabs_text2", 'أنا مؤثر ، كيف يمكننا العمل معًا؟'), _defineProperty(_message2, "Collabs_text3", ' ممتاز! يرجى إرسال بريد إلكتروني إلينا مع رابط لمحفظتك ، إنستجرام ، أو أي وسائط أخرى تريد منا مراجعتها. سنكون سعداء لإلقاء نظرة.'), _defineProperty(_message2, "Collabs_text4", ' نحن لا نعمل مع الكثير من المؤثرين ، ولكن إذا تواصلت مع جمهور التي تعتقد أنها ستحب علامتنا التجارية ، نحن منفتحون جدًا للحديث عنها. يرجى مراسلتنا عبر البريد الإلكتروني!'), _defineProperty(_message2, "Terms", 'الشروط'), _defineProperty(_message2, "Terms_text1", 'ما هي شروط الموقع'), _defineProperty(_message2, "Terms_text2", 'كيف تتعامل مع خصوصيتك'), _defineProperty(_message2, "Terms_text3", 'كيف يمكنني استرداد اﻷموال'), _defineProperty(_message2, "Terms_text4", 'اقرأ شروط الموقع'), _defineProperty(_message2, "Terms_text5", 'اقرأ سياسة الخصوصية'), _defineProperty(_message2, "Terms_text6", 'اقرأ سياسة اﻷسترداد'), _defineProperty(_message2, "noitem", '!! لا يوجد منتجات. الرجاء إضافة منتج لإكمال العملية'), _message2)
   }
 };
 var i18n = new vue_i18n__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -102828,8 +102838,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/shadid/Desktop/art/ARTWORKS/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\Art\ARTWORKS\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\Art\ARTWORKS\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
