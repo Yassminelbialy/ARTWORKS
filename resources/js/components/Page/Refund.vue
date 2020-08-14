@@ -199,7 +199,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+      mounted(){
+      $(".modal-mask").css("display","block")
+  }
+};
 </script>
 
 <style>

@@ -176,7 +176,7 @@
                 >{{ $t("message.product_text5") }}</p>
                 <p class="font-weight-bold mb-4">{{ $t("message.product_text6") }}</p>
               </div>
-              
+
             </div>
           </div>
           <div class="col-sm-12" v-if="active_el==2">
@@ -383,6 +383,9 @@ export default {
       errors: {},
       jointext:{}
     };
+  },
+   mounted(){
+      $(".modal-mask").css("display","block")
   },
   created() {
     if(this.$route.query.mydata=='artist')

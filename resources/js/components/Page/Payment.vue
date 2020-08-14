@@ -955,6 +955,9 @@ export default {
 
     };
   },
+  mounted(){
+      $(".modal-mask").css("display","none")
+  },
   created(){
 this.cartTotalPrice;
 //  {"paletteid":"3","palettesize":"medium","quantity":5}

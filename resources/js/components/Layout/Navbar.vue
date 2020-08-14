@@ -454,4 +454,18 @@ svg{
     }
 }
 
+ @media(max-width:414px){
+    .modal-content {
+        top: -30px;
+        overflow: scroll;
+        width: 436px;
+        min-height: 800px;
+        border-radius: 0;
+        left: 4%;
+        transform: scale(.8) translate(-24%, -71px);
+        background: #f2efeb;
+    }
+
+}
+
 </style>

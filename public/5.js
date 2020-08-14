@@ -469,6 +469,9 @@ __webpack_require__.r(__webpack_exports__);
       discount_section: false
     };
   },
+  mounted: function mounted() {
+    $(".modal-mask").css("display", "none");
+  },
   created: function created() {
     var _this = this;
 

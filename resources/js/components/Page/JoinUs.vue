@@ -142,6 +142,9 @@ export default {
         message:'',
         loading: false,
     }),
+     mounted(){
+      $(".modal-mask").css("display","block")
+  },
     methods:{
         send(){
     axios.post('/api/artist-request',this.form)

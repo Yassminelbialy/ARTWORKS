@@ -191,6 +191,9 @@
 
 <script>
 export default {
+          mounted(){
+      $(".modal-mask").css("display","block")
+  }
 
 }
 </script>

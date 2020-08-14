@@ -40,6 +40,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     appslider: _pagecomponents_Slider__WEBPACK_IMPORTED_MODULE_2__["default"],
     appvideo: _pagecomponents_HomeVideo__WEBPACK_IMPORTED_MODULE_3__["default"],
     appheader: _pagecomponents_Header__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  mounted: function mounted() {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".modal-mask").css("display", "block");
   }
 });
 

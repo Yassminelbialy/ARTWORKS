@@ -29,7 +29,10 @@ import appheader from "../pagecomponents/Header";
 import appslider from "../pagecomponents/Slider";
 import appvideo from "../pagecomponents/HomeVideo";
 export default {
-    components: { appslider, appvideo, appheader }
+    components: { appslider, appvideo, appheader },
+     mounted(){
+      $(".modal-mask").css("display","block")
+  }
 };
 </script>
 

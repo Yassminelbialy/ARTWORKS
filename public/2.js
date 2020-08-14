@@ -27,6 +27,9 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     shopHeader: _pagecomponents_ShopHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
     appslider: _pagecomponents_Slider__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  mounted: function mounted() {
+    $(".modal-mask").css("display", "block");
   }
 });
 
@@ -1653,28 +1656,18 @@ var render = function() {
                         ]),
                         _vm._v(" | "),
                         _c("span", { staticClass: "price px-3" }, [
-                          _vm._v("$" + _vm._s(palettesArtist.L_price))
+                          _vm._v("$" + _vm._s(palettesArtist.M_price))
                         ])
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "infor" }, [
                         _c("span", [
                           _c("span", { staticClass: "text-success" }, [
-                            _vm._v(
-                              _vm._s(
-                                palettesArtist.L_avalible +
-                                  palettesArtist.M_avalible +
-                                  palettesArtist.S_avalible
-                              )
-                            )
+                            _vm._v(_vm._s(palettesArtist.M_avalible))
                           ]),
                           _vm._v(
                             "/" +
-                              _vm._s(
-                                palettesArtist.L_copies +
-                                  palettesArtist.M_copies +
-                                  palettesArtist.S_copies
-                              ) +
+                              _vm._s(palettesArtist.M_copies) +
                               "   " +
                               _vm._s(_vm.$t("message.left"))
                           )

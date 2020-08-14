@@ -14,6 +14,9 @@ import appslider from '../pagecomponents/Slider';
 
 export default {
   components:{shopHeader,appslider}
+    ,mounted(){
+      $(".modal-mask").css("display","block")
+  }
 }
 </script>
 

@@ -7,8 +7,8 @@
                 <img :src="palettesArtist.img" alt="...">
                     <div class="content" :class="{ 'active': index == 0 }" >
                         <div class="triangle"></div>
-                        <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
-                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
+                        <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.M_price}}</span> </h6>
+                        <div class="infor">    <span><span class="text-success">{{palettesArtist.M_avalible}}</span>/{{ palettesArtist.M_copies}}   {{ $t("message.left") }}</span></div>
                     </div>
             </div>
         </div>
@@ -555,6 +555,8 @@ export default {
 
 
 <style scoped>
+
+
     .carousel-item .header{
         width: 100%;
         height: 640px;
@@ -1059,9 +1061,6 @@ transform: scale(.7);
         padding-left: 6px;
     }
 }
-
-
-
 
 .swiper-container{
     margin-bottom: 50px;
