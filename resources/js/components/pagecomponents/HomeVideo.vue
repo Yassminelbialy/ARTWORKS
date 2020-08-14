@@ -5,7 +5,7 @@
         <div class="text mb-4 about-content">
             <h1>{{ $t("message.about") }}</h1>
             <router-link to="/about" class="mb-5">
-                <a class="btn btn-light mb-5">{{ $t("message.readmore") }}</a>
+                <a class="mb-5" style="color:white">{{ $t("message.readmore") }}</a>
             </router-link>
         </div>
     </header>

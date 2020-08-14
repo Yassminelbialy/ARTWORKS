@@ -577,7 +577,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n.sm_discount[data-v-dc37895e]{\n  display: none;\n}\n@media (max-width:767px)\n{\n.lg_discount[data-v-dc37895e]{\n    display: none;\n}\n.sm_discount[data-v-dc37895e]{\n    display: block;\n}\n}\n.quantity[data-v-dc37895e]{\n    position: absolute;\n    left: 70px;\n    width: 25px;\n    height: 25px;\n    background: darkgray;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 25px\n}\n.clickdown[data-v-dc37895e]{\n  cursor: pointer;\n  font-size: 18px;\n  color: #197bbd;\n}\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 10px;\n}\n", ""]);
+exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.countity[data-v-dc37895e]{\n  margin-top: 20px;\n}\n.check_btn[data-v-dc37895e]{\n    border: 1px transparent solid;\n    border-radius: 5px;\n    color: white;\n    font-weight: 500;\n    padding: 25px 15px !important;\n    text-align: center;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n.sm_discount[data-v-dc37895e]{\n  display: none;\n}\n@media (max-width:767px)\n{\n.lg_discount[data-v-dc37895e]{\n    display: none;\n}\n.sm_discount[data-v-dc37895e]{\n    display: block;\n}\n}\n.quantity[data-v-dc37895e]{\n    position: absolute;\n    left: 70px;\n    width: 25px;\n    height: 25px;\n    background: darkgray;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 25px\n}\n.clickdown[data-v-dc37895e]{\n  cursor: pointer;\n  font-size: 18px;\n  color: #197bbd;\n  padding: 7px;\n}\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 19px;\n}\n@media (max-width:767px)\n{\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 22px;\n}\n}\n.theme--light.v-text-field--filled>.v-input__control>.v-input__slot[data-v-dc37895e] {\n    background-color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -726,7 +726,10 @@ var render = function() {
               _vm.discount_section
                 ? _c(
                     "div",
-                    { staticClass: "discount_section mt-5" },
+                    {
+                      staticClass: "discount_section mt-5",
+                      staticStyle: { width: "100%", padding: "0px 10px" }
+                    },
                     [
                       _vm._l(_vm.cart, function(item) {
                         return _c(
@@ -746,13 +749,20 @@ var render = function() {
                               _c("strong", [_vm._v(_vm._s(item.product.name))])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticStyle: { float: "right" } }, [
-                              _vm._v(
-                                "\n                $" +
-                                  _vm._s(item.price) +
-                                  "\n            "
-                              )
-                            ]),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "countity",
+                                staticStyle: { float: "right" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                $" +
+                                    _vm._s(item.price) +
+                                    "\n            "
+                                )
+                              ]
+                            ),
                             _vm._v(" "),
                             _c("div", { staticStyle: { clear: "both" } })
                           ]
@@ -772,7 +782,7 @@ var render = function() {
                                 [
                                   _c(
                                     "v-col",
-                                    { attrs: { cols: "12", sm: "9" } },
+                                    { attrs: { cols: "9", sm: "9" } },
                                     [
                                       _c("v-text-field", {
                                         staticStyle: { border: "none" },
@@ -795,12 +805,18 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "v-col",
-                                    { attrs: { cols: "12", sm: "3" } },
+                                    {
+                                      staticStyle: { padding: "0" },
+                                      attrs: { cols: "3", sm: "3" }
+                                    },
                                     [
                                       _c(
                                         "v-btn",
                                         {
-                                          staticStyle: { color: "white" },
+                                          staticStyle: {
+                                            color: "white",
+                                            padding: "26px 0"
+                                          },
                                           attrs: { color: "#c8c8c8" },
                                           on: {
                                             click: function($event) {
@@ -808,7 +824,11 @@ var render = function() {
                                             }
                                           }
                                         },
-                                        [_vm._v("Apply")]
+                                        [
+                                          _c("i", {
+                                            staticClass: "fa fa-arrow-right"
+                                          })
+                                        ]
                                       )
                                     ],
                                     1
@@ -825,7 +845,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _c("div", [
+                      _c("div", { staticStyle: { padding: "10px" } }, [
                         _c(
                           "span",
                           {
@@ -845,13 +865,13 @@ var render = function() {
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _c("div", [
+                      _c("div", { staticStyle: { padding: "10px" } }, [
                         _c(
                           "span",
                           {
                             staticStyle: {
                               "font-size": "1.1428571429em",
-                              "padding-left": "10px"
+                              padding: "10px"
                             }
                           },
                           [_vm._v(" Total ")]
@@ -1233,7 +1253,10 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
-                        { attrs: { color: "#5cbbff", type: "submit" } },
+                        {
+                          staticClass: "check_btn",
+                          attrs: { color: "#197bbd", type: "submit" }
+                        },
                         [_vm._v("Proceed To Payment")]
                       )
                     ],
@@ -1275,13 +1298,20 @@ var render = function() {
                           _c("strong", [_vm._v(_vm._s(item.product.name))])
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticStyle: { float: "right" } }, [
-                          _vm._v(
-                            "\n              $" +
-                              _vm._s(item.price) +
-                              "\n          "
-                          )
-                        ]),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "countity",
+                            staticStyle: { float: "right" }
+                          },
+                          [
+                            _vm._v(
+                              "\n              $" +
+                                _vm._s(item.price) +
+                                "\n          "
+                            )
+                          ]
+                        ),
                         _vm._v(" "),
                         _c("div", { staticStyle: { clear: "both" } })
                       ]
@@ -1512,7 +1542,10 @@ var render = function() {
               _vm.discount_section
                 ? _c(
                     "div",
-                    { staticClass: "discount_section mt-5" },
+                    {
+                      staticClass: "discount_section mt-5",
+                      staticStyle: { width: "100%", padding: "0px 10px" }
+                    },
                     [
                       _vm._l(_vm.cart, function(item) {
                         return _c(
@@ -1532,13 +1565,20 @@ var render = function() {
                               _c("strong", [_vm._v(_vm._s(item.product.name))])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticStyle: { float: "right" } }, [
-                              _vm._v(
-                                "\n                $" +
-                                  _vm._s(item.price) +
-                                  "\n            "
-                              )
-                            ]),
+                            _c(
+                              "div",
+                              {
+                                staticClass: "countity",
+                                staticStyle: { float: "right" }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                $" +
+                                    _vm._s(item.price) +
+                                    "\n            "
+                                )
+                              ]
+                            ),
                             _vm._v(" "),
                             _c("div", { staticStyle: { clear: "both" } })
                           ]
@@ -1558,7 +1598,7 @@ var render = function() {
                                 [
                                   _c(
                                     "v-col",
-                                    { attrs: { cols: "12", sm: "9" } },
+                                    { attrs: { cols: "9", sm: "9" } },
                                     [
                                       _c("v-text-field", {
                                         staticStyle: { border: "none" },
@@ -1581,12 +1621,18 @@ var render = function() {
                                   _vm._v(" "),
                                   _c(
                                     "v-col",
-                                    { attrs: { cols: "12", sm: "3" } },
+                                    {
+                                      staticStyle: { padding: "0" },
+                                      attrs: { cols: "3", sm: "3" }
+                                    },
                                     [
                                       _c(
                                         "v-btn",
                                         {
-                                          staticStyle: { color: "white" },
+                                          staticStyle: {
+                                            color: "white",
+                                            padding: "26px 0"
+                                          },
                                           attrs: { color: "#c8c8c8" },
                                           on: {
                                             click: function($event) {
@@ -1594,7 +1640,11 @@ var render = function() {
                                             }
                                           }
                                         },
-                                        [_vm._v("خصم الأن")]
+                                        [
+                                          _c("i", {
+                                            staticClass: "fa fa-arrow-right"
+                                          })
+                                        ]
                                       )
                                     ],
                                     1
@@ -1624,6 +1674,7 @@ var render = function() {
                               {
                                 staticStyle: {
                                   "font-size": "14px",
+                                  float: "right",
                                   padding: "10px",
                                   color: "#444f58"
                                 }
@@ -1635,7 +1686,6 @@ var render = function() {
                               "span",
                               {
                                 staticStyle: {
-                                  float: "right",
                                   "font-size": "14px",
                                   color: "#444f58"
                                 }
@@ -1994,7 +2044,10 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
-                        { attrs: { color: "#5cbbff", type: "submit" } },
+                        {
+                          staticClass: "check_btn",
+                          attrs: { color: "#197bbd", type: "submit" }
+                        },
                         [_vm._v("متابعة الشراء")]
                       )
                     ],
@@ -2032,13 +2085,20 @@ var render = function() {
                           _c("strong", [_vm._v(_vm._s(item.product.name))])
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticStyle: { float: "right" } }, [
-                          _vm._v(
-                            "\n               $" +
-                              _vm._s(item.price) +
-                              "\n          "
-                          )
-                        ]),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "countity",
+                            staticStyle: { float: "right" }
+                          },
+                          [
+                            _vm._v(
+                              "\n               $" +
+                                _vm._s(item.price) +
+                                "\n          "
+                            )
+                          ]
+                        ),
                         _vm._v(" "),
                         _c("div", { staticStyle: { clear: "both" } })
                       ]

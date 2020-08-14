@@ -1,23 +1,21 @@
 <template>
     <section >
-
-   <div class="swiper-container pallete-swiper text-center d-sm-none ">
-        <div class="swiper-wrapper">
-            <div  class="swiper-slide text-center "    v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
-                <img :src="palettesArtist.img" alt="...">
-                    <div class="content" :class="{ 'active': index == 0 }" >
-                        <div class="triangle"></div>
-                        <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
-                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
+        <!-- <div>
+            <div class="swiper-container pallete-swiper text-center d-sm-none ">
+                    <div class="swiper-wrapper">
+                        <div  class="swiper-slide text-center "    v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                            <img :src="palettesArtist.img" alt="...">
+                                <div class="content" :class="{ 'active': index == 0 }" >
+                                    <div class="triangle"></div>
+                                    <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
+                                    <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
+                                </div>
+                        </div>
                     </div>
-            </div>
-        </div>
-                            <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-    </div>
-
-
-        <div id="carouselExampleCaptions" class="carousel slide" data-interval="false">
+                    <div class="swiper-pagination"></div>
+                </div>
+        </div> -->
+        <div id="carouselExampleCaptions" class="carousel slide " data-interval="false">
             <ol class="carousel-indicators text-center">
                 <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': artist.id == artist_active }" :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
             </ol>
@@ -25,6 +23,22 @@
                 <div class="carousel-item" v-for="(artist,index ) in artists" :class="{ 'active':  artist.id === artist_active }" :key="artist.id">
                     <img :src="artist.cover_img" class="header" alt="...">
                 <!---------------------------- start regular pallete----------------------- -->
+                
+                    <div class="swiper-container pallete-swiper text-center d-sm-none ">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide text-center " v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                                <img :src="palettesArtist.artist_min_palettes.img" alt="...">
+                                <div class="content" :class="{ 'active': index == 0 }" >
+                                    <div class="triangle"></div>
+                                    <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
+                                    <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                                
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    
                     <div class="wrapper d-none d-sm-block ">
                         <div class=" row  d-flex justify-content-center">
                             <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive" v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
@@ -72,6 +86,9 @@
             <div class="row">
                 <div class="col-lg-8" style="margin-top:70px">
                     <div class="row">
+                        <div class="col-md-6 custom-padding ">
+                            <img :src="minPalettesActive.img" style="height:400px" class="w-100"  alt="...">
+                        </div>
                         <div class="col-md-6 custom-padding " v-for="minPalette in minPalettes"  :key="minPalette.id" >
                             <img :src="minPalette.img" style="height:400px" class="w-100"  alt="...">
                         </div>
@@ -79,7 +96,6 @@
                 </div>
                 <div class=" col-lg-4" style="margin-top:78px">
                     <div class="add-cart">
-                        <p>{{artist_text}}</p>
                         <h2 class="font-weight-bold ">{{minPalettesActive.name}}
                         <span v-if="active_el==1">${{minPalettesActive.S_price}}</span>
                         <span v-if="active_el==2" style="float: right;font-weight: normal">${{minPalettesActive.M_price}}</span>
@@ -106,7 +122,7 @@
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==2">Medium  </h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{L_copies}}/{{L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==1"> <strong style="float:right">{{minPalettesActive.S_copies}}/{{minPalettesActive.S_avalible}}  {{ $t("message.left") }}</strong></h3> -->
-                            <h3 class="mt-4 mb-4" v-if="active_el==2"><strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3>
+                            <!-- <h3 class="mt-4 mb-4" v-if="active_el==2"><strong style="float:right">{{minPalettesActive.M_copies}}/{{minPalettesActive.M_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <!-- <h3 class="mt-4 mb-4" v-if="active_el==3">large<strong style="float:right">{{minPalettesActive.L_copies}}/{{minPalettesActive.L_avalible}}  {{ $t("message.left") }}</strong></h3> -->
                             <div style="clear:both"></div>
                         </div>
@@ -251,6 +267,7 @@ export default {
                 observerParents:true,
 
             });
+            
             // swiper.update();
         },
 
@@ -453,9 +470,9 @@ export default {
         })
 
 
-            $("html,body").animate({
-                scrollTop:"450px"
-            },500)
+            // $("html,body").animate({
+            //     scrollTop:"450px"
+            // },500)
 
                 axios.get("/api/viewMinPalettes?id=" + $minPalette_id)
                 .then(response =>{
@@ -920,6 +937,7 @@ transform: scale(.7);
     transform: translate(50%,0); */
     position: absolute;
     text-align: center;
+    top:2%;
     /* transform: scale(.9); */
 }
 .pallete-swiper img{

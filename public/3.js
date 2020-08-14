@@ -470,7 +470,7 @@ var render = function() {
           _c("h1", [_vm._v(_vm._s(_vm.$t("message.about")))]),
           _vm._v(" "),
           _c("router-link", { staticClass: "mb-5", attrs: { to: "/about" } }, [
-            _c("a", { staticClass: "btn btn-light mb-5" }, [
+            _c("a", { staticClass: "mb-5", staticStyle: { color: "white" } }, [
               _vm._v(_vm._s(_vm.$t("message.readmore")))
             ])
           ])

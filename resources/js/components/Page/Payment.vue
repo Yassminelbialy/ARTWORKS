@@ -2,7 +2,7 @@
   <section>
       <div class="row"  v-if="$i18n.locale == 'en'">
         <div class="col-md-5 sm_discount mt-4" style="background-color:#fafafa">
-          <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
+          <div class="clickdown"  @click="discount_section = !discount_section" v-if="!discount_section">
             <span>
               <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span>
             <span class="plus" v-if="discount_section==false"><i class="fa fa-chevron-down"></i></span>
@@ -19,7 +19,7 @@
             </span>
             <div style="clear:both"></div>
           </div>
-          <div class="discount_section mt-5" v-if="discount_section">
+          <div class="discount_section mt-5" style="width:100%;padding:0px 10px" v-if="discount_section">
             <div class="border-bottom  p-2 img"
                 v-for="item in cart"
                 :key="item.product.id"
@@ -30,7 +30,7 @@
               :src="item.product.img"
               />
               <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
-              <div style="float:right">
+              <div class="countity" style="float:right">
                   ${{item.price}}
               </div>
               <div style="clear:both"></div>
@@ -40,18 +40,18 @@
             <div class="discount">
               <v-form class="form_discount">
                 <v-row>
-                  <v-col cols="12" sm="9">
+                  <v-col cols="9" sm="9">
                     <v-text-field v-model="discount" label="Discount" outlined filled style="border:none;"></v-text-field>
                   </v-col>
-                  <v-col cols="12" sm="3" >
-                    <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white">Apply</v-btn>
+                  <v-col cols="3" sm="3"  style="padding:0">
+                    <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white;padding: 26px 0;"><i class="fa fa-arrow-right"></i></v-btn>
                   </v-col>
                 </v-row>
               </v-form>
             </div>
             <hr />
             <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
-              <div>
+              <div style="    padding: 10px;">
                 <span style="padding:10px;color:#444f58">Subtotal</span>
                 <span style="float:right;color:#444f58">$ {{discount_value}}</span>
                 <div style="clear:both"></div>
@@ -64,8 +64,8 @@
               </div> -->
             <!-- </div> -->
 
-            <div>
-              <span style="font-size: 1.1428571429em;padding-left:10px"> Total </span>
+            <div style="padding:10px">
+              <span style="font-size: 1.1428571429em;padding:10px"> Total </span>
               <span style="float:right;">
                 <span style="color:#737171;">USD  &nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
               </span>
@@ -162,7 +162,7 @@
                  <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
-            <v-btn color="#5cbbff" type="submit">Proceed To Payment</v-btn>
+            <v-btn color="#197bbd" class="check_btn" type="submit">Proceed To Payment</v-btn>
 
           </v-container>
         </v-form>
@@ -178,7 +178,7 @@
              :src="item.product.img"
             />
             <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
-            <div style="float:right">
+            <div class="countity" style="float:right">
                 ${{item.price}}
             </div>
             <div style="clear:both"></div>
@@ -242,7 +242,7 @@
             </span>
             <div style="clear:both"></div>
           </div>
-          <div class="discount_section mt-5" v-if="discount_section">
+          <div class="discount_section mt-5" style="width:100%;padding:0px 10px" v-if="discount_section">
             <div class="border-bottom  p-2 img"
                 v-for="item in cart"
                 :key="item.product.id"
@@ -253,7 +253,7 @@
               :src="item.product.img"
               />
               <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
-              <div style="float:right">
+              <div class="countity" style="float:right">
                   ${{item.price}}
               </div>
               <div style="clear:both"></div>
@@ -263,11 +263,11 @@
             <div class="discount">
               <v-form class="form_discount">
                   <v-row>
-                    <v-col cols="12" sm="9">
+                    <v-col cols="9" sm="9">
                       <v-text-field v-model="discount" label="الكوبون" outlined filled  style="border:none"></v-text-field>
                     </v-col>
-                    <v-col cols="12" sm="3">
-                      <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white">خصم الأن</v-btn>
+                    <v-col cols="3" sm="3"  style="padding:0">
+                      <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white;padding: 26px 0;"><i class="fa fa-arrow-right"></i></v-btn>
                     </v-col>
                   </v-row>
               </v-form>
@@ -275,8 +275,8 @@
             <hr />
             <div class="discount_text" style="color:#737171;padding:10px">
               <div>
-                <span style="font-size:14px;padding:10px;color:#444f58">الخصم</span>
-                <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
+                <span style="font-size:14px;float:right;padding:10px;color:#444f58">الخصم</span>
+                <span style="font-size:14px;color:#444f58">${{discount_value}}</span>
                 <div style="clear:both"></div>
               </div>
 
@@ -372,7 +372,7 @@
                  <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
-            <v-btn color="#5cbbff" type="submit">متابعة الشراء</v-btn>
+            <v-btn color="#197bbd" class="check_btn" type="submit">متابعة الشراء</v-btn>
           </v-container>
         </v-form>
       </div>
@@ -387,7 +387,7 @@
              :src="item.product.img"
             />
             <span class="price"> <strong>{{ item.product.name }}</strong></span>
-            <div style="float:right">
+            <div class="countity" style="float:right">
                  ${{item.price}}
             </div>
             <div style="clear:both"></div>
@@ -1072,6 +1072,17 @@ this.cart.forEach(element => {
 .discount_section {
   width: 65%;
 }
+.countity{
+  margin-top: 20px;
+}
+.check_btn{
+    border: 1px transparent solid;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 25px 15px !important;
+    text-align: center;
+}
 .price{
     position: relative;
     top: -16px;
@@ -1111,9 +1122,21 @@ this.cart.forEach(element => {
   cursor: pointer;
   font-size: 18px;
   color: #197bbd;
+  padding: 7px;
 }
 .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #f5f5f5;
-    margin-top: 10px;
+    margin-top: 19px;
+}
+@media (max-width:767px)
+{
+ .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: #f5f5f5;
+    margin-top: 22px;
+  } 
+}
+
+.theme--light.v-text-field--filled>.v-input__control>.v-input__slot {
+    background-color: white !important;
 }
 </style>
