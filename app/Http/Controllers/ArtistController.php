@@ -52,7 +52,7 @@ class ArtistController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateArtistRequest $request)
+    public function store(Request $request)
     {
         // $input = $request->all();
         // $artist = $this->artistRepository->create($input);

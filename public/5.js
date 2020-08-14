@@ -414,6 +414,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     larg: function larg(el, price, avilable) {
@@ -489,7 +517,7 @@ __webpack_require__.r(__webpack_exports__);
     apply_discount: function apply_discount() {
       var _this2 = this;
 
-      console.log(this.discount);
+      //console.log(this.discount);
       axios.post('/api/check-promo', {
         code: this.discount
       }).then(function (data) {
@@ -514,15 +542,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       // console.log(this.cart());
-      this.form.items = [{
-        paletteid: 22,
-        palettesize: "small",
-        quantity: 22
-      }, {
-        paletteid: 2,
-        palettesize: "small",
-        quantity: 22
-      }];
+      // this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:2,palettesize:"small",quantity:22}]
       axios.post("/api/add-order", this.form).then(function (data) {
         // console.log(data.data);
         // if (!data.data.status) {
@@ -560,7 +580,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  width: 70%;\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n.sm_discount[data-v-dc37895e]{\n  display: none;\n}\n@media (max-width:767px)\n{\n.lg_discount[data-v-dc37895e]{\n    display: none;\n}\n.sm_discount[data-v-dc37895e]{\n    display: block;\n}\n}\n.quantity[data-v-dc37895e]{\n    position: absolute;\n    left: 70px;\n    width: 25px;\n    height: 25px;\n    background: darkgray;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 25px\n}\n.clickdown[data-v-dc37895e]{\n  cursor: pointer;\n  font-size: 18px;\n  color: #197bbd;\n}\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 24px;\n}\n", ""]);
+exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.countity[data-v-dc37895e]{\n  margin-top: 20px;\n}\n.check_btn[data-v-dc37895e]{\n    border: 1px transparent solid;\n    border-radius: 5px;\n    color: white;\n    font-weight: 500;\n    padding: 25px 15px !important;\n    text-align: center;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n.sm_discount[data-v-dc37895e]{\n  display: none;\n}\n@media (max-width:767px)\n{\n.lg_discount[data-v-dc37895e]{\n    display: none;\n}\n.sm_discount[data-v-dc37895e]{\n    display: block;\n}\n}\n.quantity[data-v-dc37895e]{\n    position: absolute;\n    left: 70px;\n    width: 25px;\n    height: 25px;\n    background: darkgray;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 25px\n}\n.clickdown[data-v-dc37895e]{\n  cursor: pointer;\n  font-size: 18px;\n  color: #197bbd;\n  padding: 7px;\n}\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 19px;\n}\n@media (max-width:767px)\n{\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 22px;\n}\n}\n.theme--light.v-text-field--filled>.v-input__control>.v-input__slot[data-v-dc37895e] {\n    background-color: white !important;\n}\n", ""]);
 
 // exports
 
@@ -619,7 +639,7 @@ var render = function() {
             "div",
             {
               staticClass: "col-md-5 sm_discount mt-4",
-              staticStyle: { "background-color": "#eaeaea" }
+              staticStyle: { "background-color": "#fafafa" }
             },
             [
               !_vm.discount_section
@@ -709,7 +729,10 @@ var render = function() {
               _vm.discount_section
                 ? _c(
                     "div",
-                    { staticClass: "discount_section mt-5" },
+                    {
+                      staticClass: "discount_section mt-5",
+                      staticStyle: { width: "100%", padding: "0px 10px" }
+                    },
                     [
                       _vm._l(_vm.cart, function(item) {
                         return _c(
@@ -729,29 +752,22 @@ var render = function() {
                               _c("strong", [_vm._v(_vm._s(item.product.name))])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticStyle: { float: "right" } }, [
-                              _vm._v(
-                                "\n                " +
-                                  _vm._s(item.quantity) +
-                                  " x $" +
-                                  _vm._s(item.price) +
-                                  "\n            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticStyle: { clear: "both" } }),
-                            _vm._v(" "),
                             _c(
-                              "h6",
+                              "div",
                               {
-                                staticStyle: {
-                                  width: "50%",
-                                  "margin-left": "90px",
-                                  "margin-top": "-31px"
-                                }
+                                staticClass: "countity",
+                                staticStyle: { float: "right" }
                               },
-                              [_vm._v(_vm._s(item.sizeTarget) + " ")]
-                            )
+                              [
+                                _vm._v(
+                                  "\n                $" +
+                                    _vm._s(item.price) +
+                                    "\n            "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticStyle: { clear: "both" } })
                           ]
                         )
                       }),
@@ -764,29 +780,64 @@ var render = function() {
                             "v-form",
                             { staticClass: "form_discount" },
                             [
-                              _c("v-text-field", {
-                                attrs: { label: "Discount" },
-                                model: {
-                                  value: _vm.discount,
-                                  callback: function($$v) {
-                                    _vm.discount = $$v
-                                  },
-                                  expression: "discount"
-                                }
-                              }),
-                              _vm._v(" "),
                               _c(
-                                "v-btn",
-                                {
-                                  staticClass: "mr-4",
-                                  staticStyle: { "margin-top": "24px" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.apply_discount()
-                                    }
-                                  }
-                                },
-                                [_vm._v("Apply")]
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "9", sm: "9" } },
+                                    [
+                                      _c("v-text-field", {
+                                        staticStyle: { border: "none" },
+                                        attrs: {
+                                          label: "Discount",
+                                          outlined: "",
+                                          filled: ""
+                                        },
+                                        model: {
+                                          value: _vm.discount,
+                                          callback: function($$v) {
+                                            _vm.discount = $$v
+                                          },
+                                          expression: "discount"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    {
+                                      staticStyle: { padding: "0" },
+                                      attrs: { cols: "3", sm: "3" }
+                                    },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          staticStyle: {
+                                            color: "white",
+                                            padding: "26px 0"
+                                          },
+                                          attrs: { color: "#c8c8c8" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.apply_discount()
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fa fa-arrow-right"
+                                          })
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
@@ -797,28 +848,18 @@ var render = function() {
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _c("div", [
+                      _c("div", { staticStyle: { padding: "10px" } }, [
                         _c(
                           "span",
                           {
-                            staticStyle: {
-                              "font-size": "14px",
-                              padding: "10px",
-                              color: "#444f58"
-                            }
+                            staticStyle: { padding: "10px", color: "#444f58" }
                           },
-                          [_vm._v("Sub Value")]
+                          [_vm._v("Subtotal")]
                         ),
                         _vm._v(" "),
                         _c(
                           "span",
-                          {
-                            staticStyle: {
-                              float: "right",
-                              "font-size": "14px",
-                              color: "#444f58"
-                            }
-                          },
+                          { staticStyle: { float: "right", color: "#444f58" } },
                           [_vm._v("$ " + _vm._s(_vm.discount_value))]
                         ),
                         _vm._v(" "),
@@ -827,26 +868,36 @@ var render = function() {
                       _vm._v(" "),
                       _c("hr"),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticStyle: { "font-size": "18px", padding: "10px" }
-                        },
-                        [
-                          _c("span", [_vm._v(" Total Price : ")]),
-                          _vm._v(" "),
-                          _c("span", { staticStyle: { float: "right" } }, [
-                            _c("span", { staticStyle: { color: "#737171" } }),
-                            _vm._v(
-                              " $ " +
-                                _vm._s(_vm.totalprice_2) +
-                                "\n            "
+                      _c("div", { staticStyle: { padding: "10px" } }, [
+                        _c(
+                          "span",
+                          {
+                            staticStyle: {
+                              "font-size": "1.1428571429em",
+                              padding: "10px"
+                            }
+                          },
+                          [_vm._v(" Total ")]
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticStyle: { float: "right" } }, [
+                          _c("span", { staticStyle: { color: "#737171" } }, [
+                            _vm._v("USD     "),
+                            _c(
+                              "strong",
+                              {
+                                staticStyle: {
+                                  color: "black",
+                                  "font-size": "22px"
+                                }
+                              },
+                              [_vm._v("$" + _vm._s(_vm.totalprice_2))]
                             )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticStyle: { clear: "both" } })
-                        ]
-                      )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticStyle: { clear: "both" } })
+                      ])
                     ],
                     2
                   )
@@ -973,7 +1024,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "E-mail", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "E-Mail", outlined: "" },
                                 model: {
                                   value: _vm.form.email,
                                   callback: function($$v) {
@@ -997,7 +1049,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "6" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "First Name", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "First Name", outlined: "" },
                                 model: {
                                   value: _vm.form.fname,
                                   callback: function($$v) {
@@ -1021,7 +1074,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "6" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "Last Name", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "Last Name", outlined: "" },
                                 model: {
                                   value: _vm.form.lname,
                                   callback: function($$v) {
@@ -1045,7 +1099,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: " Address ", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: " Address ", outlined: "" },
                                 model: {
                                   value: _vm.form.address,
                                   callback: function($$v) {
@@ -1069,7 +1124,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "Appartment" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "Appartment", outlined: "" },
                                 model: {
                                   value: _vm.form.apartment,
                                   callback: function($$v) {
@@ -1093,7 +1149,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "city", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "city", outlined: "" },
                                 model: {
                                   value: _vm.form.city,
                                   callback: function($$v) {
@@ -1120,6 +1177,7 @@ var render = function() {
                             },
                             [
                               _c("v-select", {
+                                staticStyle: { border: "none" },
                                 attrs: {
                                   items: _vm.item,
                                   label: "country",
@@ -1148,7 +1206,8 @@ var render = function() {
                             { attrs: { cols: "12", sm: "4" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "Post Code", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "Post Code", outlined: "" },
                                 model: {
                                   value: _vm.form.postcode,
                                   callback: function($$v) {
@@ -1172,7 +1231,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "Phone", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "Phone", outlined: "" },
                                 model: {
                                   value: _vm.form.phone,
                                   callback: function($$v) {
@@ -1196,8 +1256,11 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
-                        { attrs: { color: "#5cbbff", type: "submit" } },
-                        [_vm._v("Continue to Shipping")]
+                        {
+                          staticClass: "check_btn",
+                          attrs: { color: "#197bbd", type: "submit" }
+                        },
+                        [_vm._v("Proceed To Payment")]
                       )
                     ],
                     1
@@ -1213,7 +1276,7 @@ var render = function() {
             "div",
             {
               staticClass: "col-md-5 lg_discount",
-              staticStyle: { "background-color": "#eaeaea" }
+              staticStyle: { "background-color": "#fafafa" }
             },
             [
               _c(
@@ -1238,29 +1301,22 @@ var render = function() {
                           _c("strong", [_vm._v(_vm._s(item.product.name))])
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticStyle: { float: "right" } }, [
-                          _vm._v(
-                            "\n              " +
-                              _vm._s(item.quantity) +
-                              " x $" +
-                              _vm._s(item.price) +
-                              "\n          "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticStyle: { clear: "both" } }),
-                        _vm._v(" "),
                         _c(
-                          "h6",
+                          "div",
                           {
-                            staticStyle: {
-                              width: "50%",
-                              "margin-left": "90px",
-                              "margin-top": "-31px"
-                            }
+                            staticClass: "countity",
+                            staticStyle: { float: "right" }
                           },
-                          [_vm._v(_vm._s(item.sizeTarget) + " ")]
-                        )
+                          [
+                            _vm._v(
+                              "\n              $" +
+                                _vm._s(item.price) +
+                                "\n          "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticStyle: { clear: "both" } })
                       ]
                     )
                   }),
@@ -1273,28 +1329,54 @@ var render = function() {
                         "v-form",
                         { staticClass: "form_discount" },
                         [
-                          _c("v-text-field", {
-                            attrs: { label: "Discount" },
-                            model: {
-                              value: _vm.discount,
-                              callback: function($$v) {
-                                _vm.discount = $$v
-                              },
-                              expression: "discount"
-                            }
-                          }),
-                          _vm._v(" "),
                           _c(
-                            "v-btn",
-                            {
-                              staticClass: "mr-4",
-                              on: {
-                                click: function($event) {
-                                  return _vm.apply_discount()
-                                }
-                              }
-                            },
-                            [_vm._v("Apply")]
+                            "v-row",
+                            [
+                              _c(
+                                "v-col",
+                                { attrs: { cols: "12", sm: "9" } },
+                                [
+                                  _c("v-text-field", {
+                                    staticStyle: { border: "none" },
+                                    attrs: {
+                                      label: "Discount",
+                                      outlined: "",
+                                      filled: ""
+                                    },
+                                    model: {
+                                      value: _vm.discount,
+                                      callback: function($$v) {
+                                        _vm.discount = $$v
+                                      },
+                                      expression: "discount"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-col",
+                                { attrs: { cols: "12", sm: "3" } },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticStyle: { color: "white" },
+                                      attrs: { color: "#c8c8c8" },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.apply_discount()
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("Apply")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
@@ -1315,7 +1397,7 @@ var render = function() {
                           color: "#444f58"
                         }
                       },
-                      [_vm._v("Sub Value")]
+                      [_vm._v("Subtotal")]
                     ),
                     _vm._v(" "),
                     _c(
@@ -1335,22 +1417,33 @@ var render = function() {
                   _vm._v(" "),
                   _c("hr"),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticStyle: { "font-size": "20px", padding: "10px" } },
-                    [
-                      _c("span", [_vm._v(" Total Price : ")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _c("span", { staticStyle: { color: "#737171" } }),
-                        _vm._v(
-                          " $ " + _vm._s(_vm.totalprice_2) + "\n          "
+                  _c("div", [
+                    _c(
+                      "span",
+                      {
+                        staticStyle: {
+                          "font-size": "1.1428571429em",
+                          "padding-left": "10px"
+                        }
+                      },
+                      [_vm._v(" Total ")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _c("span", { staticStyle: { color: "#737171" } }, [
+                        _vm._v("USD     "),
+                        _c(
+                          "strong",
+                          {
+                            staticStyle: { color: "black", "font-size": "22px" }
+                          },
+                          [_vm._v("$" + _vm._s(_vm.totalprice_2))]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticStyle: { clear: "both" } })
-                    ]
-                  )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticStyle: { clear: "both" } })
+                  ])
                 ],
                 2
               )
@@ -1362,7 +1455,7 @@ var render = function() {
             "div",
             {
               staticClass: "col-md-5 sm_discount mt-4",
-              staticStyle: { "background-color": "#eaeaea" }
+              staticStyle: { "background-color": "#fafafa" }
             },
             [
               !_vm.discount_section
@@ -1452,7 +1545,10 @@ var render = function() {
               _vm.discount_section
                 ? _c(
                     "div",
-                    { staticClass: "discount_section mt-5" },
+                    {
+                      staticClass: "discount_section mt-5",
+                      staticStyle: { width: "100%", padding: "0px 10px" }
+                    },
                     [
                       _vm._l(_vm.cart, function(item) {
                         return _c(
@@ -1472,29 +1568,22 @@ var render = function() {
                               _c("strong", [_vm._v(_vm._s(item.product.name))])
                             ]),
                             _vm._v(" "),
-                            _c("div", { staticStyle: { float: "right" } }, [
-                              _vm._v(
-                                "\n                " +
-                                  _vm._s(item.quantity) +
-                                  " x $" +
-                                  _vm._s(item.price) +
-                                  "\n            "
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("div", { staticStyle: { clear: "both" } }),
-                            _vm._v(" "),
                             _c(
-                              "h6",
+                              "div",
                               {
-                                staticStyle: {
-                                  width: "50%",
-                                  "margin-left": "90px",
-                                  "margin-top": "-31px"
-                                }
+                                staticClass: "countity",
+                                staticStyle: { float: "right" }
                               },
-                              [_vm._v(_vm._s(item.sizeTarget) + " ")]
-                            )
+                              [
+                                _vm._v(
+                                  "\n                $" +
+                                    _vm._s(item.price) +
+                                    "\n            "
+                                )
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticStyle: { clear: "both" } })
                           ]
                         )
                       }),
@@ -1507,28 +1596,64 @@ var render = function() {
                             "v-form",
                             { staticClass: "form_discount" },
                             [
-                              _c("v-text-field", {
-                                attrs: { label: "الكوبون" },
-                                model: {
-                                  value: _vm.discount,
-                                  callback: function($$v) {
-                                    _vm.discount = $$v
-                                  },
-                                  expression: "discount"
-                                }
-                              }),
-                              _vm._v(" "),
                               _c(
-                                "v-btn",
-                                {
-                                  staticClass: "mr-4",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.apply_discount()
-                                    }
-                                  }
-                                },
-                                [_vm._v("خصم الأن")]
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "9", sm: "9" } },
+                                    [
+                                      _c("v-text-field", {
+                                        staticStyle: { border: "none" },
+                                        attrs: {
+                                          label: "الكوبون",
+                                          outlined: "",
+                                          filled: ""
+                                        },
+                                        model: {
+                                          value: _vm.discount,
+                                          callback: function($$v) {
+                                            _vm.discount = $$v
+                                          },
+                                          expression: "discount"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    {
+                                      staticStyle: { padding: "0" },
+                                      attrs: { cols: "3", sm: "3" }
+                                    },
+                                    [
+                                      _c(
+                                        "v-btn",
+                                        {
+                                          staticStyle: {
+                                            color: "white",
+                                            padding: "26px 0"
+                                          },
+                                          attrs: { color: "#c8c8c8" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.apply_discount()
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fa fa-arrow-right"
+                                          })
+                                        ]
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
                               )
                             ],
                             1
@@ -1552,6 +1677,7 @@ var render = function() {
                               {
                                 staticStyle: {
                                   "font-size": "14px",
+                                  float: "right",
                                   padding: "10px",
                                   color: "#444f58"
                                 }
@@ -1563,7 +1689,6 @@ var render = function() {
                               "span",
                               {
                                 staticStyle: {
-                                  float: "right",
                                   "font-size": "14px",
                                   color: "#444f58"
                                 }
@@ -1587,12 +1712,19 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("span", { staticStyle: { color: "#737171" } }),
-                            _vm._v(
-                              " $ " +
-                                _vm._s(_vm.totalprice_2) +
-                                "\n            "
-                            )
+                            _c("span", { staticStyle: { color: "#737171" } }, [
+                              _vm._v("USD     "),
+                              _c(
+                                "strong",
+                                {
+                                  staticStyle: {
+                                    color: "black",
+                                    "font-size": "22px"
+                                  }
+                                },
+                                [_vm._v("$" + _vm._s(_vm.totalprice_2))]
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("div", { staticStyle: { clear: "both" } })
@@ -1679,9 +1811,10 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
+                                staticStyle: { border: "none" },
                                 attrs: {
                                   label: "البريد الإلكترومى",
-                                  required: ""
+                                  outlined: ""
                                 },
                                 model: {
                                   value: _vm.form.email,
@@ -1706,7 +1839,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "6" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "الإسم الأول", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "الإسم الأول", outlined: "" },
                                 model: {
                                   value: _vm.form.fname,
                                   callback: function($$v) {
@@ -1730,7 +1864,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "6" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "الإسم الأخير", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "الإسم الأخير", outlined: "" },
                                 model: {
                                   value: _vm.form.lname,
                                   callback: function($$v) {
@@ -1754,7 +1889,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "العنوان", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "العنوان", outlined: "" },
                                 model: {
                                   value: _vm.form.address,
                                   callback: function($$v) {
@@ -1778,7 +1914,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "المنزل" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "المنزل", outlined: "" },
                                 model: {
                                   value: _vm.form.apartment,
                                   callback: function($$v) {
@@ -1802,7 +1939,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "المدينة", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "المدينة", outlined: "" },
                                 model: {
                                   value: _vm.form.city,
                                   callback: function($$v) {
@@ -1829,6 +1967,7 @@ var render = function() {
                             },
                             [
                               _c("v-select", {
+                                staticStyle: { border: "none" },
                                 attrs: {
                                   items: _vm.item_ar,
                                   value: "اليمن",
@@ -1858,7 +1997,8 @@ var render = function() {
                             { attrs: { cols: "12", sm: "4" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "رمز البريد", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "رمز البريد", outlined: "" },
                                 model: {
                                   value: _vm.form.postcode,
                                   callback: function($$v) {
@@ -1882,7 +2022,8 @@ var render = function() {
                             { attrs: { cols: "12", md: "12" } },
                             [
                               _c("v-text-field", {
-                                attrs: { label: "الهاتف", required: "" },
+                                staticStyle: { border: "none" },
+                                attrs: { label: "الهاتف", outlined: "" },
                                 model: {
                                   value: _vm.form.phone,
                                   callback: function($$v) {
@@ -1906,7 +2047,10 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-btn",
-                        { attrs: { color: "#5cbbff", type: "submit" } },
+                        {
+                          staticClass: "check_btn",
+                          attrs: { color: "#197bbd", type: "submit" }
+                        },
                         [_vm._v("متابعة الشراء")]
                       )
                     ],
@@ -1923,7 +2067,7 @@ var render = function() {
             "div",
             {
               staticClass: "col-md-5 lg_discount",
-              staticStyle: { "background-color": "#eaeaea" }
+              staticStyle: { "background-color": "#fafafa" }
             },
             [
               _c(
@@ -1944,29 +2088,22 @@ var render = function() {
                           _c("strong", [_vm._v(_vm._s(item.product.name))])
                         ]),
                         _vm._v(" "),
-                        _c("div", { staticStyle: { float: "right" } }, [
-                          _vm._v(
-                            "\n              " +
-                              _vm._s(item.quantity) +
-                              " x $" +
-                              _vm._s(item.price) +
-                              "\n          "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticStyle: { clear: "both" } }),
-                        _vm._v(" "),
                         _c(
-                          "h6",
+                          "div",
                           {
-                            staticStyle: {
-                              width: "50%",
-                              "margin-left": "70px",
-                              "margin-top": "-31px"
-                            }
+                            staticClass: "countity",
+                            staticStyle: { float: "right" }
                           },
-                          [_vm._v(_vm._s(item.sizeTarget) + " ")]
-                        )
+                          [
+                            _vm._v(
+                              "\n               $" +
+                                _vm._s(item.price) +
+                                "\n          "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticStyle: { clear: "both" } })
                       ]
                     )
                   }),
@@ -1979,28 +2116,54 @@ var render = function() {
                         "v-form",
                         { staticClass: "form_discount" },
                         [
-                          _c("v-text-field", {
-                            attrs: { label: "الكوبون" },
-                            model: {
-                              value: _vm.discount,
-                              callback: function($$v) {
-                                _vm.discount = $$v
-                              },
-                              expression: "discount"
-                            }
-                          }),
-                          _vm._v(" "),
                           _c(
-                            "v-btn",
-                            {
-                              staticClass: "mr-4",
-                              on: {
-                                click: function($event) {
-                                  return _vm.apply_discount()
-                                }
-                              }
-                            },
-                            [_vm._v("خصم الأن")]
+                            "v-row",
+                            [
+                              _c(
+                                "v-col",
+                                { attrs: { cols: "12", sm: "9" } },
+                                [
+                                  _c("v-text-field", {
+                                    staticStyle: { border: "none" },
+                                    attrs: {
+                                      label: "الكوبون",
+                                      outlined: "",
+                                      filled: ""
+                                    },
+                                    model: {
+                                      value: _vm.discount,
+                                      callback: function($$v) {
+                                        _vm.discount = $$v
+                                      },
+                                      expression: "discount"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-col",
+                                { attrs: { cols: "12", sm: "3" } },
+                                [
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      staticStyle: { color: "white" },
+                                      attrs: { color: "#c8c8c8" },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.apply_discount()
+                                        }
+                                      }
+                                    },
+                                    [_vm._v("خصم الأن")]
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
                           )
                         ],
                         1
@@ -2048,24 +2211,33 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticStyle: { "font-size": "20px", padding: "10px" } },
-                    [
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("الحساب الإجمالى")
-                      ]),
-                      _vm._v(" "),
-                      _c("span", [
-                        _c("span", { staticStyle: { color: "#737171" } }),
-                        _vm._v(
-                          " $ " + _vm._s(_vm.totalprice_2) + "\n          "
+                  _c("div", { staticStyle: { padding: "10px" } }, [
+                    _c(
+                      "span",
+                      {
+                        staticStyle: {
+                          float: "right",
+                          "font-size": "1.1428571429em"
+                        }
+                      },
+                      [_vm._v("الحساب الإجمالى")]
+                    ),
+                    _vm._v(" "),
+                    _c("span", [
+                      _c("span", { staticStyle: { color: "#737171" } }, [
+                        _vm._v("USD  "),
+                        _c(
+                          "strong",
+                          {
+                            staticStyle: { color: "black", "font-size": "22px" }
+                          },
+                          [_vm._v(" $" + _vm._s(_vm.totalprice_2))]
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticStyle: { clear: "both" } })
-                    ]
-                  )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticStyle: { clear: "both" } })
+                  ])
                 ],
                 2
               )

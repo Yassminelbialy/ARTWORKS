@@ -1,11 +1,8 @@
 <template>
   <section>
-
-
-
       <div class="row"  v-if="$i18n.locale == 'en'">
-        <div class="col-md-5 sm_discount mt-4" style="background-color:#eaeaea">
-          <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
+        <div class="col-md-5 sm_discount mt-4" style="background-color:#fafafa">
+          <div class="clickdown"  @click="discount_section = !discount_section" v-if="!discount_section">
             <span>
               <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span>
             <span class="plus" v-if="discount_section==false"><i class="fa fa-chevron-down"></i></span>
@@ -22,7 +19,7 @@
             </span>
             <div style="clear:both"></div>
           </div>
-          <div class="discount_section mt-5" v-if="discount_section">
+          <div class="discount_section mt-5" style="width:100%;padding:0px 10px" v-if="discount_section">
             <div class="border-bottom  p-2 img"
                 v-for="item in cart"
                 :key="item.product.id"
@@ -33,24 +30,30 @@
               :src="item.product.img"
               />
               <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
-              <div style="float:right">
-                  {{ item.quantity }} x ${{item.price}}
+              <div class="countity" style="float:right">
+                  ${{item.price}}
               </div>
               <div style="clear:both"></div>
-              <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6>
+              <!-- <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6> -->
             </div>
 
             <div class="discount">
               <v-form class="form_discount">
-                <v-text-field v-model="discount" label="Discount"></v-text-field>
-                <v-btn @click="apply_discount()" class="mr-4" style="margin-top:24px;">Apply</v-btn>
+                <v-row>
+                  <v-col cols="9" sm="9">
+                    <v-text-field v-model="discount" label="Discount" outlined filled style="border:none;"></v-text-field>
+                  </v-col>
+                  <v-col cols="3" sm="3"  style="padding:0">
+                    <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white;padding: 26px 0;"><i class="fa fa-arrow-right"></i></v-btn>
+                  </v-col>
+                </v-row>
               </v-form>
             </div>
             <hr />
             <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
-              <div>
-                <span style="font-size:14px;padding:10px;color:#444f58">Sub Value</span>
-                <span style="float:right;font-size:14px;color:#444f58">$ {{discount_value}}</span>
+              <div style="    padding: 10px;">
+                <span style="padding:10px;color:#444f58">Subtotal</span>
+                <span style="float:right;color:#444f58">$ {{discount_value}}</span>
                 <div style="clear:both"></div>
               </div>
               <hr/>
@@ -61,10 +64,10 @@
               </div> -->
             <!-- </div> -->
 
-            <div style="font-size:18px;padding:10px">
-              <span> Total Price : </span>
+            <div style="padding:10px">
+              <span style="font-size: 1.1428571429em;padding:10px"> Total </span>
               <span style="float:right;">
-                <span style="color:#737171;"></span> $ {{totalprice_2}}
+                <span style="color:#737171;">USD  &nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
               </span>
               <div style="clear:both"></div>
             </div>
@@ -97,7 +100,14 @@
             <v-row>
               <h4>Contacts information </h4>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.email" label="E-mail" required></v-text-field>
+       
+          <v-text-field
+            v-model="form.email"
+            label="E-Mail"
+            outlined
+            style="border:none"
+          ></v-text-field>
+
                  <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
               </v-col>
               <!-- <v-checkbox
@@ -108,28 +118,28 @@
               ></v-checkbox>-->
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.fname" label="First Name" required></v-text-field>
+                <v-text-field v-model="form.fname" label="First Name" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.fname">{{errors.fname[0]}}</span>
               </v-col>
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.lname" label="Last Name" required></v-text-field>
+                <v-text-field v-model="form.lname" label="Last Name" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.lname">{{errors.lname[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.address" label=" Address " required></v-text-field>
+                <v-text-field v-model="form.address" label=" Address " outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.address">{{errors.address[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.apartment" label="Appartment"></v-text-field>
+                <v-text-field v-model="form.apartment" label="Appartment" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.apartment">{{errors.apartment[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.city" label="city" required></v-text-field>
+                <v-text-field v-model="form.city" label="city" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
               <v-col class="d-flex" cols="12" sm="8">
-                <v-select v-model="form.country" :items="item" label="country" outlined></v-select>
+                <v-select v-model="form.country" :items="item" label="country" outlined style="border:none"></v-select>
                  <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
@@ -144,20 +154,20 @@
                 ></v-select>
               </v-col> -->
               <v-col cols="12" sm="4">
-                <v-text-field v-model="form.postcode" label="Post Code" required></v-text-field>
+                <v-text-field v-model="form.postcode" label="Post Code" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.postcode">{{errors.postcode[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.phone" label="Phone" required></v-text-field>
+                <v-text-field v-model="form.phone" label="Phone" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
-            <v-btn color="#5cbbff" type="submit">Continue to Shipping</v-btn>
+            <v-btn color="#197bbd" class="check_btn" type="submit">Proceed To Payment</v-btn>
 
           </v-container>
         </v-form>
       </div>
-      <div class="col-md-5 lg_discount" style="background-color:#eaeaea">
+      <div class="col-md-5 lg_discount" style="background-color:#fafafa">
         <div class="discount_section mt-5">
           <div class="border-bottom  p-2 img"
               v-for="item in cart"
@@ -168,23 +178,29 @@
              :src="item.product.img"
             />
             <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
-            <div style="float:right">
-                {{ item.quantity }} x ${{item.price}}
+            <div class="countity" style="float:right">
+                ${{item.price}}
             </div>
             <div style="clear:both"></div>
-            <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6>
+            <!-- <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6> -->
           </div>
 
           <div class="discount">
             <v-form class="form_discount">
-              <v-text-field v-model="discount" label="Discount"></v-text-field>
-              <v-btn @click="apply_discount()" class="mr-4">Apply</v-btn>
+              <v-row>
+                <v-col cols="12" sm="9">
+                  <v-text-field v-model="discount" label="Discount" outlined filled  style="border:none"></v-text-field>
+                </v-col>
+                <v-col cols="12" sm="3">
+                  <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white">Apply</v-btn>
+                </v-col>
+              </v-row>
             </v-form>
           </div>
           <hr />
           <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
             <div>
-              <span style="font-size:14px;padding:10px;color:#444f58">Sub Value</span>
+              <span style="font-size:14px;padding:10px;color:#444f58">Subtotal</span>
               <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
               <div style="clear:both"></div>
             </div>
@@ -196,11 +212,11 @@
             </div> -->
           <!-- </div> -->
 
-          <div style="font-size:20px;padding:10px">
-            <span> Total Price : </span>
-            <span style="float:right;">
-              <span style="color:#737171;"></span> $ {{totalprice_2}}
-            </span>
+          <div>
+              <span style="font-size: 1.1428571429em;padding-left:10px"> Total </span>
+              <span style="float:right;">
+                <span style="color:#737171;">USD  &nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
+              </span>
             <div style="clear:both"></div>
           </div>
         </div>
@@ -208,7 +224,7 @@
     </div>
 
     <div class="row"  v-else>
-          <div class="col-md-5 sm_discount mt-4" style="background-color:#eaeaea">
+          <div class="col-md-5 sm_discount mt-4" style="background-color:#fafafa">
           <div class="clickdown" @click="discount_section = !discount_section" v-if="!discount_section">
             <span>
               <i class="fa fa-shopping-cart ml-2 mr-2"></i>{{ $t("message.showorder") }} </span>
@@ -226,7 +242,7 @@
             </span>
             <div style="clear:both"></div>
           </div>
-          <div class="discount_section mt-5" v-if="discount_section">
+          <div class="discount_section mt-5" style="width:100%;padding:0px 10px" v-if="discount_section">
             <div class="border-bottom  p-2 img"
                 v-for="item in cart"
                 :key="item.product.id"
@@ -237,24 +253,30 @@
               :src="item.product.img"
               />
               <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
-              <div style="float:right">
-                  {{ item.quantity }} x ${{item.price}}
+              <div class="countity" style="float:right">
+                  ${{item.price}}
               </div>
               <div style="clear:both"></div>
-              <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6>
+              <!-- <h6 style="width: 50%;margin-left: 90px;margin-top:-31px">{{ item.sizeTarget }} </h6> -->
             </div>
 
             <div class="discount">
               <v-form class="form_discount">
-                <v-text-field v-model="discount" label="الكوبون"></v-text-field>
-                <v-btn @click="apply_discount()" class="mr-4">خصم الأن</v-btn>
+                  <v-row>
+                    <v-col cols="9" sm="9">
+                      <v-text-field v-model="discount" label="الكوبون" outlined filled  style="border:none"></v-text-field>
+                    </v-col>
+                    <v-col cols="3" sm="3"  style="padding:0">
+                      <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white;padding: 26px 0;"><i class="fa fa-arrow-right"></i></v-btn>
+                    </v-col>
+                  </v-row>
               </v-form>
             </div>
             <hr />
             <div class="discount_text" style="color:#737171;padding:10px">
               <div>
-                <span style="font-size:14px;padding:10px;color:#444f58">الخصم</span>
-                <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
+                <span style="font-size:14px;float:right;padding:10px;color:#444f58">الخصم</span>
+                <span style="font-size:14px;color:#444f58">${{discount_value}}</span>
                 <div style="clear:both"></div>
               </div>
 
@@ -263,7 +285,7 @@
             <div style="font-size:20px;padding:10px">
               <span style="float:right;">الحساب الإجمالى</span>
               <span >
-                <span style="color:#737171;"></span> $ {{totalprice_2}}
+                <span style="color:#737171;">USD &nbsp; &nbsp; <strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span>
               </span>
               <div style="clear:both"></div>
             </div>
@@ -296,7 +318,7 @@
             <v-row>
               <h4>تسجيل البيانات</h4>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.email" label="البريد الإلكترومى" required></v-text-field>
+                <v-text-field v-model="form.email" label="البريد الإلكترومى" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
               </v-col>
               <!-- <v-checkbox
@@ -307,28 +329,28 @@
               ></v-checkbox>-->
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.fname" label="الإسم الأول" required></v-text-field>
+                <v-text-field v-model="form.fname" label="الإسم الأول" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.fname">{{errors.fname[0]}}</span>
               </v-col>
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.lname" label="الإسم الأخير" required></v-text-field>
+                <v-text-field v-model="form.lname" label="الإسم الأخير" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.lname">{{errors.lname[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.address" label="العنوان" required></v-text-field>
+                <v-text-field v-model="form.address" label="العنوان" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.address">{{errors.address[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.apartment" label="المنزل"></v-text-field>
+                <v-text-field v-model="form.apartment" label="المنزل" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.apartment">{{errors.apartment[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.city" label="المدينة" required></v-text-field>
+                <v-text-field v-model="form.city" label="المدينة" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
               <v-col class="d-flex" cols="12" sm="8">
-                <v-select v-model="form.country" :items="item_ar" value='اليمن' label="الدولة" outlined></v-select>
+                <v-select v-model="form.country" :items="item_ar" value='اليمن' label="الدولة" outlined  style="border:none"></v-select>
                  <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
@@ -342,19 +364,19 @@
                 ></v-select>
               </v-col> -->
               <v-col cols="12" sm="4">
-                <v-text-field v-model="form.postcode" label="رمز البريد" required></v-text-field>
+                <v-text-field v-model="form.postcode" label="رمز البريد" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.postcode">{{errors.postcode[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.phone" label="الهاتف" required></v-text-field>
+                <v-text-field v-model="form.phone" label="الهاتف" outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
-            <v-btn color="#5cbbff" type="submit">متابعة الشراء</v-btn>
+            <v-btn color="#197bbd" class="check_btn" type="submit">متابعة الشراء</v-btn>
           </v-container>
         </v-form>
       </div>
-      <div class="col-md-5 lg_discount" style="background-color:#eaeaea">
+      <div class="col-md-5 lg_discount" style="background-color:#fafafa">
 
         <div class="discount_section mt-5">
           <div class="border-bottom  p-2 img"
@@ -365,17 +387,23 @@
              :src="item.product.img"
             />
             <span class="price"> <strong>{{ item.product.name }}</strong></span>
-            <div style="float:right">
-                {{ item.quantity }} x ${{item.price}}
+            <div class="countity" style="float:right">
+                 ${{item.price}}
             </div>
             <div style="clear:both"></div>
-            <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} </h6>
+            <!-- <h6 style="width: 50%;margin-left: 70px;margin-top:-31px">{{ item.sizeTarget }} </h6> -->
           </div>
 
           <div class="discount">
             <v-form class="form_discount">
-              <v-text-field v-model="discount" label="الكوبون"></v-text-field>
-              <v-btn @click="apply_discount()" class="mr-4">خصم الأن</v-btn>
+                  <v-row>
+                    <v-col cols="12" sm="9">
+                      <v-text-field v-model="discount" label="الكوبون" outlined filled  style="border:none"></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="3">
+                      <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white">خصم الأن</v-btn>
+                    </v-col>
+                  </v-row>
             </v-form>
           </div>
           <hr />
@@ -388,10 +416,10 @@
 
           </div>
 
-          <div style="font-size:20px;padding:10px">
-            <span style="float:right;">الحساب الإجمالى</span>
+          <div style="padding:10px">
+            <span style="float:right;font-size: 1.1428571429em;">الحساب الإجمالى</span>
             <span >
-              <span style="color:#737171;"></span> $ {{totalprice_2}}
+              <span style="color:#737171;">USD&nbsp;&nbsp;<strong style="color:black;font-size:22px"> ${{totalprice_2}}</strong></span> 
             </span>
             <div style="clear:both"></div>
           </div>
@@ -974,7 +1002,7 @@ this.cart.forEach(element => {
   },
   methods: {
       apply_discount(){
-            console.log(this.discount);
+            //console.log(this.discount);
             axios.post('/api/check-promo',{code:this.discount}).then((data)=>{
                 // console.log(data.data);
                 if(data.data.status)
@@ -999,7 +1027,7 @@ this.cart.forEach(element => {
 
     send() {
         // console.log(this.cart());
-this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:2,palettesize:"small",quantity:22}]
+// this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:2,palettesize:"small",quantity:22}]
       axios
         .post("/api/add-order", this.form)
         .then(data => {
@@ -1042,11 +1070,21 @@ this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:
   height: 70px;
 }
 .form_discount {
-  width: 70%;
   padding: 10px;
 }
 .discount_section {
   width: 65%;
+}
+.countity{
+  margin-top: 20px;
+}
+.check_btn{
+    border: 1px transparent solid;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    padding: 25px 15px !important;
+    text-align: center;
 }
 .price{
     position: relative;
@@ -1087,9 +1125,21 @@ this.form.items=[    {paletteid:22,palettesize:"small",quantity:22}, {paletteid:
   cursor: pointer;
   font-size: 18px;
   color: #197bbd;
+  padding: 7px;
 }
 .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #f5f5f5;
-    margin-top: 24px;
+    margin-top: 19px;
+}
+@media (max-width:767px)
+{
+ .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: #f5f5f5;
+    margin-top: 22px;
+  } 
+}
+
+.theme--light.v-text-field--filled>.v-input__control>.v-input__slot {
+    background-color: white !important;
 }
 </style>

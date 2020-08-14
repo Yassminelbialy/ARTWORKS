@@ -190,7 +190,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n@media(max-width:991px)\r\n{\n.hero .hero-title[data-v-74e1d05c]{\r\n        font-size: 60px;\r\n        padding: 0 10px ;\n}\n}\n@media(max-width:550px)\r\n{\n.hero .hero-title[data-v-74e1d05c]{\r\n        font-size: 40px;\r\n        padding: 0 10px ;\r\n        margin:20px 0 10px 0;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n@media(max-width:991px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 60px;\n        padding: 0 10px ;\n}\n}\n@media(max-width:550px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 40px;\n        padding: 0 10px ;\n        margin:20px 0 10px 0;\n}\n}\n", ""]);
 
 // exports
 
@@ -209,7 +209,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\nheader[data-v-bb44e346]{\r\n    margin-bottom: 50px;\n}\n.about-us .about-content[data-v-bb44e346]{\r\n    position: relative;\r\n    top:322px;\n}\n@media(max-width: 400px){\n.about-us .about-content[data-v-bb44e346]{\r\n        position: relative;\r\n        top:431px;\n}\n}\n.about-us[data-v-bb44e346]{\r\n    background-repeat: no-repeat;\r\n    background-size: cover  ;\r\n    background-position: center;\n}\r\n", ""]);
+exports.push([module.i, "\n.about-us .about-content[data-v-bb44e346]{\n    position: relative;\n    top:322px;\n}\n@media(max-width: 400px){\n.about-us .about-content[data-v-bb44e346]{\n        position: relative;\n        top:431px;\n}\n}\n.about-us[data-v-bb44e346]{\n    background-repeat: no-repeat;\n    background-size: cover  ;\n    background-position: center;\n}\n", ""]);
 
 // exports
 
@@ -473,7 +473,7 @@ var render = function() {
           _c("h1", [_vm._v(_vm._s(_vm.$t("message.about")))]),
           _vm._v(" "),
           _c("router-link", { staticClass: "mb-5", attrs: { to: "/about" } }, [
-            _c("a", { staticClass: "btn btn-light mb-5" }, [
+            _c("a", { staticClass: "mb-5", staticStyle: { color: "white" } }, [
               _vm._v(_vm._s(_vm.$t("message.readmore")))
             ])
           ])
