@@ -190,7 +190,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n@media(max-width:991px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 60px;\n        padding: 0 10px ;\n}\n}\n@media(max-width:550px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 40px;\n        padding: 0 10px ;\n        margin:20px 0 10px 0;\n}\n}\n", ""]);
+exports.push([module.i, "\n.row[data-v-74e1d05c]{\n    padding: 0;\n    margin: 0;\n}\n@media(max-width:991px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 60px;\n        padding: 0 10px ;\n}\n}\n@media(max-width:550px)\n{\n.hero .hero-title[data-v-74e1d05c]{\n        font-size: 40px;\n        padding: 0 10px ;\n        margin:20px 0 10px 0;\n}\n}\n", ""]);
 
 // exports
 

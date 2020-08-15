@@ -66,6 +66,10 @@ export default {
 </script>
 
 <style scoped>
+.row{
+    padding: 0;
+    margin: 0;
+}
 @media(max-width:991px)
 {
     .hero .hero-title{

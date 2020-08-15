@@ -263,7 +263,7 @@ console.log(this.mycart)
   /* left: 15px; */
 }
 .modal-content{
-    top: -30px;
+    top: -8px;
     overflow: scroll;
     width: 436px;
     min-height: 800px;
@@ -451,15 +451,27 @@ svg{
         transform: translate(50%, 0);
     }
 }
-
- @media(max-width:414px){
+ @media (max-width:349px){
     .modal-content {
-        top: -30px;
+        top: -8px;
+        overflow: scroll;
+        width: 397px;
+        min-height: 800px;
+        border-radius: 0;
+        left: 24%;
+        transform: scale(.8) translate(-24%, -71px);
+        background: #f2efeb;
+    }
+
+}
+ @media (min-width:350px )and(max-width:414px){
+    .modal-content {
+        top: -8px;
         overflow: scroll;
         width: 436px;
         min-height: 800px;
         border-radius: 0;
-        left: 4%;
+        left: 31%;
         transform: scale(.8) translate(-24%, -71px);
         background: #f2efeb;
     }

@@ -544,7 +544,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 
@@ -1639,76 +1638,7 @@ var render = function() {
       _c(
         "div",
         {
-<<<<<<< HEAD
-          staticClass: "swiper-container pallete-swiper text-center d-sm-none "
-        },
-        [
-          _c(
-            "div",
-            { staticClass: "swiper-wrapper" },
-            _vm._l(_vm.palettesArtists, function(palettesArtist, index) {
-              return _c(
-                "div",
-                {
-                  key: palettesArtist.id,
-                  staticClass: "swiper-slide text-center ",
-                  on: {
-                    click: function($event) {
-                      return _vm.addActive(palettesArtist.id, index)
-                    }
-                  }
-                },
-                [
-                  _c("img", { attrs: { src: palettesArtist.img, alt: "..." } }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "content", class: { active: index == 0 } },
-                    [
-                      _c("div", { staticClass: "triangle" }),
-                      _vm._v(" "),
-                      _c("h6", [
-                        _c("span", { staticClass: "px-3" }, [
-                          _vm._v(_vm._s(palettesArtist.name) + " ")
-                        ]),
-                        _vm._v(" | "),
-                        _c("span", { staticClass: "price px-3" }, [
-                          _vm._v("$" + _vm._s(palettesArtist.M_price))
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "infor" }, [
-                        _c("span", [
-                          _c("span", { staticClass: "text-success" }, [
-                            _vm._v(_vm._s(palettesArtist.M_avalible))
-                          ]),
-                          _vm._v(
-                            "/" +
-                              _vm._s(palettesArtist.M_copies) +
-                              "   " +
-                              _vm._s(_vm.$t("message.left"))
-                          )
-                        ])
-                      ])
-                    ]
-                  )
-                ]
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "swiper-pagination" })
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "carousel slide",
-=======
           staticClass: "carousel slide ",
->>>>>>> d34f2c4c49a1ad89c56218b4cd5f8cc359163a21
           attrs: { id: "carouselExampleCaptions", "data-interval": "false" }
         },
         [

@@ -1,20 +1,20 @@
 <template>
     <section >
-        <!-- <div>
-            <div class="swiper-container pallete-swiper text-center d-sm-none ">
-                    <div class="swiper-wrapper">
-                        <div  class="swiper-slide text-center "    v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
-                            <img :src="palettesArtist.img" alt="...">
-                                <div class="content" :class="{ 'active': index == 0 }" >
-                                    <div class="triangle"></div>
-                                    <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
-                                    <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
-                                </div>
-                        </div>
+        
+        <!-- <div class="swiper-container pallete-swiper text-center d-sm-none">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide text-center " v-for="(artist , index) in artists" @click="addActive(artist.id,index)"   :key="artist.id">
+                    <img  v-for="(palettesArtist , index) in artist.artist_palettes" :key="index" :src="palettesArtist.artist_min_palettes.img" alt="...">
+                    <div class="content" :class="{ 'active': index == 0 }" >
+                        <div class="triangle"></div>
+                        <h6><span class="px-3">{{artist.artist_palettes.name[0]}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
+                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
                     </div>
-                    <div class="swiper-pagination"></div>
                 </div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div> -->
+    
         <div id="carouselExampleCaptions" class="carousel slide " data-interval="false">
             <ol class="carousel-indicators text-center">
                 <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': artist.id == artist_active }" :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
@@ -35,7 +35,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="swiper-pagination"></div>
                     </div>
 
