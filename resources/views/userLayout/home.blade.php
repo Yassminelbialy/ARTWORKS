@@ -14,8 +14,6 @@
   toggle: true
 })
 	$('.product-grid-item__image').hover(function(e) {
-		console.log(e)
-
 	}, function() {
 		// out
 	});
@@ -26,6 +24,7 @@
 	$('div .size_btn').on('click', function () {
         
         $(this).addClass('active_btn').siblings().removeClass('active_btn');
-    });
+	});
+	
 </script>
 @endsection

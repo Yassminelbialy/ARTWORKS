@@ -12,6 +12,14 @@ import Vue from "vue";
 import VueInternationalization from "vue-i18n";
 import VueRouter from "vue-router";
 import Vuetify from "vuetify";
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+
+// // import style
+// import 'swiper/css/swiper.css'
+// // If you use Swiper 6.0.0 or higher
+// import 'swiper/swiper-bundle.css'
+
+Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

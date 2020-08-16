@@ -60,7 +60,7 @@
         </div>
             <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
             <button class="nav-btns" @click="showsModal()">
-        <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" alt="Shopping Cart" width="33px">
+        <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
          <span id="count">{{cartItemCount}}</span>
           </button>
             <div >
@@ -260,13 +260,14 @@ console.log(this.mycart)
   position: relative;
 
   transition: all 1s;
+  top: 67px;
   /* left: 15px; */
 }
 .modal-content{
-    top: -8px;
+    top: -26px;
     overflow: scroll;
     width: 436px;
-    min-height: 800px;
+    min-height: 840px;
     border-radius: 0;
     left: 4%;
     background: #f2efeb;
@@ -276,7 +277,7 @@ console.log(this.mycart)
 .modal-body {
     position: relative;
     -ms-flex: 1 1 auto;
-    max-height: 500px;
+    max-height: 680px;
     flex: 1 1 auto;
     overflow: auto;
     padding: 1rem;
@@ -305,9 +306,9 @@ console.log(this.mycart)
         width: 67px;
     }
 }
-.nav-btns{
+/* .nav-btns{
     margin-left: 27px;
-}
+} */
 
 .delete{
      width: 90px !important;
@@ -451,29 +452,70 @@ svg{
         transform: translate(50%, 0);
     }
 }
- @media (max-width:349px){
+ @media (max-width:299px){
     .modal-content {
-        top: -8px;
-        overflow: scroll;
-        width: 397px;
-        min-height: 800px;
-        border-radius: 0;
-        left: 24%;
-        transform: scale(.8) translate(-24%, -71px);
-        background: #f2efeb;
+        width: 240px;
+        left: 2%;
     }
 
 }
- @media (min-width:350px )and(max-width:414px){
+ @media (min-width:300px ) and (max-width:316px){
     .modal-content {
-        top: -8px;
-        overflow: scroll;
-        width: 436px;
-        min-height: 800px;
-        border-radius: 0;
-        left: 31%;
-        transform: scale(.8) translate(-24%, -71px);
-        background: #f2efeb;
+        width: 280px;
+        min-height: 511px;
+    }
+    .modal-body{
+        min-height: 571px;
+    }
+
+}
+ @media (min-width:317px ) and (max-width:336px){
+    .modal-content {
+        width: 300px;
+        min-height: 511px;
+    }
+    .modal-body{
+        min-height: 571px;
+    }
+
+}
+ @media (min-width:337px ) and (max-width:365px){
+    .modal-content {
+        width: 320px;
+        min-height: 511px;
+    }
+    .modal-body{
+        min-height: 571px;
+    }
+
+}
+ @media (min-width:366px ) and (max-width:396px){
+    .modal-content {
+        width: 350px;
+        min-height: 511px;
+    }
+    .modal-body{
+        min-height: 571px;
+    }
+
+}
+ @media (min-width:397px ) and (max-width:440px){
+    .modal-content {
+        width: 383px;
+        min-height: 511px;
+    }
+    .modal-body{
+        min-height: 571px;
+    }
+
+}
+ @media (min-width:441px ) and (max-width:457px){
+    .modal-content {
+        width: 425px;
+        min-height: 511px;
+    }
+    .modal-body{
+        min-height: 571px;
     }
 
 }

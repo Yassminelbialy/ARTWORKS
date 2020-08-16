@@ -3,11 +3,11 @@
         
         <!-- <div class="swiper-container pallete-swiper text-center d-sm-none">
             <div class="swiper-wrapper">
-                <div class="swiper-slide text-center " v-for="(artist , index) in artists" @click="addActive(artist.id,index)"   :key="artist.id">
-                    <img  v-for="(palettesArtist , index) in artist.artist_palettes" :key="index" :src="palettesArtist.artist_min_palettes.img" alt="...">
+                <div class="swiper-slide text-center " v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                    <img  :src="palettesArtist.img" alt="...">
                     <div class="content" :class="{ 'active': index == 0 }" >
                         <div class="triangle"></div>
-                        <h6><span class="px-3">{{artist.artist_palettes.name[0]}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
+                        <h6><span class="px-3">{{palettesArtist.name[0]}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
                         <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
                     </div>
                 </div>
@@ -24,22 +24,18 @@
                     <img :src="artist.cover_img" class="header" alt="...">
                 <!---------------------------- start regular pallete----------------------- -->
 
-                    <div class="swiper-container pallete-swiper text-center d-sm-none ">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide text-center " v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
-                                <img :src="palettesArtist.artist_min_palettes.img" alt="...">
-                                <div class="content" :class="{ 'active': index == 0 }" >
-                                    <div class="triangle"></div>
-                                    <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
-                                    <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
-                                </div>
+                    <swiper class="agile_swap d-sm-none">
+                        <swiper-slide class="details agile_slide" v-for="(palettesArtist , index) in artist.artist_palettes" ref="myActive" @click.native="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
+                            <img :src="palettesArtist.artist_min_palettes.img" alt="...">
+                            <div class="content" :class="{ 'active': index == 0 }" >
+                                <div class="triangle"></div>
+                                <h6><span class="px-3">{{palettesArtist.name}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
+                                <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
                             </div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-
+                        </swiper-slide>
+                    </swiper>
                     <div class="wrapper d-none d-sm-block ">
-                        <div class=" row  d-flex justify-content-center">
+                        <div class=" row  d-flex justify-content-center" style="width:100%">
                             <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive" v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                                <div class="details-content">
                                     <img    :src="palettesArtist.artist_min_palettes.img" class="details_img" alt="...">
@@ -206,10 +202,18 @@
 import appvideo from '../pagecomponents/ShopVideo';
 import review from '../pagecomponents/Review';
 import $ from "jquery";
-
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
 export default {
-    components:{appvideo,review},
+    components:{
+            appvideo,
+            review,
+            Swiper,
+            SwiperSlide
+        },
+          directives: {
+    swiper: directive
+  },
     data(){
         return {
             palettes:[],
@@ -234,7 +238,8 @@ export default {
             artistID:'',
             sizeCm:"",
             artist_text:'',
-            artist_active:''
+            artist_active:'',
+
         }
     },mounted(){
 
@@ -266,7 +271,6 @@ export default {
                 observerParents:true,
 
             });
-
             // swiper.update();
         },
 
@@ -341,7 +345,10 @@ export default {
             (total, product) => total + product.quantity,
             0);
 
-        }
+        },
+        // swiper(){
+        //     return this.$refs.mySwiper.$swiper
+        // }
       },
     methods:{
 
@@ -351,6 +358,7 @@ export default {
                  product,
                 quantity:1
             })
+        
         }
         ,
          updateCart(product, updateType) {
@@ -405,6 +413,9 @@ export default {
                 .catch(error => console.log(error.response.data))
         })
         .catch(error => console.log(error.response.data))
+                   
+                  
+
         },
         small(el,price,avilable,cardId){
             this.sizeTarget="small"
@@ -469,9 +480,9 @@ export default {
         })
 
 
-            // $("html,body").animate({
-            //     scrollTop:"450px"
-            // },500)
+            $("html,body").animate({
+                scrollTop:"450px"
+            },500)
 
                 axios.get("/api/viewMinPalettes?id=" + $minPalette_id)
                 .then(response =>{
@@ -718,6 +729,7 @@ export default {
     width: 22px;
     height: 10px;
     }
+
     /* .details.active .triangle{
             top: -26.1px;
 
@@ -931,35 +943,35 @@ transform: scale(.7);
   width: 170px;
 }
 
-.pallete-swiper{
+.agile_swap {
     /* position: absolute; */
     /* top: 100px; */
     /* left: 50%;
     transform: translate(50%,0); */
     position: absolute;
     text-align: center;
-    top:2%;
+    /* top:2%; */
     /* transform: scale(.9); */
 }
-.pallete-swiper img{
-    width: auto;
-    height: 50vw;
+.agile_swap  img{
+    width: 37%;
     margin-top: 30px;
     border-top: 6px solid #111;
     border-bottom: 6px solid #111;
 }
+/*
 .pallete-swiper .swiper-pagination{
     display: none;
 }
-.pallete-swiper .swiper-slide {
+.agile_swap  .agile_slide {
     width: 77% !important;
 
-}
+} */
 .swiper-wrapper{
     /* left: 44px; */
 }
 
-.pallete-swiper .content{
+.agile_swap  .content{
  position: relative;
         font-size: 14px;
         width:  68%;
@@ -978,7 +990,7 @@ transform: scale(.7);
 
 }
 
-.pallete-swiper .content .triangle{
+.agile_swap  .content .triangle{
     position: relative;
     z-index: 1;
     /* padding: 10px; */
@@ -995,14 +1007,14 @@ transform: scale(.7);
 
 
 @media (max-width: 414px){
-
-.pallete-swiper img{
+/* 
+.agile_swap  img{
 
 
     margin-top: 80px;
 
-}
-.pallete-swiper .content{
+} */
+.agile_swap  .content{
  position: relative;
         font-size: 14px;
         width:  68%;
@@ -1013,7 +1025,7 @@ transform: scale(.7);
         color:white;
         border-radius: 10px;
         background: rgba(0,0,0,0.75);
-        top: 10px;
+        top: 20px;
         padding: 0 20px;
         border: 4px solid rgba(0,0,0,-7.25);
         left:50%;
@@ -1021,18 +1033,18 @@ transform: scale(.7);
 
 }
 
-.pallete-swiper .content .triangle{
+.agile_swap  .content .triangle{
 
-    left: 55%;
+    left: 70%;
 
 
 }
 
-.pallete-swiper .swiper-slide {
+/* .agile_swap  .agile_slide {
          width: 70% !important;
          margin-right:0px  !important;
 
-}
+} */
 }
 
 
@@ -1081,5 +1093,18 @@ transform: scale(.7);
 
 .swiper-container{
     margin-bottom: 50px;
+}
+.agile_swap{
+    position: absolute;
+    top: 1%;
+    left: 16%;
+    width: 100%;
+}
+.agile_swap img{
+    height: 240px;
+}
+.agile_swap .agile_slide{
+    position: relative;
+    left: -11%;
 }
 </style>
