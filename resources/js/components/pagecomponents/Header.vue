@@ -86,4 +86,7 @@ export default {
         margin:20px 0 10px 0;
     }
 }
+a:not([href]):hover{
+    color: white !important;
+}
 </style>

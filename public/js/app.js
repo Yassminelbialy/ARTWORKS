@@ -2366,8 +2366,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    this.mycart = $(".modal-wrapper");
-    console.log(this.mycart); // let infoUrl = window.location.href
+    this.mycart = $(".modal-wrapper"); // let infoUrl = window.location.href
     // let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
     // $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
     // console.log("."+infoUrlTarget)
@@ -2399,7 +2398,6 @@ __webpack_require__.r(__webpack_exports__);
     expanding: function expanding() {
       this.expand = !this.expand;
       $(".navbar-collapse").toggleClass("show");
-      console.log("done");
     },
     decreaseProduct: function decreaseProduct(product) {
       this.$store.dispatch('decreaseProduct', {
@@ -2408,7 +2406,6 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     addToCart: function addToCart(product) {
-      console.log(product);
       this.$store.dispatch('addProductToCart', {
         product: product,
         quantity: 1
@@ -53587,7 +53584,7 @@ var render = function() {
                             return _c(
                               "div",
                               {
-                                key: { index: index },
+                                key: item.id,
                                 staticClass: "row p-4 mt-2 border-bottom"
                               },
                               [

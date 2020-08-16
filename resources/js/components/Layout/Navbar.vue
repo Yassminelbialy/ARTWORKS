@@ -88,7 +88,7 @@
 <!-- -------------------------------------------pallalet cart----------------- -->
                             <div class="row p-4 mt-2 border-bottom"
                                  v-for="(item,index) in cart "
-                                 :key="{index}">
+                                 :key="item.id">
                                 <div class="col-md-sm-4 ml-1">
                                     <img :src="item.product.img">
                                 </div>
@@ -157,7 +157,6 @@ export default {
     },
     mounted(){
 this.mycart=$(".modal-wrapper")
-console.log(this.mycart)
         // let infoUrl = window.location.href
         // let infoUrlTarget =infoUrl.split('/').slice(-1)[0]
         // $("."+infoUrlTarget).addClass('active').siblings().removeClass('active')
@@ -195,7 +194,6 @@ console.log(this.mycart)
         expanding(){
             this.expand=!this.expand;
             $(".navbar-collapse").toggleClass("show")
-            console.log("done")
         },
            decreaseProduct(product){
 
@@ -205,7 +203,6 @@ console.log(this.mycart)
             })
         },
          addToCart(product){
-             console.log(product)
             this.$store.dispatch('addProductToCart',{
                  product,
                 quantity:1
