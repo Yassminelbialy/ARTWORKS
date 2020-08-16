@@ -16,6 +16,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                 ></v-text-field>
                  <span class="red--text" v-if="errors.name">{{errors.name[0]}}</span>
                 </v-col>
@@ -30,6 +31,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
                 </v-col>
@@ -43,6 +45,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
                 </v-col>
@@ -56,6 +59,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.socialLink">{{errors.socialLink[0]}}</span>
                 </v-col>
@@ -77,6 +81,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                     dir="rtl"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.name">{{errors.name[0]}}</span>
@@ -92,6 +97,7 @@
                     loading
                     clearable
                     required
+                    outlined style="border:none"
                     dir="rtl"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
@@ -106,6 +112,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                     dir="rtl"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
@@ -120,6 +127,7 @@
                     required
                     loading
                     clearable
+                    outlined style="border:none"
                     dir="rtl"
                 ></v-text-field>
                 <span class="red--text" v-if="errors.socialLink">{{errors.socialLink[0]}}</span>

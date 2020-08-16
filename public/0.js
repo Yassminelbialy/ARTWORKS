@@ -145,6 +145,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -278,11 +286,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "Your Name",
                               required: "",
                               loading: "",
-                              clearable: ""
+                              clearable: "",
+                              outlined: ""
                             },
                             model: {
                               value: _vm.form.name,
@@ -307,11 +317,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "E-mail",
                               required: "",
                               loading: "",
-                              clearable: ""
+                              clearable: "",
+                              outlined: ""
                             },
                             model: {
                               value: _vm.form.email,
@@ -336,11 +348,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "Your Phone Number",
                               required: "",
                               loading: "",
-                              clearable: ""
+                              clearable: "",
+                              outlined: ""
                             },
                             model: {
                               value: _vm.form.phone,
@@ -365,11 +379,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "Your Social Link",
                               required: "",
                               loading: "",
-                              clearable: ""
+                              clearable: "",
+                              outlined: ""
                             },
                             model: {
                               value: _vm.form.socialLink,
@@ -423,11 +439,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "أسمك",
                               required: "",
                               loading: "",
                               clearable: "",
+                              outlined: "",
                               dir: "rtl"
                             },
                             model: {
@@ -453,11 +471,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "بريدك اﻷلكتروني",
                               loading: "",
                               clearable: "",
                               required: "",
+                              outlined: "",
                               dir: "rtl"
                             },
                             model: {
@@ -483,11 +503,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "رقم الموبايل الخاص بك",
                               required: "",
                               loading: "",
                               clearable: "",
+                              outlined: "",
                               dir: "rtl"
                             },
                             model: {
@@ -513,11 +535,13 @@ var render = function() {
                         { attrs: { cols: "12", md: "12" } },
                         [
                           _c("v-text-field", {
+                            staticStyle: { border: "none" },
                             attrs: {
                               label: "رابط التواصل الاجتماعي",
                               required: "",
                               loading: "",
                               clearable: "",
+                              outlined: "",
                               dir: "rtl"
                             },
                             model: {

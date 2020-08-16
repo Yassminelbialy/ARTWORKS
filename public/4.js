@@ -172,205 +172,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -385,7 +186,6 @@ __webpack_require__.r(__webpack_exports__);
       artist: false,
       support: false,
       joinus: false,
-      active_el: 1,
       text_contact: {},
       form: {
         name: null,
@@ -441,9 +241,6 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    activate: function activate(el) {
-      this.active_el = el;
-    },
     send: function send() {
       var _this2 = this;
 
@@ -470,7 +267,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.support_div .content[data-v-2fea7dd6] {\n  color: grey;\n  cursor: pointer;\n}\n.support_div .active[data-v-2fea7dd6] {\n  color: black;\n  font-weight: bold;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 200px;\n}\n}\n.right[data-v-2fea7dd6] {\n  border-left: 2px solid #000;\n  padding-right: 300px;\n}\n@media (max-width: 991px) {\n.right[data-v-2fea7dd6] {\n    border-left: none;\n    padding-right: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.right[data-v-2fea7dd6] {\n    padding-right: 200px;\n}\n}\n@media(max-width:991px){\n.term_text[data-v-2fea7dd6]{\n    text-align: center !important;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\n  width:90%;\n  height:370px;\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\n    width: 100% !important;\n}\n}\n\n\n", ""]);
+exports.push([module.i, "\n.row[data-v-2fea7dd6] {\n  margin: 0;\n  padding: 0;\n}\n.title[data-v-2fea7dd6] {\n  font-size: 34px;\n  font-weight: bold;\n  line-height: 60px;\n  margin: 0;\n  margin-bottom: 1px;\n  cursor: pointer;\n  transition: all 0.4s;\n  text-align: center;\n  background: #f2efeb;\n}\n.title[data-v-2fea7dd6]:hover {\n  background: #e6e1da;\n}\n.about-team__people[data-v-2fea7dd6] {\n  margin: 0 20px 30px;\n}\n.about-team__people img[data-v-2fea7dd6] {\n  width: 120px;\n}\n.topteam[data-v-2fea7dd6] {\n  margin-bottom: 30px;\n  border-bottom: 2px solid #eee;\n  width: 70%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.support_div .content[data-v-2fea7dd6] {\n  color: grey;\n  cursor: pointer;\n}\n.support_div .active[data-v-2fea7dd6] {\n  color: black;\n  font-weight: bold;\n}\n.left[data-v-2fea7dd6] {\n  border-right: 2px solid #000;\n  padding-left: 300px;\n}\n@media (max-width: 991px) {\n.left[data-v-2fea7dd6] {\n    border-right: none;\n    padding-left: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.left[data-v-2fea7dd6] {\n    padding-left: 200px;\n}\n}\n.right[data-v-2fea7dd6] {\n  border-left: 2px solid #000;\n  padding-right: 300px;\n}\n@media (max-width: 991px) {\n.right[data-v-2fea7dd6] {\n    border-left: none;\n    padding-right: 0;\n}\n}\n@media (min-width: 992px) and (max-width: 1999px) {\n.right[data-v-2fea7dd6] {\n    padding-right: 200px;\n}\n}\n@media(max-width:991px){\n.term_text[data-v-2fea7dd6]{\n    text-align: center !important;\n}\n}\n.form[data-v-2fea7dd6] {\n  width: 50%;\n  margin: auto;\n}\n.mission img[data-v-2fea7dd6]{\n  width:90%;\n  height:370px;\n  border-radius: 10px;\n}\n@media(max-width:767px){\n.mission img[data-v-2fea7dd6]{\n    width: 50% !important;\n}\n}\n@media(min-width:768px) and (max-width:991px){\n.mission img[data-v-2fea7dd6]{\n    width: 100% !important;\n}\n}\n\n", ""]);
 
 // exports
 
@@ -823,8 +620,10 @@ var render = function() {
                                         { attrs: { cols: "12", md: "6" } },
                                         [
                                           _c("v-text-field", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               label: "First name",
+                                              outlined: "",
                                               required: ""
                                             },
                                             model: {
@@ -856,8 +655,10 @@ var render = function() {
                                         { attrs: { cols: "12", md: "6" } },
                                         [
                                           _c("v-text-field", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               label: "E-mail",
+                                              outlined: "",
                                               required: ""
                                             },
                                             model: {
@@ -889,8 +690,10 @@ var render = function() {
                                         { attrs: { cols: "12", md: "12" } },
                                         [
                                           _c("v-text-field", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               label: "Phone Number",
+                                              outlined: "",
                                               required: ""
                                             },
                                             model: {
@@ -922,6 +725,7 @@ var render = function() {
                                         { attrs: { cols: "12", md: "12" } },
                                         [
                                           _c("v-textarea", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               outlined: "",
                                               name: "input-7-4",
@@ -1003,8 +807,10 @@ var render = function() {
                                         { attrs: { cols: "12", md: "6" } },
                                         [
                                           _c("v-text-field", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               label: " اﻷسم",
+                                              outlined: "",
                                               required: "",
                                               dir: "rtl"
                                             },
@@ -1037,8 +843,10 @@ var render = function() {
                                         { attrs: { cols: "12", md: "6" } },
                                         [
                                           _c("v-text-field", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               label: "البريد اﻷلكتروني",
+                                              outlined: "",
                                               required: "",
                                               dir: "rtl"
                                             },
@@ -1071,8 +879,10 @@ var render = function() {
                                         { attrs: { cols: "12", md: "12" } },
                                         [
                                           _c("v-text-field", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               label: "رقم التليفون الخاص بك",
+                                              outlined: "",
                                               required: "",
                                               dir: "rtl"
                                             },
@@ -1105,6 +915,7 @@ var render = function() {
                                         { attrs: { cols: "12", md: "12" } },
                                         [
                                           _c("v-textarea", {
+                                            staticStyle: { border: "none" },
                                             attrs: {
                                               outlined: "",
                                               name: "input-7-4",
