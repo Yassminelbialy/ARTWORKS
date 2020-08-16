@@ -263,16 +263,28 @@ console.log(this.mycart)
   top: 67px;
   /* left: 15px; */
 }
+
 .modal-content{
     top: -26px;
     overflow: scroll;
     width: 436px;
-    min-height: 840px;
+    min-height: 685px;
     border-radius: 0;
     left: 4%;
     background: #f2efeb;
 
 
+}
+@media(min-width:768px){
+    .modal-content{
+        top: -95px;
+    }
+}
+@media(min-width:991px)
+{
+    .modal-content{
+        min-height: 860px;
+    }
 }
 .modal-body {
     position: relative;
@@ -519,5 +531,12 @@ svg{
     }
 
 }
+@media (min-width:458px) and (max-width: 767px)
+{
+    .modal-content{
+        min-height: 624px;
+    }
+}
+
 
 </style>

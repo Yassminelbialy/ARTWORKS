@@ -1,20 +1,5 @@
 <template>
     <section >
-        
-        <!-- <div class="swiper-container pallete-swiper text-center d-sm-none">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide text-center " v-for="(palettesArtist , index) in palettesArtists" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
-                    <img  :src="palettesArtist.img" alt="...">
-                    <div class="content" :class="{ 'active': index == 0 }" >
-                        <div class="triangle"></div>
-                        <h6><span class="px-3">{{palettesArtist.name[0]}} </span> | <span class="price px-3">${{palettesArtist.L_price}}</span> </h6>
-                        <div class="infor">    <span><span class="text-success">{{palettesArtist.L_avalible + palettesArtist.M_avalible + palettesArtist.S_avalible }}</span>/{{palettesArtist.L_copies + palettesArtist.M_copies + palettesArtist.S_copies }}   {{ $t("message.left") }}</span></div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div> -->
-    
         <div id="carouselExampleCaptions" class="carousel slide " data-interval="false">
             <ol class="carousel-indicators text-center">
                 <li data-target="#carouselExampleCaptions" v-for="(artist,index) in artists" :class="{ 'active': artist.id == artist_active }" :key="artist.id" @click="getdata(index)" :data-slide-to="index" >{{artist.name}}</li>
@@ -624,70 +609,9 @@ export default {
           width: 83%;
     transition: all 1s;
     height: 400px;
-    /* box-shadow: 5px 5px 5px black; */
     border-top: 8px solid #111;
     border-bottom: 8px solid #111;
     }
-/*
-    @media(max-width: 560px){
-        .details{
-            width: 40%;
-            font-size: 14px;
-        }
-        .details img{
-            width: 100%;
-            height: 200px;
-        }
-        .wrapper .details .content{
-            width: 100%;
-            margin: 16px auto 0;
-
-        }
-        .carousel-item .header{
-            height: 860px;
-        }
-
-    } */
-    /* @media(min-width: 561px) and (max-width:767px){
-        .details{
-            width: 40% ;
-            font-size: 14px;
-        }
-        .carousel-item .header{
-            height: 855px;
-        }
-        .details img{
-            width: 80%;
-            height: 200px;
-        }
-        .wrapper .details .content{
-            width: 80%;
-
-
-        }
-    } */
-    /* @media(min-width: 768px) and (max-width:991px){
-        .details{
-            width: 33% ;
-            font-size: 14px;
-        }
-
-        .details img{
-            width: 80%;
-            height: 250px;
-        }
-        .wrapper .details .content{
-            width: 80%;
-
-
-        }
-        .wrapper{
-            top: -1%;
-            width: 90%;
-            left: 52%;
-
-        }
-    } */
  .wrapper .row{
          transform: scale(.5);
 
@@ -711,12 +635,8 @@ export default {
         padding: 0 20px;
         border: 4px solid rgba(0,0,0,-7.25);
     }
-        /* @media(max-width: 991px){
-        .wrapper .details .content{
-            width:33%;
-        }
-    } */
-        .wrapper .details .content .triangle{
+
+    .wrapper .details .content .triangle{
    position: relative;
     z-index: 1;
     /* padding: 10px; */
