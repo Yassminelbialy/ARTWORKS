@@ -4,19 +4,20 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <a class="navbar-brand" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
-    <div class="d-sm-block d-none">
-        <LanguageDropdown class="lang"></LanguageDropdown>
-    </div>
+        <button class="nav-btns d-block d-md-none" @click="showsModal()">
+            <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
+            <span id="count">{{cartItemCount}}</span>
+        </button>
+        <div class="d-md-block d-none">
+            <LanguageDropdown class="lang"></LanguageDropdown>
+        </div>
+
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-if=" $i18n.locale == 'en'">
-                <li class="nav-item d-block d-sm-none about text-center" style="margin: auto;">
-                   <LanguageDropdown class="nav-link"></LanguageDropdown>
-                </li>
                 <li class="nav-item home active">
                     <router-link to="/">
                         <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
-
                 </li>
                 <li class="nav-item shop">
                     <router-link to="/shop">
@@ -28,12 +29,18 @@
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
+                <li class="nav-item d-block d-md-none about">
+                   <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
+                </li>
+                <li class="nav-item">
+                            <router-link
+                            :to="{ path: '/payment'}">
+                                payment
+                            </router-link>
+                </li>
 
             </ul>
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
-                <li class="nav-item d-block d-sm-none about" style="margin: auto;">
-                   <LanguageDropdown class="nav-link"></LanguageDropdown>
-                </li>
                 <li class="nav-item about">
                     <router-link to="/about" class="lg">
                         <a class="nav-link">{{ $t("message.about") }}</a>
@@ -56,74 +63,74 @@
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
+                <li class="nav-item d-block d-md-none about">
+                   <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
+                </li>
+                <li class="nav-item">
+                            <router-link
+                            :to="{ path: '/payment'}">
+                                payment
+                            </router-link>
+                </li>
             </ul>
         </div>
-            <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <button class="nav-btns" @click="showsModal()">
-        <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
-         <span id="count">{{cartItemCount}}</span>
-          </button>
-            <div >
-                <transition name="modal">
+        <button class="nav-btns d-md-block d-none" @click="showsModal()">
+            <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
+            <span id="count">{{cartItemCount}}</span>
+        </button>
+        <div>
+            <transition name="modal">
                 <div class="modal-mask" ref="mycart">
                     <div class="modal-wrapper"  >
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                        <div class="modal-header">
-
-
-                            <h5 class="modal-title"> {{ $t("message.cartname") }}</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" @click="closeModal()">
-                                <svg role="presentation" viewBox="0 0 16 14">
-                                     <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd"></path>
-                                </svg>
-                            </span>
-
-                            </button>
-                        </div>
-                        <div class="modal-body" >
-                            <p class="cart-empty" v-if="cartItemCount==0">Your cart is empty.</p>
-
-<!-- -------------------------------------------pallalet cart----------------- -->
-                            <div class="row p-4 mt-2 border-bottom"
-                                 v-for="(item,index) in cart "
-                                 :key="item.id">
-                                <div class="col-md-sm-4 ml-1">
-                                    <img :src="item.product.img">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"> {{ $t("message.cartname") }}</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true" @click="closeModal()">
+                                            <svg role="presentation" viewBox="0 0 16 14">
+                                                <path d="M15 0L1 14m14 0L1 0" fill="none" fill-rule="evenodd"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
                                 </div>
-                                <div class="col-md-sm-8 ml-3 ">
-                                    <span class="move move1"> <strong>{{ item.product.name }}</strong></span>
-                                     <!-- <h6  style="font-size:14px">{{ item.sizeTarget }}  {{item.sizeCm}} </h6> -->
-                                    <h6 class="move" style="margin-top:10px"> ${{item.price}}.00</h6>
-                                      <v-form class="control-increse" style="width:50%;display:inline-block">
-                                    <v-text-field  v-model=" item.quantity  ">
-                                        <v-icon slot="append" @click="addToCart(item.product )">mdi-plus</v-icon>
-                                        <v-icon slot="prepend"  @click.prevent="decreaseProduct(item.product)"  >mdi-minus</v-icon>
-                                    </v-text-field>
-                                </v-form>
+                                <div class="modal-body" >
+                                    <p class="cart-empty" v-if="cartItemCount==0">Your cart is empty.</p>
+                                    <!-- -----------------------------pallalet cart----------------- -->
+                                    <div class="row p-4 mt-2 border-bottom"
+                                        v-for="(item,index) in cart "
+                                        :key="item.id">
+                                        <div class="col-md-sm-4 ml-1">
+                                            <img :src="item.product.img">
+                                        </div>
+                                        <div class="col-md-sm-8 ml-3 ">
+                                            <span class="move move1"> <strong>{{ item.product.name }}</strong></span>
+                                            <!-- <h6  style="font-size:14px">{{ item.sizeTarget }}  {{item.sizeCm}} </h6> -->
+                                            <h6 class="move" style="margin-top:10px"> ${{item.price}}.00</h6>
+                                            <v-form class="control-increse" style="width:50%;display:inline-block">
+                                                <v-text-field  v-model=" item.quantity  ">
+                                                    <v-icon slot="append" @click="addToCart(item.product )">mdi-plus</v-icon>
+                                                    <v-icon slot="prepend"  @click.prevent="decreaseProduct(item.product)"  >mdi-minus</v-icon>
+                                                </v-text-field>
+                                            </v-form>
+                                        </div>
+                                        <div class="pro">
+                                            <button class="ml-3 btn delete " @click.prevent="clearProductFromCart(index)"> {{ $t("message.remove") }}</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                  <div class="pro">
-
-                                <button class="ml-3 btn delete " @click.prevent="clearProductFromCart(index)"> {{ $t("message.remove") }}</button>
+                                <div class="modal-footer modal-cart-footer" v-if="cartItemCount>0">
+                                    <router-link style="margin: auto;color: #fff;"
+                                        :to="{ path: '/payment', query: { myprop: this.pallatecart }}">
+                                        <button type="button" class="btn checkout" style="font-size: 18px;"> {{ $t("message.total") }} : $ {{cartTotalPrice}} &nbsp;  <strong>.</strong> &nbsp;  {{ $t("message.checkout") }}</button>
+                                    </router-link>
+                                </div>
                             </div>
-                            </div>
-
                         </div>
-
-                        <div class="modal-footer modal-cart-footer" v-if="cartItemCount>0">
-                            <router-link style="margin: auto;color: #fff;"
-                            :to="{ path: '/payment', query: { myprop: this.pallatecart }}">
-                                <button type="button" class="btn checkout" style="font-size: 18px;"> {{ $t("message.total") }} : $ {{cartTotalPrice}} &nbsp;  <strong>.</strong> &nbsp;  {{ $t("message.checkout") }}</button>
-                            </router-link>
-
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
-                </transition>
-            </div>
+            </transition>
+        </div>
     </nav>
 </template>
 
@@ -534,6 +541,5 @@ svg{
         min-height: 624px;
     }
 }
-
 
 </style>

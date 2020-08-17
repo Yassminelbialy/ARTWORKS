@@ -442,6 +442,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: {
     larg: function larg(el, price, avilable) {
@@ -580,7 +610,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.countity[data-v-dc37895e]{\n  margin-top: 20px;\n}\n.check_btn[data-v-dc37895e]{\n    border: 1px transparent solid;\n    border-radius: 5px;\n    color: white;\n    font-weight: 500;\n    padding: 25px 15px !important;\n    text-align: center;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n.sm_discount[data-v-dc37895e]{\n  display: none;\n}\n@media (max-width:767px)\n{\n.lg_discount[data-v-dc37895e]{\n    display: none;\n}\n.sm_discount[data-v-dc37895e]{\n    display: block;\n}\n}\n.quantity[data-v-dc37895e]{\n    position: absolute;\n    left: 70px;\n    width: 25px;\n    height: 25px;\n    background: darkgray;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 25px\n}\n.clickdown[data-v-dc37895e]{\n  cursor: pointer;\n  font-size: 18px;\n  color: #197bbd;\n  padding: 7px;\n}\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 19px;\n}\n@media (max-width:767px)\n{\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 22px;\n}\n}\n.theme--light.v-text-field--filled>.v-input__control>.v-input__slot[data-v-dc37895e] {\n    background-color: white !important;\n}\n", ""]);
+exports.push([module.i, "\n.form[data-v-dc37895e] {\n  width: 60%;\n  margin: auto;\n}\n.img[data-v-dc37895e]{\n    margin: 20px 0 ;\n}\n.img img[data-v-dc37895e] {\n  width: 62px;\n  height: 70px;\n}\n.form_discount[data-v-dc37895e] {\n  padding: 10px;\n}\n.discount_section[data-v-dc37895e] {\n  width: 65%;\n}\n.countity[data-v-dc37895e]{\n  margin-top: 20px;\n}\n.check_btn[data-v-dc37895e]{\n    border: 1px transparent solid;\n    border-radius: 5px;\n    color: white;\n    font-weight: 500;\n    padding: 25px 15px !important;\n    text-align: center;\n}\n.price[data-v-dc37895e]{\n    position: relative;\n    top: -16px;\n}\n@media (min-width: 767px) and (max-width: 991px) {\n.discount_section[data-v-dc37895e] {\n    width: 100%;\n}\n}\n.alert[data-v-dc37895e]{\n    text-align: center;\n}\n.sm_discount[data-v-dc37895e]{\n  display: none;\n}\n@media (max-width:767px)\n{\n.lg_discount[data-v-dc37895e]{\n    display: none;\n}\n.sm_discount[data-v-dc37895e]{\n    display: block;\n}\n}\n.quantity[data-v-dc37895e]{\n    position: absolute;\n    left: 70px;\n    width: 25px;\n    height: 25px;\n    background: darkgray;\n    border-radius: 50%;\n    text-align: center;\n    line-height: 25px\n}\n@media (max-width:767px){\n.quantity[data-v-dc37895e]{\n    left: 78px;\n}\n}\n.clickdown[data-v-dc37895e]{\n  cursor: pointer;\n  font-size: 18px;\n  color: #197bbd;\n  padding: 7px;\n}\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 9px;\n}\n@media (max-width:767px)\n{\n.theme--light.v-btn[data-v-dc37895e]:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {\n    background-color: #f5f5f5;\n    margin-top: 14px;\n}\n}\n.theme--light.v-text-field--filled>.v-input__control>.v-input__slot[data-v-dc37895e] {\n    background-color: white !important;\n}\n.theme--light.v-input[data-v-dc37895e]{\n  padding: 0 !important;\n}\n.v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot  input[data-v-dc37895e]{\n    text-align: start !important;\n}\n", ""]);
 
 // exports
 
@@ -859,7 +889,13 @@ var render = function() {
                         _vm._v(" "),
                         _c(
                           "span",
-                          { staticStyle: { float: "right", color: "#444f58" } },
+                          {
+                            staticStyle: {
+                              float: "right",
+                              color: "#444f58",
+                              "padding-right": "10px"
+                            }
+                          },
                           [_vm._v("$ " + _vm._s(_vm.discount_value))]
                         ),
                         _vm._v(" "),
@@ -881,19 +917,28 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("span", { staticStyle: { float: "right" } }, [
-                          _c("span", { staticStyle: { color: "#737171" } }, [
-                            _vm._v("USD     "),
-                            _c(
-                              "strong",
-                              {
-                                staticStyle: {
-                                  color: "black",
-                                  "font-size": "22px"
-                                }
-                              },
-                              [_vm._v("$" + _vm._s(_vm.totalprice_2))]
-                            )
-                          ])
+                          _c(
+                            "span",
+                            {
+                              staticStyle: {
+                                color: "#737171",
+                                "padding-right": "10px"
+                              }
+                            },
+                            [
+                              _vm._v("USD   "),
+                              _c(
+                                "strong",
+                                {
+                                  staticStyle: {
+                                    color: "black",
+                                    "font-size": "22px"
+                                  }
+                                },
+                                [_vm._v("$" + _vm._s(_vm.totalprice_2))]
+                              )
+                            ]
+                          )
                         ]),
                         _vm._v(" "),
                         _c("div", { staticStyle: { clear: "both" } })
@@ -1023,9 +1068,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", [_vm._v("E-mail")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "E-Mail", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.email,
                                   callback: function($$v) {
@@ -1048,9 +1095,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "6" } },
                             [
+                              _c("label", [_vm._v("First Name")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "First Name", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.fname,
                                   callback: function($$v) {
@@ -1073,9 +1122,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "6" } },
                             [
+                              _c("label", [_vm._v("Last Name")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "Last Name", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.lname,
                                   callback: function($$v) {
@@ -1098,9 +1149,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", [_vm._v("Address")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: " Address ", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.address,
                                   callback: function($$v) {
@@ -1123,9 +1176,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", [_vm._v("Appartment")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "Appartment", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.apartment,
                                   callback: function($$v) {
@@ -1148,9 +1203,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", [_vm._v("City")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "city", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.city,
                                   callback: function($$v) {
@@ -1171,18 +1228,13 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-col",
-                            {
-                              staticClass: "d-flex",
-                              attrs: { cols: "12", sm: "8" }
-                            },
+                            { attrs: { cols: "12", sm: "8" } },
                             [
+                              _c("label", [_vm._v("Country")]),
+                              _vm._v(" "),
                               _c("v-select", {
                                 staticStyle: { border: "none" },
-                                attrs: {
-                                  items: _vm.item,
-                                  label: "country",
-                                  outlined: ""
-                                },
+                                attrs: { items: _vm.item, outlined: "" },
                                 model: {
                                   value: _vm.form.country,
                                   callback: function($$v) {
@@ -1205,9 +1257,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", sm: "4" } },
                             [
+                              _c("label", [_vm._v("Post Code")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "Post Code", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.postcode,
                                   callback: function($$v) {
@@ -1230,9 +1284,11 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", [_vm._v("Phone")]),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "Phone", outlined: "" },
+                                attrs: { outlined: "" },
                                 model: {
                                   value: _vm.form.phone,
                                   callback: function($$v) {
@@ -1406,7 +1462,8 @@ var render = function() {
                         staticStyle: {
                           float: "right",
                           "font-size": "14px",
-                          color: "#444f58"
+                          color: "#444f58",
+                          "padding-right": "10px"
                         }
                       },
                       [_vm._v("$" + _vm._s(_vm.discount_value))]
@@ -1430,16 +1487,28 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("span", { staticStyle: { float: "right" } }, [
-                      _c("span", { staticStyle: { color: "#737171" } }, [
-                        _vm._v("USD     "),
-                        _c(
-                          "strong",
-                          {
-                            staticStyle: { color: "black", "font-size": "22px" }
-                          },
-                          [_vm._v("$" + _vm._s(_vm.totalprice_2))]
-                        )
-                      ])
+                      _c(
+                        "span",
+                        {
+                          staticStyle: {
+                            color: "#737171",
+                            "padding-right": "10px"
+                          }
+                        },
+                        [
+                          _vm._v("USD   "),
+                          _c(
+                            "strong",
+                            {
+                              staticStyle: {
+                                color: "black",
+                                "font-size": "22px"
+                              }
+                            },
+                            [_vm._v("$" + _vm._s(_vm.totalprice_2))]
+                          )
+                        ]
+                      )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticStyle: { clear: "both" } })
@@ -1690,7 +1759,8 @@ var render = function() {
                               {
                                 staticStyle: {
                                   "font-size": "14px",
-                                  color: "#444f58"
+                                  color: "#444f58",
+                                  "padding-right": "10px"
                                 }
                               },
                               [_vm._v("$" + _vm._s(_vm.discount_value))]
@@ -1712,19 +1782,28 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("span", [
-                            _c("span", { staticStyle: { color: "#737171" } }, [
-                              _vm._v("USD     "),
-                              _c(
-                                "strong",
-                                {
-                                  staticStyle: {
-                                    color: "black",
-                                    "font-size": "22px"
-                                  }
-                                },
-                                [_vm._v("$" + _vm._s(_vm.totalprice_2))]
-                              )
-                            ])
+                            _c(
+                              "span",
+                              {
+                                staticStyle: {
+                                  color: "#737171",
+                                  "padding-right": "10px"
+                                }
+                              },
+                              [
+                                _vm._v("USD  "),
+                                _c(
+                                  "strong",
+                                  {
+                                    staticStyle: {
+                                      color: "black",
+                                      "font-size": "22px"
+                                    }
+                                  },
+                                  [_vm._v("$" + _vm._s(_vm.totalprice_2))]
+                                )
+                              ]
+                            )
                           ]),
                           _vm._v(" "),
                           _c("div", { staticStyle: { clear: "both" } })
@@ -1801,21 +1880,29 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
+                      _c("h4", { staticClass: "text-right" }, [
+                        _vm._v("\n            تسجيل البيانات\n          ")
+                      ]),
+                      _vm._v(" "),
                       _c(
                         "v-row",
                         [
-                          _c("h4", [_vm._v("تسجيل البيانات")]),
-                          _vm._v(" "),
                           _c(
                             "v-col",
-                            { attrs: { cols: "12", md: "12" } },
+                            {
+                              staticClass: "arabic",
+                              attrs: { cols: "12", md: "12" }
+                            },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("البريد الإلكتروني ")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: {
-                                  label: "البريد الإلكترومى",
-                                  outlined: ""
-                                },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.email,
                                   callback: function($$v) {
@@ -1838,9 +1925,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "6" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("الإسم الأول")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "الإسم الأول", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.fname,
                                   callback: function($$v) {
@@ -1863,9 +1956,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "6" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("الإسم الأخير")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "الإسم الأخير", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.lname,
                                   callback: function($$v) {
@@ -1888,9 +1987,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("العنوان")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "العنوان", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.address,
                                   callback: function($$v) {
@@ -1913,9 +2018,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("المنزل")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "المنزل", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.apartment,
                                   callback: function($$v) {
@@ -1938,9 +2049,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("المدينة")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "المدينة", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.city,
                                   callback: function($$v) {
@@ -1961,18 +2078,21 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "v-col",
-                            {
-                              staticClass: "d-flex",
-                              attrs: { cols: "12", sm: "8" }
-                            },
+                            { attrs: { cols: "12", sm: "8" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("الدولة")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-select", {
                                 staticStyle: { border: "none" },
                                 attrs: {
                                   items: _vm.item_ar,
                                   value: "اليمن",
-                                  label: "الدولة",
-                                  outlined: ""
+                                  outlined: "",
+                                  dir: "rtl"
                                 },
                                 model: {
                                   value: _vm.form.country,
@@ -1996,9 +2116,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", sm: "4" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("رمز البريد")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "رمز البريد", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.postcode,
                                   callback: function($$v) {
@@ -2021,9 +2147,15 @@ var render = function() {
                             "v-col",
                             { attrs: { cols: "12", md: "12" } },
                             [
+                              _c("label", { staticStyle: { float: "right" } }, [
+                                _vm._v("الهاتف")
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticStyle: { clear: "both" } }),
+                              _vm._v(" "),
                               _c("v-text-field", {
                                 staticStyle: { border: "none" },
-                                attrs: { label: "الهاتف", outlined: "" },
+                                attrs: { outlined: "", dir: "rtl" },
                                 model: {
                                   value: _vm.form.phone,
                                   callback: function($$v) {
@@ -2049,10 +2181,13 @@ var render = function() {
                         "v-btn",
                         {
                           staticClass: "check_btn",
+                          staticStyle: { float: "right" },
                           attrs: { color: "#197bbd", type: "submit" }
                         },
                         [_vm._v("متابعة الشراء")]
-                      )
+                      ),
+                      _vm._v(" "),
+                      _c("div", { staticStyle: { clear: "both" } })
                     ],
                     1
                   )
@@ -2084,7 +2219,11 @@ var render = function() {
                       [
                         _c("img", { attrs: { src: item.product.img } }),
                         _vm._v(" "),
-                        _c("span", { staticClass: "price" }, [
+                        _c("span", { staticClass: "quantity" }, [
+                          _vm._v(_vm._s(item.quantity))
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "price ml-5" }, [
                           _c("strong", [_vm._v(_vm._s(item.product.name))])
                         ]),
                         _vm._v(" "),
@@ -2149,7 +2288,10 @@ var render = function() {
                                   _c(
                                     "v-btn",
                                     {
-                                      staticStyle: { color: "white" },
+                                      staticStyle: {
+                                        color: "white",
+                                        padding: "0 6px"
+                                      },
                                       attrs: { color: "#c8c8c8" },
                                       on: {
                                         click: function($event) {
@@ -2187,6 +2329,7 @@ var render = function() {
                           {
                             staticStyle: {
                               "font-size": "14px",
+                              float: "right",
                               padding: "10px",
                               color: "#444f58"
                             }
@@ -2198,9 +2341,9 @@ var render = function() {
                           "span",
                           {
                             staticStyle: {
-                              float: "right",
                               "font-size": "14px",
-                              color: "#444f58"
+                              color: "#444f58",
+                              "padding-right": "10px"
                             }
                           },
                           [_vm._v("$" + _vm._s(_vm.discount_value))]
@@ -2224,16 +2367,28 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("span", [
-                      _c("span", { staticStyle: { color: "#737171" } }, [
-                        _vm._v("USD  "),
-                        _c(
-                          "strong",
-                          {
-                            staticStyle: { color: "black", "font-size": "22px" }
-                          },
-                          [_vm._v(" $" + _vm._s(_vm.totalprice_2))]
-                        )
-                      ])
+                      _c(
+                        "span",
+                        {
+                          staticStyle: {
+                            color: "#737171",
+                            "padding-right": "10px"
+                          }
+                        },
+                        [
+                          _vm._v("USD  "),
+                          _c(
+                            "strong",
+                            {
+                              staticStyle: {
+                                color: "black",
+                                "font-size": "22px"
+                              }
+                            },
+                            [_vm._v(" $" + _vm._s(_vm.totalprice_2))]
+                          )
+                        ]
+                      )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticStyle: { clear: "both" } })

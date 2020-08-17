@@ -53,7 +53,7 @@
             <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
               <div style="    padding: 10px;">
                 <span style="padding:10px;color:#444f58">Subtotal</span>
-                <span style="float:right;color:#444f58">$ {{discount_value}}</span>
+                <span style="float:right;color:#444f58;padding-right: 10px;">$ {{discount_value}}</span>
                 <div style="clear:both"></div>
               </div>
               <hr/>
@@ -67,7 +67,7 @@
             <div style="padding:10px">
               <span style="font-size: 1.1428571429em;padding:10px"> Total </span>
               <span style="float:right;">
-                <span style="color:#737171;">USD  &nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
+                <span style="color:#737171;padding-right: 10px;">USD&nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
               </span>
               <div style="clear:both"></div>
             </div>
@@ -100,13 +100,12 @@
             <v-row>
               <h4>Contacts information </h4>
               <v-col cols="12" md="12">
-       
-          <v-text-field
-            v-model="form.email"
-            label="E-Mail"
-            outlined
-            style="border:none"
-          ></v-text-field>
+                <label >E-mail</label>
+                <v-text-field
+                  v-model="form.email"
+                  outlined
+                  style="border:none"
+                ></v-text-field>
 
                  <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
               </v-col>
@@ -118,28 +117,34 @@
               ></v-checkbox>-->
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.fname" label="First Name" outlined  style="border:none"></v-text-field>
+                <label >First Name</label>
+                <v-text-field v-model="form.fname"  outlined  style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.fname">{{errors.fname[0]}}</span>
               </v-col>
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.lname" label="Last Name" outlined style="border:none"></v-text-field>
+                <label >Last Name</label>
+                <v-text-field v-model="form.lname" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.lname">{{errors.lname[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.address" label=" Address " outlined style="border:none"></v-text-field>
+                <label >Address</label>
+                <v-text-field v-model="form.address" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.address">{{errors.address[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.apartment" label="Appartment" outlined style="border:none"></v-text-field>
+                <label >Appartment</label>
+                <v-text-field v-model="form.apartment" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.apartment">{{errors.apartment[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.city" label="city" outlined style="border:none"></v-text-field>
+                <label >City</label>
+                <v-text-field v-model="form.city" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
-              <v-col class="d-flex" cols="12" sm="8">
-                <v-select v-model="form.country" :items="item" label="country" outlined style="border:none"></v-select>
+              <v-col  cols="12" sm="8">
+                <label >Country</label>
+                <v-select v-model="form.country" :items="item" outlined style="border:none"></v-select>
                  <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
@@ -154,11 +159,13 @@
                 ></v-select>
               </v-col> -->
               <v-col cols="12" sm="4">
-                <v-text-field v-model="form.postcode" label="Post Code" outlined style="border:none"></v-text-field>
+                <label >Post Code</label>
+                <v-text-field v-model="form.postcode" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.postcode">{{errors.postcode[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.phone" label="Phone" outlined style="border:none"></v-text-field>
+                <label>Phone</label>
+                <v-text-field v-model="form.phone" outlined style="border:none"></v-text-field>
                  <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
@@ -201,7 +208,7 @@
           <!-- <div class="discount_text" style="color:#737171;padding:10px"> -->
             <div>
               <span style="font-size:14px;padding:10px;color:#444f58">Subtotal</span>
-              <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
+              <span style="float:right;font-size:14px;color:#444f58;padding-right: 10px;">${{discount_value}}</span>
               <div style="clear:both"></div>
             </div>
             <hr/>
@@ -215,7 +222,7 @@
           <div>
               <span style="font-size: 1.1428571429em;padding-left:10px"> Total </span>
               <span style="float:right;">
-                <span style="color:#737171;">USD  &nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
+                <span style="color:#737171;padding-right: 10px;">USD&nbsp; &nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span> 
               </span>
             <div style="clear:both"></div>
           </div>
@@ -276,7 +283,7 @@
             <div class="discount_text" style="color:#737171;padding:10px">
               <div>
                 <span style="font-size:14px;float:right;padding:10px;color:#444f58">الخصم</span>
-                <span style="font-size:14px;color:#444f58">${{discount_value}}</span>
+                <span style="font-size:14px;color:#444f58;padding-right: 10px;">${{discount_value}}</span>
                 <div style="clear:both"></div>
               </div>
 
@@ -285,7 +292,7 @@
             <div style="font-size:20px;padding:10px">
               <span style="float:right;">الحساب الإجمالى</span>
               <span >
-                <span style="color:#737171;">USD &nbsp; &nbsp; <strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span>
+                <span style="color:#737171;padding-right: 10px;">USD&nbsp;&nbsp;<strong style="color:black;font-size:22px">${{totalprice_2}}</strong></span>
               </span>
               <div style="clear:both"></div>
             </div>
@@ -305,6 +312,7 @@
             </div>
           </div>
         <v-form class="form" @submit.prevent="send">
+
           <v-container>
             <div class="alert text-center mb-3">
               <h5 class="red--text" v-if="errors.items">{{ $t("message.noitem") }}</h5>
@@ -315,10 +323,14 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <h4 class="text-right">
+              تسجيل البيانات
+            </h4>
             <v-row>
-              <h4>تسجيل البيانات</h4>
-              <v-col cols="12" md="12">
-                <v-text-field v-model="form.email" label="البريد الإلكترومى" outlined  style="border:none"></v-text-field>
+              <v-col cols="12" md="12" class="arabic">
+                <label style="float:right">البريد الإلكتروني </label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.email" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.email">{{errors.email[0]}}</span>
               </v-col>
               <!-- <v-checkbox
@@ -329,28 +341,40 @@
               ></v-checkbox>-->
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.fname" label="الإسم الأول" outlined  style="border:none"></v-text-field>
+                <label style="float:right">الإسم الأول</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.fname" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.fname">{{errors.fname[0]}}</span>
               </v-col>
 
               <v-col cols="12" md="6">
-                <v-text-field v-model="form.lname" label="الإسم الأخير" outlined  style="border:none"></v-text-field>
+                <label style="float:right">الإسم الأخير</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.lname" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.lname">{{errors.lname[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.address" label="العنوان" outlined  style="border:none"></v-text-field>
+                <label style="float:right">العنوان</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.address" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.address">{{errors.address[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.apartment" label="المنزل" outlined  style="border:none"></v-text-field>
+                <label style="float:right">المنزل</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.apartment" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.apartment">{{errors.apartment[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.city" label="المدينة" outlined  style="border:none"></v-text-field>
+                <label style="float:right">المدينة</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.city" outlined  style="border:none"  dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
-              <v-col class="d-flex" cols="12" sm="8">
-                <v-select v-model="form.country" :items="item_ar" value='اليمن' label="الدولة" outlined  style="border:none"></v-select>
+              <v-col cols="12" sm="8">
+                <label style="float:right">الدولة</label>
+                <div style="clear:both"></div>
+                <v-select v-model="form.country" :items="item_ar" value='اليمن' outlined  dir="rtl" style="border:none"></v-select>
                  <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
@@ -364,15 +388,20 @@
                 ></v-select>
               </v-col> -->
               <v-col cols="12" sm="4">
-                <v-text-field v-model="form.postcode" label="رمز البريد" outlined  style="border:none"></v-text-field>
+                <label style="float:right">رمز البريد</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.postcode" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.postcode">{{errors.postcode[0]}}</span>
               </v-col>
               <v-col cols="12" md="12">
-                <v-text-field v-model="form.phone" label="الهاتف" outlined  style="border:none"></v-text-field>
+                <label style="float:right">الهاتف</label>
+                <div style="clear:both"></div>
+                <v-text-field v-model="form.phone" outlined  style="border:none" dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.phone">{{errors.phone[0]}}</span>
               </v-col>
             </v-row>
-            <v-btn color="#197bbd" class="check_btn" type="submit">متابعة الشراء</v-btn>
+            <v-btn color="#197bbd" style="float:right" class="check_btn" type="submit">متابعة الشراء</v-btn>
+            <div style="clear:both"></div>
           </v-container>
         </v-form>
       </div>
@@ -386,7 +415,8 @@
             <img
              :src="item.product.img"
             />
-            <span class="price"> <strong>{{ item.product.name }}</strong></span>
+            <span class="quantity">{{ item.quantity }}</span>
+            <span class="price ml-5"> <strong>{{ item.product.name }}</strong></span>
             <div class="countity" style="float:right">
                  ${{item.price}}
             </div>
@@ -397,11 +427,11 @@
           <div class="discount">
             <v-form class="form_discount">
                   <v-row>
-                    <v-col cols="12" sm="9">
+                    <v-col cols="12" sm="9" >
                       <v-text-field v-model="discount" label="الكوبون" outlined filled  style="border:none"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="3">
-                      <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white">خصم الأن</v-btn>
+                      <v-btn @click="apply_discount()" color="#c8c8c8" style="color:white;padding:0 6px">خصم الأن</v-btn>
                     </v-col>
                   </v-row>
             </v-form>
@@ -409,8 +439,8 @@
           <hr />
           <div class="discount_text" style="color:#737171;padding:10px">
             <div>
-              <span style="font-size:14px;padding:10px;color:#444f58">الخصم</span>
-              <span style="float:right;font-size:14px;color:#444f58">${{discount_value}}</span>
+              <span style="font-size:14px;float:right;padding:10px;color:#444f58">الخصم</span>
+              <span style="font-size:14px;color:#444f58;padding-right: 10px;">${{discount_value}}</span>
               <div style="clear:both"></div>
             </div>
 
@@ -419,7 +449,7 @@
           <div style="padding:10px">
             <span style="float:right;font-size: 1.1428571429em;">الحساب الإجمالى</span>
             <span >
-              <span style="color:#737171;">USD&nbsp;&nbsp;<strong style="color:black;font-size:22px"> ${{totalprice_2}}</strong></span> 
+              <span style="color:#737171;padding-right: 10px;">USD&nbsp;&nbsp;<strong style="color:black;font-size:22px"> ${{totalprice_2}}</strong></span> 
             </span>
             <div style="clear:both"></div>
           </div>
@@ -1121,6 +1151,11 @@ this.cart.forEach(element => {
     text-align: center;
     line-height: 25px
 }
+@media (max-width:767px){
+  .quantity{
+    left: 78px;
+  }
+}
 .clickdown{
   cursor: pointer;
   font-size: 18px;
@@ -1129,17 +1164,23 @@ this.cart.forEach(element => {
 }
 .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #f5f5f5;
-    margin-top: 19px;
+    margin-top: 9px;
 }
 @media (max-width:767px)
 {
  .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #f5f5f5;
-    margin-top: 22px;
+    margin-top: 14px;
   } 
 }
 
 .theme--light.v-text-field--filled>.v-input__control>.v-input__slot {
     background-color: white !important;
+}
+.theme--light.v-input{
+  padding: 0 !important;
+}
+.v-text-field>.v-input__control>.v-input__slot>.v-text-field__slot  input{
+    text-align: start !important;
 }
 </style>
