@@ -1,14 +1,14 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light px-3 sticky-top">
-        <button class="navbar-toggler" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
+        <button class="navbar-toggler ss" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
-        <button class="nav-btns d-block d-md-none" @click="showsModal()">
+        <a class="navbar-brand ss" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
+        <button class="nav-btns ss d-block d-md-none" @click="showsModal()">
             <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
             <span id="count">{{cartItemCount}}</span>
         </button>
-        <div class="d-md-block d-none">
+        <div class="lang_lg">
             <LanguageDropdown class="lang"></LanguageDropdown>
         </div>
 
@@ -29,7 +29,7 @@
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item d-block d-md-none about">
+                <li class="nav-item lang_sm about">
                    <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
                 </li>
             </ul>
@@ -56,7 +56,7 @@
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item d-block d-md-none about">
+                <li class="nav-item lang_sm about">
                    <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
                 </li>
             </ul>
@@ -528,5 +528,16 @@ svg{
         min-height: 624px;
     }
 }
-
+.lang_sm{
+    display: none;
+}
+@media(max-width:991px)
+{
+    .lang_sm{
+        display: block;
+    }
+    .lang_lg{
+        display: none;
+    }
+}
 </style>

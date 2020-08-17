@@ -2090,7 +2090,6 @@ var render = function() {
                                 staticStyle: { border: "none" },
                                 attrs: {
                                   items: _vm.item_ar,
-                                  value: "اليمن",
                                   outlined: "",
                                   dir: "rtl"
                                 },

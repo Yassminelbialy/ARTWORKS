@@ -45,6 +45,9 @@ li.nav-item {
         border-bottom-color: gray;
         width: 70px;
     }
+    li.nav-item:last-child:hover,.navbar-nav li.active:last-child {
+        width: 60px;
+    }
     .navbar .navbar-brand img{
         width: 60%;
     }

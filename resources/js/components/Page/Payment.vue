@@ -368,13 +368,13 @@
               <v-col cols="12" md="12">
                 <label style="float:right">المدينة</label>
                 <div style="clear:both"></div>
-                <v-text-field v-model="form.city" outlined  style="border:none"  dir="rtl"></v-text-field>
+                <v-text-field v-model="form.city" outlined style="border:none"  dir="rtl"></v-text-field>
                  <span class="red--text" v-if="errors.city">{{errors.city[0]}}</span>
               </v-col>
               <v-col cols="12" sm="8">
                 <label style="float:right">الدولة</label>
                 <div style="clear:both"></div>
-                <v-select v-model="form.country" :items="item_ar" value='اليمن' outlined  dir="rtl" style="border:none"></v-select>
+                <v-select v-model="form.country" :items="item_ar" outlined  dir="rtl" style="border:none"></v-select>
                  <span class="red--text" v-if="errors.country">{{errors.country[0]}}</span>
               </v-col>
               <!-- <v-col class="d-flex" cols="12" sm="4">
@@ -1015,6 +1015,7 @@ export default {
   },
   mounted(){
       $(".modal-mask").css("display","none")
+      
   },
   created(){
 this.cartTotalPrice;
@@ -1082,7 +1083,7 @@ this.cart.forEach(element => {
         })
 
       .catch(error => this.errors = error.response.data.errors)
-    }
+    },
   }
 };
 </script>
