@@ -2330,19 +2330,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -53428,19 +53415,6 @@ var render = function() {
                     })
                   ],
                   1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c("router-link", { attrs: { to: { path: "/payment" } } }, [
-                      _vm._v(
-                        "\n                            payment\n                        "
-                      )
-                    ])
-                  ],
-                  1
                 )
               ])
             : _c("ul", { staticClass: "navbar-nav  mx-auto mt-2 mt-lg-0" }, [
@@ -53525,19 +53499,6 @@ var render = function() {
                       staticClass: "nav-link",
                       staticStyle: { display: "flex" }
                     })
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  [
-                    _c("router-link", { attrs: { to: { path: "/payment" } } }, [
-                      _vm._v(
-                        "\n                            payment\n                        "
-                      )
-                    ])
                   ],
                   1
                 )

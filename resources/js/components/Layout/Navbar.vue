@@ -32,13 +32,6 @@
                 <li class="nav-item d-block d-md-none about">
                    <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
                 </li>
-                <li class="nav-item">
-                            <router-link
-                            :to="{ path: '/payment'}">
-                                payment
-                            </router-link>
-                </li>
-
             </ul>
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
                 <li class="nav-item about">
@@ -65,12 +58,6 @@
                 </li>
                 <li class="nav-item d-block d-md-none about">
                    <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
-                </li>
-                <li class="nav-item">
-                            <router-link
-                            :to="{ path: '/payment'}">
-                                payment
-                            </router-link>
                 </li>
             </ul>
         </div>
