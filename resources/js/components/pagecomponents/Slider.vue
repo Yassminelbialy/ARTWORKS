@@ -113,9 +113,9 @@
     .product-grid-item__title{
         font-size: 16px;
     }
-    .product-grid-item .product-grid-item__image .product-grid-item__imagewrapper{
+    /* .product-grid-item .product-grid-item__image .product-grid-item__imagewrapper{
         min-height: 200px;
-    }
+    } */
 }
 .swiper-pagination[data-v-40f21cb0] {
 

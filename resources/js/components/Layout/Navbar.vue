@@ -1,10 +1,10 @@
 <template>
     <nav class="navbar navbar-expand-lg navbar-light px-3 sticky-top">
-        <button class="navbar-toggler ss" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand ss" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
-        <button class="nav-btns ss d-block d-md-none" @click="showsModal()">
+        <a class="navbar-brand" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
+        <button class="nav-btns nav_sm_btn" @click="showsModal()">
             <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
             <span id="count">{{cartItemCount}}</span>
         </button>
@@ -14,27 +14,27 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-if=" $i18n.locale == 'en'">
-                <li class="nav-item home active">
+                <li class="nav-item home active" style="width:50px">
                     <router-link to="/">
                         <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
                 </li>
-                <li class="nav-item shop">
+                <li class="nav-item shop shop_sm">
                     <router-link to="/shop">
                         <a class="nav-link">{{ $t("message.shopart") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item about"  >
+                <li class="nav-item about"  style="width:50px">
                     <router-link to="/about">
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item lang_sm about">
+                <li class="lang_sm about">
                    <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
                 </li>
             </ul>
             <ul class="navbar-nav  mx-auto mt-2 mt-lg-0" v-else>
-                <li class="nav-item about">
+                <li class="nav-item about about_sm">
                     <router-link to="/about" class="lg">
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
@@ -43,12 +43,12 @@
                     </router-link>
                 </li>
 
-                <li class="nav-item shop">
+                <li class="nav-item shop shop_sm">
                     <router-link to="/shop">
                         <a class="nav-link">{{ $t("message.shopart") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item active home">
+                <li class="nav-item active home home_sm">
                     <router-link to="/" class="lg">
                         <a class="nav-link"> {{ $t("message.home") }}<span class="sr-only">(current)</span></a>
                     </router-link>
@@ -56,12 +56,12 @@
                         <a class="nav-link">{{ $t("message.about") }}</a>
                     </router-link>
                 </li>
-                <li class="nav-item lang_sm about">
+                <li class="lang_sm about">
                    <LanguageDropdown class="nav-link" style="display: flex;"></LanguageDropdown>
                 </li>
             </ul>
         </div>
-        <button class="nav-btns d-md-block d-none" @click="showsModal()">
+        <button class="nav-btns nav_lg_btn" @click="showsModal()">
             <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
             <span id="count">{{cartItemCount}}</span>
         </button>
@@ -303,12 +303,12 @@ this.mycart=$(".modal-wrapper")
 
 }
 
-@media(max-width:996px){
+/* @media(max-width:996px){
 
     li.nav-item{
         width: 67px;
     }
-}
+} */
 /* .nav-btns{
     margin-left: 27px;
 } */
@@ -452,7 +452,14 @@ svg{
 
 @media (max-width: 991px){
     .navbar-brand{
-        transform: translate(50%, 0);
+        position: absolute;
+        left: 50%;
+        top: 2px
+    }
+    .nav_sm_btn{
+        position: absolute;
+        right: 1%;
+        top: -4px;
     }
 }
  @media (max-width:299px){
@@ -531,6 +538,9 @@ svg{
 .lang_sm{
     display: none;
 }
+.nav_sm_btn{
+    display: none;
+}
 @media(max-width:991px)
 {
     .lang_sm{
@@ -538,6 +548,12 @@ svg{
     }
     .lang_lg{
         display: none;
+    }
+    .nav_lg_btn{
+        display: none;
+    }
+    .nav_sm_btn{
+        display: block;
     }
 }
 </style>

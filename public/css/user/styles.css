@@ -32,26 +32,54 @@ li.nav-item {
     border-bottom: 2px solid white;
     transition: border-bottom 0.5s;
 }
-
+li .nav-link{
+    color: #000 !important;
+}
 .navbar-nav li.active {
     border-bottom-color: black;
+    
 }
+@media (min-width:893px) and (max-width:897px)
+{
+    .navbar-nav li.nav-item ,.navbar-nav li.active
+    {
+        width: 70px !important;
+    } 
+    .navbar-nav .shop_sm{
+        width: 78px !important;
+    }
+}
+
 @media(max-width:991px){
     .navbar-nav li.active {
         border-bottom-color: black;
         width: 70px;
     }
+    .navbar-nav .about_sm ,.navbar-nav .about_sm.active,.navbar-nav .about_sm:hover{
+        width: 110px;
+    }
+    .navbar-nav .home_sm,.navbar-nav .home_sm.active,.navbar-nav .home_sm:hover{
+        width: 56px;
+    }
     li.nav-item:hover {
         border-bottom-color: gray;
         width: 70px;
     }
-    li.nav-item:last-child:hover,.navbar-nav li.active:last-child {
-        width: 60px;
+    .navbar-nav li:last-child{
+        padding-left: 4px;
+    }
+    .navbar-nav li:last-child:hover{
+        width: 52px;
+        border-bottom: 2px solid #000;
     }
     .navbar .navbar-brand img{
         width: 60%;
     }
+    .navbar-nav .shop_sm{
+        width: 70px !important;
+    }
 }
+
 
 li.nav-item:hover {
     border-bottom-color: gray;

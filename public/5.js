@@ -1889,10 +1889,7 @@ var render = function() {
                         [
                           _c(
                             "v-col",
-                            {
-                              staticClass: "arabic",
-                              attrs: { cols: "12", md: "12" }
-                            },
+                            { attrs: { cols: "12", md: "12" } },
                             [
                               _c("label", { staticStyle: { float: "right" } }, [
                                 _vm._v("البريد الإلكتروني ")

@@ -327,7 +327,7 @@
               تسجيل البيانات
             </h4>
             <v-row>
-              <v-col cols="12" md="12" class="arabic">
+              <v-col cols="12" md="12">
                 <label style="float:right">البريد الإلكتروني </label>
                 <div style="clear:both"></div>
                 <v-text-field v-model="form.email" outlined  style="border:none" dir="rtl"></v-text-field>

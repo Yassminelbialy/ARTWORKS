@@ -573,6 +573,12 @@ export default {
         width: 100%;
         height: 640px;
     }
+    @media (max-width:767px)
+    {
+        .carousel-item .header{
+            transform: scale(1.6);
+        }
+    }
     .header_sm{
         background-image: url('https://cdn.shopify.com/s/files/1/3000/4362/files/turrell_mobile_final_post_3_2048x.jpg?v=1565189502');
         -webkit-background-size: cover;
@@ -593,7 +599,7 @@ export default {
         position: absolute;
         top: -3%;
         transform: translate(-50%, 0);
-        left: 51%;
+        left: 52%;
         width: 100%;
     }
 
@@ -606,11 +612,11 @@ export default {
 
     }
     .details img{
-          width: 83%;
-    transition: all 1s;
-    height: 400px;
-    border-top: 8px solid #111;
-    border-bottom: 8px solid #111;
+        width: 83%;
+        transition: all 1s;
+        height: 400px;
+        border-top: 8px solid #111;
+        border-bottom: 8px solid #111;
     }
  .wrapper .row{
          transform: scale(.5);
@@ -770,7 +776,7 @@ font-size: 2rem;
 top: -12px;
 left: -20px;
 position: relative;
-transform: scale(.7);
+transform: scale(.87);
 
 }
 
