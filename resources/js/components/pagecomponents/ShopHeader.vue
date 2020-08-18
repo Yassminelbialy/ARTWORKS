@@ -9,7 +9,7 @@
                     <img :src="artist.cover_img" class="header" alt="...">
                 <!---------------------------- start regular pallete----------------------- -->
 
-                    <swiper class="agile_swap d-sm-none">
+                    <swiper class="agile_swap swap_sm">
                         <swiper-slide class="details agile_slide" v-for="(palettesArtist , index) in artist.artist_palettes" ref="myActive" @click.native="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                             <img :src="palettesArtist.artist_min_palettes.img" alt="...">
                             <div class="content" :class="{ 'active': index == 0 }" >
@@ -19,7 +19,7 @@
                             </div>
                         </swiper-slide>
                     </swiper>
-                    <div class="wrapper d-none d-sm-block ">
+                    <div class="wrapper swap_lg">
                         <div class=" row  d-flex justify-content-center" style="width:100%">
                             <div  class="details  col-lg-3  col-sm-4"  :class="{ 'active': index == 0 }"  ref="myActive" v-for="(palettesArtist , index) in artist.artist_palettes" @click="addActive(palettesArtist.id,index)"   :key="palettesArtist.id">
                                <div class="details-content">
@@ -40,7 +40,7 @@
                     </div>
                     <!---------------------------- start carousel pallete----------------------- -->
 
-                    <div class="parent d-sm-none">
+                    <div class="parent swap_sm">
                         <div>
                             <img src="https://cdn.shopify.com/s/files/1/3000/4362/t/109/assets/swipetothenext.png?v=14393615295324639232" alt="">
                         </div>
@@ -590,11 +590,7 @@ export default {
         position: relative;
         display: none;
     }
-        @media(max-width:991px){
-        .header_sm{
-            display: none;
-        }
-    }
+
     .wrapper{
         position: absolute;
         top: -3%;
@@ -603,7 +599,14 @@ export default {
         width: 100%;
     }
 
-
+    @media(max-width:991px){
+        .header_sm{
+            display: none;
+        }
+        .wrapper{
+            left: 48%;
+        }
+    }
     .details{
     color: #fff;
     cursor: pointer;
@@ -999,7 +1002,9 @@ transform: scale(.87);
     padding-left: 5px!important;
     padding-bottom: .3px;
 }
-
+.swap_sm{
+    display: none;
+}
 @media(max-width: 767px){
     .custom-padding:nth-child(odd){
     padding-right: 11px !important;
@@ -1014,6 +1019,13 @@ transform: scale(.87);
     }
 .add-cart[data-v-266b1872] {
         padding-left: 6px;
+    }
+
+    .swap_sm {
+        display: block;
+    }
+    .swap_lg{
+        display: none;
     }
 }
 
@@ -1033,4 +1045,6 @@ transform: scale(.87);
     position: relative;
     left: -11%;
 }
+
+
 </style>
