@@ -3,7 +3,7 @@
         <button class="navbar-toggler" type="button" @click="expanding()" aria-controls="navbarTogglerDemo03" :aria-expanded=expand aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="/"><img class="logo-ecs" src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559" width="32px" alt=""></a>
+        <a class="navbar-brand" href="/"><img class="logo-ecs" src="images/logo.jpeg" width="32px" alt=""></a>
         <button class="nav-btns nav_sm_btn" @click="showsModal()">
             <img src="//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/nav_icons_bag.svg?v=8412811641524949656" @click="showsModal()" alt="Shopping Cart" width="33px">
             <span id="count">{{cartItemCount}}</span>

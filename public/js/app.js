@@ -53810,12 +53810,7 @@ var staticRenderFns = [
     return _c("a", { staticClass: "navbar-brand", attrs: { href: "/" } }, [
       _c("img", {
         staticClass: "logo-ecs",
-        attrs: {
-          src:
-            "//cdn.shopify.com/s/files/1/3000/4362/t/109/assets/logo-ecs.png?v=2452931808056810559",
-          width: "32px",
-          alt: ""
-        }
+        attrs: { src: "images/logo.jpeg", width: "32px", alt: "" }
       })
     ])
   }
